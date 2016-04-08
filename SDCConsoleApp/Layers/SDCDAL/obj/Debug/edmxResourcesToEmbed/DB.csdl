@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MarketMovers" EntityType="DBModel.MarketMover" />
+  </EntityContainer>
+  <EntityType Name="MarketMover">
+    <Key>
+      <PropertyRef Name="Market_MoverId" />
+    </Key>
+    <Property Name="Market_MoverId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ticker" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Data_Display" Type="DateTime" Precision="3" />
+    <Property Name="Exchange" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Industry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Update_TS" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

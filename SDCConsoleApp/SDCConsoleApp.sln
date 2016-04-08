@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDCConsoleApp", "SDCConsoleApp\SDCConsoleApp.csproj", "{6D855229-5123-464E-B426-73119C620371}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDCDAL", "Layers\SDCDAL\SDCDAL.csproj", "{67D568EF-3F06-4BE7-AE0E-9989160DD3F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDCBLL", "Layers\SDCBLL\SDCBLL.csproj", "{FE60F1A2-EA27-47C8-9879-A31C07236C94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{6D855229-5123-464E-B426-73119C620371}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D855229-5123-464E-B426-73119C620371}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D855229-5123-464E-B426-73119C620371}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67D568EF-3F06-4BE7-AE0E-9989160DD3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67D568EF-3F06-4BE7-AE0E-9989160DD3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67D568EF-3F06-4BE7-AE0E-9989160DD3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67D568EF-3F06-4BE7-AE0E-9989160DD3F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE60F1A2-EA27-47C8-9879-A31C07236C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE60F1A2-EA27-47C8-9879-A31C07236C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE60F1A2-EA27-47C8-9879-A31C07236C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE60F1A2-EA27-47C8-9879-A31C07236C94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

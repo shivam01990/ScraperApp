@@ -1,0 +1,2474 @@
+=============Import Start 4/8/2016 8:17:11 AM============
+=============Import End 4/8/2016 8:17:12 AM============
+=============Import Start 4/8/2016 8:17:32 AM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/B.htm
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/C.htm
+=============Import Start 4/8/2016 8:32:40 AM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 8:34:52 AM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/B.htm
+=============Import Start 4/8/2016 8:39:45 AM============
+=============Import Start 4/8/2016 8:44:32 AM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 9:19:34 PM============
+=============Import End 4/8/2016 9:20:02 PM============
+=============Import Start 4/8/2016 9:24:18 PM============
+=============Import End 4/8/2016 9:25:23 PM============
+=============Import Start 4/8/2016 9:25:35 PM============
+=============Import End 4/8/2016 9:26:14 PM============
+=============Import Start 4/8/2016 9:26:15 PM============
+=============Import End 4/8/2016 9:27:07 PM============
+=============Import Start 4/8/2016 9:31:14 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 9:47:44 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import End 4/8/2016 9:48:18 PM============
+=============Import Start 4/8/2016 9:48:21 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 9:52:11 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 9:55:04 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 9:57:30 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 10:12:59 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import End 4/8/2016 10:13:28 PM============
+=============Import Start 4/8/2016 10:14:05 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 10:18:18 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 10:22:56 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 10:26:02 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 11:04:37 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 11:33:37 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import End 4/8/2016 11:34:11 PM============
+=============Import Start 4/8/2016 11:34:53 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import End 4/8/2016 11:35:11 PM============
+=============Import Start 4/8/2016 11:35:15 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 11:37:42 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 11:38:50 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 11:40:38 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 11:41:51 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import End 4/8/2016 11:42:37 PM============
+=============Import Start 4/8/2016 11:50:28 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 11:52:10 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 11:53:21 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 11:54:55 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/8/2016 11:55:59 PM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/9/2016 12:03:57 AM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/9/2016 12:10:23 AM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/9/2016 12:17:23 AM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+=============Import Start 4/9/2016 12:41:59 AM============
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/A.htm
+Reading row number1
+Ticker:AAAP
+Name:Advanced Accele. Ads
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AAAP
+Reading row number2
+Ticker:AAL
+Name:American Airlines Gp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AAL
+Data_Display:4/8/2016 4:40:00 PM
+Exchange:London Stock Exchange
+Sector:Basic Materials
+Industry:Mining
+Reading row number3
+Ticker:AAME
+Name:Atlantic Amer Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AAME
+Data_Display:4/8/2016 6:08:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Financials
+Industry:Life Insurance
+Reading row number4
+Ticker:AAOI
+Name:Applied Optoelect Cm
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AAOI
+Data_Display:4/8/2016 7:57:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number5
+Ticker:AAON
+Name:Aaon Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AAON
+Data_Display:4/8/2016 7:56:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Construction &amp; Materials
+Reading row number6
+Ticker:AAPC
+Name:Atlantic Alliance Or
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AAPC
+Data_Display:4/8/2016 3:13:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Financials
+Reading row number7
+Ticker:AAPL
+Name:Apple Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AAPL
+Data_Display:4/8/2016 7:57:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number8
+Ticker:AAVL
+Name:Avalanche Biot Cm ST
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AAVL
+Data_Display:4/8/2016 7:55:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number9
+Ticker:AAWW
+Name:Atlas Air Ww
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AAWW
+Data_Display:4/8/2016 7:55:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Industrial Transportation
+Reading row number10
+Ticker:AAXJ
+Name:Ishrs MSCI Aca Xjpn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AAXJ
+Reading row number11
+Ticker:ABAC
+Name:Aoxin Tianli Grp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABAC
+Data_Display:4/8/2016 7:37:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Consumer Goods
+Industry:Food Producers
+Reading row number12
+Ticker:ABAX
+Name:Abaxis Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABAX
+Data_Display:4/8/2016 7:57:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number13
+Ticker:ABCB
+Name:Ameris Bancorp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABCB
+Data_Display:4/8/2016 7:57:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number14
+Ticker:ABCD
+Name:Cambium Learning Grp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABCD
+Data_Display:4/8/2016 7:51:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Consumer Services
+Industry:General Retailers
+Reading row number15
+Ticker:ABCO
+Name:Advisory Board Co
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABCO
+Data_Display:4/8/2016 7:57:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Support Services
+Reading row number16
+Ticker:ABCW
+Name:Anchor Bancorp Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABCW
+Data_Display:4/8/2016 7:55:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number17
+Ticker:ABDC
+Name:Alcentra Capital Com
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABDC
+Data_Display:4/6/2016 3:58:00 PM
+Exchange:
+Sector:
+Reading row number18
+Ticker:ABEO
+Name:Abeona Therapeutics
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABEO
+Data_Display:4/8/2016 7:58:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number19
+Ticker:ABEOW
+Name:Abeona Thera Wts
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABEOW
+Data_Display:4/8/2016 3:48:00 PM
+Reading row number20
+Ticker:ABGB
+Name:Abengoa S.A. Ads
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABGB
+Data_Display:4/8/2016 7:48:00 PM
+Reading row number21
+Ticker:ABIL
+Name:Ability Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABIL
+Data_Display:4/8/2016 7:47:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Reading row number22
+Ticker:ABILW
+Name:Ability Inc. Warrant
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABILW
+Data_Display:4/7/2016 2:39:00 PM
+Reading row number23
+Ticker:ABIO
+Name:Arca Biopharma Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABIO
+Data_Display:4/8/2016 6:58:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number24
+Ticker:ABMD
+Name:Abiomed Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABMD
+Data_Display:4/8/2016 7:59:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number25
+Ticker:ABTL
+Name:Autobytel Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABTL
+Data_Display:4/8/2016 7:57:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Consumer Services
+Industry:General Retailers
+Reading row number26
+Ticker:ABTX
+Name:Allegiance Banc CS
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABTX
+Data_Display:4/8/2016 7:55:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Financials
+Industry:Banks
+Reading row number27
+Ticker:ABUS
+Name:Arbutus Biopharma Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABUS
+Data_Display:4/8/2016 7:57:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number28
+Ticker:ABY
+Name:Abengoa Yield Ord
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ABY
+Exchange:Australian Stock Exchange Ltd
+Sector:Basic Materials
+Industry:Industrial Metals
+Reading row number29
+Ticker:ACAD
+Name:Acadia Pharmaceutica
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACAD
+Data_Display:4/8/2016 7:59:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number30
+Ticker:ACAS
+Name:Amer Capital Ltd
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACAS
+Data_Display:4/8/2016 7:59:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Reading row number31
+Ticker:ACAT
+Name:Arctic Cat Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACAT
+Data_Display:4/8/2016 7:59:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Goods
+Industry:Leisure Goods
+Reading row number32
+Ticker:ACBI
+Name:Atlantic Capital Cm
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACBI
+Data_Display:4/8/2016 7:48:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number33
+Ticker:ACET
+Name:Aceto Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACET
+Data_Display:4/8/2016 7:53:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Basic Materials
+Industry:Chemicals
+Reading row number34
+Ticker:ACFC
+Name:Atlantic Coast Finl
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACFC
+Data_Display:4/8/2016 7:57:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Financials
+Industry:Banks
+Reading row number35
+Ticker:ACGL
+Name:Arch Capital Grp Ltd
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACGL
+Data_Display:4/8/2016 7:58:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Nonlife Insurance
+Reading row number36
+Ticker:ACHC
+Name:Acadia Healthcr Co
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACHC
+Data_Display:4/8/2016 7:59:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number37
+Ticker:ACHN
+Name:Achillion Pharmaceut
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACHN
+Data_Display:4/8/2016 8:00:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number38
+Ticker:ACIW
+Name:Aci Worldwide Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACIW
+Data_Display:4/8/2016 7:59:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number39
+Ticker:ACLS
+Name:Axcelis Tech Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACLS
+Data_Display:4/8/2016 8:00:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number40
+Ticker:ACNB
+Name:Acnb Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACNB
+Data_Display:4/8/2016 7:59:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Financials
+Industry:Banks
+Reading row number41
+Ticker:ACOR
+Name:Acorda Therapeutics
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACOR
+Data_Display:4/7/2016 7:21:00 PM
+Exchange:
+Sector:
+Reading row number42
+Ticker:ACPW
+Name:Active Power Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACPW
+Data_Display:4/8/2016 6:26:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:Electronic &amp; Electrical Equipment
+Reading row number43
+Ticker:ACRS
+Name:Aclaris Therapts Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACRS
+Data_Display:4/8/2016 7:25:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number44
+Ticker:ACRX
+Name:Acelrx Pharmaceutica
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACRX
+Data_Display:4/8/2016 7:56:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number45
+Ticker:ACSF
+Name:American Capital Sen
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACSF
+Data_Display:4/8/2016 8:00:00 PM
+Reading row number46
+Ticker:ACST
+Name:Acasti Pharma Cmn A
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACST
+Data_Display:4/8/2016 9:48:00 AM
+Exchange:Indonesia Stock Exchange (formerly Jakarta SE)
+Sector:Industrials
+Industry:Construction &amp; Materials
+Reading row number47
+Ticker:ACTA
+Name:Actua Corp Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACTA
+Data_Display:4/8/2016 3:25:00 PM
+Exchange:Oslo Stock Exchange
+Sector:Financials
+Industry:Financial Services
+Reading row number48
+Ticker:ACTG
+Name:Acacia Res-Acacia
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACTG
+Data_Display:4/8/2016 8:00:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Support Services
+Reading row number49
+Ticker:ACTS
+Name:Actions Semiconducto
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACTS
+Data_Display:4/8/2016 6:51:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number50
+Ticker:ACTX
+Name:Glbl X Guru Actv ETF
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACTX
+Reading row number51
+Ticker:ACUR
+Name:Acura Pharma Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACUR
+Data_Display:4/8/2016 6:10:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number52
+Ticker:ACWI
+Name:Ishares MSCI ACWI
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACWI
+Reading row number53
+Ticker:ACWX
+Name:Ishares MSCI ACWI
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACWX
+Reading row number54
+Ticker:ACXM
+Name:Acxiom Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ACXM
+Data_Display:4/8/2016 7:59:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:Media
+Reading row number55
+Ticker:ADAP
+Name:Adaptimmune Ther Ads
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADAP
+Data_Display:4/8/2016 7:53:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number56
+Ticker:ADBE
+Name:Adobe Systems Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADBE
+Data_Display:4/8/2016 8:01:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number57
+Ticker:ADHD
+Name:Alcobra Ltd. Ord
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADHD
+Data_Display:4/8/2016 7:56:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number58
+Ticker:ADI
+Name:Analog Devices Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADI
+Data_Display:4/8/2016 4:09:00 PM
+Exchange:London Stock Exchange
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number59
+Ticker:ADMA
+Name:Adma Biologics Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADMA
+Data_Display:4/8/2016 7:42:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number60
+Ticker:ADMP
+Name:Adamis Pharmaceuticl
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADMP
+Data_Display:4/8/2016 8:01:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number61
+Ticker:ADMS
+Name:Adamas Pharma Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADMS
+Exchange:
+Sector:
+Reading row number62
+Ticker:ADP
+Name:Automatic Data Procs
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADP
+Data_Display:4/8/2016 8:01:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Support Services
+Reading row number63
+Ticker:ADRA
+Name:Bldrs Asia 50 Fd
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADRA
+Reading row number64
+Ticker:ADRD
+Name:Bldrs Dev Mkts 100
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADRD
+Reading row number65
+Ticker:ADRE
+Name:Bldrs EM Mkts 50
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADRE
+Reading row number66
+Ticker:ADRO
+Name:Aduro Biotech Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADRO
+Data_Display:4/8/2016 10:14:00 AM
+Exchange:Indonesia Stock Exchange (formerly Jakarta SE)
+Sector:Basic Materials
+Industry:Mining
+Reading row number67
+Ticker:ADRU
+Name:Bldrs EUR 100 Fd
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADRU
+Reading row number68
+Ticker:ADSK
+Name:Autodesk Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADSK
+Data_Display:4/8/2016 8:02:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number69
+Ticker:ADTN
+Name:Adtran Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADTN
+Data_Display:4/8/2016 8:01:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number70
+Ticker:ADUS
+Name:Addus Homecare Corpo
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADUS
+Data_Display:4/8/2016 8:02:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number71
+Ticker:ADXS
+Name:Advaxis Inc Cmn Stk
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADXS
+Data_Display:4/8/2016 8:02:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number72
+Ticker:ADXSW
+Name:Advaxis Inc. Wts
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ADXSW
+Data_Display:4/7/2016 8:02:00 PM
+Reading row number73
+Ticker:AEGN
+Name:Aegion Corp Cmn Stk
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AEGN
+Data_Display:4/8/2016 8:02:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Construction &amp; Materials
+Reading row number74
+Ticker:AEGR
+Name:Aegerion Pharma Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AEGR
+Data_Display:4/8/2016 8:01:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number75
+Ticker:AEHR
+Name:Aehr Test Systems
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AEHR
+Data_Display:4/8/2016 5:55:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number76
+Ticker:AEIS
+Name:Advanced Energy
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AEIS
+Data_Display:4/8/2016 8:03:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number77
+Ticker:AEMD
+Name:Aethlon Medical Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AEMD
+Data_Display:4/8/2016 8:01:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number78
+Ticker:AEPI
+Name:AEP Inds Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AEPI
+Data_Display:4/8/2016 8:00:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:General Industrials
+Reading row number79
+Ticker:AERI
+Name:Aerie Pharmaceutical
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AERI
+Data_Display:4/8/2016 8:02:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number80
+Ticker:AETI
+Name:American Electric Te
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AETI
+Data_Display:4/8/2016 7:56:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:Electronic &amp; Electrical Equipment
+Reading row number81
+Ticker:AEY
+Name:Addvantage Techs Grp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AEY
+Data_Display:4/8/2016 8:02:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number82
+Ticker:AEZS
+Name:Aeterna Zentaris
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AEZS
+Data_Display:4/8/2016 8:01:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Reading row number83
+Ticker:AFAM
+Name:Almost Family Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AFAM
+Data_Display:4/8/2016 7:49:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number84
+Ticker:AFFX
+Name:Affymetrix Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AFFX
+Reading row number85
+Ticker:AFH
+Name:Atlas Fincl Hld Ord
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AFH
+Exchange:Bulgarian Stock Exchange - Sofia
+Sector:Financials
+Industry:Financial Services
+Reading row number86
+Ticker:AFMD
+Name:Affimed N.V
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AFMD
+Data_Display:4/8/2016 7:55:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number87
+Ticker:AFOP
+Name:Alliance Fiber Optic
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AFOP
+Data_Display:4/8/2016 8:03:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number88
+Ticker:AFSI
+Name:Amtrust Financial
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AFSI
+Data_Display:4/8/2016 8:03:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Nonlife Insurance
+Reading row number89
+Ticker:AGEN
+Name:Agenus Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGEN
+Data_Display:4/8/2016 8:04:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number90
+Ticker:AGFS
+Name:Agrofresh Solutions
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGFS
+Data_Display:4/8/2016 7:56:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Basic Materials
+Industry:Chemicals
+Reading row number91
+Ticker:AGFSW
+Name:Agrofresh Sol Wrrnts
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGFSW
+Data_Display:4/7/2016 2:54:00 PM
+Reading row number92
+Ticker:AGII
+Name:Argo Group Intl Hlds
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGII
+Data_Display:4/8/2016 8:04:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Nonlife Insurance
+Reading row number93
+Ticker:AGIIL
+Name:Argo Grp Itl Snr NTS
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGIIL
+Data_Display:4/8/2016 6:39:00 PM
+Reading row number94
+Ticker:AGIO
+Name:Agios Pharmaceutical
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGIO
+Data_Display:4/8/2016 8:03:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number95
+Ticker:AGNC
+Name:American Capital Age
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGNC
+Data_Display:4/8/2016 8:04:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:General Financial
+Reading row number96
+Ticker:AGNCB
+Name:American Cap Agy Cor
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGNCB
+Data_Display:4/8/2016 7:44:00 PM
+Reading row number97
+Ticker:AGNCP
+Name:American Capital Pfd
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGNCP
+Data_Display:4/8/2016 7:36:00 PM
+Reading row number98
+Ticker:AGND
+Name:Wt Brclys Usagg Ndur
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGND
+Reading row number99
+Ticker:AGRX
+Name:Agile Therap Cmn Stk
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGRX
+Data_Display:4/8/2016 7:59:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number100
+Ticker:AGTC
+Name:Applied Genetic Tech
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGTC
+Data_Display:4/8/2016 8:02:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number101
+Ticker:AGYS
+Name:Agilysys Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGYS
+Data_Display:4/8/2016 8:00:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number102
+Ticker:AGZD
+Name:Wt Barc Usagg Zro Dr
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AGZD
+Reading row number103
+Ticker:AHGP
+Name:Alliance Holdings Gp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AHGP
+Data_Display:4/8/2016 8:04:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Basic Materials
+Industry:Mining
+Reading row number104
+Ticker:AHPI
+Name:Allied Healthcare
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AHPI
+Data_Display:4/8/2016 7:50:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number105
+Ticker:AIA
+Name:Ishares Asia 50 ETF
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AIA
+Reading row number106
+Ticker:AIMC
+Name:Altra Indtl Mtn Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AIMC
+Data_Display:4/8/2016 8:05:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Industrial Engineering
+Reading row number107
+Ticker:AIMT
+Name:Aimmune Therap Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AIMT
+Data_Display:4/8/2016 8:03:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number108
+Ticker:AINV
+Name:Apollo Investment Co
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AINV
+Data_Display:4/8/2016 8:04:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Reading row number109
+Ticker:AIQ
+Name:Alliance Hlthcare Cm
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AIQ
+Data_Display:4/8/2016 7:54:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number110
+Ticker:AIRM
+Name:Air Methods Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AIRM
+Data_Display:4/8/2016 8:04:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number111
+Ticker:AIRR
+Name:First Trust Rba Am I
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AIRR
+Reading row number112
+Ticker:AIRT
+Name:Air T Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AIRT
+Data_Display:4/8/2016 6:43:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:Industrial Transportation
+Reading row number113
+Ticker:AIXG
+Name:Aixtron Se
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AIXG
+Data_Display:4/8/2016 7:50:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Reading row number114
+Ticker:AKAM
+Name:Akamai Technologies
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AKAM
+Data_Display:4/8/2016 8:05:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number115
+Ticker:AKAO
+Name:Achaogen Inc Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AKAO
+Data_Display:4/8/2016 8:05:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number116
+Ticker:AKBA
+Name:Akebia Therapeutics
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AKBA
+Data_Display:4/8/2016 8:06:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number117
+Ticker:AKER
+Name:Akers Biosciences Cm
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AKER
+Data_Display:4/8/2016 3:25:00 PM
+Exchange:Oslo Stock Exchange
+Sector:Financials
+Industry:Financial Services
+Reading row number118
+Ticker:AKRX
+Name:Akorn Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AKRX
+Data_Display:4/8/2016 8:06:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number119
+Ticker:AKTX
+Name:Akari Therapeutics
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AKTX
+Data_Display:4/8/2016 6:20:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number120
+Ticker:ALCO
+Name:Alico Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALCO
+Data_Display:4/8/2016 6:33:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Goods
+Industry:Food Producers
+Reading row number121
+Ticker:ALDR
+Name:Alder Biopharma Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALDR
+Data_Display:4/8/2016 4:35:00 PM
+Exchange:Euronext Paris
+Sector:Industrials
+Industry:Aerospace &amp; Defense
+Reading row number122
+Ticker:ALDX
+Name:Aldeyra Therapeu Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALDX
+Data_Display:4/8/2016 8:06:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number123
+Ticker:ALGN
+Name:Align Technology I
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALGN
+Data_Display:4/8/2016 8:06:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number124
+Ticker:ALGT
+Name:Allegiant Travel Com
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALGT
+Data_Display:4/8/2016 8:05:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:Travel &amp; Leisure
+Reading row number125
+Ticker:ALIM
+Name:Alimera Sciences Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALIM
+Data_Display:4/8/2016 8:03:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number126
+Ticker:ALKS
+Name:Alkermes Plc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALKS
+Data_Display:4/8/2016 8:06:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number127
+Ticker:ALLT
+Name:Allot Communications
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALLT
+Exchange:Tel Aviv Stock Exchange
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number128
+Ticker:ALNY
+Name:Alnylam Pharmaceut
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALNY
+Data_Display:4/8/2016 8:06:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number129
+Ticker:ALOG
+Name:Analogic Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALOG
+Data_Display:4/8/2016 8:06:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number130
+Ticker:ALOT
+Name:Astro Med Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALOT
+Data_Display:4/7/2016 9:00:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number131
+Ticker:ALQA
+Name:Alliqua Biomedical
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALQA
+Data_Display:4/8/2016 7:56:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number132
+Ticker:ALRM
+Name:Alarm.Com Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALRM
+Data_Display:4/8/2016 8:04:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number133
+Ticker:ALSK
+Name:Alaska Commun Sys
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALSK
+Data_Display:4/8/2016 8:01:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Telecommunications
+Industry:Fixed Line Telecommunications
+Reading row number134
+Ticker:ALTY
+Name:Global X Sprdv ETF
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALTY
+Reading row number135
+Ticker:ALXA
+Name:Alexza Pharmaceutica
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALXA
+Data_Display:4/8/2016 7:56:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number136
+Ticker:ALXN
+Name:Alexion Pharm Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ALXN
+Data_Display:4/8/2016 8:07:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number137
+Ticker:AMAG
+Name:Amag Pharmaceuticals
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMAG
+Data_Display:4/8/2016 8:07:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number138
+Ticker:AMAT
+Name:Applied Materials
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMAT
+Data_Display:4/8/2016 8:07:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number139
+Ticker:AMBA
+Name:Ambarella Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMBA
+Data_Display:4/8/2016 8:07:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Electronic &amp; Electrical Equipment
+Reading row number140
+Ticker:AMBC
+Name:Ambac Financial Grp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMBC
+Data_Display:4/4/2016 5:24:00 PM
+Exchange:
+Sector:
+Reading row number141
+Ticker:AMBCW
+Name:Ambac Financial Grp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMBCW
+Data_Display:4/8/2016 5:56:00 PM
+Reading row number142
+Ticker:AMCC
+Name:Applied Micro Crcts
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMCC
+Data_Display:4/8/2016 8:07:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number143
+Ticker:AMCN
+Name:Airmedia Group Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMCN
+Data_Display:4/8/2016 8:02:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:Media
+Reading row number144
+Ticker:AMCX
+Name:Amc Networks Cl A
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMCX
+Data_Display:4/8/2016 8:08:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:Media
+Reading row number145
+Ticker:AMD
+Name:Adv Micro Devices
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMD
+Reading row number146
+Ticker:AMDA
+Name:Amedica Corporation
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMDA
+Data_Display:4/8/2016 8:06:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number147
+Ticker:AMED
+Name:Amedisys Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMED
+Data_Display:4/8/2016 4:20:00 PM
+Exchange:London Stock Exchange
+Sector:Financials
+Industry:Financial Services
+Reading row number148
+Ticker:AMGN
+Name:Amgen
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMGN
+Data_Display:4/8/2016 8:08:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number149
+Ticker:AMIC
+Name:Amer Independ Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMIC
+Data_Display:4/7/2016 9:00:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Financials
+Industry:Life Insurance
+Reading row number150
+Ticker:AMKR
+Name:Amkor Technology
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMKR
+Data_Display:4/8/2016 8:05:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number151
+Ticker:AMNB
+Name:American Natl Bksh
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMNB
+Data_Display:4/8/2016 6:29:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number152
+Ticker:AMOT
+Name:Allied Motion Tech
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMOT
+Data_Display:4/8/2016 8:03:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Industrials
+Industry:Electronic &amp; Electrical Equipment
+Reading row number153
+Ticker:AMOV
+Name:America Movil A Ads
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMOV
+Data_Display:4/8/2016 8:07:00 PM
+Reading row number154
+Ticker:AMPH
+Name:Amphastar Pharma Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMPH
+Exchange:London Stock Exchange
+Sector:Utilities
+Industry:Electricity
+Reading row number155
+Ticker:AMRB
+Name:American River Bkshs
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMRB
+Data_Display:4/7/2016 8:59:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number156
+Ticker:AMRI
+Name:Albany Molecular Res
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMRI
+Data_Display:4/8/2016 8:08:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number157
+Ticker:AMRK
+Name:A-Mark Precious Meta
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMRK
+Exchange:Tel Aviv Stock Exchange
+Sector:Industrials
+Industry:Support Services
+Reading row number158
+Ticker:AMRN
+Name:Amarin Corp Ads
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMRN
+Data_Display:4/8/2016 8:09:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number159
+Ticker:AMRS
+Name:Amyris Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMRS
+Data_Display:4/7/2016 4:04:00 PM
+Reading row number160
+Ticker:AMSC
+Name:Amer Superconductor
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMSC
+Data_Display:4/8/2016 7:57:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Electronic &amp; Electrical Equipment
+Reading row number161
+Ticker:AMSF
+Name:Amerisafe Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMSF
+Data_Display:4/8/2016 8:08:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Life Insurance
+Reading row number162
+Ticker:AMSG
+Name:Amsurg Corp Com
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMSG
+Data_Display:4/8/2016 8:09:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number163
+Ticker:AMSGP
+Name:Amsurg 5.25 Pfd A-1
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMSGP
+Data_Display:4/8/2016 5:11:00 PM
+Reading row number164
+Ticker:AMSWA
+Name:Amer Software Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMSWA
+Data_Display:4/8/2016 8:10:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number165
+Ticker:AMTD
+Name:TD Ameritrade HD Cm
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMTD
+Data_Display:4/8/2016 8:10:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Financial Services
+Reading row number166
+Ticker:AMTX
+Name:Aemetis Inc Cmn Stk
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMTX
+Data_Display:4/6/2016 2:34:00 PM
+Reading row number167
+Ticker:AMWD
+Name:Amer Woodmark Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMWD
+Data_Display:4/8/2016 8:08:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Construction &amp; Materials
+Reading row number168
+Ticker:AMZN
+Name:Amazon.Com Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AMZN
+Data_Display:4/8/2016 8:10:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:General Retailers
+Reading row number169
+Ticker:ANAC
+Name:Anacor Pharmaceutica
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANAC
+Data_Display:4/8/2016 8:11:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number170
+Ticker:ANAD
+Name:Anadigics Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANAD
+Reading row number171
+Ticker:ANAT
+Name:Amer Natl Insurance
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANAT
+Data_Display:4/8/2016 8:08:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Nonlife Insurance
+Reading row number172
+Ticker:ANCB
+Name:Anchor Bancorp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANCB
+Data_Display:4/8/2016 4:42:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Financials
+Industry:Banks
+Reading row number173
+Ticker:ANCX
+Name:Access National Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANCX
+Data_Display:4/8/2016 7:53:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Financials
+Industry:Banks
+Reading row number174
+Ticker:ANDA
+Name:Andina Acq Cp Ord Sh
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANDA
+Data_Display:4/8/2016 8:09:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:Construction &amp; Materials
+Reading row number175
+Ticker:ANDAR
+Name:Andina Acq Cp Rt
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANDAR
+Data_Display:3/24/2016 7:50:00 PM
+Reading row number176
+Ticker:ANDAU
+Name:Andina Acq Cp Unit
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANDAU
+Data_Display:4/8/2016 3:45:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Financials
+Reading row number177
+Ticker:ANDAW
+Name:Andina Acq Cp Wt
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANDAW
+Data_Display:4/8/2016 7:08:00 PM
+Reading row number178
+Ticker:ANDE
+Name:Andersons Inc [The
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANDE
+Data_Display:4/8/2016 8:10:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Goods
+Industry:Food Producers
+Reading row number179
+Ticker:ANGI
+Name:Angie's List Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANGI
+Data_Display:4/8/2016 8:11:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:Media
+Reading row number180
+Ticker:ANGO
+Name:Angiodynamics Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANGO
+Data_Display:4/8/2016 8:11:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number181
+Ticker:ANIK
+Name:Anika Therapeutics
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANIK
+Data_Display:4/8/2016 8:12:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number182
+Ticker:ANIP
+Name:ANI  Pharma Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANIP
+Data_Display:4/8/2016 8:10:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number183
+Ticker:ANSS
+Name:Ansys Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANSS
+Data_Display:4/8/2016 8:12:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number184
+Ticker:ANTH
+Name:Anthera Pharmaceutic
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANTH
+Data_Display:4/8/2016 8:11:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number185
+Ticker:ANY
+Name:Sphere 3D Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ANY
+Data_Display:4/8/2016 4:05:00 PM
+Exchange:Budapest Stock Exchange
+Sector:Industrials
+Industry:Support Services
+Reading row number186
+Ticker:AOSL
+Name:Alpha and Omega Semi
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AOSL
+Data_Display:4/8/2016 8:12:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number187
+Ticker:APDN
+Name:Applied Dna Scns Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APDN
+Data_Display:4/8/2016 8:10:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:Electronic &amp; Electrical Equipment
+Reading row number188
+Ticker:APDNW
+Name:Applied Dna Sci Wrnt
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APDNW
+Data_Display:4/8/2016 6:04:00 PM
+Reading row number189
+Ticker:APEI
+Name:American Pub. Edu
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APEI
+Data_Display:4/8/2016 8:12:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:General Retailers
+Reading row number190
+Ticker:APIC
+Name:Apigee Corp Cm ST
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APIC
+Data_Display:4/8/2016 9:11:00 AM
+Exchange:Indonesia Stock Exchange (formerly Jakarta SE)
+Sector:Financials
+Industry:Financial Services
+Reading row number191
+Ticker:APLP
+Name:Archrock Partners LP
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APLP
+Data_Display:4/8/2016 8:04:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Oil &amp; Gas
+Industry:Oil Equipment, Services &amp; Distribution
+Reading row number192
+Ticker:APOG
+Name:Apogee Entrpr Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APOG
+Data_Display:4/8/2016 8:13:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Construction &amp; Materials
+Reading row number193
+Ticker:APOL
+Name:Apollo Ed Grp A
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APOL
+Reading row number194
+Ticker:APPF
+Name:Appfolio Cl A Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APPF
+Data_Display:4/8/2016 8:06:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number195
+Ticker:APPS
+Name:Digital Turbine Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APPS
+Data_Display:4/8/2016 8:07:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Consumer Services
+Industry:Media
+Reading row number196
+Ticker:APPY
+Name:Venaxis Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APPY
+Data_Display:4/8/2016 7:58:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Reading row number197
+Ticker:APRI
+Name:Apricus Biosciences Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APRI
+Data_Display:4/8/2016 8:13:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number198
+Ticker:APTO
+Name:Aptose Bioscns Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APTO
+Data_Display:4/8/2016 6:18:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Reading row number199
+Ticker:APWC
+Name:Asia Pac Wire &Cable
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:APWC
+Data_Display:4/8/2016 2:58:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Industrials
+Industry:Electronic &amp; Electrical Equipment
+Reading row number200
+Ticker:AQMS
+Name:Aqua Metals Inc. Cm
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AQMS
+Data_Display:4/8/2016 7:52:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:Support Services
+Reading row number201
+Ticker:AQXP
+Name:Aquinox Pharmaceutic
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AQXP
+Data_Display:4/8/2016 8:11:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number202
+Ticker:ARAY
+Name:Accuray Incorporated
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARAY
+Data_Display:4/8/2016 8:14:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number203
+Ticker:ARCB
+Name:Arcbest Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARCB
+Data_Display:4/8/2016 8:14:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Industrial Transportation
+Reading row number204
+Ticker:ARCC
+Name:Ares Capital Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARCC
+Data_Display:4/8/2016 8:14:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Reading row number205
+Ticker:ARCI
+Name:Applnc Rcycl Ct Amer
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARCI
+Data_Display:4/8/2016 4:25:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:Support Services
+Reading row number206
+Ticker:ARCW
+Name:Arc Group Worldwide
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARCW
+Data_Display:4/8/2016 7:51:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number207
+Ticker:ARDM
+Name:Aradigm Corp Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARDM
+Data_Display:4/8/2016 8:03:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number208
+Ticker:ARDX
+Name:Ardelyx Inc. Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARDX
+Data_Display:4/8/2016 8:13:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number209
+Ticker:AREX
+Name:Approach Res. Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AREX
+Data_Display:4/8/2016 8:13:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Oil &amp; Gas
+Industry:Oil &amp; Gas Producers
+Reading row number210
+Ticker:ARGS
+Name:Argos Therapeutics
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARGS
+Data_Display:4/8/2016 8:14:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number211
+Ticker:ARIA
+Name:Ariad Pharm Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARIA
+Data_Display:4/8/2016 8:15:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number212
+Ticker:ARII
+Name:American Railcar Ind
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARII
+Data_Display:4/8/2016 8:12:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Industrial Engineering
+Reading row number213
+Ticker:ARIS
+Name:Ari Network Svcs
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARIS
+Data_Display:4/8/2016 3:24:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number214
+Ticker:ARKR
+Name:Ark Restaurants Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARKR
+Data_Display:4/8/2016 7:17:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Consumer Services
+Industry:Travel &amp; Leisure
+Reading row number215
+Ticker:ARLP
+Name:Alliance Resource Pt
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARLP
+Data_Display:4/8/2016 8:15:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Basic Materials
+Industry:Mining
+Reading row number216
+Ticker:ARLZ
+Name:Aralez Pharm Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARLZ
+Data_Display:4/8/2016 8:15:00 PM
+Reading row number217
+Ticker:ARMH
+Name:Arm Holdings Plc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARMH
+Data_Display:4/8/2016 8:15:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number218
+Ticker:ARNA
+Name:Arena Pharmaceutical
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARNA
+Data_Display:4/8/2016 10:05:00 AM
+Exchange:Indonesia Stock Exchange (formerly Jakarta SE)
+Sector:Industrials
+Industry:Construction &amp; Materials
+Reading row number219
+Ticker:AROW
+Name:Arrow Financial Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AROW
+Data_Display:4/8/2016 8:14:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number220
+Ticker:ARQL
+Name:Arqule Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARQL
+Data_Display:4/8/2016 8:15:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number221
+Ticker:ARRS
+Name:Arris Group Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARRS
+Data_Display:4/8/2016 8:16:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number222
+Ticker:ARRY
+Name:Array Biopharma Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARRY
+Data_Display:4/8/2016 8:16:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number223
+Ticker:ARTNA
+Name:Artesian Res Cp A
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARTNA
+Data_Display:4/8/2016 8:11:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Utilities
+Industry:Gas, Water &amp; Multi-utilities
+Reading row number224
+Ticker:ARTW
+Name:Art S Way MFG Co I
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARTW
+Data_Display:4/8/2016 6:43:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:Industrial Engineering
+Reading row number225
+Ticker:ARTX
+Name:Arotech Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARTX
+Data_Display:4/8/2016 8:14:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Industrials
+Industry:Aerospace &amp; Defense
+Reading row number226
+Ticker:ARWA
+Name:Arowana Inc. Ord
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARWA
+Data_Display:4/7/2016 6:36:00 PM
+Reading row number227
+Ticker:ARWAR
+Name:Arowana Inc RTS
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARWAR
+Data_Display:4/7/2016 4:54:00 PM
+Reading row number228
+Ticker:ARWAU
+Name:Arowana Inc. Units
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARWAU
+Data_Display:3/22/2016 6:19:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:General Industrials
+Reading row number229
+Ticker:ARWAW
+Name:Arowana Inc Wts
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARWAW
+Data_Display:3/22/2016 2:29:00 PM
+Reading row number230
+Ticker:ARWR
+Name:Arrowhead Research
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ARWR
+Data_Display:4/8/2016 8:17:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Reading row number231
+Ticker:ASBB
+Name:Asb Bancorp Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASBB
+Data_Display:4/7/2016 9:00:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Financials
+Industry:Banks
+Reading row number232
+Ticker:ASCMA
+Name:Ascent Capital Group
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASCMA
+Data_Display:4/8/2016 8:15:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:Media
+Reading row number233
+Ticker:ASEI
+Name:Amer Sci Engr
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASEI
+Data_Display:4/8/2016 8:12:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Electronic &amp; Electrical Equipment
+Reading row number234
+Ticker:ASET
+Name:Flxsh Rl As Al Ix Fd
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASET
+Reading row number235
+Ticker:ASFI
+Name:Asta Funding Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASFI
+Data_Display:4/8/2016 5:13:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Financial Services
+Reading row number236
+Ticker:ASMB
+Name:Assembly Biosciences
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASMB
+Data_Display:4/8/2016 8:15:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number237
+Ticker:ASML
+Name:Asml Hldg NY Reg
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASML
+Data_Display:4/8/2016 4:35:00 PM
+Exchange:Euronext Amsterdam
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number238
+Ticker:ASNA
+Name:Ascena Retail Grp Cm
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASNA
+Data_Display:4/8/2016 8:17:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:General Retailers
+Reading row number239
+Ticker:ASND
+Name:Ascendis Pharma Ads
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASND
+Data_Display:12/27/2013 5:44:00 PM
+Exchange:Pink OTC Markets Inc
+Sector:Financials
+Industry:Financial Services
+Reading row number240
+Ticker:ASPS
+Name:Altisource Portfolio
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASPS
+Data_Display:4/8/2016 8:17:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Financial Services
+Reading row number241
+Ticker:ASRV
+Name:Ameriserv Financial
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASRV
+Data_Display:4/8/2016 8:14:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Financials
+Industry:Banks
+Reading row number242
+Ticker:ASRVP
+Name:Ameriserv Fin Cap
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASRVP
+Data_Display:4/8/2016 7:54:00 PM
+Reading row number243
+Ticker:ASTC
+Name:Astrotech Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASTC
+Data_Display:4/8/2016 8:02:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:Aerospace &amp; Defense
+Reading row number244
+Ticker:ASTE
+Name:Astec Inds Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASTE
+Data_Display:4/8/2016 8:16:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Industrial Engineering
+Reading row number245
+Ticker:ASUR
+Name:Asure Software
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASUR
+Data_Display:4/8/2016 7:32:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Industrials
+Industry:Support Services
+Reading row number246
+Ticker:ASYS
+Name:Amtech Systems Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ASYS
+Data_Display:4/8/2016 7:14:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number247
+Ticker:ATAI
+Name:Ata Inc. ADR
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATAI
+Data_Display:4/8/2016 7:04:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Consumer Services
+Industry:General Retailers
+Reading row number248
+Ticker:ATAX
+Name:Amer First Mf Inv
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATAX
+Data_Display:4/8/2016 8:17:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Financial Services
+Reading row number249
+Ticker:ATEC
+Name:Alphatec Holdings
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATEC
+Data_Display:4/8/2016 7:57:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number250
+Ticker:ATHN
+Name:Athenahealth Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATHN
+Exchange:SIX Swiss Exchange
+Sector:Utilities
+Industry:Electricity
+Reading row number251
+Ticker:ATHX
+Name:Athersys Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATHX
+Data_Display:4/8/2016 8:19:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number252
+Ticker:ATLC
+Name:Atlanticus Hldg Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATLC
+Data_Display:4/8/2016 2:30:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Financial Services
+Reading row number253
+Ticker:ATLO
+Name:Ames Natl Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATLO
+Data_Display:4/8/2016 8:09:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Financials
+Industry:Banks
+Reading row number254
+Ticker:ATML
+Name:Atmel Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATML
+Reading row number255
+Ticker:ATNI
+Name:Atlantic Tele-Netwrk
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATNI
+Data_Display:4/8/2016 8:09:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Telecommunications
+Industry:Mobile Telecommunications
+Reading row number256
+Ticker:ATNY
+Name:Api Technologies
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATNY
+Data_Display:3/22/2016 2:19:00 PM
+Exchange:
+Sector:
+Reading row number257
+Ticker:ATOS
+Name:Atossa Genetics Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATOS
+Data_Display:4/8/2016 8:15:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number258
+Ticker:ATRA
+Name:Atara Biotherap Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATRA
+Data_Display:4/8/2016 8:19:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number259
+Ticker:ATRC
+Name:Atricure Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATRC
+Data_Display:4/8/2016 8:19:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number260
+Ticker:ATRI
+Name:Atrion Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATRI
+Data_Display:4/8/2016 6:53:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number261
+Ticker:ATRO
+Name:Astronics Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATRO
+Data_Display:4/8/2016 8:18:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Aerospace &amp; Defense
+Reading row number262
+Ticker:ATRS
+Name:Antares Pharma Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATRS
+Data_Display:4/8/2016 8:19:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number263
+Ticker:ATSG
+Name:Air Transport
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATSG
+Data_Display:4/8/2016 8:19:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Industrial Transportation
+Reading row number264
+Ticker:ATTU
+Name:Attunity Ltd
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATTU
+Data_Display:4/8/2016 8:17:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number265
+Ticker:ATVI
+Name:Activision Blizzard
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:ATVI
+Data_Display:4/8/2016 8:20:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Goods
+Industry:Leisure Goods
+Reading row number266
+Ticker:AUBN
+Name:Auburn Natl Bncp I
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AUBN
+Data_Display:4/8/2016 4:24:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Financials
+Industry:Banks
+Reading row number267
+Ticker:AUDC
+Name:Audiocodes Ltd
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AUDC
+Exchange:Tel Aviv Stock Exchange
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number268
+Ticker:AUMA
+Name:Ar Cap Acq Common
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AUMA
+Data_Display:4/7/2016 8:44:00 PM
+Reading row number269
+Ticker:AUMAU
+Name:Ar Capital Acq Uts
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AUMAU
+Data_Display:4/8/2016 7:01:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Reading row number270
+Ticker:AUMAW
+Name:Ar Cap Acq Warrants
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AUMAW
+Data_Display:3/31/2016 5:42:00 PM
+Reading row number271
+Ticker:AUPH
+Name:Aurinia Pharm Ord
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AUPH
+Data_Display:4/8/2016 8:03:00 PM
+Reading row number272
+Ticker:AVAV
+Name:Aerovironment Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AVAV
+Data_Display:4/8/2016 8:19:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Aerospace &amp; Defense
+Reading row number273
+Ticker:AVEO
+Name:Aveo Pharmaceuticals
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AVEO
+Data_Display:4/8/2016 8:19:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number274
+Ticker:AVGO
+Name:Broadcom Ltd
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AVGO
+Data_Display:4/8/2016 8:21:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number275
+Ticker:AVGR
+Name:Avinger Inc. Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AVGR
+Exchange:London Stock Exchange
+Sector:Consumer Goods
+Industry:Food Producers
+Reading row number276
+Ticker:AVHI
+Name:A V Homes Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AVHI
+Data_Display:4/8/2016 8:19:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Real Estate Investment &amp; Services
+Reading row number277
+Ticker:AVID
+Name:Avid Tech Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AVID
+Data_Display:4/8/2016 8:20:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:Media
+Reading row number278
+Ticker:AVNU
+Name:Avenue Financial Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AVNU
+Data_Display:4/8/2016 8:17:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number279
+Ticker:AVNW
+Name:Aviat Networks Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AVNW
+Data_Display:4/8/2016 8:02:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number280
+Ticker:AVXL
+Name:Anavex Lf SC Cm
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AVXL
+Data_Display:4/8/2016 8:21:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number281
+Ticker:AVXS
+Name:Avexis Inc Cmn Stk
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AVXS
+Data_Display:4/8/2016 8:21:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number282
+Ticker:AWRE
+Name:Aware Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AWRE
+Data_Display:4/8/2016 6:57:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number283
+Ticker:AXAS
+Name:Abraxas Petro Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AXAS
+Data_Display:4/8/2016 8:21:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Oil &amp; Gas
+Industry:Oil &amp; Gas Producers
+Reading row number284
+Ticker:AXDX
+Name:Accelerate Diagnosti
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AXDX
+Data_Display:4/8/2016 8:18:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number285
+Ticker:AXGN
+Name:Axogen Inc Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AXGN
+Data_Display:4/8/2016 8:15:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number286
+Ticker:AXSM
+Name:Axsome Thera Cmn Stk
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AXSM
+Data_Display:4/8/2016 8:06:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number287
+Ticker:AXTI
+Name:Axt Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AXTI
+Data_Display:4/8/2016 8:10:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Technology Hardware &amp; Equipment
+Reading row number288
+Ticker:AYA
+Name:Amaya Inc. Cmn Stk
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AYA
+Data_Display:3/24/2016 4:59:00 PM
+Exchange:
+Sector:
+Reading row number289
+Ticker:AZPN
+Name:Aspen Technology Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:AZPN
+Data_Display:4/8/2016 8:22:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Start Running Loop For URL:http://eoddata.com/stocklist/NASDAQ/B.htm
+Reading row number1
+Ticker:BABY
+Name:Natus Medical Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BABY
+Data_Display:4/8/2016 8:22:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number2
+Ticker:BANF
+Name:Bancfirst Corp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BANF
+Data_Display:4/8/2016 8:10:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number3
+Ticker:BANFP
+Name:Bfc Capital Trust II
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BANFP
+Data_Display:4/8/2016 4:22:00 PM
+Reading row number4
+Ticker:BANR
+Name:Banner Corporation
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BANR
+Data_Display:4/8/2016 8:20:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number5
+Ticker:BANX
+Name:Stonecastle Fncl Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BANX
+Data_Display:4/8/2016 7:23:00 PM
+Reading row number6
+Ticker:BASI
+Name:Bioanalytical Syst
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BASI
+Data_Display:4/8/2016 8:01:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number7
+Ticker:BBBY
+Name:Bed Bath & Beyond
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBBY
+Data_Display:4/8/2016 8:23:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:General Retailers
+Reading row number8
+Ticker:BBC
+Name:Bioshrs Biotec Cl TR
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBC
+Data_Display:4/7/2016 7:40:00 PM
+Exchange:
+Sector:
+Reading row number9
+Ticker:BBCN
+Name:Bbcn Bancorp Com
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBCN
+Data_Display:4/8/2016 8:23:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number10
+Ticker:BBEP
+Name:Breitburn Energy
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBEP
+Data_Display:4/8/2016 8:23:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Oil &amp; Gas
+Industry:Oil &amp; Gas Producers
+Reading row number11
+Ticker:BBEPP
+Name:Breitburn Eng Prep P
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBEPP
+Data_Display:4/8/2016 8:16:00 PM
+Reading row number12
+Ticker:BBGI
+Name:Beasley Brdcst Gr
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBGI
+Data_Display:4/8/2016 4:35:00 PM
+Reading row number13
+Ticker:BBH
+Name:Mkt Vectors Biotech
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBH
+Exchange:Colombo Stock Exchange
+Sector:Consumer Services
+Industry:Travel &amp; Leisure
+Reading row number14
+Ticker:BBLU
+Name:Blue Earth Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBLU
+Data_Display:4/8/2016 8:17:00 PM
+Exchange:
+Sector:
+Reading row number15
+Ticker:BBOX
+Name:Black Box Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBOX
+Data_Display:4/8/2016 5:15:00 PM
+Reading row number16
+Ticker:BBP
+Name:Bioshrs Biotech Prod
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBP
+Data_Display:4/8/2016 8:05:00 PM
+Exchange:TSX Venture Exchange (former Canadian Ventures Exchange)
+Sector:Oil &amp; Gas
+Industry:Oil &amp; Gas Producers
+Reading row number17
+Ticker:BBRG
+Name:Bravo Brio Restauran
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBRG
+Data_Display:4/8/2016 8:22:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:Travel &amp; Leisure
+Reading row number18
+Ticker:BBRY
+Name:Blackberry Limited
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBRY
+Data_Display:4/8/2016 8:24:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Reading row number19
+Ticker:BBSI
+Name:Barrett Business S
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BBSI
+Data_Display:4/8/2016 8:22:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Support Services
+Reading row number20
+Ticker:BCBP
+Name:Bcb Bancorp Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BCBP
+Data_Display:4/8/2016 7:52:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Global Market
+Sector:Financials
+Industry:Banks
+Reading row number21
+Ticker:BCLI
+Name:Brainstorm Cell Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BCLI
+Data_Display:4/8/2016 8:22:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number22
+Ticker:BCOM
+Name:B Communications Ltd
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BCOM
+Exchange:Tel Aviv Stock Exchange
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number23
+Ticker:BCOR
+Name:Blucora Inc Cmn
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BCOR
+Data_Display:4/8/2016 8:23:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number24
+Ticker:BCOV
+Name:Brightcove Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BCOV
+Data_Display:4/8/2016 8:22:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Technology
+Industry:Software &amp; Computer Services
+Reading row number25
+Ticker:BCPC
+Name:Balchem Cp
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BCPC
+Data_Display:4/8/2016 8:24:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Basic Materials
+Industry:Chemicals
+Reading row number26
+Ticker:BCRX
+Name:Biocryst Pharma Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BCRX
+Data_Display:4/8/2016 8:24:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number27
+Ticker:BDE
+Name:Black Diamond Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BDE
+Data_Display:4/8/2016 8:23:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Goods
+Industry:Leisure Goods
+Reading row number28
+Ticker:BDGE
+Name:Bridge Bancorp Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BDGE
+Data_Display:4/8/2016 8:22:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Financials
+Industry:Banks
+Reading row number29
+Ticker:BDMS
+Name:Birner Dental Mgmt
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BDMS
+Data_Display:4/8/2016 2:30:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number30
+Ticker:BDSI
+Name:Biodelivery Sci Intl
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BDSI
+Data_Display:4/8/2016 8:24:00 PM
+Exchange:Consolidated Issue listed on NASDAQ Capital Market
+Sector:Health Care
+Industry:Pharmaceuticals &amp; Biotechnology
+Reading row number31
+Ticker:BEAT
+Name:Biotelemetry Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BEAT
+Data_Display:4/8/2016 8:24:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Health Care
+Industry:Health Care Equipment &amp; Services
+Reading row number32
+Ticker:BEAV
+Name:BE Aerospace Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BEAV
+Data_Display:4/8/2016 8:25:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Aerospace &amp; Defense
+Reading row number33
+Ticker:BEBE
+Name:Bebe Stores Inc
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BEBE
+Data_Display:4/8/2016 8:23:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:General Retailers
+Reading row number34
+Ticker:BECN
+Name:Beacon Roofing Suppl
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BECN
+Data_Display:4/8/2016 8:25:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Consumer Services
+Industry:General Retailers
+Reading row number35
+Ticker:BELFA
+Name:Bel Fuse Cl A
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BELFA
+Data_Display:4/7/2016 7:18:00 PM
+Exchange:Consolidated Issue Listed on NASDAQ Global Select Market
+Sector:Industrials
+Industry:Electronic &amp; Electrical Equipment
+Reading row number36
+Ticker:BELFB
+Name:Bel Fuse Inc Cl B
+fetching data from http://markets.ft.com/research/Markets/Tearsheets/Summary?s=:BELFB
+Data_Display:4/8/2016 8:24:00 PM
+Reading row number37
+Ticker:BFIN
+Name:Bankfinancial Corpor

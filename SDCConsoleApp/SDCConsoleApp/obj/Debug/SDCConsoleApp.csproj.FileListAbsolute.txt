@@ -8,3 +8,11 @@ D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\bin\Debug\HtmlAgility
 D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\obj\Debug\SDCConsoleApp.csprojResolveAssemblyReference.cache
 D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\obj\Debug\SDCConsoleApp.exe
 D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\obj\Debug\SDCConsoleApp.pdb
+D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\bin\Debug\EntityFramework.dll
+D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
+D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\bin\Debug\SDCBLL.dll
+D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\bin\Debug\SDCDAL.dll
+D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\bin\Debug\SDCBLL.pdb
+D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\bin\Debug\SDCDAL.pdb
+D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\bin\Debug\EntityFramework.xml
+D:\Development Area\Edward App\SDCConsoleApp\SDCConsoleApp\bin\Debug\EntityFramework.SqlServer.xml

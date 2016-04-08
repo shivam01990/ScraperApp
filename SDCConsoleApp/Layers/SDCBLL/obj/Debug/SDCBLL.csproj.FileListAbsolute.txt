@@ -1,0 +1,9 @@
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCBLL\bin\Debug\SDCBLL.dll
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCBLL\bin\Debug\SDCBLL.pdb
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCBLL\bin\Debug\SDCDAL.dll
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCBLL\bin\Debug\EntityFramework.dll
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCBLL\bin\Debug\SDCDAL.pdb
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCBLL\bin\Debug\EntityFramework.xml
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCBLL\obj\Debug\SDCBLL.csprojResolveAssemblyReference.cache
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCBLL\obj\Debug\SDCBLL.dll
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCBLL\obj\Debug\SDCBLL.pdb

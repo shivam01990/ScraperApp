@@ -1,0 +1,10 @@
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCDAL\bin\Debug\SDCDAL.dll.config
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCDAL\bin\Debug\SDCDAL.dll
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCDAL\bin\Debug\SDCDAL.pdb
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCDAL\bin\Debug\EntityFramework.dll
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCDAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCDAL\bin\Debug\EntityFramework.xml
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCDAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCDAL\obj\Debug\SDCDAL.csprojResolveAssemblyReference.cache
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCDAL\obj\Debug\SDCDAL.dll
+D:\Development Area\Edward App\SDCConsoleApp\Layers\SDCDAL\obj\Debug\SDCDAL.pdb

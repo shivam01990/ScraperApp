@@ -25,6 +25,7 @@ namespace SDCConsoleApp
                 using (StreamWriter writer = new StreamWriter(filepath, true))
                 {
                     writer.WriteLine(Message);
+                    Console.WriteLine(Message);
                 }
             }
             catch
