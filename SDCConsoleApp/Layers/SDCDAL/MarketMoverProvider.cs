@@ -18,6 +18,14 @@ namespace SDCDAL
             int Market_MoverId = 0;
             using (DBEntities db = new DBEntities())
             {
+                if (mm.Market_MoverId==0)
+                {
+                  int count=  db.MarketMovers.Where(u => u.Ticker == mm.Ticker).Count();
+                    if(count>0)
+                    {
+                        return 0;
+                    }
+                }
                 if (mm.Market_MoverId > 0)
                 {
                     MarketMover temp = db.MarketMovers.Where(u => u.Market_MoverId == mm.Market_MoverId).FirstOrDefault();

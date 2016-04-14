@@ -33,8 +33,8 @@ namespace SDCConsoleApp
         } 
         #endregion
 
-        #region--Get Urls--
-        public static List<string> GetUrls()                                               //Return List of Five Master Page URLs
+        #region--Get Eodata Urls--
+        public static List<string> GetEodataUrls()                                               //Return List of Five Master Page URLs
         {
             List<string> lst = new List<string>();
             for (char c = 'A'; c <= 'Z'; c++)
@@ -42,6 +42,13 @@ namespace SDCConsoleApp
                 lst.Add(@"http://eoddata.com/stocklist/NASDAQ/" + c + ".htm");
             }
             return lst;
+        }
+        #endregion
+
+        #region--Get Wikipedia Url--
+        public static string GetWikipediaUrl()
+        {
+            return "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies";
         }
         #endregion
     }

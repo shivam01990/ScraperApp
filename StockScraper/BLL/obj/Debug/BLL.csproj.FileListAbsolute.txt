@@ -1,0 +1,12 @@
+D:\Development Area\Edward App\StockScraper\BLL\bin\Debug\BLL.dll.config
+D:\Development Area\Edward App\StockScraper\BLL\bin\Debug\BLL.dll
+D:\Development Area\Edward App\StockScraper\BLL\bin\Debug\BLL.pdb
+D:\Development Area\Edward App\StockScraper\BLL\bin\Debug\DLL.dll
+D:\Development Area\Edward App\StockScraper\BLL\bin\Debug\EntityFramework.dll
+D:\Development Area\Edward App\StockScraper\BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Development Area\Edward App\StockScraper\BLL\bin\Debug\DLL.pdb
+D:\Development Area\Edward App\StockScraper\BLL\bin\Debug\EntityFramework.xml
+D:\Development Area\Edward App\StockScraper\BLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Development Area\Edward App\StockScraper\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Development Area\Edward App\StockScraper\BLL\obj\Debug\BLL.dll
+D:\Development Area\Edward App\StockScraper\BLL\obj\Debug\BLL.pdb

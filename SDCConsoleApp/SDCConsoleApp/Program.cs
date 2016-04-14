@@ -11,7 +11,12 @@ namespace SDCConsoleApp
         static void Main(string[] args)
         {
             Helper.AddtoLogFile("=============Import Start " + DateTime.Now + "============");
+            Helper.AddtoLogFile("==================WikipediaImport Started=============");
+            WikipediaImport.StartImport();
+            Helper.AddtoLogFile("==================WikipediaImport End=============");
+            Helper.AddtoLogFile("==================EoddataImport Started=============");           
             EoddataImport.StartImport();
+            Helper.AddtoLogFile("==================EoddataImport End=============");           
             Helper.AddtoLogFile("=============Import End " + DateTime.Now + "============");
         }
     }

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockScraper", "StockScraper\StockScraper.csproj", "{B6F4C62A-DE1C-403B-A8B8-31DD169E8CB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLL", "DLL\DLL.csproj", "{995DB948-9545-456D-898C-AC1D47C9AF4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{8267E8D9-B756-4A04-AC4E-F8F4C3580B35}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6F4C62A-DE1C-403B-A8B8-31DD169E8CB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F4C62A-DE1C-403B-A8B8-31DD169E8CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F4C62A-DE1C-403B-A8B8-31DD169E8CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F4C62A-DE1C-403B-A8B8-31DD169E8CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{995DB948-9545-456D-898C-AC1D47C9AF4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{995DB948-9545-456D-898C-AC1D47C9AF4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{995DB948-9545-456D-898C-AC1D47C9AF4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{995DB948-9545-456D-898C-AC1D47C9AF4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8267E8D9-B756-4A04-AC4E-F8F4C3580B35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8267E8D9-B756-4A04-AC4E-F8F4C3580B35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8267E8D9-B756-4A04-AC4E-F8F4C3580B35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8267E8D9-B756-4A04-AC4E-F8F4C3580B35}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
