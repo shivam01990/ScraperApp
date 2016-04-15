@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,14 +33,46 @@ namespace StockScraper
         }
         #endregion
 
-        #region--Get Eodata Urls--
-        public static string GetReutersAnalyticsUrls(string Ticket)                                              
+        #region--Get Reuters Urls--
+        public static string GetReutersAnalyticsUrls(string Ticket)
         {
             string rType = @"http://www.reuters.com/finance/stocks/analyst?symbol=" + Ticket;
             return rType;
         }
+
+        public static string GetReutersfinancialHighlightsUrls(string Ticket)
+        {
+            string rType = @"http://www.reuters.com/finance/stocks/financialHighlights?symbol=" + Ticket;
+            return rType;
+        }
         #endregion
 
-       
+
+        public static string GetEffetiveTime(HtmlDocument doc)
+        {
+
+            string EffectiveTime = "";
+            try
+            {
+                EffectiveTime = doc.DocumentNode.SelectSingleNode("//span[@class='nasdaqChangeTime']").InnerText;
+            }
+            catch
+            { }
+
+            if (!(EffectiveTime.ToLower().Contains("am") || EffectiveTime.Contains("pm")))
+            {
+                try
+                {
+                    DateTime _effectivetime = DateTime.Parse(EffectiveTime);
+                    EffectiveTime = _effectivetime.ToString("yyyyMMdd");
+                }
+                catch { }
+            }
+            else
+            {
+                EffectiveTime = (DateTime.Now.ToString("yyyyMMdd") + " " + EffectiveTime).Trim();
+            }
+            return EffectiveTime;
+        }
     }
 }

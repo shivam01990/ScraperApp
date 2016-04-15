@@ -4,54 +4,58 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="18b82138a1494634b2547c4458f08465" Name="Diagram1">
-        <EntityTypeShape EntityType="DBModel.Finviz_Financials" Width="1.5" PointX="3" PointY="29.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Inside_Trading" Width="1.5" PointX="6" PointY="28.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Job" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Log" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Markets_Financials" Width="1.5" PointX="3" PointY="25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.News" Width="1.5" PointX="3" PointY="33.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Recommendation" Width="1.5" PointX="14.25" PointY="29.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Dividends" Width="1.5" PointX="6" PointY="24.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Efficiencies" Width="1.5" PointX="6" PointY="34" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_GrowthRates" Width="1.5" PointX="3" PointY="53.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Institutions" Width="1.5" PointX="9" PointY="29.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_MgmtEffectiveness" Width="1.5" PointX="9" PointY="25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_SalesEstimates" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Strength" Width="1.5" PointX="9" PointY="33" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_ValuationRatios" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Reuters_RecommendationsRevisions" Width="1.5" PointX="3" PointY="37" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Stock" Width="1.5" PointX="0.75" PointY="27.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Stocks_Common" Width="1.5" PointX="12" PointY="27.5" IsExpanded="true" />
-        <AssociationConnector Association="DBModel.FK_Finviz_Financials_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Finviz_Financials_Stocks" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Inside_Trading_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Inside_Trading_Stocks" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Logs_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Markets_Financials_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_News_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Dividends_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Efficiencies_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Institutions_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_MgmtEffectiveness_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Strength_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_ValuationRatios_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_RecommendationsRevisions_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Stocks_Common_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Markets_Financials_Stocks" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_News_Stocks1" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Recommendations_TimeSeries" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Dividends_Stocks1" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Efficiencies_Stocks" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_GrowthRates_Stocks" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Institutions_Stocks" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_MgmtEffectiveness_Stocks" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Strength_Stocks" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_Financials_ValuationRatios_Stocks" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Reuters_RecommendationsRevisions_Stocks" ManuallyRouted="false" />
-        <AssociationConnector Association="DBModel.FK_Stocks_Common_Stocks" ManuallyRouted="false" />
+      <Diagram DiagramId="18b82138a1494634b2547c4458f08465" Name="Diagram1" ZoomLevel="95">
+        <EntityTypeShape EntityType="DBModel.Finviz_Financials" Width="1.5" PointX="3" PointY="44.25" />
+        <EntityTypeShape EntityType="DBModel.ft_Financials_MgmtEffectiveness" Width="1.5" PointX="12" PointY="34.5" />
+        <EntityTypeShape EntityType="DBModel.Inside_Trading" Width="1.5" PointX="3" PointY="30.5" />
+        <EntityTypeShape EntityType="DBModel.Job" Width="1.5" PointX="0.75" PointY="35.375" />
+        <EntityTypeShape EntityType="DBModel.Log" Width="1.5" PointX="3" PointY="101.375" />
+        <EntityTypeShape EntityType="DBModel.Markets_Financials" Width="1.5" PointX="6" PointY="36" />
+        <EntityTypeShape EntityType="DBModel.News" Width="1.5" PointX="6" PointY="40.25" />
+        <EntityTypeShape EntityType="DBModel.Recommendation" Width="1.5" PointX="14.25" PointY="36.25" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Dividends" Width="1.5" PointX="3" PointY="40" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Efficiencies" Width="1.5" PointX="9" PointY="31" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_GrowthRates" Width="1.5" PointX="12" PointY="42" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Institutions" Width="1.5" PointX="3" PointY="36.25" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_MgmtEffectiveness" Width="1.5" PointX="9" PointY="41" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_ProfitabilityRatios" Width="1.5" PointX="6" PointY="31" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_SalesEstimates" Width="1.5" PointX="12" PointY="29.75" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Strength" Width="1.5" PointX="3" PointY="26" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_ValuationRatios" Width="1.5" PointX="6" PointY="44" />
+        <EntityTypeShape EntityType="DBModel.Reuters_RecommendationsRevisions" Width="1.5" PointX="9" PointY="35.875" />
+        <EntityTypeShape EntityType="DBModel.Stock" Width="1.5" PointX="0.75" PointY="24.625" />
+        <AssociationConnector Association="DBModel.FK_Finviz_Financials_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Finviz_Financials_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Recommendations_TimeSeries" />
+        <AssociationConnector Association="DBModel.FK_Stocks_Common_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Stocks_Common_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Inside_Trading_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Inside_Trading_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Logs_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Markets_Financials_Jobs" />
+        <AssociationConnector Association="DBModel.FK_News_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Dividends_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Efficiencies_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_GrowthRates_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Institutions_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_MgmtEffectiveness_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Jobs" />
         <AssociationConnector Association="DBModel.FK_Reuters_Financials_SalesEstimates_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Strength_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_ValuationRatios_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Reuters_RecommendationsRevisions_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Markets_Financials_Stocks" />
+        <AssociationConnector Association="DBModel.FK_News_Stocks1" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Dividends_Stocks1" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Efficiencies_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_GrowthRates_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Institutions_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_MgmtEffectiveness_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Stocks" />
         <AssociationConnector Association="DBModel.FK_Reuters_Financials_SalesEstimates_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_Strength_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Reuters_Financials_ValuationRatios_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Reuters_RecommendationsRevisions_Stocks" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

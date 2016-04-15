@@ -20,6 +20,7 @@ namespace DLL
         public string EffectiveDate { get; set; }
         public string Title { get; set; }
         public string Company { get; set; }
+        public string Industry { get; set; }
         public string Sector { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public byte[] Time_ST { get; set; }

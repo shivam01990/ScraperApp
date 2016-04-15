@@ -18,7 +18,7 @@ namespace DLL
         public int Stock_Id { get; set; }
         public Nullable<int> Job_Id { get; set; }
         public string EffectiveDate { get; set; }
-        public string Titile { get; set; }
+        public string Title { get; set; }
         public string Company { get; set; }
         public string Industry { get; set; }
         public string Sector { get; set; }

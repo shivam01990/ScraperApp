@@ -68,6 +68,9 @@
     <Compile Include="Finviz_Financials.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ft_Financials_MgmtEffectiveness.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Inside_Trading.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
@@ -102,6 +105,9 @@
     <Compile Include="Reuters_Financials_MgmtEffectiveness.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Reuters_Financials_ProfitabilityRatios.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Reuters_Financials_SalesEstimates.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
@@ -115,9 +121,6 @@
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Stock.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Stocks_Common.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
   </ItemGroup>

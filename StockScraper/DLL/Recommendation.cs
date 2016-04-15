@@ -24,6 +24,6 @@ namespace DLL
         public Nullable<System.DateTime> CreatedOn { get; set; }
         public Nullable<System.DateTime> UpdatedOn { get; set; }
     
-        public virtual Stocks_Common Stocks_Common { get; set; }
+        public virtual ft_Financials_MgmtEffectiveness ft_Financials_MgmtEffectiveness { get; set; }
     }
 }

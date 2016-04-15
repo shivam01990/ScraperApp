@@ -60,7 +60,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReutersProvider.cs" />
+    <Compile Include="Reuters_Financials_DividendsProvider.cs" />
+    <Compile Include="Reuters_Financials_EfficienciesProvider.cs" />
+    <Compile Include="Reuters_Financials_GrowthRatesProvider.cs" />
+    <Compile Include="Reuters_Financials_MgmtEffectivenessProvider.cs" />
+    <Compile Include="Reuters_Financials_ProfitabilityRatiosProvider.cs" />
     <Compile Include="Reuters_Financials_SalesEstimatesProvider.cs" />
+    <Compile Include="Reuters_Financials_StrengthProvider.cs" />
+    <Compile Include="Reuters_Financials_ValuationRatiosProvider.cs" />
     <Compile Include="Reuters_RecommendationsRevisionsProvider.cs" />
   </ItemGroup>
   <ItemGroup>

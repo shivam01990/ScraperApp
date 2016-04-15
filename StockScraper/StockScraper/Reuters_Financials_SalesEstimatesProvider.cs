@@ -16,6 +16,8 @@ namespace StockScraper
             HtmlNodeCollection rowcollection = doc.DocumentNode.SelectNodes("//div[contains(@class, 'column1') and contains(@class, 'gridPanel') and contains(@class, 'grid8')]//div[@class='module']");
             if (rowcollection.Count > 0)
             {
+                string EffectiveTime = Helper.GetEffetiveTime(doc);
+               
                 var tblrows = rowcollection[2].SelectNodes("div[@class='moduleBody']//table[@class='dataTable']//tr");
                 if (tblrows != null)
                 {
@@ -35,6 +37,7 @@ namespace StockScraper
                                 temp.High = tr.ChildNodes[7].InnerText;
                                 temp.Low = tr.ChildNodes[9].InnerText;
                                 temp.One_Year_Ago = tr.ChildNodes[11].InnerText;
+                                temp.Effective_Date = EffectiveTime;
                                 rType.Add(temp);
                             }
                             catch

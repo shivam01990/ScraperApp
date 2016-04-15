@@ -101,8 +101,8 @@
     <Property Name="Job_Id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="14" />
     <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="Company" Type="nvarchar" MaxLength="100" />
-    <Property Name="Industry" Type="nvarchar" MaxLength="100" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Industry" Type="nvarchar" MaxLength="50" />
     <Property Name="Sector" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
@@ -114,11 +114,11 @@
     <Property Name="Reuters_FinancialsEfficiency_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="Job_Id" Type="int" />
-    <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
-    <Property Name="Titile" Type="nvarchar" MaxLength="100" />
-    <Property Name="Company" Type="nvarchar" MaxLength="100" />
-    <Property Name="Industry" Type="nvarchar" MaxLength="100" />
-    <Property Name="Sector" Type="nvarchar" MaxLength="100" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Industry" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sector" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
@@ -128,10 +128,12 @@
     </Key>
     <Property Name="Reuters_FinancialsGrowthRate_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
-    <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="Job_Id" Type="int" Nullable="false" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="30" />
     <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="Company" Type="nvarchar" MaxLength="100" />
-    <Property Name="Sector" Type="nvarchar" MaxLength="100" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Industry" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sector" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
@@ -163,6 +165,21 @@
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
+  <EntityType Name="Reuters_Financials_ProfitabilityRatios">
+    <Key>
+      <PropertyRef Name="Reuters_Financials_ProfitabilityRatios_Id" />
+    </Key>
+    <Property Name="Reuters_Financials_ProfitabilityRatios_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Id" Type="int" Nullable="false" />
+    <Property Name="Job_Id" Type="int" Nullable="false" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Industry" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sector" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
   <EntityType Name="Reuters_Financials_SalesEstimates">
     <Key>
       <PropertyRef Name="Reuters_FinancialsSalesEstimates_Id" />
@@ -170,7 +187,7 @@
     <Property Name="Reuters_FinancialsSalesEstimates_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="Job_Id" Type="int" Nullable="false" />
-    <Property Name="Effective_Date" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="Effective_Date" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="100" />
     <Property Name="Estimates" Type="nvarchar" MaxLength="50" />
     <Property Name="Mean" Type="nvarchar" MaxLength="50" />
@@ -188,11 +205,11 @@
     <Property Name="Reuters_FinancialsStrength_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="Job_Id" Type="int" Nullable="false" />
-    <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="Company" Type="nvarchar" MaxLength="100" />
-    <Property Name="Industry" Type="nvarchar" MaxLength="100" />
-    <Property Name="Sector" Type="nvarchar" MaxLength="100" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Industry" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sector" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
@@ -203,9 +220,10 @@
     <Property Name="Reuters_FinancialsValuationRatio_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="Job_Id" Type="int" Nullable="false" />
-    <Property Name="EffectiveDate" Type="varchar" MaxLength="14" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="30" />
     <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="Company" Type="nvarchar" MaxLength="100" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Industry" Type="nvarchar" MaxLength="50" />
     <Property Name="Sector" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
@@ -271,6 +289,16 @@
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="ModifiedOn" Type="datetime" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK_Finviz_Financials_Jobs">
     <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
@@ -440,6 +468,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Reuters_Financials_GrowthRates_Jobs">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+    <End Role="Reuters_Financials_GrowthRates" Type="Self.Reuters_Financials_GrowthRates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="Reuters_Financials_GrowthRates">
+        <PropertyRef Name="Job_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Reuters_Financials_GrowthRates_Stocks">
     <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
     <End Role="Reuters_Financials_GrowthRates" Type="Self.Reuters_Financials_GrowthRates" Multiplicity="*" />
@@ -496,6 +536,30 @@
         <PropertyRef Name="Stock_Id" />
       </Principal>
       <Dependent Role="Reuters_Financials_MgmtEffectiveness">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reuters_Financials_ProfitabilityRatios_Jobs">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+    <End Role="Reuters_Financials_ProfitabilityRatios" Type="Self.Reuters_Financials_ProfitabilityRatios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="Reuters_Financials_ProfitabilityRatios">
+        <PropertyRef Name="Job_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reuters_Financials_ProfitabilityRatios_Stocks">
+    <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
+    <End Role="Reuters_Financials_ProfitabilityRatios" Type="Self.Reuters_Financials_ProfitabilityRatios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stocks">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="Reuters_Financials_ProfitabilityRatios">
         <PropertyRef Name="Stock_Id" />
       </Dependent>
     </ReferentialConstraint>
@@ -633,12 +697,14 @@
     <EntitySet Name="Reuters_Financials_GrowthRates" EntityType="Self.Reuters_Financials_GrowthRates" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reuters_Financials_Institutions" EntityType="Self.Reuters_Financials_Institutions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reuters_Financials_MgmtEffectiveness" EntityType="Self.Reuters_Financials_MgmtEffectiveness" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reuters_Financials_ProfitabilityRatios" EntityType="Self.Reuters_Financials_ProfitabilityRatios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reuters_Financials_SalesEstimates" EntityType="Self.Reuters_Financials_SalesEstimates" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reuters_Financials_Strength" EntityType="Self.Reuters_Financials_Strength" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reuters_Financials_ValuationRatios" EntityType="Self.Reuters_Financials_ValuationRatios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reuters_RecommendationsRevisions" EntityType="Self.Reuters_RecommendationsRevisions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Stocks" EntityType="Self.Stocks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Stocks_Common" EntityType="Self.Stocks_Common" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Finviz_Financials_Jobs" Association="Self.FK_Finviz_Financials_Jobs">
       <End Role="Jobs" EntitySet="Jobs" />
       <End Role="Finviz_Financials" EntitySet="Finviz_Financials" />
@@ -695,6 +761,10 @@
       <End Role="Stocks" EntitySet="Stocks" />
       <End Role="Reuters_Financials_Efficiencies" EntitySet="Reuters_Financials_Efficiencies" />
     </AssociationSet>
+    <AssociationSet Name="FK_Reuters_Financials_GrowthRates_Jobs" Association="Self.FK_Reuters_Financials_GrowthRates_Jobs">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="Reuters_Financials_GrowthRates" EntitySet="Reuters_Financials_GrowthRates" />
+    </AssociationSet>
     <AssociationSet Name="FK_Reuters_Financials_GrowthRates_Stocks" Association="Self.FK_Reuters_Financials_GrowthRates_Stocks">
       <End Role="Stocks" EntitySet="Stocks" />
       <End Role="Reuters_Financials_GrowthRates" EntitySet="Reuters_Financials_GrowthRates" />
@@ -714,6 +784,14 @@
     <AssociationSet Name="FK_Reuters_Financials_MgmtEffectiveness_Stocks" Association="Self.FK_Reuters_Financials_MgmtEffectiveness_Stocks">
       <End Role="Stocks" EntitySet="Stocks" />
       <End Role="Reuters_Financials_MgmtEffectiveness" EntitySet="Reuters_Financials_MgmtEffectiveness" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reuters_Financials_ProfitabilityRatios_Jobs" Association="Self.FK_Reuters_Financials_ProfitabilityRatios_Jobs">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="Reuters_Financials_ProfitabilityRatios" EntitySet="Reuters_Financials_ProfitabilityRatios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reuters_Financials_ProfitabilityRatios_Stocks" Association="Self.FK_Reuters_Financials_ProfitabilityRatios_Stocks">
+      <End Role="Stocks" EntitySet="Stocks" />
+      <End Role="Reuters_Financials_ProfitabilityRatios" EntitySet="Reuters_Financials_ProfitabilityRatios" />
     </AssociationSet>
     <AssociationSet Name="FK_Reuters_Financials_SalesEstimates_Jobs" Association="Self.FK_Reuters_Financials_SalesEstimates_Jobs">
       <End Role="Jobs" EntitySet="Jobs" />

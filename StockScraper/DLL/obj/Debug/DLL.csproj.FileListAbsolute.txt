@@ -5,6 +5,5 @@ D:\Development Area\Edward App\StockScraper\DLL\bin\Debug\EntityFramework.dll
 D:\Development Area\Edward App\StockScraper\DLL\bin\Debug\EntityFramework.SqlServer.dll
 D:\Development Area\Edward App\StockScraper\DLL\bin\Debug\EntityFramework.xml
 D:\Development Area\Edward App\StockScraper\DLL\bin\Debug\EntityFramework.SqlServer.xml
-D:\Development Area\Edward App\StockScraper\DLL\obj\Debug\DLL.csprojResolveAssemblyReference.cache
 D:\Development Area\Edward App\StockScraper\DLL\obj\Debug\DLL.dll
 D:\Development Area\Edward App\StockScraper\DLL\obj\Debug\DLL.pdb

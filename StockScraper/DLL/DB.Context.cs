@@ -26,6 +26,7 @@ namespace DLL
         }
     
         public virtual DbSet<Finviz_Financials> Finviz_Financials { get; set; }
+        public virtual DbSet<ft_Financials_MgmtEffectiveness> ft_Financials_MgmtEffectiveness { get; set; }
         public virtual DbSet<Inside_Trading> Inside_Trading { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
         public virtual DbSet<Log> Logs { get; set; }
@@ -37,11 +38,11 @@ namespace DLL
         public virtual DbSet<Reuters_Financials_GrowthRates> Reuters_Financials_GrowthRates { get; set; }
         public virtual DbSet<Reuters_Financials_Institutions> Reuters_Financials_Institutions { get; set; }
         public virtual DbSet<Reuters_Financials_MgmtEffectiveness> Reuters_Financials_MgmtEffectiveness { get; set; }
+        public virtual DbSet<Reuters_Financials_ProfitabilityRatios> Reuters_Financials_ProfitabilityRatios { get; set; }
         public virtual DbSet<Reuters_Financials_SalesEstimates> Reuters_Financials_SalesEstimates { get; set; }
         public virtual DbSet<Reuters_Financials_Strength> Reuters_Financials_Strength { get; set; }
         public virtual DbSet<Reuters_Financials_ValuationRatios> Reuters_Financials_ValuationRatios { get; set; }
         public virtual DbSet<Reuters_RecommendationsRevisions> Reuters_RecommendationsRevisions { get; set; }
         public virtual DbSet<Stock> Stocks { get; set; }
-        public virtual DbSet<Stocks_Common> Stocks_Common { get; set; }
     }
 }

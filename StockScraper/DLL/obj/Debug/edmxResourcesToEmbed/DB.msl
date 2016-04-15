@@ -4,175 +4,177 @@
     <EntitySetMapping Name="Finviz_Financials">
       <EntityTypeMapping TypeName="DBModel.Finviz_Financials">
         <MappingFragment StoreEntitySet="Finviz_Financials">
-          <ScalarProperty Name="Finviz_FinancialId" ColumnName="Finviz_FinancialId" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="Data_Points" ColumnName="Data_Points" />
-          <ScalarProperty Name="Descriptor" ColumnName="Descriptor" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Descriptor" ColumnName="Descriptor" />
+          <ScalarProperty Name="Data_Points" ColumnName="Data_Points" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Finviz_FinancialId" ColumnName="Finviz_FinancialId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Inside_Trading">
       <EntityTypeMapping TypeName="DBModel.Inside_Trading">
         <MappingFragment StoreEntitySet="Inside_Trading">
-          <ScalarProperty Name="Insider_TradingId" ColumnName="Insider_TradingId" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="Insider_Trading" ColumnName="Insider_Trading" />
-          <ScalarProperty Name="Relashionship" ColumnName="Relashionship" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Transaction" ColumnName="Transaction" />
-          <ScalarProperty Name="Cost" ColumnName="Cost" />
-          <ScalarProperty Name="Shares" ColumnName="Shares" />
-          <ScalarProperty Name="Value" ColumnName="Value" />
-          <ScalarProperty Name="Shares_Total" ColumnName="Shares_Total" />
-          <ScalarProperty Name="SECForm4" ColumnName="SECForm4" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="SECForm4" ColumnName="SECForm4" />
+          <ScalarProperty Name="Shares_Total" ColumnName="Shares_Total" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Shares" ColumnName="Shares" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Transaction" ColumnName="Transaction" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Relashionship" ColumnName="Relashionship" />
+          <ScalarProperty Name="Insider_Trading" ColumnName="Insider_Trading" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Insider_TradingId" ColumnName="Insider_TradingId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Jobs">
       <EntityTypeMapping TypeName="DBModel.Job">
         <MappingFragment StoreEntitySet="Jobs">
-          <ScalarProperty Name="Job_id" ColumnName="Job_id" />
           <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="Job_id" ColumnName="Job_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Logs">
       <EntityTypeMapping TypeName="DBModel.Log">
         <MappingFragment StoreEntitySet="Logs">
-          <ScalarProperty Name="Log_Id" ColumnName="Log_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="LogMsg" ColumnName="LogMsg" />
-          <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="LogMsg" ColumnName="LogMsg" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Log_Id" ColumnName="Log_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Markets_Financials">
       <EntityTypeMapping TypeName="DBModel.Markets_Financials">
         <MappingFragment StoreEntitySet="Markets_Financials">
-          <ScalarProperty Name="Markets_FinancialId" ColumnName="Markets_FinancialId" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="First_Year" ColumnName="First_Year" />
-          <ScalarProperty Name="Second_Year" ColumnName="Second_Year" />
-          <ScalarProperty Name="Third_Year" ColumnName="Third_Year" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Third_Year" ColumnName="Third_Year" />
+          <ScalarProperty Name="Second_Year" ColumnName="Second_Year" />
+          <ScalarProperty Name="First_Year" ColumnName="First_Year" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Markets_FinancialId" ColumnName="Markets_FinancialId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="News">
       <EntityTypeMapping TypeName="DBModel.News">
         <MappingFragment StoreEntitySet="News">
-          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="NewsMsg" ColumnName="NewsMsg" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="NewsMsg" ColumnName="NewsMsg" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Recommendations">
       <EntityTypeMapping TypeName="DBModel.Recommendation">
         <MappingFragment StoreEntitySet="Recommendations">
-          <ScalarProperty Name="RecommendationId" ColumnName="RecommendationId" />
-          <ScalarProperty Name="Time_SeriesId" ColumnName="Time_SeriesId" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="RecommendationType" ColumnName="RecommendationType" />
-          <ScalarProperty Name="Analyst" ColumnName="Analyst" />
-          <ScalarProperty Name="Recommendation1" ColumnName="Recommendation" />
-          <ScalarProperty Name="Target" ColumnName="Target" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Recommendation1" ColumnName="Recommendation" />
+          <ScalarProperty Name="Analyst" ColumnName="Analyst" />
+          <ScalarProperty Name="RecommendationType" ColumnName="RecommendationType" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time_SeriesId" ColumnName="Time_SeriesId" />
+          <ScalarProperty Name="RecommendationId" ColumnName="RecommendationId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reuters_Financials_Dividends">
       <EntityTypeMapping TypeName="DBModel.Reuters_Financials_Dividends">
         <MappingFragment StoreEntitySet="Reuters_Financials_Dividends">
-          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
-          <ScalarProperty Name="Reuters_FinancialsDividend_Id" ColumnName="Reuters_FinancialsDividend_Id" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Company" ColumnName="Company" />
-          <ScalarProperty Name="Industry" ColumnName="Industry" />
-          <ScalarProperty Name="Sector" ColumnName="Sector" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Reuters_FinancialsDividend_Id" ColumnName="Reuters_FinancialsDividend_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reuters_Financials_Efficiencies">
       <EntityTypeMapping TypeName="DBModel.Reuters_Financials_Efficiencies">
         <MappingFragment StoreEntitySet="Reuters_Financials_Efficiencies">
-          <ScalarProperty Name="Reuters_FinancialsEfficiency_Id" ColumnName="Reuters_FinancialsEfficiency_Id" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
-          <ScalarProperty Name="Titile" ColumnName="Titile" />
-          <ScalarProperty Name="Company" ColumnName="Company" />
-          <ScalarProperty Name="Industry" ColumnName="Industry" />
-          <ScalarProperty Name="Sector" ColumnName="Sector" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Reuters_FinancialsEfficiency_Id" ColumnName="Reuters_FinancialsEfficiency_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reuters_Financials_GrowthRates">
       <EntityTypeMapping TypeName="DBModel.Reuters_Financials_GrowthRates">
         <MappingFragment StoreEntitySet="Reuters_Financials_GrowthRates">
-          <ScalarProperty Name="Reuters_FinancialsGrowthRate_Id" ColumnName="Reuters_FinancialsGrowthRate_Id" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Company" ColumnName="Company" />
-          <ScalarProperty Name="Sector" ColumnName="Sector" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Reuters_FinancialsGrowthRate_Id" ColumnName="Reuters_FinancialsGrowthRate_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reuters_Financials_Institutions">
       <EntityTypeMapping TypeName="DBModel.Reuters_Financials_Institutions">
         <MappingFragment StoreEntitySet="Reuters_Financials_Institutions">
-          <ScalarProperty Name="Reuters_FinancialsInstitutions_Id" ColumnName="Reuters_FinancialsInstitutions_Id" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="DataValue" ColumnName="DataValue" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="DataValue" ColumnName="DataValue" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Reuters_FinancialsInstitutions_Id" ColumnName="Reuters_FinancialsInstitutions_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reuters_Financials_MgmtEffectiveness">
       <EntityTypeMapping TypeName="DBModel.Reuters_Financials_MgmtEffectiveness">
         <MappingFragment StoreEntitySet="Reuters_Financials_MgmtEffectiveness">
-          <ScalarProperty Name="Reuters_FinancialsMgmtEffectiveness_Id" ColumnName="Reuters_FinancialsMgmtEffectiveness_Id" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Company" ColumnName="Company" />
-          <ScalarProperty Name="Industry" ColumnName="Industry" />
-          <ScalarProperty Name="Sector" ColumnName="Sector" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Reuters_FinancialsMgmtEffectiveness_Id" ColumnName="Reuters_FinancialsMgmtEffectiveness_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -181,6 +183,7 @@
         <MappingFragment StoreEntitySet="Reuters_Financials_SalesEstimates">
           <ScalarProperty Name="SaleType" ColumnName="SaleType" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="One_Year_Ago" ColumnName="One_Year_Ago" />
           <ScalarProperty Name="Low" ColumnName="Low" />
           <ScalarProperty Name="High" ColumnName="High" />
@@ -189,105 +192,132 @@
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Effective_Date" ColumnName="Effective_Date" />
           <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="Reuters_FinancialsSalesEstimates_Id" ColumnName="Reuters_FinancialsSalesEstimates_Id" />
           <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Reuters_FinancialsSalesEstimates_Id" ColumnName="Reuters_FinancialsSalesEstimates_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reuters_Financials_Strength">
       <EntityTypeMapping TypeName="DBModel.Reuters_Financials_Strength">
         <MappingFragment StoreEntitySet="Reuters_Financials_Strength">
-          <ScalarProperty Name="Reuters_FinancialsStrength_Id" ColumnName="Reuters_FinancialsStrength_Id" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Company" ColumnName="Company" />
-          <ScalarProperty Name="Industry" ColumnName="Industry" />
-          <ScalarProperty Name="Sector" ColumnName="Sector" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Reuters_FinancialsStrength_Id" ColumnName="Reuters_FinancialsStrength_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reuters_Financials_ValuationRatios">
       <EntityTypeMapping TypeName="DBModel.Reuters_Financials_ValuationRatios">
         <MappingFragment StoreEntitySet="Reuters_Financials_ValuationRatios">
-          <ScalarProperty Name="Reuters_FinancialsValuationRatio_Id" ColumnName="Reuters_FinancialsValuationRatio_Id" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Company" ColumnName="Company" />
-          <ScalarProperty Name="Sector" ColumnName="Sector" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Reuters_FinancialsValuationRatio_Id" ColumnName="Reuters_FinancialsValuationRatio_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reuters_RecommendationsRevisions">
       <EntityTypeMapping TypeName="DBModel.Reuters_RecommendationsRevisions">
         <MappingFragment StoreEntitySet="Reuters_RecommendationsRevisions">
-          <ScalarProperty Name="Reuters_RecommendationsRevisions_Id" ColumnName="Reuters_RecommendationsRevisions_Id" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="LastRecommendationDate" ColumnName="LastRecommendationDate" />
-          <ScalarProperty Name="Linear_Scale" ColumnName="Linear_Scale" />
-          <ScalarProperty Name="AnalystRecommend_Current" ColumnName="AnalystRecommend_Current" />
-          <ScalarProperty Name="AnalystRecommend_Month_1" ColumnName="AnalystRecommend_Month_1" />
-          <ScalarProperty Name="AnalystRecommend_Month_2" ColumnName="AnalystRecommend_Month_2" />
-          <ScalarProperty Name="AnalystRecommend_Month_3" ColumnName="AnalystRecommend_Month_3" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Time_TS" ColumnName="Time_TS" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="AnalystRecommend_Month_3" ColumnName="AnalystRecommend_Month_3" />
+          <ScalarProperty Name="AnalystRecommend_Month_2" ColumnName="AnalystRecommend_Month_2" />
+          <ScalarProperty Name="AnalystRecommend_Month_1" ColumnName="AnalystRecommend_Month_1" />
+          <ScalarProperty Name="AnalystRecommend_Current" ColumnName="AnalystRecommend_Current" />
+          <ScalarProperty Name="Linear_Scale" ColumnName="Linear_Scale" />
+          <ScalarProperty Name="LastRecommendationDate" ColumnName="LastRecommendationDate" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Reuters_RecommendationsRevisions_Id" ColumnName="Reuters_RecommendationsRevisions_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Stocks">
       <EntityTypeMapping TypeName="DBModel.Stock">
         <MappingFragment StoreEntitySet="Stocks">
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Ticker" ColumnName="Ticker" />
-          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
-          <ScalarProperty Name="Exchange" ColumnName="Exchange" />
-          <ScalarProperty Name="Sector" ColumnName="Sector" />
-          <ScalarProperty Name="Industry" ColumnName="Industry" />
-          <ScalarProperty Name="Exchange_Abbr" ColumnName="Exchange_Abbr" />
-          <ScalarProperty Name="Exchange_Letter" ColumnName="Exchange_Letter" />
-          <ScalarProperty Name="StatusState_Id" ColumnName="StatusState_Id" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="StatusState_Id" ColumnName="StatusState_Id" />
+          <ScalarProperty Name="Exchange_Letter" ColumnName="Exchange_Letter" />
+          <ScalarProperty Name="Exchange_Abbr" ColumnName="Exchange_Abbr" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Exchange" ColumnName="Exchange" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Ticker" ColumnName="Ticker" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Stocks_Common">
       <EntityTypeMapping TypeName="DBModel.Stocks_Common">
         <MappingFragment StoreEntitySet="Stocks_Common">
-          <ScalarProperty Name="Stock_Common_Id" ColumnName="Stock_Common_Id" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="Display_Date" ColumnName="Display_Date" />
-          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+          <ScalarProperty Name="Low_Value" ColumnName="Low_Value" />
+          <ScalarProperty Name="Low_Percentage" ColumnName="Low_Percentage" />
+          <ScalarProperty Name="Med_Value" ColumnName="Med_Value" />
+          <ScalarProperty Name="Med_Percentage" ColumnName="Med_Percentage" />
+          <ScalarProperty Name="High_Value" ColumnName="High_Value" />
+          <ScalarProperty Name="High_Percentage" ColumnName="High_Percentage" />
+          <ScalarProperty Name="Share_Price_ForeCast" ColumnName="Share_Price_ForeCast" />
+          <ScalarProperty Name="NoOpinion" ColumnName="NoOpinion" />
+          <ScalarProperty Name="Sell" ColumnName="Sell" />
+          <ScalarProperty Name="UnderPerform" ColumnName="UnderPerform" />
+          <ScalarProperty Name="Hold" ColumnName="Hold" />
+          <ScalarProperty Name="OutPerforms" ColumnName="OutPerforms" />
+          <ScalarProperty Name="Buy" ColumnName="Buy" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
           <ScalarProperty Name="Exchange" ColumnName="Exchange" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Display_Date" ColumnName="Display_Date" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Stock_Common_Id" ColumnName="Stock_Common_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reuters_Financials_ProfitabilityRatios">
+      <EntityTypeMapping TypeName="DBModel.Reuters_Financials_ProfitabilityRatios">
+        <MappingFragment StoreEntitySet="Reuters_Financials_ProfitabilityRatios">
+          <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Sector" ColumnName="Sector" />
           <ScalarProperty Name="Industry" ColumnName="Industry" />
-          <ScalarProperty Name="Buy" ColumnName="Buy" />
-          <ScalarProperty Name="OutPerforms" ColumnName="OutPerforms" />
-          <ScalarProperty Name="Hold" ColumnName="Hold" />
-          <ScalarProperty Name="UnderPerform" ColumnName="UnderPerform" />
-          <ScalarProperty Name="Sell" ColumnName="Sell" />
-          <ScalarProperty Name="NoOpinion" ColumnName="NoOpinion" />
-          <ScalarProperty Name="Share_Price_ForeCast" ColumnName="Share_Price_ForeCast" />
-          <ScalarProperty Name="High_Percentage" ColumnName="High_Percentage" />
-          <ScalarProperty Name="High_Value" ColumnName="High_Value" />
-          <ScalarProperty Name="Med_Percentage" ColumnName="Med_Percentage" />
-          <ScalarProperty Name="Med_Value" ColumnName="Med_Value" />
-          <ScalarProperty Name="Low_Percentage" ColumnName="Low_Percentage" />
-          <ScalarProperty Name="Low_Value" ColumnName="Low_Value" />
-          <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-          <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Reuters_Financials_ProfitabilityRatios_Id" ColumnName="Reuters_Financials_ProfitabilityRatios_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
