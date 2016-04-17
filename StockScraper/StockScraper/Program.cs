@@ -10,7 +10,10 @@ namespace StockScraper
     {
         static void Main(string[] args)
         {
-            ReutersProvider.StartImport();
+            //ReutersProvider.StartImport();
+            //MarketsProvider.StartImport();
+            finvizProvider.StartImport();
+           
         }
     }
 }

@@ -5,32 +5,34 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="18b82138a1494634b2547c4458f08465" Name="Diagram1" ZoomLevel="95">
-        <EntityTypeShape EntityType="DBModel.Finviz_Financials" Width="1.5" PointX="3" PointY="44.25" />
-        <EntityTypeShape EntityType="DBModel.ft_Financials_MgmtEffectiveness" Width="1.5" PointX="12" PointY="34.5" />
-        <EntityTypeShape EntityType="DBModel.Inside_Trading" Width="1.5" PointX="3" PointY="30.5" />
-        <EntityTypeShape EntityType="DBModel.Job" Width="1.5" PointX="0.75" PointY="35.375" />
-        <EntityTypeShape EntityType="DBModel.Log" Width="1.5" PointX="3" PointY="101.375" />
-        <EntityTypeShape EntityType="DBModel.Markets_Financials" Width="1.5" PointX="6" PointY="36" />
-        <EntityTypeShape EntityType="DBModel.News" Width="1.5" PointX="6" PointY="40.25" />
-        <EntityTypeShape EntityType="DBModel.Recommendation" Width="1.5" PointX="14.25" PointY="36.25" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Dividends" Width="1.5" PointX="3" PointY="40" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Efficiencies" Width="1.5" PointX="9" PointY="31" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_GrowthRates" Width="1.5" PointX="12" PointY="42" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Institutions" Width="1.5" PointX="3" PointY="36.25" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_MgmtEffectiveness" Width="1.5" PointX="9" PointY="41" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_ProfitabilityRatios" Width="1.5" PointX="6" PointY="31" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_SalesEstimates" Width="1.5" PointX="12" PointY="29.75" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Strength" Width="1.5" PointX="3" PointY="26" />
-        <EntityTypeShape EntityType="DBModel.Reuters_Financials_ValuationRatios" Width="1.5" PointX="6" PointY="44" />
-        <EntityTypeShape EntityType="DBModel.Reuters_RecommendationsRevisions" Width="1.5" PointX="9" PointY="35.875" />
-        <EntityTypeShape EntityType="DBModel.Stock" Width="1.5" PointX="0.75" PointY="24.625" />
+        <EntityTypeShape EntityType="DBModel.Finviz_Financials" Width="1.5" PointX="6" PointY="38.5" />
+        <EntityTypeShape EntityType="DBModel.Finviz_Insider_Trading" Width="1.5" PointX="9" PointY="32.875" />
+        <EntityTypeShape EntityType="DBModel.Finviz_Recommendations" Width="1.5" PointX="3" PointY="28.25" />
+        <EntityTypeShape EntityType="DBModel.ft_Financials_MgmtEffectiveness" Width="1.5" PointX="12" PointY="42.875" />
+        <EntityTypeShape EntityType="DBModel.Job" Width="1.5" PointX="0.75" PointY="37.625" />
+        <EntityTypeShape EntityType="DBModel.Log" Width="1.5" PointX="3" PointY="108" />
+        <EntityTypeShape EntityType="DBModel.Markets_Financials" Width="1.5" PointX="12" PointY="38.25" />
+        <EntityTypeShape EntityType="DBModel.Markets_Financials_Types" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.News" Width="1.5" PointX="9" PointY="38.5" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Dividends" Width="1.5" PointX="9" PointY="42.375" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Efficiencies" Width="1.5" PointX="6" PointY="30.375" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_GrowthRates" Width="1.5" PointX="12" PointY="33.375" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Institutions" Width="1.5" PointX="6" PointY="34.5" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_MgmtEffectiveness" Width="1.5" PointX="6" PointY="42.375" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_ProfitabilityRatios" Width="1.5" PointX="3" PointY="33.375" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_SalesEstimates" Width="1.5" PointX="3" PointY="38" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_Strength" Width="1.5" PointX="3" PointY="43.375" />
+        <EntityTypeShape EntityType="DBModel.Reuters_Financials_ValuationRatios" Width="1.5" PointX="6" PointY="47.375" />
+        <EntityTypeShape EntityType="DBModel.Reuters_RecommendationsRevisions" Width="1.5" PointX="9" PointY="47.25" />
+        <EntityTypeShape EntityType="DBModel.Stock" Width="1.5" PointX="0.75" PointY="26.875" />
         <AssociationConnector Association="DBModel.FK_Finviz_Financials_Jobs" />
         <AssociationConnector Association="DBModel.FK_Finviz_Financials_Stocks" />
-        <AssociationConnector Association="DBModel.FK_Recommendations_TimeSeries" />
-        <AssociationConnector Association="DBModel.FK_Stocks_Common_Jobs" />
-        <AssociationConnector Association="DBModel.FK_Stocks_Common_Stocks" />
         <AssociationConnector Association="DBModel.FK_Inside_Trading_Jobs" />
         <AssociationConnector Association="DBModel.FK_Inside_Trading_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Finviz_Recommendations_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Finviz_Recommendations_Stocks" />
+        <AssociationConnector Association="DBModel.FK_Stocks_Common_Jobs" />
+        <AssociationConnector Association="DBModel.FK_Stocks_Common_Stocks" />
         <AssociationConnector Association="DBModel.FK_Logs_Jobs" />
         <AssociationConnector Association="DBModel.FK_Markets_Financials_Jobs" />
         <AssociationConnector Association="DBModel.FK_News_Jobs" />

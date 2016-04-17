@@ -27,7 +27,8 @@ namespace StockScraper
             //Reuters_Financials_StrengthProvider.GetData(doc2, 0, 0);
             //Reuters_Financials_ProfitabilityRatiosProvider.GetData(doc2, 0, 0);
             //Reuters_Financials_EfficienciesProvider.GetData(doc2, 0, 0);
-            Reuters_Financials_MgmtEffectivenessProvider.GetData(doc2, 0, 0);
+            //Reuters_Financials_MgmtEffectivenessProvider.GetData(doc2, 0, 0);
+            Reuters_Financials_InstitutionsProvider.GetData(doc2, 0, 0);
           
         }
     }

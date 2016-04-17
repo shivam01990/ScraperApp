@@ -30,7 +30,6 @@ namespace StockScraper
                             try
                             {
                                 temp.Title = tr.ChildNodes[1].InnerText.Replace("&nbsp;", " ");
-
                                 temp.Company = tr.ChildNodes[3].InnerText;
                                 temp.Industry = tr.ChildNodes[5].InnerText;
                                 temp.Sector = tr.ChildNodes[7].InnerText;

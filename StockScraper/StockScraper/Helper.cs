@@ -47,6 +47,26 @@ namespace StockScraper
         }
         #endregion
 
+        #region--Market Provider--
+        public static string GetMarketsUrls(string Ticker)
+        {
+            string rType = @"http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s=" + Ticker + ":NYQ";
+            return rType;
+        }
+        public static string GetMarketsFinancialUrls(string Ticker)
+        {
+            string rType = @"http://markets.ft.com/research//Markets/Tearsheets/Financials?s=" + Ticker + ":NYQ&subview=IncomeStatement&period=a";
+            return rType;
+        }
+        #endregion
+
+        #region--finviz Url--
+        public static string finvizUrl(string Ticker)
+        {
+            string rType = @"http://finviz.com/quote.ashx?t=" + Ticker + "&ty=c&p=d&b=1";
+            return rType;
+        }
+        #endregion
 
         public static string GetEffetiveTime(HtmlDocument doc)
         {

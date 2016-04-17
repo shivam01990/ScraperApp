@@ -50,7 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="JobServices.cs" />
+    <Compile Include="LogServices.cs" />
+    <Compile Include="Reuters_Financials_DividendsServices.cs" />
+    <Compile Include="Reuters_Financials_EfficienciesServices.cs" />
+    <Compile Include="Reuters_Financials_GrowthRatesServices.cs" />
+    <Compile Include="Reuters_Financials_MgmtEffectivenessServices.cs" />
+    <Compile Include="StockServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

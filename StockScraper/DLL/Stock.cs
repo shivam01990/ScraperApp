@@ -17,8 +17,9 @@ namespace DLL
         public Stock()
         {
             this.Finviz_Financials = new HashSet<Finviz_Financials>();
+            this.Finviz_Insider_Trading = new HashSet<Finviz_Insider_Trading>();
+            this.Finviz_Recommendations = new HashSet<Finviz_Recommendations>();
             this.ft_Financials_MgmtEffectiveness = new HashSet<ft_Financials_MgmtEffectiveness>();
-            this.Inside_Trading = new HashSet<Inside_Trading>();
             this.Markets_Financials = new HashSet<Markets_Financials>();
             this.News = new HashSet<News>();
             this.Reuters_Financials_Dividends = new HashSet<Reuters_Financials_Dividends>();
@@ -46,8 +47,9 @@ namespace DLL
         public byte[] UpdatedOn { get; set; }
     
         public virtual ICollection<Finviz_Financials> Finviz_Financials { get; set; }
+        public virtual ICollection<Finviz_Insider_Trading> Finviz_Insider_Trading { get; set; }
+        public virtual ICollection<Finviz_Recommendations> Finviz_Recommendations { get; set; }
         public virtual ICollection<ft_Financials_MgmtEffectiveness> ft_Financials_MgmtEffectiveness { get; set; }
-        public virtual ICollection<Inside_Trading> Inside_Trading { get; set; }
         public virtual ICollection<Markets_Financials> Markets_Financials { get; set; }
         public virtual ICollection<News> News { get; set; }
         public virtual ICollection<Reuters_Financials_Dividends> Reuters_Financials_Dividends { get; set; }

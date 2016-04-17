@@ -12,19 +12,23 @@ namespace DLL
     using System;
     using System.Collections.Generic;
     
-    public partial class Markets_Financials
+    public partial class Finviz_Insider_Trading
     {
-        public long Markets_FinancialId { get; set; }
+        public long Finviz_Insider_TradingId { get; set; }
         public int Stock_Id { get; set; }
         public int Job_Id { get; set; }
-        public string Title { get; set; }
-        public string First_Year { get; set; }
-        public string Second_Year { get; set; }
-        public string Third_Year { get; set; }
+        public string Insider_Trading { get; set; }
+        public string Relashionship { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public string Transaction { get; set; }
+        public string Cost { get; set; }
+        public string Shares { get; set; }
+        public string Value { get; set; }
+        public string Shares_Total { get; set; }
+        public string SECForm4 { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
         public Nullable<System.DateTime> UpdatedOn { get; set; }
         public byte[] Time_ST { get; set; }
-        public short Markets_Financials_Types_Id { get; set; }
     
         public virtual Job Job { get; set; }
         public virtual Stock Stock { get; set; }

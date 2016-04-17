@@ -12,19 +12,19 @@ namespace DLL
     using System;
     using System.Collections.Generic;
     
-    public partial class Markets_Financials
+    public partial class Finviz_Recommendations
     {
-        public long Markets_FinancialId { get; set; }
-        public int Stock_Id { get; set; }
+        public long RecommendationId { get; set; }
         public int Job_Id { get; set; }
-        public string Title { get; set; }
-        public string First_Year { get; set; }
-        public string Second_Year { get; set; }
-        public string Third_Year { get; set; }
+        public int Stock_Id { get; set; }
+        public string Date { get; set; }
+        public string RecommendationType { get; set; }
+        public string Analyst { get; set; }
+        public string Recommendation { get; set; }
+        public string Target { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
         public Nullable<System.DateTime> UpdatedOn { get; set; }
         public byte[] Time_ST { get; set; }
-        public short Markets_Financials_Types_Id { get; set; }
     
         public virtual Job Job { get; set; }
         public virtual Stock Stock { get; set; }

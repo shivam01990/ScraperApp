@@ -68,6 +68,9 @@
     <Compile Include="Finviz_Financials.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Finviz_Recommendations.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="ft_Financials_MgmtEffectiveness.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
@@ -83,13 +86,13 @@
     <Compile Include="Markets_Financials.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Markets_Financials_Types.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="News.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Recommendation.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Reuters_Financials_Dividends.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>

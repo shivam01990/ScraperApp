@@ -13,6 +13,52 @@
     <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
+  <EntityType Name="Finviz_Recommendations">
+    <Key>
+      <PropertyRef Name="RecommendationId" />
+    </Key>
+    <Property Name="RecommendationId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Job_Id" Type="int" Nullable="false" />
+    <Property Name="Stock_Id" Type="int" Nullable="false" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecommendationType" Type="nvarchar" MaxLength="100" />
+    <Property Name="Analyst" Type="nvarchar" MaxLength="100" />
+    <Property Name="Recommendation" Type="nvarchar" MaxLength="100" />
+    <Property Name="Target" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ft_Financials_MgmtEffectiveness">
+    <Key>
+      <PropertyRef Name="ft_Financials_MgmtEffectiveness_Id" />
+    </Key>
+    <Property Name="ft_Financials_MgmtEffectiveness_Id" Type="bigint" Nullable="false" />
+    <Property Name="Stock_Id" Type="int" Nullable="false" />
+    <Property Name="Job_Id" Type="int" Nullable="false" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="30" />
+    <Property Name="Company_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Exchange" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sector" Type="nvarchar" MaxLength="100" />
+    <Property Name="Industry" Type="nvarchar" MaxLength="100" />
+    <Property Name="Buy" Type="nvarchar" MaxLength="50" />
+    <Property Name="OutPerforms" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hold" Type="nvarchar" MaxLength="50" />
+    <Property Name="UnderPerform" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sell" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoOpinion" Type="nvarchar" MaxLength="50" />
+    <Property Name="Share_Price_ForeCast" Type="nvarchar(max)" />
+    <Property Name="High_Percentage" Type="nvarchar" MaxLength="50" />
+    <Property Name="High_Value" Type="nvarchar" MaxLength="50" />
+    <Property Name="Med_Percentage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Med_Value" Type="nvarchar" MaxLength="50" />
+    <Property Name="Low_Percentage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Low_Value" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyDescription" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
   <EntityType Name="Inside_Trading">
     <Key>
       <PropertyRef Name="Insider_TradingId" />
@@ -64,6 +110,14 @@
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Markets_Financials_Types_Id" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Markets_Financials_Types">
+    <Key>
+      <PropertyRef Name="Markets_Financials_Type_Id" />
+    </Key>
+    <Property Name="Markets_Financials_Type_Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="News">
     <Key>
@@ -77,20 +131,6 @@
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Recommendations">
-    <Key>
-      <PropertyRef Name="RecommendationId" />
-    </Key>
-    <Property Name="RecommendationId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Time_SeriesId" Type="bigint" Nullable="false" />
-    <Property Name="Date" Type="datetime" />
-    <Property Name="RecommendationType" Type="nvarchar(max)" />
-    <Property Name="Analyst" Type="nvarchar(max)" />
-    <Property Name="Recommendation" Type="nvarchar(max)" />
-    <Property Name="Target" Type="nvarchar(max)" />
-    <Property Name="CreatedOn" Type="datetime" />
-    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Reuters_Financials_Dividends">
     <Key>
@@ -157,11 +197,11 @@
     <Property Name="Reuters_FinancialsMgmtEffectiveness_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="Job_Id" Type="int" Nullable="false" />
-    <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="30" />
     <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="Company" Type="nvarchar" MaxLength="100" />
-    <Property Name="Industry" Type="nvarchar" MaxLength="100" />
-    <Property Name="Sector" Type="nvarchar" MaxLength="100" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Industry" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sector" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
@@ -260,46 +300,6 @@
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="UpdatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <EntityType Name="Stocks_Common">
-    <Key>
-      <PropertyRef Name="Stock_Common_Id" />
-    </Key>
-    <Property Name="Stock_Common_Id" Type="bigint" Nullable="false" />
-    <Property Name="Stock_Id" Type="int" Nullable="false" />
-    <Property Name="Job_Id" Type="int" Nullable="false" />
-    <Property Name="Display_Date" Type="datetime" />
-    <Property Name="Company_Name" Type="nvarchar(max)" />
-    <Property Name="Exchange" Type="nvarchar(max)" />
-    <Property Name="Sector" Type="nvarchar(max)" />
-    <Property Name="Industry" Type="nvarchar(max)" />
-    <Property Name="Buy" Type="decimal" Precision="18" Scale="2" />
-    <Property Name="OutPerforms" Type="decimal" Precision="18" Scale="2" />
-    <Property Name="Hold" Type="decimal" Precision="18" Scale="2" />
-    <Property Name="UnderPerform" Type="numeric" Precision="18" Scale="2" />
-    <Property Name="Sell" Type="numeric" Precision="18" Scale="2" />
-    <Property Name="NoOpinion" Type="numeric" Precision="18" Scale="2" />
-    <Property Name="Share_Price_ForeCast" Type="nvarchar(max)" />
-    <Property Name="High_Percentage" Type="nvarchar(max)" />
-    <Property Name="High_Value" Type="nvarchar(max)" />
-    <Property Name="Med_Percentage" Type="nvarchar(max)" />
-    <Property Name="Med_Value" Type="nvarchar(max)" />
-    <Property Name="Low_Percentage" Type="nvarchar(max)" />
-    <Property Name="Low_Value" Type="nvarchar(max)" />
-    <Property Name="CompanyDescription" Type="nvarchar(max)" />
-    <Property Name="CreatedOn" Type="datetime" />
-    <Property Name="ModifiedOn" Type="datetime" />
-    <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <Association Name="FK_Finviz_Financials_Jobs">
     <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
     <End Role="Finviz_Financials" Type="Self.Finviz_Financials" Multiplicity="*" />
@@ -320,6 +320,30 @@
         <PropertyRef Name="Stock_Id" />
       </Principal>
       <Dependent Role="Finviz_Financials">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Finviz_Recommendations_Jobs">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+    <End Role="Finviz_Recommendations" Type="Self.Finviz_Recommendations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="Finviz_Recommendations">
+        <PropertyRef Name="Job_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Finviz_Recommendations_Stocks">
+    <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
+    <End Role="Finviz_Recommendations" Type="Self.Finviz_Recommendations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stocks">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="Finviz_Recommendations">
         <PropertyRef Name="Stock_Id" />
       </Dependent>
     </ReferentialConstraint>
@@ -405,18 +429,6 @@
       </Principal>
       <Dependent Role="News">
         <PropertyRef Name="Stock_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Recommendations_TimeSeries">
-    <End Role="Stocks_Common" Type="Self.Stocks_Common" Multiplicity="1" />
-    <End Role="Recommendations" Type="Self.Recommendations" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Stocks_Common">
-        <PropertyRef Name="Stock_Common_Id" />
-      </Principal>
-      <Dependent Role="Recommendations">
-        <PropertyRef Name="Time_SeriesId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -662,36 +674,38 @@
   </Association>
   <Association Name="FK_Stocks_Common_Jobs">
     <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
-    <End Role="Stocks_Common" Type="Self.Stocks_Common" Multiplicity="*" />
+    <End Role="ft_Financials_MgmtEffectiveness" Type="Self.ft_Financials_MgmtEffectiveness" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="Stocks_Common">
+      <Dependent Role="ft_Financials_MgmtEffectiveness">
         <PropertyRef Name="Job_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Stocks_Common_Stocks">
     <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
-    <End Role="Stocks_Common" Type="Self.Stocks_Common" Multiplicity="*" />
+    <End Role="ft_Financials_MgmtEffectiveness" Type="Self.ft_Financials_MgmtEffectiveness" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="Stocks_Common">
+      <Dependent Role="ft_Financials_MgmtEffectiveness">
         <PropertyRef Name="Stock_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="DBModelStoreContainer">
     <EntitySet Name="Finviz_Financials" EntityType="Self.Finviz_Financials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Finviz_Recommendations" EntityType="Self.Finviz_Recommendations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ft_Financials_MgmtEffectiveness" EntityType="Self.ft_Financials_MgmtEffectiveness" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Inside_Trading" EntityType="Self.Inside_Trading" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Markets_Financials" EntityType="Self.Markets_Financials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Markets_Financials_Types" EntityType="Self.Markets_Financials_Types" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Recommendations" EntityType="Self.Recommendations" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reuters_Financials_Dividends" EntityType="Self.Reuters_Financials_Dividends" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reuters_Financials_Efficiencies" EntityType="Self.Reuters_Financials_Efficiencies" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reuters_Financials_GrowthRates" EntityType="Self.Reuters_Financials_GrowthRates" Schema="dbo" store:Type="Tables" />
@@ -703,8 +717,6 @@
     <EntitySet Name="Reuters_Financials_ValuationRatios" EntityType="Self.Reuters_Financials_ValuationRatios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reuters_RecommendationsRevisions" EntityType="Self.Reuters_RecommendationsRevisions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Stocks" EntityType="Self.Stocks" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Stocks_Common" EntityType="Self.Stocks_Common" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Finviz_Financials_Jobs" Association="Self.FK_Finviz_Financials_Jobs">
       <End Role="Jobs" EntitySet="Jobs" />
       <End Role="Finviz_Financials" EntitySet="Finviz_Financials" />
@@ -712,6 +724,14 @@
     <AssociationSet Name="FK_Finviz_Financials_Stocks" Association="Self.FK_Finviz_Financials_Stocks">
       <End Role="Stocks" EntitySet="Stocks" />
       <End Role="Finviz_Financials" EntitySet="Finviz_Financials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Finviz_Recommendations_Jobs" Association="Self.FK_Finviz_Recommendations_Jobs">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="Finviz_Recommendations" EntitySet="Finviz_Recommendations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Finviz_Recommendations_Stocks" Association="Self.FK_Finviz_Recommendations_Stocks">
+      <End Role="Stocks" EntitySet="Stocks" />
+      <End Role="Finviz_Recommendations" EntitySet="Finviz_Recommendations" />
     </AssociationSet>
     <AssociationSet Name="FK_Inside_Trading_Jobs" Association="Self.FK_Inside_Trading_Jobs">
       <End Role="Jobs" EntitySet="Jobs" />
@@ -740,10 +760,6 @@
     <AssociationSet Name="FK_News_Stocks1" Association="Self.FK_News_Stocks1">
       <End Role="Stocks" EntitySet="Stocks" />
       <End Role="News" EntitySet="News" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Recommendations_TimeSeries" Association="Self.FK_Recommendations_TimeSeries">
-      <End Role="Stocks_Common" EntitySet="Stocks_Common" />
-      <End Role="Recommendations" EntitySet="Recommendations" />
     </AssociationSet>
     <AssociationSet Name="FK_Reuters_Financials_Dividends_Jobs" Association="Self.FK_Reuters_Financials_Dividends_Jobs">
       <End Role="Jobs" EntitySet="Jobs" />
@@ -827,11 +843,11 @@
     </AssociationSet>
     <AssociationSet Name="FK_Stocks_Common_Jobs" Association="Self.FK_Stocks_Common_Jobs">
       <End Role="Jobs" EntitySet="Jobs" />
-      <End Role="Stocks_Common" EntitySet="Stocks_Common" />
+      <End Role="ft_Financials_MgmtEffectiveness" EntitySet="ft_Financials_MgmtEffectiveness" />
     </AssociationSet>
     <AssociationSet Name="FK_Stocks_Common_Stocks" Association="Self.FK_Stocks_Common_Stocks">
       <End Role="Stocks" EntitySet="Stocks" />
-      <End Role="Stocks_Common" EntitySet="Stocks_Common" />
+      <End Role="ft_Financials_MgmtEffectiveness" EntitySet="ft_Financials_MgmtEffectiveness" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

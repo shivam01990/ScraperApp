@@ -26,13 +26,14 @@ namespace DLL
         }
     
         public virtual DbSet<Finviz_Financials> Finviz_Financials { get; set; }
+        public virtual DbSet<Finviz_Insider_Trading> Finviz_Insider_Trading { get; set; }
+        public virtual DbSet<Finviz_Recommendations> Finviz_Recommendations { get; set; }
         public virtual DbSet<ft_Financials_MgmtEffectiveness> ft_Financials_MgmtEffectiveness { get; set; }
-        public virtual DbSet<Inside_Trading> Inside_Trading { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
         public virtual DbSet<Log> Logs { get; set; }
         public virtual DbSet<Markets_Financials> Markets_Financials { get; set; }
+        public virtual DbSet<Markets_Financials_Types> Markets_Financials_Types { get; set; }
         public virtual DbSet<News> News { get; set; }
-        public virtual DbSet<Recommendation> Recommendations { get; set; }
         public virtual DbSet<Reuters_Financials_Dividends> Reuters_Financials_Dividends { get; set; }
         public virtual DbSet<Reuters_Financials_Efficiencies> Reuters_Financials_Efficiencies { get; set; }
         public virtual DbSet<Reuters_Financials_GrowthRates> Reuters_Financials_GrowthRates { get; set; }

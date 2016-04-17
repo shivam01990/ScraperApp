@@ -2,24 +2,25 @@
 <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Finviz_Financials" EntityType="DBModel.Finviz_Financials" />
+    <EntitySet Name="Finviz_Recommendations" EntityType="DBModel.Finviz_Recommendations" />
+    <EntitySet Name="ft_Financials_MgmtEffectiveness" EntityType="DBModel.ft_Financials_MgmtEffectiveness" />
     <EntitySet Name="Inside_Trading" EntityType="DBModel.Inside_Trading" />
     <EntitySet Name="Jobs" EntityType="DBModel.Job" />
     <EntitySet Name="Logs" EntityType="DBModel.Log" />
     <EntitySet Name="Markets_Financials" EntityType="DBModel.Markets_Financials" />
+    <EntitySet Name="Markets_Financials_Types" EntityType="DBModel.Markets_Financials_Types" />
     <EntitySet Name="News" EntityType="DBModel.News" />
-    <EntitySet Name="Recommendations" EntityType="DBModel.Recommendation" />
     <EntitySet Name="Reuters_Financials_Dividends" EntityType="DBModel.Reuters_Financials_Dividends" />
     <EntitySet Name="Reuters_Financials_Efficiencies" EntityType="DBModel.Reuters_Financials_Efficiencies" />
     <EntitySet Name="Reuters_Financials_GrowthRates" EntityType="DBModel.Reuters_Financials_GrowthRates" />
     <EntitySet Name="Reuters_Financials_Institutions" EntityType="DBModel.Reuters_Financials_Institutions" />
     <EntitySet Name="Reuters_Financials_MgmtEffectiveness" EntityType="DBModel.Reuters_Financials_MgmtEffectiveness" />
+    <EntitySet Name="Reuters_Financials_ProfitabilityRatios" EntityType="DBModel.Reuters_Financials_ProfitabilityRatios" />
     <EntitySet Name="Reuters_Financials_SalesEstimates" EntityType="DBModel.Reuters_Financials_SalesEstimates" />
     <EntitySet Name="Reuters_Financials_Strength" EntityType="DBModel.Reuters_Financials_Strength" />
     <EntitySet Name="Reuters_Financials_ValuationRatios" EntityType="DBModel.Reuters_Financials_ValuationRatios" />
     <EntitySet Name="Reuters_RecommendationsRevisions" EntityType="DBModel.Reuters_RecommendationsRevisions" />
     <EntitySet Name="Stocks" EntityType="DBModel.Stock" />
-    <EntitySet Name="Stocks_Common" EntityType="DBModel.Stocks_Common" />
-    <EntitySet Name="sysdiagrams" EntityType="DBModel.sysdiagram" />
     <AssociationSet Name="FK_Finviz_Financials_Jobs" Association="DBModel.FK_Finviz_Financials_Jobs">
       <End Role="Job" EntitySet="Jobs" />
       <End Role="Finviz_Financials" EntitySet="Finviz_Financials" />
@@ -27,6 +28,22 @@
     <AssociationSet Name="FK_Finviz_Financials_Stocks" Association="DBModel.FK_Finviz_Financials_Stocks">
       <End Role="Stock" EntitySet="Stocks" />
       <End Role="Finviz_Financials" EntitySet="Finviz_Financials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Finviz_Recommendations_Jobs" Association="DBModel.FK_Finviz_Recommendations_Jobs">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Finviz_Recommendations" EntitySet="Finviz_Recommendations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Finviz_Recommendations_Stocks" Association="DBModel.FK_Finviz_Recommendations_Stocks">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Finviz_Recommendations" EntitySet="Finviz_Recommendations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stocks_Common_Jobs" Association="DBModel.FK_Stocks_Common_Jobs">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="ft_Financials_MgmtEffectiveness" EntitySet="ft_Financials_MgmtEffectiveness" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stocks_Common_Stocks" Association="DBModel.FK_Stocks_Common_Stocks">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="ft_Financials_MgmtEffectiveness" EntitySet="ft_Financials_MgmtEffectiveness" />
     </AssociationSet>
     <AssociationSet Name="FK_Inside_Trading_Jobs" Association="DBModel.FK_Inside_Trading_Jobs">
       <End Role="Job" EntitySet="Jobs" />
@@ -56,6 +73,10 @@
       <End Role="Job" EntitySet="Jobs" />
       <End Role="Reuters_Financials_Efficiencies" EntitySet="Reuters_Financials_Efficiencies" />
     </AssociationSet>
+    <AssociationSet Name="FK_Reuters_Financials_GrowthRates_Jobs" Association="DBModel.FK_Reuters_Financials_GrowthRates_Jobs">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Reuters_Financials_GrowthRates" EntitySet="Reuters_Financials_GrowthRates" />
+    </AssociationSet>
     <AssociationSet Name="FK_Reuters_Financials_Institutions_Jobs" Association="DBModel.FK_Reuters_Financials_Institutions_Jobs">
       <End Role="Job" EntitySet="Jobs" />
       <End Role="Reuters_Financials_Institutions" EntitySet="Reuters_Financials_Institutions" />
@@ -63,6 +84,10 @@
     <AssociationSet Name="FK_Reuters_Financials_MgmtEffectiveness_Jobs" Association="DBModel.FK_Reuters_Financials_MgmtEffectiveness_Jobs">
       <End Role="Job" EntitySet="Jobs" />
       <End Role="Reuters_Financials_MgmtEffectiveness" EntitySet="Reuters_Financials_MgmtEffectiveness" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reuters_Financials_ProfitabilityRatios_Jobs" Association="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Jobs">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Reuters_Financials_ProfitabilityRatios" EntitySet="Reuters_Financials_ProfitabilityRatios" />
     </AssociationSet>
     <AssociationSet Name="FK_Reuters_Financials_SalesEstimates_Jobs" Association="DBModel.FK_Reuters_Financials_SalesEstimates_Jobs">
       <End Role="Job" EntitySet="Jobs" />
@@ -80,10 +105,6 @@
       <End Role="Job" EntitySet="Jobs" />
       <End Role="Reuters_RecommendationsRevisions" EntitySet="Reuters_RecommendationsRevisions" />
     </AssociationSet>
-    <AssociationSet Name="FK_Stocks_Common_Jobs" Association="DBModel.FK_Stocks_Common_Jobs">
-      <End Role="Job" EntitySet="Jobs" />
-      <End Role="Stocks_Common" EntitySet="Stocks_Common" />
-    </AssociationSet>
     <AssociationSet Name="FK_Markets_Financials_Stocks" Association="DBModel.FK_Markets_Financials_Stocks">
       <End Role="Stock" EntitySet="Stocks" />
       <End Role="Markets_Financials" EntitySet="Markets_Financials" />
@@ -91,10 +112,6 @@
     <AssociationSet Name="FK_News_Stocks1" Association="DBModel.FK_News_Stocks1">
       <End Role="Stock" EntitySet="Stocks" />
       <End Role="News" EntitySet="News" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Recommendations_TimeSeries" Association="DBModel.FK_Recommendations_TimeSeries">
-      <End Role="Stocks_Common" EntitySet="Stocks_Common" />
-      <End Role="Recommendation" EntitySet="Recommendations" />
     </AssociationSet>
     <AssociationSet Name="FK_Reuters_Financials_Dividends_Stocks1" Association="DBModel.FK_Reuters_Financials_Dividends_Stocks1">
       <End Role="Stock" EntitySet="Stocks" />
@@ -116,6 +133,10 @@
       <End Role="Stock" EntitySet="Stocks" />
       <End Role="Reuters_Financials_MgmtEffectiveness" EntitySet="Reuters_Financials_MgmtEffectiveness" />
     </AssociationSet>
+    <AssociationSet Name="FK_Reuters_Financials_ProfitabilityRatios_Stocks" Association="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Stocks">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Reuters_Financials_ProfitabilityRatios" EntitySet="Reuters_Financials_ProfitabilityRatios" />
+    </AssociationSet>
     <AssociationSet Name="FK_Reuters_Financials_SalesEstimates_Stocks" Association="DBModel.FK_Reuters_Financials_SalesEstimates_Stocks">
       <End Role="Stock" EntitySet="Stocks" />
       <End Role="Reuters_Financials_SalesEstimates" EntitySet="Reuters_Financials_SalesEstimates" />
@@ -132,23 +153,6 @@
       <End Role="Stock" EntitySet="Stocks" />
       <End Role="Reuters_RecommendationsRevisions" EntitySet="Reuters_RecommendationsRevisions" />
     </AssociationSet>
-    <AssociationSet Name="FK_Stocks_Common_Stocks" Association="DBModel.FK_Stocks_Common_Stocks">
-      <End Role="Stock" EntitySet="Stocks" />
-      <End Role="Stocks_Common" EntitySet="Stocks_Common" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Reuters_Financials_GrowthRates_Jobs" Association="DBModel.FK_Reuters_Financials_GrowthRates_Jobs">
-      <End Role="Job" EntitySet="Jobs" />
-      <End Role="Reuters_Financials_GrowthRates" EntitySet="Reuters_Financials_GrowthRates" />
-    </AssociationSet>
-    <EntitySet Name="Reuters_Financials_ProfitabilityRatios" EntityType="DBModel.Reuters_Financials_ProfitabilityRatios" />
-    <AssociationSet Name="FK_Reuters_Financials_ProfitabilityRatios_Jobs" Association="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Jobs">
-      <End Role="Job" EntitySet="Jobs" />
-      <End Role="Reuters_Financials_ProfitabilityRatios" EntitySet="Reuters_Financials_ProfitabilityRatios" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Reuters_Financials_ProfitabilityRatios_Stocks" Association="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Stocks">
-      <End Role="Stock" EntitySet="Stocks" />
-      <End Role="Reuters_Financials_ProfitabilityRatios" EntitySet="Reuters_Financials_ProfitabilityRatios" />
-    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Finviz_Financials">
     <Key>
@@ -164,6 +168,56 @@
     <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Job" Relationship="DBModel.FK_Finviz_Financials_Jobs" FromRole="Finviz_Financials" ToRole="Job" />
     <NavigationProperty Name="Stock" Relationship="DBModel.FK_Finviz_Financials_Stocks" FromRole="Finviz_Financials" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="Finviz_Recommendations">
+    <Key>
+      <PropertyRef Name="RecommendationId" />
+    </Key>
+    <Property Name="RecommendationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Job_Id" Type="Int32" Nullable="false" />
+    <Property Name="Stock_Id" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendationType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Analyst" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Recommendation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Target" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Job" Relationship="DBModel.FK_Finviz_Recommendations_Jobs" FromRole="Finviz_Recommendations" ToRole="Job" />
+    <NavigationProperty Name="Stock" Relationship="DBModel.FK_Finviz_Recommendations_Stocks" FromRole="Finviz_Recommendations" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="ft_Financials_MgmtEffectiveness">
+    <Key>
+      <PropertyRef Name="ft_Financials_MgmtEffectiveness_Id" />
+    </Key>
+    <Property Name="ft_Financials_MgmtEffectiveness_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Id" Type="Int32" Nullable="false" />
+    <Property Name="Job_Id" Type="Int32" Nullable="false" />
+    <Property Name="EffectiveDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Exchange" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sector" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Industry" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Buy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OutPerforms" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hold" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UnderPerform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoOpinion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Share_Price_ForeCast" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="High_Percentage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="High_Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Med_Percentage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Med_Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Low_Percentage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Low_Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Job" Relationship="DBModel.FK_Stocks_Common_Jobs" FromRole="ft_Financials_MgmtEffectiveness" ToRole="Job" />
+    <NavigationProperty Name="Stock" Relationship="DBModel.FK_Stocks_Common_Stocks" FromRole="ft_Financials_MgmtEffectiveness" ToRole="Stock" />
   </EntityType>
   <EntityType Name="Inside_Trading">
     <Key>
@@ -194,21 +248,22 @@
     <Property Name="Job_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Start_Time" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Finviz_Financials" Relationship="DBModel.FK_Finviz_Financials_Jobs" FromRole="Job" ToRole="Finviz_Financials" />
+    <NavigationProperty Name="Finviz_Recommendations" Relationship="DBModel.FK_Finviz_Recommendations_Jobs" FromRole="Job" ToRole="Finviz_Recommendations" />
+    <NavigationProperty Name="ft_Financials_MgmtEffectiveness" Relationship="DBModel.FK_Stocks_Common_Jobs" FromRole="Job" ToRole="ft_Financials_MgmtEffectiveness" />
     <NavigationProperty Name="Inside_Trading" Relationship="DBModel.FK_Inside_Trading_Jobs" FromRole="Job" ToRole="Inside_Trading" />
     <NavigationProperty Name="Logs" Relationship="DBModel.FK_Logs_Jobs" FromRole="Job" ToRole="Log" />
     <NavigationProperty Name="Markets_Financials" Relationship="DBModel.FK_Markets_Financials_Jobs" FromRole="Job" ToRole="Markets_Financials" />
     <NavigationProperty Name="News" Relationship="DBModel.FK_News_Jobs" FromRole="Job" ToRole="News" />
     <NavigationProperty Name="Reuters_Financials_Dividends" Relationship="DBModel.FK_Reuters_Financials_Dividends_Jobs" FromRole="Job" ToRole="Reuters_Financials_Dividends" />
     <NavigationProperty Name="Reuters_Financials_Efficiencies" Relationship="DBModel.FK_Reuters_Financials_Efficiencies_Jobs" FromRole="Job" ToRole="Reuters_Financials_Efficiencies" />
+    <NavigationProperty Name="Reuters_Financials_GrowthRates" Relationship="DBModel.FK_Reuters_Financials_GrowthRates_Jobs" FromRole="Job" ToRole="Reuters_Financials_GrowthRates" />
     <NavigationProperty Name="Reuters_Financials_Institutions" Relationship="DBModel.FK_Reuters_Financials_Institutions_Jobs" FromRole="Job" ToRole="Reuters_Financials_Institutions" />
     <NavigationProperty Name="Reuters_Financials_MgmtEffectiveness" Relationship="DBModel.FK_Reuters_Financials_MgmtEffectiveness_Jobs" FromRole="Job" ToRole="Reuters_Financials_MgmtEffectiveness" />
+    <NavigationProperty Name="Reuters_Financials_ProfitabilityRatios" Relationship="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Jobs" FromRole="Job" ToRole="Reuters_Financials_ProfitabilityRatios" />
     <NavigationProperty Name="Reuters_Financials_SalesEstimates" Relationship="DBModel.FK_Reuters_Financials_SalesEstimates_Jobs" FromRole="Job" ToRole="Reuters_Financials_SalesEstimates" />
     <NavigationProperty Name="Reuters_Financials_Strength" Relationship="DBModel.FK_Reuters_Financials_Strength_Jobs" FromRole="Job" ToRole="Reuters_Financials_Strength" />
     <NavigationProperty Name="Reuters_Financials_ValuationRatios" Relationship="DBModel.FK_Reuters_Financials_ValuationRatios_Jobs" FromRole="Job" ToRole="Reuters_Financials_ValuationRatios" />
     <NavigationProperty Name="Reuters_RecommendationsRevisions" Relationship="DBModel.FK_Reuters_RecommendationsRevisions_Jobs" FromRole="Job" ToRole="Reuters_RecommendationsRevisions" />
-    <NavigationProperty Name="Stocks_Common" Relationship="DBModel.FK_Stocks_Common_Jobs" FromRole="Job" ToRole="Stocks_Common" />
-    <NavigationProperty Name="Reuters_Financials_GrowthRates" Relationship="DBModel.FK_Reuters_Financials_GrowthRates_Jobs" FromRole="Job" ToRole="Reuters_Financials_GrowthRates" />
-    <NavigationProperty Name="Reuters_Financials_ProfitabilityRatios" Relationship="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Jobs" FromRole="Job" ToRole="Reuters_Financials_ProfitabilityRatios" />
   </EntityType>
   <EntityType Name="Log">
     <Key>
@@ -235,8 +290,16 @@
     <Property Name="CreatedOn" Type="DateTime" Precision="3" />
     <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
     <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Markets_Financials_Types_Id" Type="Int16" Nullable="false" />
     <NavigationProperty Name="Job" Relationship="DBModel.FK_Markets_Financials_Jobs" FromRole="Markets_Financials" ToRole="Job" />
     <NavigationProperty Name="Stock" Relationship="DBModel.FK_Markets_Financials_Stocks" FromRole="Markets_Financials" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="Markets_Financials_Types">
+    <Key>
+      <PropertyRef Name="Markets_Financials_Type_Id" />
+    </Key>
+    <Property Name="Markets_Financials_Type_Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="News">
     <Key>
@@ -252,21 +315,6 @@
     <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Job" Relationship="DBModel.FK_News_Jobs" FromRole="News" ToRole="Job" />
     <NavigationProperty Name="Stock" Relationship="DBModel.FK_News_Stocks1" FromRole="News" ToRole="Stock" />
-  </EntityType>
-  <EntityType Name="Recommendation">
-    <Key>
-      <PropertyRef Name="RecommendationId" />
-    </Key>
-    <Property Name="RecommendationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Time_SeriesId" Type="Int64" Nullable="false" />
-    <Property Name="Date" Type="DateTime" Precision="3" />
-    <Property Name="RecommendationType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Analyst" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Recommendation1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Target" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
-    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Stocks_Common" Relationship="DBModel.FK_Recommendations_TimeSeries" FromRole="Recommendation" ToRole="Stocks_Common" />
   </EntityType>
   <EntityType Name="Reuters_Financials_Dividends">
     <Key>
@@ -293,7 +341,7 @@
     <Property Name="Stock_Id" Type="Int32" Nullable="false" />
     <Property Name="Job_Id" Type="Int32" />
     <Property Name="EffectiveDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="Titile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -301,7 +349,6 @@
     <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Job" Relationship="DBModel.FK_Reuters_Financials_Efficiencies_Jobs" FromRole="Reuters_Financials_Efficiencies" ToRole="Job" />
     <NavigationProperty Name="Stock" Relationship="DBModel.FK_Reuters_Financials_Efficiencies_Stocks" FromRole="Reuters_Financials_Efficiencies" ToRole="Stock" />
-    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Reuters_Financials_GrowthRates">
     <Key>
@@ -309,16 +356,16 @@
     </Key>
     <Property Name="Reuters_FinancialsGrowthRate_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Stock_Id" Type="Int32" Nullable="false" />
+    <Property Name="Job_Id" Type="Int32" Nullable="false" />
     <Property Name="EffectiveDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-    <NavigationProperty Name="Stock" Relationship="DBModel.FK_Reuters_Financials_GrowthRates_Stocks" FromRole="Reuters_Financials_GrowthRates" ToRole="Stock" />
-    <Property Name="Job_Id" Type="Int32" Nullable="false" />
-    <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Job" Relationship="DBModel.FK_Reuters_Financials_GrowthRates_Jobs" FromRole="Reuters_Financials_GrowthRates" ToRole="Job" />
+    <NavigationProperty Name="Stock" Relationship="DBModel.FK_Reuters_Financials_GrowthRates_Stocks" FromRole="Reuters_Financials_GrowthRates" ToRole="Stock" />
   </EntityType>
   <EntityType Name="Reuters_Financials_Institutions">
     <Key>
@@ -342,15 +389,32 @@
     <Property Name="Reuters_FinancialsMgmtEffectiveness_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Stock_Id" Type="Int32" Nullable="false" />
     <Property Name="Job_Id" Type="Int32" Nullable="false" />
-    <Property Name="EffectiveDate" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Industry" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Sector" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Job" Relationship="DBModel.FK_Reuters_Financials_MgmtEffectiveness_Jobs" FromRole="Reuters_Financials_MgmtEffectiveness" ToRole="Job" />
     <NavigationProperty Name="Stock" Relationship="DBModel.FK_Reuters_Financials_MgmtEffectiveness_Stocks" FromRole="Reuters_Financials_MgmtEffectiveness" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="Reuters_Financials_ProfitabilityRatios">
+    <Key>
+      <PropertyRef Name="Reuters_Financials_ProfitabilityRatios_Id" />
+    </Key>
+    <Property Name="Reuters_Financials_ProfitabilityRatios_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Id" Type="Int32" Nullable="false" />
+    <Property Name="Job_Id" Type="Int32" Nullable="false" />
+    <Property Name="EffectiveDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Job" Relationship="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Jobs" FromRole="Reuters_Financials_ProfitabilityRatios" ToRole="Job" />
+    <NavigationProperty Name="Stock" Relationship="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Stocks" FromRole="Reuters_Financials_ProfitabilityRatios" ToRole="Stock" />
   </EntityType>
   <EntityType Name="Reuters_Financials_SalesEstimates">
     <Key>
@@ -399,12 +463,12 @@
     <Property Name="EffectiveDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Job" Relationship="DBModel.FK_Reuters_Financials_ValuationRatios_Jobs" FromRole="Reuters_Financials_ValuationRatios" ToRole="Job" />
     <NavigationProperty Name="Stock" Relationship="DBModel.FK_Reuters_Financials_ValuationRatios_Stocks" FromRole="Reuters_Financials_ValuationRatios" ToRole="Stock" />
-    <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Reuters_RecommendationsRevisions">
     <Key>
@@ -440,6 +504,8 @@
     <Property Name="CreatedOn" Type="DateTime" Precision="3" />
     <Property Name="UpdatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Finviz_Financials" Relationship="DBModel.FK_Finviz_Financials_Stocks" FromRole="Stock" ToRole="Finviz_Financials" />
+    <NavigationProperty Name="Finviz_Recommendations" Relationship="DBModel.FK_Finviz_Recommendations_Stocks" FromRole="Stock" ToRole="Finviz_Recommendations" />
+    <NavigationProperty Name="ft_Financials_MgmtEffectiveness" Relationship="DBModel.FK_Stocks_Common_Stocks" FromRole="Stock" ToRole="ft_Financials_MgmtEffectiveness" />
     <NavigationProperty Name="Inside_Trading" Relationship="DBModel.FK_Inside_Trading_Stocks" FromRole="Stock" ToRole="Inside_Trading" />
     <NavigationProperty Name="Markets_Financials" Relationship="DBModel.FK_Markets_Financials_Stocks" FromRole="Stock" ToRole="Markets_Financials" />
     <NavigationProperty Name="News" Relationship="DBModel.FK_News_Stocks1" FromRole="Stock" ToRole="News" />
@@ -448,55 +514,11 @@
     <NavigationProperty Name="Reuters_Financials_GrowthRates" Relationship="DBModel.FK_Reuters_Financials_GrowthRates_Stocks" FromRole="Stock" ToRole="Reuters_Financials_GrowthRates" />
     <NavigationProperty Name="Reuters_Financials_Institutions" Relationship="DBModel.FK_Reuters_Financials_Institutions_Stocks" FromRole="Stock" ToRole="Reuters_Financials_Institutions" />
     <NavigationProperty Name="Reuters_Financials_MgmtEffectiveness" Relationship="DBModel.FK_Reuters_Financials_MgmtEffectiveness_Stocks" FromRole="Stock" ToRole="Reuters_Financials_MgmtEffectiveness" />
+    <NavigationProperty Name="Reuters_Financials_ProfitabilityRatios" Relationship="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Stocks" FromRole="Stock" ToRole="Reuters_Financials_ProfitabilityRatios" />
     <NavigationProperty Name="Reuters_Financials_SalesEstimates" Relationship="DBModel.FK_Reuters_Financials_SalesEstimates_Stocks" FromRole="Stock" ToRole="Reuters_Financials_SalesEstimates" />
     <NavigationProperty Name="Reuters_Financials_Strength" Relationship="DBModel.FK_Reuters_Financials_Strength_Stocks" FromRole="Stock" ToRole="Reuters_Financials_Strength" />
     <NavigationProperty Name="Reuters_Financials_ValuationRatios" Relationship="DBModel.FK_Reuters_Financials_ValuationRatios_Stocks" FromRole="Stock" ToRole="Reuters_Financials_ValuationRatios" />
     <NavigationProperty Name="Reuters_RecommendationsRevisions" Relationship="DBModel.FK_Reuters_RecommendationsRevisions_Stocks" FromRole="Stock" ToRole="Reuters_RecommendationsRevisions" />
-    <NavigationProperty Name="Stocks_Common" Relationship="DBModel.FK_Stocks_Common_Stocks" FromRole="Stock" ToRole="Stocks_Common" />
-    <NavigationProperty Name="Reuters_Financials_ProfitabilityRatios" Relationship="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Stocks" FromRole="Stock" ToRole="Reuters_Financials_ProfitabilityRatios" />
-  </EntityType>
-  <EntityType Name="Stocks_Common">
-    <Key>
-      <PropertyRef Name="Stock_Common_Id" />
-    </Key>
-    <Property Name="Stock_Common_Id" Type="Int64" Nullable="false" />
-    <Property Name="Stock_Id" Type="Int32" Nullable="false" />
-    <Property Name="Job_Id" Type="Int32" Nullable="false" />
-    <Property Name="Display_Date" Type="DateTime" Precision="3" />
-    <Property Name="Company_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Exchange" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Sector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Industry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Buy" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="OutPerforms" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="Hold" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="UnderPerform" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="Sell" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="NoOpinion" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="Share_Price_ForeCast" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="High_Percentage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="High_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Med_Percentage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Med_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Low_Percentage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Low_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CompanyDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
-    <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-    <NavigationProperty Name="Job" Relationship="DBModel.FK_Stocks_Common_Jobs" FromRole="Stocks_Common" ToRole="Job" />
-    <NavigationProperty Name="Recommendations" Relationship="DBModel.FK_Recommendations_TimeSeries" FromRole="Stocks_Common" ToRole="Recommendation" />
-    <NavigationProperty Name="Stock" Relationship="DBModel.FK_Stocks_Common_Stocks" FromRole="Stocks_Common" ToRole="Stock" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="FK_Finviz_Financials_Jobs">
     <End Type="DBModel.Job" Role="Job" Multiplicity="1" />
@@ -518,6 +540,54 @@
         <PropertyRef Name="Stock_Id" />
       </Principal>
       <Dependent Role="Finviz_Financials">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Finviz_Recommendations_Jobs">
+    <End Type="DBModel.Job" Role="Job" Multiplicity="1" />
+    <End Type="DBModel.Finviz_Recommendations" Role="Finviz_Recommendations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="Finviz_Recommendations">
+        <PropertyRef Name="Job_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Finviz_Recommendations_Stocks">
+    <End Type="DBModel.Stock" Role="Stock" Multiplicity="1" />
+    <End Type="DBModel.Finviz_Recommendations" Role="Finviz_Recommendations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="Finviz_Recommendations">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stocks_Common_Jobs">
+    <End Type="DBModel.Job" Role="Job" Multiplicity="1" />
+    <End Type="DBModel.ft_Financials_MgmtEffectiveness" Role="ft_Financials_MgmtEffectiveness" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="ft_Financials_MgmtEffectiveness">
+        <PropertyRef Name="Job_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stocks_Common_Stocks">
+    <End Type="DBModel.Stock" Role="Stock" Multiplicity="1" />
+    <End Type="DBModel.ft_Financials_MgmtEffectiveness" Role="ft_Financials_MgmtEffectiveness" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="ft_Financials_MgmtEffectiveness">
         <PropertyRef Name="Stock_Id" />
       </Dependent>
     </ReferentialConstraint>
@@ -606,6 +676,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Reuters_Financials_GrowthRates_Jobs">
+    <End Type="DBModel.Job" Role="Job" Multiplicity="1" />
+    <End Type="DBModel.Reuters_Financials_GrowthRates" Role="Reuters_Financials_GrowthRates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="Reuters_Financials_GrowthRates">
+        <PropertyRef Name="Job_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Reuters_Financials_Institutions_Jobs">
     <End Type="DBModel.Job" Role="Job" Multiplicity="1" />
     <End Type="DBModel.Reuters_Financials_Institutions" Role="Reuters_Financials_Institutions" Multiplicity="*" />
@@ -626,6 +708,18 @@
         <PropertyRef Name="Job_id" />
       </Principal>
       <Dependent Role="Reuters_Financials_MgmtEffectiveness">
+        <PropertyRef Name="Job_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reuters_Financials_ProfitabilityRatios_Jobs">
+    <End Type="DBModel.Job" Role="Job" Multiplicity="1" />
+    <End Type="DBModel.Reuters_Financials_ProfitabilityRatios" Role="Reuters_Financials_ProfitabilityRatios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="Reuters_Financials_ProfitabilityRatios">
         <PropertyRef Name="Job_Id" />
       </Dependent>
     </ReferentialConstraint>
@@ -678,18 +772,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Stocks_Common_Jobs">
-    <End Type="DBModel.Job" Role="Job" Multiplicity="1" />
-    <End Type="DBModel.Stocks_Common" Role="Stocks_Common" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Job">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="Stocks_Common">
-        <PropertyRef Name="Job_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Markets_Financials_Stocks">
     <End Type="DBModel.Stock" Role="Stock" Multiplicity="1" />
     <End Type="DBModel.Markets_Financials" Role="Markets_Financials" Multiplicity="*" />
@@ -711,18 +793,6 @@
       </Principal>
       <Dependent Role="News">
         <PropertyRef Name="Stock_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Recommendations_TimeSeries">
-    <End Type="DBModel.Stocks_Common" Role="Stocks_Common" Multiplicity="1" />
-    <End Type="DBModel.Recommendation" Role="Recommendation" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Stocks_Common">
-        <PropertyRef Name="Stock_Common_Id" />
-      </Principal>
-      <Dependent Role="Recommendation">
-        <PropertyRef Name="Time_SeriesId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -786,6 +856,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Reuters_Financials_ProfitabilityRatios_Stocks">
+    <End Type="DBModel.Stock" Role="Stock" Multiplicity="1" />
+    <End Type="DBModel.Reuters_Financials_ProfitabilityRatios" Role="Reuters_Financials_ProfitabilityRatios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="Reuters_Financials_ProfitabilityRatios">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Reuters_Financials_SalesEstimates_Stocks">
     <End Type="DBModel.Stock" Role="Stock" Multiplicity="1" />
     <End Type="DBModel.Reuters_Financials_SalesEstimates" Role="Reuters_Financials_SalesEstimates" Multiplicity="*" />
@@ -830,71 +912,6 @@
         <PropertyRef Name="Stock_Id" />
       </Principal>
       <Dependent Role="Reuters_RecommendationsRevisions">
-        <PropertyRef Name="Stock_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Stocks_Common_Stocks">
-    <End Type="DBModel.Stock" Role="Stock" Multiplicity="1" />
-    <End Type="DBModel.Stocks_Common" Role="Stocks_Common" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Stock">
-        <PropertyRef Name="Stock_Id" />
-      </Principal>
-      <Dependent Role="Stocks_Common">
-        <PropertyRef Name="Stock_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Reuters_Financials_GrowthRates_Jobs">
-    <End Type="DBModel.Job" Role="Job" Multiplicity="1" />
-    <End Type="DBModel.Reuters_Financials_GrowthRates" Role="Reuters_Financials_GrowthRates" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Job">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="Reuters_Financials_GrowthRates">
-        <PropertyRef Name="Job_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="Reuters_Financials_ProfitabilityRatios">
-    <Key>
-      <PropertyRef Name="Reuters_Financials_ProfitabilityRatios_Id" />
-    </Key>
-    <Property Name="Reuters_Financials_ProfitabilityRatios_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Stock_Id" Type="Int32" Nullable="false" />
-    <Property Name="Job_Id" Type="Int32" Nullable="false" />
-    <Property Name="EffectiveDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Time_ST" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-    <NavigationProperty Name="Job" Relationship="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Jobs" FromRole="Reuters_Financials_ProfitabilityRatios" ToRole="Job" />
-    <NavigationProperty Name="Stock" Relationship="DBModel.FK_Reuters_Financials_ProfitabilityRatios_Stocks" FromRole="Reuters_Financials_ProfitabilityRatios" ToRole="Stock" />
-  </EntityType>
-  <Association Name="FK_Reuters_Financials_ProfitabilityRatios_Jobs">
-    <End Type="DBModel.Job" Role="Job" Multiplicity="1" />
-    <End Type="DBModel.Reuters_Financials_ProfitabilityRatios" Role="Reuters_Financials_ProfitabilityRatios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Job">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="Reuters_Financials_ProfitabilityRatios">
-        <PropertyRef Name="Job_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Reuters_Financials_ProfitabilityRatios_Stocks">
-    <End Type="DBModel.Stock" Role="Stock" Multiplicity="1" />
-    <End Type="DBModel.Reuters_Financials_ProfitabilityRatios" Role="Reuters_Financials_ProfitabilityRatios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Stock">
-        <PropertyRef Name="Stock_Id" />
-      </Principal>
-      <Dependent Role="Reuters_Financials_ProfitabilityRatios">
         <PropertyRef Name="Stock_Id" />
       </Dependent>
     </ReferentialConstraint>

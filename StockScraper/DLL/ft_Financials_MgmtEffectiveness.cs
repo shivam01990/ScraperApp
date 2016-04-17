@@ -14,11 +14,6 @@ namespace DLL
     
     public partial class ft_Financials_MgmtEffectiveness
     {
-        public ft_Financials_MgmtEffectiveness()
-        {
-            this.Recommendations = new HashSet<Recommendation>();
-        }
-    
         public long ft_Financials_MgmtEffectiveness_Id { get; set; }
         public int Stock_Id { get; set; }
         public int Job_Id { get; set; }
@@ -27,12 +22,12 @@ namespace DLL
         public string Exchange { get; set; }
         public string Sector { get; set; }
         public string Industry { get; set; }
-        public Nullable<decimal> Buy { get; set; }
-        public Nullable<decimal> OutPerforms { get; set; }
-        public Nullable<decimal> Hold { get; set; }
-        public Nullable<decimal> UnderPerform { get; set; }
-        public Nullable<decimal> Sell { get; set; }
-        public Nullable<decimal> NoOpinion { get; set; }
+        public string Buy { get; set; }
+        public string OutPerforms { get; set; }
+        public string Hold { get; set; }
+        public string UnderPerform { get; set; }
+        public string Sell { get; set; }
+        public string NoOpinion { get; set; }
         public string Share_Price_ForeCast { get; set; }
         public string High_Percentage { get; set; }
         public string High_Value { get; set; }
@@ -45,7 +40,6 @@ namespace DLL
         public Nullable<System.DateTime> ModifiedOn { get; set; }
         public byte[] Time_ST { get; set; }
     
-        public virtual ICollection<Recommendation> Recommendations { get; set; }
         public virtual Job Job { get; set; }
         public virtual Stock Stock { get; set; }
     }
