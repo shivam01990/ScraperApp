@@ -68,13 +68,13 @@
     <Compile Include="Finviz_Financials.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Finviz_Insider_Trading.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Finviz_Recommendations.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="ft_Financials_MgmtEffectiveness.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Inside_Trading.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Job.cs">
