@@ -12,23 +12,21 @@ namespace DLL
     using System;
     using System.Collections.Generic;
     
-    public partial class Reuters_Financials_SalesEstimates
+    public partial class reuters_Financials_SalesEstimates
     {
         public int Reuters_FinancialsSalesEstimates_Id { get; set; }
         public int Stock_Id { get; set; }
-        public int Job_Id { get; set; }
-        public string Effective_Date { get; set; }
+        public int job_run_id { get; set; }
+        public string EffectiveDate { get; set; }
         public string Title { get; set; }
         public string Estimates { get; set; }
         public string Mean { get; set; }
         public string High { get; set; }
         public string Low { get; set; }
-        public string One_Year_Ago { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
-        public byte[] Time_ST { get; set; }
-        public short SaleType { get; set; }
+        public Nullable<short> Sale_Type { get; set; }
+        public byte[] CreatedOn { get; set; }
     
-        public virtual Job Job { get; set; }
-        public virtual Stock Stock { get; set; }
+        public virtual ws_Jobs ws_Jobs { get; set; }
+        public virtual ws_Stocks ws_Stocks { get; set; }
     }
 }

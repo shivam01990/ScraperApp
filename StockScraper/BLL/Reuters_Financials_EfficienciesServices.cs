@@ -7,36 +7,36 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Reuters_Financials_EfficienciesServices
+    public class reuters_Financials_EfficienciesServices
     {
         #region--Instance--
-        public static Reuters_Financials_EfficienciesServices Instance = new Reuters_Financials_EfficienciesServices();
+        public static reuters_Financials_EfficienciesServices Instance = new reuters_Financials_EfficienciesServices();
         #endregion
 
         #region--Save Reuters Financials Dividends--
-        public int Save_Reuters_Financials_Efficiencies(Reuters_Financials_Efficiencies rr)
+        public int Save_Reuters_Financials_Efficiencies(reuters_Financials_Efficiencies rr)
         {
             int Reuters_FinancialsEfficiency_Id = 0;
             using (DBEntities db = new DBEntities())
             {
                 if (rr.Reuters_FinancialsEfficiency_Id > 0)
                 {
-                    Reuters_Financials_Efficiencies temp = db.Reuters_Financials_Efficiencies.Where(u => u.Reuters_FinancialsEfficiency_Id == rr.Reuters_FinancialsEfficiency_Id).FirstOrDefault();
+                    reuters_Financials_Efficiencies temp = db.reuters_Financials_Efficiencies.Where(u => u.Reuters_FinancialsEfficiency_Id == rr.Reuters_FinancialsEfficiency_Id).FirstOrDefault();
 
                     if (temp != null)
                     {
                         temp.Stock_Id = rr.Stock_Id;
-                        temp.Job_Id = rr.Job_Id;
+                        temp.run_job_id = rr.run_job_id;
                         temp.EffectiveDate = rr.EffectiveDate;
                         temp.Title = rr.Title;
                         temp.Company = rr.Company;
                         temp.Industry = rr.Industry;
-                        temp.Stock = rr.Stock;
+                        temp.Sector = rr.Sector;
                     }
                 }
                 else
                 {
-                    db.Reuters_Financials_Efficiencies.Add(rr);
+                    db.reuters_Financials_Efficiencies.Add(rr);
                 }
 
                 int x = db.SaveChanges();

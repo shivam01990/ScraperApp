@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace StockScraper
 {
-    public class Reuters_Financials_ProfitabilityRatiosProvider
+    public class reuters_Financials_ProfitabilityRatiosProvider
     {
-        public static List<Reuters_Financials_ProfitabilityRatios> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<reuters_Financials_ProfitabilityRatios> GetData(HtmlDocument doc, int job_id, int stock_id)
         {
-            List<Reuters_Financials_ProfitabilityRatios> rType = new List<Reuters_Financials_ProfitabilityRatios>();
+            List<reuters_Financials_ProfitabilityRatios> rType = new List<reuters_Financials_ProfitabilityRatios>();
             HtmlNodeCollection rowcollection = doc.DocumentNode.SelectNodes("//div[contains(@class, 'column1') and contains(@class, 'gridPanel') and contains(@class, 'grid8')]//div[@class='module']");
             if (rowcollection.Count > 0)
             {
@@ -24,7 +24,7 @@ namespace StockScraper
                     for (int k = 1; k < tblrows.Count; k++)
                     {
                         HtmlNode tr = tblrows[k];
-                        Reuters_Financials_ProfitabilityRatios temp = new Reuters_Financials_ProfitabilityRatios();
+                        reuters_Financials_ProfitabilityRatios temp = new reuters_Financials_ProfitabilityRatios();
                         if (tr.ChildNodes.Count() == 9)
                         {
                             try
@@ -34,7 +34,7 @@ namespace StockScraper
                                 temp.Industry = tr.ChildNodes[5].InnerText;
                                 temp.Sector = tr.ChildNodes[7].InnerText;
                                 temp.EffectiveDate = EffectiveTime;
-                                temp.Job_Id = job_id;
+                                temp.Job_run_Id = job_id;
                                 temp.Stock_Id = stock_id;
                                 rType.Add(temp);
                             }

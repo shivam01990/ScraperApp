@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace StockScraper
 {
-    public class Finviz_FinancialsProvider
+    public class finviz_FinancialsProvider
     {
-        public static List<Finviz_Financials> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<finviz_Financials> GetData(HtmlDocument doc, int job_id, int stock_id)
         {
-            List<Finviz_Financials> rType = new List<Finviz_Financials>();
+            List<finviz_Financials> rType = new List<finviz_Financials>();
 
 
             var tblrows = doc.DocumentNode.SelectNodes("//table[@class='snapshot-table2']//tr");
@@ -26,53 +26,53 @@ namespace StockScraper
                             try
                             {
                                 {
-                                    Finviz_Financials temp = new Finviz_Financials();
+                                    finviz_Financials temp = new finviz_Financials();
                                     temp.Data_Points = tr.ChildNodes[1].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[2].InnerText;
-                                    temp.Job_Id = job_id;
+                                    temp.job_run_Id = job_id;
                                     temp.Stock_Id = stock_id;
                                     rType.Add(temp);
                                 }
 
                                 {
-                                    Finviz_Financials temp = new Finviz_Financials();
+                                    finviz_Financials temp = new finviz_Financials();
                                     temp.Data_Points = tr.ChildNodes[4].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[5].InnerText;
-                                    temp.Job_Id = job_id;
+                                    temp.job_run_Id = job_id;
                                     temp.Stock_Id = stock_id;
                                     rType.Add(temp);
                                 }
 
                                 {
-                                    Finviz_Financials temp = new Finviz_Financials();
+                                    finviz_Financials temp = new finviz_Financials();
                                     temp.Data_Points = tr.ChildNodes[7].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[8].InnerText;
-                                    temp.Job_Id = job_id;
+                                    temp.job_run_Id = job_id;
                                     temp.Stock_Id = stock_id;
                                     rType.Add(temp);
                                 }
 
                                 {
-                                    Finviz_Financials temp = new Finviz_Financials();
+                                    finviz_Financials temp = new finviz_Financials();
                                     temp.Data_Points = tr.ChildNodes[10].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[11].InnerText;
-                                    temp.Job_Id = job_id;
+                                    temp.job_run_Id = job_id;
                                     temp.Stock_Id = stock_id;
                                     rType.Add(temp);
                                 }
                                 {
-                                    Finviz_Financials temp = new Finviz_Financials();
+                                    finviz_Financials temp = new finviz_Financials();
                                     temp.Data_Points = tr.ChildNodes[13].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[14].InnerText;
-                                    temp.Job_Id = job_id;
+                                    temp.job_run_Id = job_id;
                                     temp.Stock_Id = stock_id;
                                     rType.Add(temp);
                                 }
                                 {
-                                    Finviz_Financials temp = new Finviz_Financials();
+                                    finviz_Financials temp = new finviz_Financials();
                                     temp.Data_Points = tr.ChildNodes[16].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[17].InnerText;
-                                    temp.Job_Id = job_id;
+                                    temp.job_run_Id = job_id;
                                     temp.Stock_Id = stock_id;
                                     rType.Add(temp);
                                 }

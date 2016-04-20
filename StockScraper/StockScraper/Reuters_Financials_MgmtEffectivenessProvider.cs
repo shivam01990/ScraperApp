@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace StockScraper
 {
-    public class Reuters_Financials_MgmtEffectivenessProvider
+    public class reuters_Financials_MgmtEffectivenessProvider
     {
-        public static List<Reuters_Financials_MgmtEffectiveness> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<reuters_Financials_MgmtEffectiveness> GetData(HtmlDocument doc, int job_id, int stock_id)
         {
-            List<Reuters_Financials_MgmtEffectiveness> rType = new List<Reuters_Financials_MgmtEffectiveness>();
+            List<reuters_Financials_MgmtEffectiveness> rType = new List<reuters_Financials_MgmtEffectiveness>();
             HtmlNodeCollection rowcollection = doc.DocumentNode.SelectNodes("//div[contains(@class, 'column1') and contains(@class, 'gridPanel') and contains(@class, 'grid8')]//div[@class='module']");
             if (rowcollection.Count > 0)
             {
@@ -24,7 +24,7 @@ namespace StockScraper
                     for (int k = 1; k < tblrows.Count; k++)
                     {
                         HtmlNode tr = tblrows[k];
-                        Reuters_Financials_MgmtEffectiveness temp = new Reuters_Financials_MgmtEffectiveness();
+                        reuters_Financials_MgmtEffectiveness temp = new reuters_Financials_MgmtEffectiveness();
                         if (tr.ChildNodes.Count() == 9)
                         {
                             try
@@ -34,7 +34,7 @@ namespace StockScraper
                                 temp.Industry = tr.ChildNodes[5].InnerText;
                                 temp.Sector = tr.ChildNodes[7].InnerText;
                                 temp.EffectiveDate = EffectiveTime;
-                                temp.Job_Id = job_id;
+                                temp.job_run_Id = job_id;
                                 temp.Stock_Id = stock_id;
                                 rType.Add(temp);
                             }

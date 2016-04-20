@@ -12,21 +12,20 @@ namespace DLL
     using System;
     using System.Collections.Generic;
     
-    public partial class Reuters_RecommendationsRevisions
+    public partial class reuters_RecommendationsRevisions
     {
         public long Reuters_RecommendationsRevisions_Id { get; set; }
         public int Stock_Id { get; set; }
-        public int Job_Id { get; set; }
+        public int job_run_Id { get; set; }
         public Nullable<System.DateTime> LastRecommendationDate { get; set; }
         public string Linear_Scale { get; set; }
         public string AnalystRecommend_Current { get; set; }
         public string AnalystRecommend_Month_1 { get; set; }
         public string AnalystRecommend_Month_2 { get; set; }
         public string AnalystRecommend_Month_3 { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
-        public byte[] Time_TS { get; set; }
+        public byte[] CreatedOn { get; set; }
     
-        public virtual Job Job { get; set; }
-        public virtual Stock Stock { get; set; }
+        public virtual ws_Jobs ws_Jobs { get; set; }
+        public virtual ws_Stocks ws_Stocks { get; set; }
     }
 }

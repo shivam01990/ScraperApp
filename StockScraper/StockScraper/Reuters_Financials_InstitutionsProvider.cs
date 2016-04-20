@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace StockScraper
 {
-   public class Reuters_Financials_InstitutionsProvider
+   public class reuters_Financials_InstitutionsProvider
     {
-       public static List<Reuters_Financials_Institutions> GetData(HtmlDocument doc, int job_id, int stock_id)
+       public static List<reuters_Financials_Institutions> GetData(HtmlDocument doc, int job_id, int stock_id)
        {
-           List<Reuters_Financials_Institutions> rType = new List<Reuters_Financials_Institutions>();
+           List<reuters_Financials_Institutions> rType = new List<reuters_Financials_Institutions>();
            HtmlNodeCollection rowcollection = doc.DocumentNode.SelectNodes("//div[contains(@class, 'column2') and contains(@class, 'gridPanel') and contains(@class, 'grid4')]//div[@class='module']");
            if (rowcollection.Count > 0)
            {
@@ -24,7 +24,7 @@ namespace StockScraper
                    for (int k = 0; k < tblrows.Count; k++)
                    {
                        HtmlNode tr = tblrows[k];
-                       Reuters_Financials_Institutions temp = new Reuters_Financials_Institutions();
+                       reuters_Financials_Institutions temp = new reuters_Financials_Institutions();
                        if (tr.ChildNodes.Count() == 5)
                        {
                            try
@@ -32,7 +32,7 @@ namespace StockScraper
                                temp.Title = tr.ChildNodes[1].InnerText.Replace("&nbsp;", " ");
                                temp.DataValue = tr.ChildNodes[3].InnerText.Replace("&nbsp;", " ");
                                temp.EffectiveDate = EffectiveTime;
-                               temp.Job_Id = job_id;
+                               temp.job_run_id = job_id;
                                temp.Stock_Id = stock_id;
                                rType.Add(temp);
                            }

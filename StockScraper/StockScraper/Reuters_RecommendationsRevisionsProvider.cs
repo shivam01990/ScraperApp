@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using DLL;
 namespace StockScraper
 {
-    public class Reuters_RecommendationsRevisionsProvider
+    public class reuters_RecommendationsRevisionsProvider
     {
-        public static List<Reuters_RecommendationsRevisions> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<reuters_RecommendationsRevisions> GetData(HtmlDocument doc, int job_id, int stock_id)
         {
-            List<Reuters_RecommendationsRevisions> rType = new List<Reuters_RecommendationsRevisions>();
+            List<reuters_RecommendationsRevisions> rType = new List<reuters_RecommendationsRevisions>();
             HtmlNodeCollection rowcollection = doc.DocumentNode.SelectNodes("//div[contains(@class, 'column1') and contains(@class, 'gridPanel') and contains(@class, 'grid8')]//div[@class='module']");
 
             if (rowcollection.Count > 0)
@@ -35,7 +35,7 @@ namespace StockScraper
 
                     for (int k = 1; k < tblrows.Count; k++)
                     {
-                        Reuters_RecommendationsRevisions temp = new Reuters_RecommendationsRevisions();
+                        reuters_RecommendationsRevisions temp = new reuters_RecommendationsRevisions();
                         HtmlNode tr = tblrows[k];
                         if (tr.ChildNodes.Count() == 11)
                         {
@@ -47,7 +47,7 @@ namespace StockScraper
                                 temp.AnalystRecommend_Month_2 = tr.ChildNodes[7].InnerText;
                                 temp.AnalystRecommend_Month_3 = tr.ChildNodes[9].InnerText;
                                 temp.LastRecommendationDate = lastUpdated;
-                                temp.Job_Id = job_id;
+                                temp.job_run_Id = job_id;
                                 temp.Stock_Id = stock_id;
                                 rType.Add(temp);
                             }

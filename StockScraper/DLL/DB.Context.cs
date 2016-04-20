@@ -25,25 +25,35 @@ namespace DLL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Finviz_Financials> Finviz_Financials { get; set; }
-        public virtual DbSet<Finviz_Insider_Trading> Finviz_Insider_Trading { get; set; }
-        public virtual DbSet<Finviz_Recommendations> Finviz_Recommendations { get; set; }
-        public virtual DbSet<ft_Financials_MgmtEffectiveness> ft_Financials_MgmtEffectiveness { get; set; }
-        public virtual DbSet<Job> Jobs { get; set; }
-        public virtual DbSet<Log> Logs { get; set; }
-        public virtual DbSet<Markets_Financials> Markets_Financials { get; set; }
-        public virtual DbSet<Markets_Financials_Types> Markets_Financials_Types { get; set; }
-        public virtual DbSet<News> News { get; set; }
-        public virtual DbSet<Reuters_Financials_Dividends> Reuters_Financials_Dividends { get; set; }
-        public virtual DbSet<Reuters_Financials_Efficiencies> Reuters_Financials_Efficiencies { get; set; }
-        public virtual DbSet<Reuters_Financials_GrowthRates> Reuters_Financials_GrowthRates { get; set; }
-        public virtual DbSet<Reuters_Financials_Institutions> Reuters_Financials_Institutions { get; set; }
-        public virtual DbSet<Reuters_Financials_MgmtEffectiveness> Reuters_Financials_MgmtEffectiveness { get; set; }
-        public virtual DbSet<Reuters_Financials_ProfitabilityRatios> Reuters_Financials_ProfitabilityRatios { get; set; }
-        public virtual DbSet<Reuters_Financials_SalesEstimates> Reuters_Financials_SalesEstimates { get; set; }
-        public virtual DbSet<Reuters_Financials_Strength> Reuters_Financials_Strength { get; set; }
-        public virtual DbSet<Reuters_Financials_ValuationRatios> Reuters_Financials_ValuationRatios { get; set; }
-        public virtual DbSet<Reuters_RecommendationsRevisions> Reuters_RecommendationsRevisions { get; set; }
-        public virtual DbSet<Stock> Stocks { get; set; }
+        public virtual DbSet<finviz_Financials> finviz_Financials { get; set; }
+        public virtual DbSet<finviz_Insider_Trading> finviz_Insider_Trading { get; set; }
+        public virtual DbSet<finviz_Market_Movers> finviz_Market_Movers { get; set; }
+        public virtual DbSet<finviz_News> finviz_News { get; set; }
+        public virtual DbSet<finviz_Recommendations> finviz_Recommendations { get; set; }
+        public virtual DbSet<ft_fin_common_stock_dividends> ft_fin_common_stock_dividends { get; set; }
+        public virtual DbSet<ft_fin_eps_reconciliation> ft_fin_eps_reconciliation { get; set; }
+        public virtual DbSet<ft_fin_incometaxes_minorityinterest_extras> ft_fin_incometaxes_minorityinterest_extras { get; set; }
+        public virtual DbSet<ft_fin_normalized_income> ft_fin_normalized_income { get; set; }
+        public virtual DbSet<ft_fin_operating_expenses> ft_fin_operating_expenses { get; set; }
+        public virtual DbSet<ft_fin_proforma_income> ft_fin_proforma_income { get; set; }
+        public virtual DbSet<ft_fin_revenue_and_gross_profit> ft_fin_revenue_and_gross_profit { get; set; }
+        public virtual DbSet<ft_fin_supplemetal_income> ft_fin_supplemetal_income { get; set; }
+        public virtual DbSet<ft_forecasts_prices> ft_forecasts_prices { get; set; }
+        public virtual DbSet<ft_forecasts_recommendations> ft_forecasts_recommendations { get; set; }
+        public virtual DbSet<reuters_Financials_Dividends> reuters_Financials_Dividends { get; set; }
+        public virtual DbSet<reuters_Financials_Efficiencies> reuters_Financials_Efficiencies { get; set; }
+        public virtual DbSet<reuters_Financials_GrowthRates> reuters_Financials_GrowthRates { get; set; }
+        public virtual DbSet<reuters_Financials_Institutions> reuters_Financials_Institutions { get; set; }
+        public virtual DbSet<reuters_Financials_MgmtEffectiveness> reuters_Financials_MgmtEffectiveness { get; set; }
+        public virtual DbSet<reuters_Financials_ProfitabilityRatios> reuters_Financials_ProfitabilityRatios { get; set; }
+        public virtual DbSet<reuters_Financials_SalesEstimates> reuters_Financials_SalesEstimates { get; set; }
+        public virtual DbSet<reuters_Financials_Strength> reuters_Financials_Strength { get; set; }
+        public virtual DbSet<reuters_Financials_ValuationRatios> reuters_Financials_ValuationRatios { get; set; }
+        public virtual DbSet<reuters_RecommendationsRevisions> reuters_RecommendationsRevisions { get; set; }
+        public virtual DbSet<ws_Jobs> ws_Jobs { get; set; }
+        public virtual DbSet<ws_Logs> ws_Logs { get; set; }
+        public virtual DbSet<ws_Stocks> ws_Stocks { get; set; }
+        public virtual DbSet<Stocks_TXT_NASDAQ> Stocks_TXT_NASDAQ { get; set; }
+        public virtual DbSet<Stocks_TXT_NYSE> Stocks_TXT_NYSE { get; set; }
     }
 }

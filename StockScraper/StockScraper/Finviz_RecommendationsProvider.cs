@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace StockScraper
 {
-    public class Finviz_RecommendationsProvider
+    public class finviz_RecommendationsProvider
     {
-        public static List<Finviz_Recommendations> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<finviz_Recommendations> GetData(HtmlDocument doc, int job_id, int stock_id)
         {
-            List<Finviz_Recommendations> rType = new List<Finviz_Recommendations>();
+            List<finviz_Recommendations> rType = new List<finviz_Recommendations>();
 
 
             var tblrows1 = doc.DocumentNode.SelectNodes("//table[@class='fullview-ratings-outer']//tr[@class='body-table-rating-neutral']//tr");
@@ -26,14 +26,14 @@ namespace StockScraper
                         try
                         {
 
-                            Finviz_Recommendations temp = new Finviz_Recommendations();
+                            finviz_Recommendations temp = new finviz_Recommendations();
                             temp.Date = tr1.ChildNodes[0].InnerText;
                             temp.RecommendationType = tr1.ChildNodes[1].InnerText;
                             temp.Analyst = tr1.ChildNodes[3].InnerText;
                             temp.Recommendation = tr1.ChildNodes[5].InnerText;
                             temp.Target = tr1.ChildNodes[7].InnerText;
-                            temp.Stock_Id = stock_id;
-                            temp.Job_Id = job_id;
+                            temp.Stock_id = stock_id;
+                            temp.Job_run_id = job_id;
                             rType.Add(temp);
                         }
                         catch

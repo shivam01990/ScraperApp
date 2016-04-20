@@ -7,36 +7,36 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Reuters_Financials_DividendsServices
+    public class reuters_Financials_DividendsServices
     {
         #region--Instance--
-        public static Reuters_Financials_DividendsServices Instance = new Reuters_Financials_DividendsServices();        
+        public static reuters_Financials_DividendsServices Instance = new reuters_Financials_DividendsServices();        
         #endregion
 
         #region--Save Reuters Financials Dividends--
-        public int Save_Reuters_Financials_Dividends(Reuters_Financials_Dividends rr)
+        public int Save_Reuters_Financials_Dividends(reuters_Financials_Dividends rr)
         {
             int Reuters_FinancialsDividend_Id = 0;
             using (DBEntities db = new DBEntities())
             {               
                 if (rr.Reuters_FinancialsDividend_Id > 0)
                 {
-                    Reuters_Financials_Dividends temp = db.Reuters_Financials_Dividends.Where(u => u.Reuters_FinancialsDividend_Id == rr.Reuters_FinancialsDividend_Id).FirstOrDefault();
+                    reuters_Financials_Dividends temp = db.reuters_Financials_Dividends.Where(u => u.Reuters_FinancialsDividend_Id == rr.Reuters_FinancialsDividend_Id).FirstOrDefault();
 
                     if (temp != null)
                     {
                         temp.Stock_Id = rr.Stock_Id;
-                        temp.Job_Id = rr.Job_Id;
+                        temp.run_job_Id = rr.run_job_Id;
                         temp.EffectiveDate = rr.EffectiveDate;
                         temp.Title = rr.Title;
                         temp.Company = rr.Company;
                         temp.Industry = rr.Industry;
-                        temp.Stock = rr.Stock;
+                        temp.Sector = rr.Sector;
                     }
                 }
                 else
                 {
-                    db.Reuters_Financials_Dividends.Add(rr);
+                    db.reuters_Financials_Dividends.Add(rr);
                 }
 
                 int x = db.SaveChanges();

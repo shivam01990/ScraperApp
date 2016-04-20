@@ -50,13 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JobServices.cs" />
-    <Compile Include="LogServices.cs" />
-    <Compile Include="Reuters_Financials_DividendsServices.cs" />
-    <Compile Include="Reuters_Financials_EfficienciesServices.cs" />
-    <Compile Include="Reuters_Financials_GrowthRatesServices.cs" />
-    <Compile Include="Reuters_Financials_MgmtEffectivenessServices.cs" />
-    <Compile Include="StockServices.cs" />
+    <Compile Include="ws_JobsServices.cs" />
+    <Compile Include="ws_LogsServices.cs" />
+    <Compile Include="reuters_Financials_DividendsServices.cs" />
+    <Compile Include="reuters_Financials_EfficienciesServices.cs" />
+    <Compile Include="reuters_Financials_GrowthRatesRatesServices.cs" />
+    <Compile Include="reuters_Financials_MgmtEffectivenessServices.cs" />
+    <Compile Include="ws_StocksServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

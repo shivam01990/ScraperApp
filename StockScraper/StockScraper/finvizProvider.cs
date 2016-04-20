@@ -16,10 +16,10 @@ namespace StockScraper
             HtmlWeb web = new HtmlWeb();
             string finvizUrl = Helper.finvizUrl(ticker);
             HtmlDocument doc = web.Load(finvizUrl);
-            //Finviz_FinancialsProvider.GetData(doc, 0, 0);
-            //Finviz_RecommendationsProvider.GetData(doc, 0, 0);
-            NewsProvider.GetData(doc, 0, 0);
-         
+            //finviz_FinancialsProvider.GetData(doc, 0, 0);
+            //finviz_RecommendationsProvider.GetData(doc, 0, 0);
+            //NewsProvider.GetData(doc, 0, 0);
+            finviz_Insider_TradingProvider.GetData(doc, 0, 0);
         }
     }
 }

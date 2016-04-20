@@ -12,8 +12,8 @@ namespace StockScraper
         {
             //ReutersProvider.StartImport();
             //MarketsProvider.StartImport();
-            finvizProvider.StartImport();
-           
+            //finvizProvider.StartImport();
+            finviz_Market_MoversProvider.GetData(0);
         }
     }
 }
