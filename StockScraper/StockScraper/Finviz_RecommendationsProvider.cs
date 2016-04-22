@@ -10,9 +10,9 @@ namespace StockScraper
 {
     public class finviz_RecommendationsProvider
     {
-        public static List<finviz_Recommendations> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<fin_Recommendations> GetData(HtmlDocument doc, int job_id, int stock_id)
         {
-            List<finviz_Recommendations> rType = new List<finviz_Recommendations>();
+            List<fin_Recommendations> rType = new List<fin_Recommendations>();
 
 
             var tblrows1 = doc.DocumentNode.SelectNodes("//table[@class='fullview-ratings-outer']//tr[@class='body-table-rating-neutral']//tr");
@@ -26,7 +26,7 @@ namespace StockScraper
                         try
                         {
 
-                            finviz_Recommendations temp = new finviz_Recommendations();
+                            fin_Recommendations temp = new fin_Recommendations();
                             temp.Date = tr1.ChildNodes[0].InnerText;
                             temp.RecommendationType = tr1.ChildNodes[1].InnerText;
                             temp.Analyst = tr1.ChildNodes[3].InnerText;

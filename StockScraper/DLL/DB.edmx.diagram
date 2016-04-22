@@ -5,34 +5,34 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="18b82138a1494634b2547c4458f08465" Name="Diagram1" ZoomLevel="70">
-        <EntityTypeShape EntityType="DBModel.finviz_Financials" Width="1.5" PointX="12" PointY="54" />
-        <EntityTypeShape EntityType="DBModel.finviz_Insider_Trading" Width="1.5" PointX="15" PointY="53.625" />
-        <EntityTypeShape EntityType="DBModel.finviz_Market_Movers" Width="1.5" PointX="3" PointY="146.5" />
-        <EntityTypeShape EntityType="DBModel.finviz_News" Width="1.5" PointX="12" PointY="50" />
-        <EntityTypeShape EntityType="DBModel.finviz_Recommendations" Width="1.5" PointX="3" PointY="58" />
-        <EntityTypeShape EntityType="DBModel.ft_fin_common_stock_dividends" Width="1.5" PointX="6" PointY="66" />
-        <EntityTypeShape EntityType="DBModel.ft_fin_eps_reconciliation" Width="1.5" PointX="9" PointY="54" />
-        <EntityTypeShape EntityType="DBModel.ft_fin_incometaxes_minorityinterest_extras" Width="1.5" PointX="9" PointY="50" />
-        <EntityTypeShape EntityType="DBModel.ft_fin_normalized_income" Width="1.5" PointX="9" PointY="46" />
-        <EntityTypeShape EntityType="DBModel.ft_fin_operating_expenses" Width="1.5" PointX="9" PointY="58" />
-        <EntityTypeShape EntityType="DBModel.ft_fin_proforma_income" Width="1.5" PointX="9" PointY="62" />
+        <EntityTypeShape EntityType="DBModel.fin_Financials" Width="1.5" PointX="3" PointY="58" />
+        <EntityTypeShape EntityType="DBModel.fin_Insider_Trading" Width="1.5" PointX="9" PointY="53.625" />
+        <EntityTypeShape EntityType="DBModel.fin_Market_Movers" Width="1.5" PointX="3" PointY="138.75" />
+        <EntityTypeShape EntityType="DBModel.fin_News" Width="1.5" PointX="9" PointY="49" />
+        <EntityTypeShape EntityType="DBModel.fin_Recommendations" Width="1.5" PointX="6" PointY="46" />
+        <EntityTypeShape EntityType="DBModel.ft_fin_common_stock_dividends" Width="1.5" PointX="12" PointY="54" />
+        <EntityTypeShape EntityType="DBModel.ft_fin_eps_reconciliation" Width="1.5" PointX="3" PointY="42" />
+        <EntityTypeShape EntityType="DBModel.ft_fin_incometaxes_minorityinterest_extras" Width="1.5" PointX="12" PointY="50" />
+        <EntityTypeShape EntityType="DBModel.ft_fin_normalized_income" Width="1.5" PointX="6" PointY="66" />
+        <EntityTypeShape EntityType="DBModel.ft_fin_operating_expenses" Width="1.5" PointX="6" PointY="58" />
+        <EntityTypeShape EntityType="DBModel.ft_fin_proforma_income" Width="1.5" PointX="3" PointY="54" />
         <EntityTypeShape EntityType="DBModel.ft_fin_revenue_and_gross_profit" Width="1.5" PointX="3" PointY="50" />
-        <EntityTypeShape EntityType="DBModel.ft_fin_supplemetal_income" Width="1.5" PointX="3" PointY="46" />
-        <EntityTypeShape EntityType="DBModel.ft_forecasts_prices" Width="1.5" PointX="12" PointY="58" />
-        <EntityTypeShape EntityType="DBModel.ft_forecasts_recommendations" Width="1.5" PointX="6" PointY="45.875" />
-        <EntityTypeShape EntityType="DBModel.reuters_Financials_Dividends" Width="1.5" PointX="6" PointY="42" />
-        <EntityTypeShape EntityType="DBModel.reuters_Financials_Efficiencies" Width="1.5" PointX="12" PointY="62" />
-        <EntityTypeShape EntityType="DBModel.reuters_Financials_GrowthRates" Width="1.5" PointX="6" PointY="54" />
-        <EntityTypeShape EntityType="DBModel.reuters_Financials_Institutions" Width="1.5" PointX="3" PointY="54.125" />
-        <EntityTypeShape EntityType="DBModel.reuters_Financials_MgmtEffectiveness" Width="1.5" PointX="3" PointY="42" />
-        <EntityTypeShape EntityType="DBModel.reuters_Financials_ProfitabilityRatios" Width="1.5" PointX="6" PointY="50" />
-        <EntityTypeShape EntityType="DBModel.reuters_Financials_SalesEstimates" Width="1.5" PointX="3" PointY="62.75" />
-        <EntityTypeShape EntityType="DBModel.reuters_Financials_Strength" Width="1.5" PointX="6" PointY="58" />
-        <EntityTypeShape EntityType="DBModel.reuters_Financials_ValuationRatios" Width="1.5" PointX="12" PointY="46" />
+        <EntityTypeShape EntityType="DBModel.ft_fin_supplemetal_income" Width="1.5" PointX="6" PointY="54" />
+        <EntityTypeShape EntityType="DBModel.ft_forecasts_prices" Width="1.5" PointX="15" PointY="54" />
+        <EntityTypeShape EntityType="DBModel.ft_forecasts_recommendations" Width="1.5" PointX="6" PointY="49.875" />
+        <EntityTypeShape EntityType="DBModel.reuters_Financials_Dividends" Width="1.5" PointX="9" PointY="59" />
+        <EntityTypeShape EntityType="DBModel.reuters_Financials_Efficiencies" Width="1.5" PointX="12" PointY="58" />
+        <EntityTypeShape EntityType="DBModel.reuters_Financials_GrowthRates" Width="1.5" PointX="9" PointY="45" />
+        <EntityTypeShape EntityType="DBModel.reuters_Financials_Institutions" Width="1.5" PointX="12" PointY="62.125" />
+        <EntityTypeShape EntityType="DBModel.reuters_Financials_MgmtEffectiveness" Width="1.5" PointX="9" PointY="63" />
+        <EntityTypeShape EntityType="DBModel.reuters_Financials_ProfitabilityRatios" Width="1.5" PointX="12" PointY="46" />
+        <EntityTypeShape EntityType="DBModel.reuters_Financials_SalesEstimates" Width="1.5" PointX="3" PointY="61.75" />
+        <EntityTypeShape EntityType="DBModel.reuters_Financials_Strength" Width="1.5" PointX="3" PointY="46" />
+        <EntityTypeShape EntityType="DBModel.reuters_Financials_ValuationRatios" Width="1.5" PointX="6" PointY="42" />
         <EntityTypeShape EntityType="DBModel.reuters_RecommendationsRevisions" Width="1.5" PointX="6" PointY="61.875" />
         <EntityTypeShape EntityType="DBModel.ws_Jobs" Width="1.5" PointX="0.75" PointY="52.375" />
         <EntityTypeShape EntityType="DBModel.ws_Logs" Width="1.5" PointX="3" PointY="150" />
-        <EntityTypeShape EntityType="DBModel.ws_Stocks" Width="1.5" PointX="3.75" PointY="32.5" />
+        <EntityTypeShape EntityType="DBModel.ws_Stocks" Width="1.5" PointX="0.75" PointY="39.5" />
         <EntityTypeShape EntityType="DBModel.Stocks_TXT_NASDAQ" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="DBModel.Stocks_TXT_NYSE" Width="1.5" PointX="2.75" PointY="0.75" />
         <AssociationConnector Association="DBModel.FK_Finviz_Financials_Jobs" />

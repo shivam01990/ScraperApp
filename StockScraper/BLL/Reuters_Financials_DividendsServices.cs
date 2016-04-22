@@ -14,9 +14,9 @@ namespace BLL
         #endregion
 
         #region--Save Reuters Financials Dividends--
-        public int Save_Reuters_Financials_Dividends(reuters_Financials_Dividends rr)
+        public long Save_Reuters_Financials_Dividends(reuters_Financials_Dividends rr)
         {
-            int Reuters_FinancialsDividend_Id = 0;
+            long Reuters_FinancialsDividend_Id = 0;
             using (DBEntities db = new DBEntities())
             {               
                 if (rr.Reuters_FinancialsDividend_Id > 0)

@@ -10,9 +10,9 @@ namespace StockScraper
 {
     public class NewsProvider
     {
-        public static List<finviz_News> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<fin_News> GetData(HtmlDocument doc, int job_id, int stock_id)
         {
-            List<finviz_News> rType = new List<finviz_News>();
+            List<fin_News> rType = new List<fin_News>();
 
             var tblrows1 = doc.DocumentNode.SelectNodes("//table[@id='news-table']//tr");
             if (tblrows1 != null)
@@ -25,7 +25,7 @@ namespace StockScraper
                         try
                         {
 
-                            finviz_News temp = new finviz_News();
+                            fin_News temp = new fin_News();
                             string _date = tr1.ChildNodes[0].InnerText.Replace("&nbsp;", " "); ;
                             try
                             {

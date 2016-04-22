@@ -14,9 +14,9 @@ namespace BLL
         #endregion
 
         #region--save Reuters Financials GrowthRates--
-        public int Save_Reuters_Financials_Efficiencies(reuters_Financials_GrowthRates rr)
+        public long Save_Reuters_Financials_Efficiencies(reuters_Financials_GrowthRates rr)
         {
-            int Reuters_FinancialsEfficiency_Id = 0;
+            long Reuters_FinancialsEfficiency_Id = 0;
             using (DBEntities db = new DBEntities())
             {
                 if (rr.Reuters_FinancialsGrowthRate_Id > 0)

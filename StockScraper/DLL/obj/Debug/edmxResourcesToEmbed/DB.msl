@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
-    <EntitySetMapping Name="finviz_Financials">
-      <EntityTypeMapping TypeName="DBModel.finviz_Financials">
-        <MappingFragment StoreEntitySet="finviz_Financials">
+    <EntitySetMapping Name="fin_Financials">
+      <EntityTypeMapping TypeName="DBModel.fin_Financials">
+        <MappingFragment StoreEntitySet="fin_Financials">
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
           <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
@@ -15,9 +15,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="finviz_Insider_Trading">
-      <EntityTypeMapping TypeName="DBModel.finviz_Insider_Trading">
-        <MappingFragment StoreEntitySet="finviz_Insider_Trading">
+    <EntitySetMapping Name="fin_Insider_Trading">
+      <EntityTypeMapping TypeName="DBModel.fin_Insider_Trading">
+        <MappingFragment StoreEntitySet="fin_Insider_Trading">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="SECForm4" ColumnName="SECForm4" />
           <ScalarProperty Name="Shares_Total" ColumnName="Shares_Total" />
@@ -34,9 +34,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="finviz_Market_Movers">
-      <EntityTypeMapping TypeName="DBModel.finviz_Market_Movers">
-        <MappingFragment StoreEntitySet="finviz_Market_Movers">
+    <EntitySetMapping Name="fin_Market_Movers">
+      <EntityTypeMapping TypeName="DBModel.fin_Market_Movers">
+        <MappingFragment StoreEntitySet="fin_Market_Movers">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Signal" ColumnName="Signal" />
           <ScalarProperty Name="Volume" ColumnName="Volume" />
@@ -48,9 +48,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="finviz_News">
-      <EntityTypeMapping TypeName="DBModel.finviz_News">
-        <MappingFragment StoreEntitySet="finviz_News">
+    <EntitySetMapping Name="fin_News">
+      <EntityTypeMapping TypeName="DBModel.fin_News">
+        <MappingFragment StoreEntitySet="fin_News">
           <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
           <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
@@ -62,9 +62,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="finviz_Recommendations">
-      <EntityTypeMapping TypeName="DBModel.finviz_Recommendations">
-        <MappingFragment StoreEntitySet="finviz_Recommendations">
+    <EntitySetMapping Name="fin_Recommendations">
+      <EntityTypeMapping TypeName="DBModel.fin_Recommendations">
+        <MappingFragment StoreEntitySet="fin_Recommendations">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Target" ColumnName="Target" />
           <ScalarProperty Name="Recommendation" ColumnName="Recommendation" />

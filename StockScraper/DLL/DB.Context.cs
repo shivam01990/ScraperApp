@@ -25,11 +25,11 @@ namespace DLL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<finviz_Financials> finviz_Financials { get; set; }
-        public virtual DbSet<finviz_Insider_Trading> finviz_Insider_Trading { get; set; }
-        public virtual DbSet<finviz_Market_Movers> finviz_Market_Movers { get; set; }
-        public virtual DbSet<finviz_News> finviz_News { get; set; }
-        public virtual DbSet<finviz_Recommendations> finviz_Recommendations { get; set; }
+        public virtual DbSet<fin_Financials> fin_Financials { get; set; }
+        public virtual DbSet<fin_Insider_Trading> fin_Insider_Trading { get; set; }
+        public virtual DbSet<fin_Market_Movers> fin_Market_Movers { get; set; }
+        public virtual DbSet<fin_News> fin_News { get; set; }
+        public virtual DbSet<fin_Recommendations> fin_Recommendations { get; set; }
         public virtual DbSet<ft_fin_common_stock_dividends> ft_fin_common_stock_dividends { get; set; }
         public virtual DbSet<ft_fin_eps_reconciliation> ft_fin_eps_reconciliation { get; set; }
         public virtual DbSet<ft_fin_incometaxes_minorityinterest_extras> ft_fin_incometaxes_minorityinterest_extras { get; set; }

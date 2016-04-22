@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="finviz_Financials">
+  <EntityType Name="fin_Financials">
     <Key>
       <PropertyRef Name="Finviz_FinancialId" />
     </Key>
@@ -13,7 +13,7 @@
     <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <EntityType Name="finviz_Insider_Trading">
+  <EntityType Name="fin_Insider_Trading">
     <Key>
       <PropertyRef Name="Finviz_Insider_TradingId" />
     </Key>
@@ -31,7 +31,7 @@
     <Property Name="SECForm4" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" />
   </EntityType>
-  <EntityType Name="finviz_Market_Movers">
+  <EntityType Name="fin_Market_Movers">
     <Key>
       <PropertyRef Name="Market_Movers_Id" />
     </Key>
@@ -44,7 +44,7 @@
     <Property Name="Signal" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <EntityType Name="finviz_News">
+  <EntityType Name="fin_News">
     <Key>
       <PropertyRef Name="NewsId" />
     </Key>
@@ -57,7 +57,7 @@
     <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <EntityType Name="finviz_Recommendations">
+  <EntityType Name="fin_Recommendations">
     <Key>
       <PropertyRef Name="RecommendationId" />
     </Key>
@@ -215,7 +215,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsDividend_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsDividend_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsDividend_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="run_job_Id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="nvarchar" MaxLength="30" />
@@ -229,7 +229,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsEfficiency_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsEfficiency_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsEfficiency_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="run_job_id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
@@ -243,7 +243,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsGrowthRate_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsGrowthRate_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsGrowthRate_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="run_job_id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="30" />
@@ -257,7 +257,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsInstitutions_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsInstitutions_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsInstitutions_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="30" Nullable="false" />
@@ -269,7 +269,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsMgmtEffectiveness_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsMgmtEffectiveness_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsMgmtEffectiveness_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_Id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="30" Nullable="false" />
@@ -297,7 +297,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsSalesEstimates_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsSalesEstimates_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsSalesEstimates_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="nvarchar" MaxLength="30" />
@@ -313,7 +313,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsStrength_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsStrength_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsStrength_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_Id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
@@ -327,7 +327,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsValuationRatio_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsValuationRatio_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsValuationRatio_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_Id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
@@ -413,84 +413,84 @@ warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a pri
   </EntityType>
   <Association Name="FK_Finviz_Financials_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="finviz_Financials" Type="Self.finviz_Financials" Multiplicity="*" />
+    <End Role="fin_Financials" Type="Self.fin_Financials" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="finviz_Financials">
+      <Dependent Role="fin_Financials">
         <PropertyRef Name="job_run_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Finviz_Financials_Stocks">
     <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="finviz_Financials" Type="Self.finviz_Financials" Multiplicity="*" />
+    <End Role="fin_Financials" Type="Self.fin_Financials" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="finviz_Financials">
+      <Dependent Role="fin_Financials">
         <PropertyRef Name="Stock_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_finviz_Insider_Trading_ws_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="finviz_Insider_Trading" Type="Self.finviz_Insider_Trading" Multiplicity="*" />
+    <End Role="fin_Insider_Trading" Type="Self.fin_Insider_Trading" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="finviz_Insider_Trading">
+      <Dependent Role="fin_Insider_Trading">
         <PropertyRef Name="Job_run_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_finviz_Insider_Trading_ws_Stocks">
     <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="finviz_Insider_Trading" Type="Self.finviz_Insider_Trading" Multiplicity="*" />
+    <End Role="fin_Insider_Trading" Type="Self.fin_Insider_Trading" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="finviz_Insider_Trading">
+      <Dependent Role="fin_Insider_Trading">
         <PropertyRef Name="stock_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_finviz_MARKET_MOVERS_ws_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="finviz_Market_Movers" Type="Self.finviz_Market_Movers" Multiplicity="*" />
+    <End Role="fin_Market_Movers" Type="Self.fin_Market_Movers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="finviz_Market_Movers">
+      <Dependent Role="fin_Market_Movers">
         <PropertyRef Name="Job_run_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_finviz_Recommendations_ws_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="finviz_Recommendations" Type="Self.finviz_Recommendations" Multiplicity="*" />
+    <End Role="fin_Recommendations" Type="Self.fin_Recommendations" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="finviz_Recommendations">
+      <Dependent Role="fin_Recommendations">
         <PropertyRef Name="Job_run_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_finviz_Recommendations_ws_Stocks">
     <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="finviz_Recommendations" Type="Self.finviz_Recommendations" Multiplicity="*" />
+    <End Role="fin_Recommendations" Type="Self.fin_Recommendations" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="finviz_Recommendations">
+      <Dependent Role="fin_Recommendations">
         <PropertyRef Name="Stock_id" />
       </Dependent>
     </ReferentialConstraint>
@@ -749,24 +749,24 @@ warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a pri
   </Association>
   <Association Name="FK_News_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="finviz_News" Type="Self.finviz_News" Multiplicity="*" />
+    <End Role="fin_News" Type="Self.fin_News" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="finviz_News">
+      <Dependent Role="fin_News">
         <PropertyRef Name="Job_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_News_Stocks1">
     <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="finviz_News" Type="Self.finviz_News" Multiplicity="*" />
+    <End Role="fin_News" Type="Self.fin_News" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="finviz_News">
+      <Dependent Role="fin_News">
         <PropertyRef Name="Stock_Id" />
       </Dependent>
     </ReferentialConstraint>
@@ -1012,11 +1012,11 @@ warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a pri
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="DBModelStoreContainer">
-    <EntitySet Name="finviz_Financials" EntityType="Self.finviz_Financials" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="finviz_Insider_Trading" EntityType="Self.finviz_Insider_Trading" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="finviz_Market_Movers" EntityType="Self.finviz_Market_Movers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="finviz_News" EntityType="Self.finviz_News" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="finviz_Recommendations" EntityType="Self.finviz_Recommendations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fin_Financials" EntityType="Self.fin_Financials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fin_Insider_Trading" EntityType="Self.fin_Insider_Trading" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fin_Market_Movers" EntityType="Self.fin_Market_Movers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fin_News" EntityType="Self.fin_News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fin_Recommendations" EntityType="Self.fin_Recommendations" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ft_fin_common_stock_dividends" EntityType="Self.ft_fin_common_stock_dividends" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ft_fin_eps_reconciliation" EntityType="Self.ft_fin_eps_reconciliation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ft_fin_incometaxes_minorityinterest_extras" EntityType="Self.ft_fin_incometaxes_minorityinterest_extras" Schema="dbo" store:Type="Tables" />
@@ -1058,31 +1058,31 @@ warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a pri
     </EntitySet>
     <AssociationSet Name="FK_Finviz_Financials_Jobs" Association="Self.FK_Finviz_Financials_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="finviz_Financials" EntitySet="finviz_Financials" />
+      <End Role="fin_Financials" EntitySet="fin_Financials" />
     </AssociationSet>
     <AssociationSet Name="FK_Finviz_Financials_Stocks" Association="Self.FK_Finviz_Financials_Stocks">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="finviz_Financials" EntitySet="finviz_Financials" />
+      <End Role="fin_Financials" EntitySet="fin_Financials" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_Insider_Trading_ws_Jobs" Association="Self.FK_finviz_Insider_Trading_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="finviz_Insider_Trading" EntitySet="finviz_Insider_Trading" />
+      <End Role="fin_Insider_Trading" EntitySet="fin_Insider_Trading" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_Insider_Trading_ws_Stocks" Association="Self.FK_finviz_Insider_Trading_ws_Stocks">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="finviz_Insider_Trading" EntitySet="finviz_Insider_Trading" />
+      <End Role="fin_Insider_Trading" EntitySet="fin_Insider_Trading" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_MARKET_MOVERS_ws_Jobs" Association="Self.FK_finviz_MARKET_MOVERS_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="finviz_Market_Movers" EntitySet="finviz_Market_Movers" />
+      <End Role="fin_Market_Movers" EntitySet="fin_Market_Movers" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_Recommendations_ws_Jobs" Association="Self.FK_finviz_Recommendations_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="finviz_Recommendations" EntitySet="finviz_Recommendations" />
+      <End Role="fin_Recommendations" EntitySet="fin_Recommendations" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_Recommendations_ws_Stocks" Association="Self.FK_finviz_Recommendations_ws_Stocks">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="finviz_Recommendations" EntitySet="finviz_Recommendations" />
+      <End Role="fin_Recommendations" EntitySet="fin_Recommendations" />
     </AssociationSet>
     <AssociationSet Name="FK_ft_fin_common_stock_dividends_ws_Jobs" Association="Self.FK_ft_fin_common_stock_dividends_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
@@ -1170,11 +1170,11 @@ warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a pri
     </AssociationSet>
     <AssociationSet Name="FK_News_Jobs" Association="Self.FK_News_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="finviz_News" EntitySet="finviz_News" />
+      <End Role="fin_News" EntitySet="fin_News" />
     </AssociationSet>
     <AssociationSet Name="FK_News_Stocks1" Association="Self.FK_News_Stocks1">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="finviz_News" EntitySet="finviz_News" />
+      <End Role="fin_News" EntitySet="fin_News" />
     </AssociationSet>
     <AssociationSet Name="FK_Reuters_Financials_Dividends_Jobs" Association="Self.FK_Reuters_Financials_Dividends_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />

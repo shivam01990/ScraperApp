@@ -50,6 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fin_FinancialsServices.cs" />
+    <Compile Include="ft_fin_common_stock_dividendsServices.cs" />
+    <Compile Include="ft_fin_eps_reconciliationServices.cs" />
+    <Compile Include="ft_fin_incometaxes_minorityinterest_extrasServices.cs" />
+    <Compile Include="ft_fin_normalized_incomeServices.cs" />
+    <Compile Include="ft_fin_operating_expensesServices.cs" />
+    <Compile Include="ft_fin_proforma_incomeServices.cs" />
+    <Compile Include="ft_fin_revenue_and_gross_profitServices.cs" />
+    <Compile Include="ft_fin_supplemetal_incomeServices.cs" />
+    <Compile Include="ft_forecasts_pricesServices.cs" />
+    <Compile Include="ft_forecasts_recommendationsServices.cs" />
+    <Compile Include="reuters_Financials_InstitutionsServices.cs" />
+    <Compile Include="reuters_Financials_ProfitabilityRatios_Services.cs" />
+    <Compile Include="reuters_Financials_SalesEstimatesSevices.cs" />
+    <Compile Include="reuters_Financials_StrengthServices.cs" />
+    <Compile Include="reuters_Financials_ValuationRatiosServices.cs" />
+    <Compile Include="reuters_RecommendationsRevisionsServices.cs" />
     <Compile Include="ws_JobsServices.cs" />
     <Compile Include="ws_LogsServices.cs" />
     <Compile Include="reuters_Financials_DividendsServices.cs" />

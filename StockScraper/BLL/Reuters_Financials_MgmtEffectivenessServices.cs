@@ -14,9 +14,9 @@ namespace BLL
        #endregion
 
        #region-- Get Reuters Financials MgmtEffectiveness--
-       public int Save_Reuters_Financials_Efficiencies(reuters_Financials_MgmtEffectiveness rr)
+       public long Save_Reuters_Financials_Efficiencies(reuters_Financials_MgmtEffectiveness rr)
        {
-           int Reuters_FinancialsEfficiency_Id = 0;
+           long Reuters_FinancialsEfficiency_Id = 0;
            using (DBEntities db = new DBEntities())
            {
                if (rr.Reuters_FinancialsMgmtEffectiveness_Id > 0)

@@ -65,19 +65,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="finviz_Financials.cs">
+    <Compile Include="fin_Financials.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="finviz_Insider_Trading.cs">
+    <Compile Include="fin_Insider_Trading.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="finviz_Market_Movers.cs">
+    <Compile Include="fin_Market_Movers.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="finviz_News.cs">
+    <Compile Include="fin_News.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="finviz_Recommendations.cs">
+    <Compile Include="fin_Recommendations.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="ft_fin_common_stock_dividends.cs">

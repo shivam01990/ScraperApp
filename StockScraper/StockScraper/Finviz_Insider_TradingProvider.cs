@@ -10,9 +10,9 @@ namespace StockScraper
 {
     public class finviz_Insider_TradingProvider
     {
-        public static List<finviz_Insider_Trading> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<fin_Insider_Trading> GetData(HtmlDocument doc, int job_id, int stock_id)
         {
-            List<finviz_Insider_Trading> rType = new List<finviz_Insider_Trading>();
+            List<fin_Insider_Trading> rType = new List<fin_Insider_Trading>();
 
 
             var tblrows1 = doc.DocumentNode.SelectNodes("//table[@class='body-table']//tr");
@@ -26,7 +26,7 @@ namespace StockScraper
                         try
                         {
 
-                            finviz_Insider_Trading temp = new finviz_Insider_Trading();
+                            fin_Insider_Trading temp = new fin_Insider_Trading();
                             temp.Insider_Trading = tr1.ChildNodes[0].InnerText;
                             temp.Relashionship = tr1.ChildNodes[1].InnerText;
                             temp.Date = tr1.ChildNodes[2].InnerText;

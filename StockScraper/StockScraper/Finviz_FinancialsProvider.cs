@@ -10,9 +10,9 @@ namespace StockScraper
 {
     public class finviz_FinancialsProvider
     {
-        public static List<finviz_Financials> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<fin_Financials> GetData(HtmlDocument doc, int job_id, int stock_id)
         {
-            List<finviz_Financials> rType = new List<finviz_Financials>();
+            List<fin_Financials> rType = new List<fin_Financials>();
 
 
             var tblrows = doc.DocumentNode.SelectNodes("//table[@class='snapshot-table2']//tr");
@@ -26,7 +26,7 @@ namespace StockScraper
                             try
                             {
                                 {
-                                    finviz_Financials temp = new finviz_Financials();
+                                    fin_Financials temp = new fin_Financials();
                                     temp.Data_Points = tr.ChildNodes[1].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[2].InnerText;
                                     temp.job_run_Id = job_id;
@@ -35,7 +35,7 @@ namespace StockScraper
                                 }
 
                                 {
-                                    finviz_Financials temp = new finviz_Financials();
+                                    fin_Financials temp = new fin_Financials();
                                     temp.Data_Points = tr.ChildNodes[4].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[5].InnerText;
                                     temp.job_run_Id = job_id;
@@ -44,7 +44,7 @@ namespace StockScraper
                                 }
 
                                 {
-                                    finviz_Financials temp = new finviz_Financials();
+                                    fin_Financials temp = new fin_Financials();
                                     temp.Data_Points = tr.ChildNodes[7].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[8].InnerText;
                                     temp.job_run_Id = job_id;
@@ -53,7 +53,7 @@ namespace StockScraper
                                 }
 
                                 {
-                                    finviz_Financials temp = new finviz_Financials();
+                                    fin_Financials temp = new fin_Financials();
                                     temp.Data_Points = tr.ChildNodes[10].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[11].InnerText;
                                     temp.job_run_Id = job_id;
@@ -61,7 +61,7 @@ namespace StockScraper
                                     rType.Add(temp);
                                 }
                                 {
-                                    finviz_Financials temp = new finviz_Financials();
+                                    fin_Financials temp = new fin_Financials();
                                     temp.Data_Points = tr.ChildNodes[13].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[14].InnerText;
                                     temp.job_run_Id = job_id;
@@ -69,7 +69,7 @@ namespace StockScraper
                                     rType.Add(temp);
                                 }
                                 {
-                                    finviz_Financials temp = new finviz_Financials();
+                                    fin_Financials temp = new fin_Financials();
                                     temp.Data_Points = tr.ChildNodes[16].InnerText.Replace("&nbsp;", " ");
                                     temp.Descriptor = tr.ChildNodes[17].InnerText;
                                     temp.job_run_Id = job_id;

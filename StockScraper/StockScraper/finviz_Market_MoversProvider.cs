@@ -10,12 +10,12 @@ namespace StockScraper
 {
     class finviz_Market_MoversProvider
     {
-        public static List<finviz_Market_Movers> GetData(int job_id)
+        public static List<fin_Market_Movers> GetData(int job_id)
         {
 
             HtmlWeb web = new HtmlWeb();
             HtmlDocument doc = web.Load("http://finviz.com/");
-            List<finviz_Market_Movers> rType = new List<finviz_Market_Movers>();
+            List<fin_Market_Movers> rType = new List<fin_Market_Movers>();
 
 
             var tblrows1 = doc.DocumentNode.SelectNodes("//table[@class='t-home-table']//tr");
@@ -29,7 +29,7 @@ namespace StockScraper
                         try
                         {
 
-                            finviz_Market_Movers temp = new finviz_Market_Movers();
+                            fin_Market_Movers temp = new fin_Market_Movers();
                             temp.Ticker = tr1.ChildNodes[1].InnerText;
                             temp.Last= tr1.ChildNodes[2].InnerText;
                             temp.Change = tr1.ChildNodes[3].InnerText;

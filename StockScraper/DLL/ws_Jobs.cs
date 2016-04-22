@@ -16,11 +16,11 @@ namespace DLL
     {
         public ws_Jobs()
         {
-            this.finviz_Financials = new HashSet<finviz_Financials>();
-            this.finviz_Insider_Trading = new HashSet<finviz_Insider_Trading>();
-            this.finviz_Market_Movers = new HashSet<finviz_Market_Movers>();
-            this.finviz_News = new HashSet<finviz_News>();
-            this.finviz_Recommendations = new HashSet<finviz_Recommendations>();
+            this.fin_Financials = new HashSet<fin_Financials>();
+            this.fin_Insider_Trading = new HashSet<fin_Insider_Trading>();
+            this.fin_Market_Movers = new HashSet<fin_Market_Movers>();
+            this.fin_News = new HashSet<fin_News>();
+            this.fin_Recommendations = new HashSet<fin_Recommendations>();
             this.ft_fin_common_stock_dividends = new HashSet<ft_fin_common_stock_dividends>();
             this.ft_fin_eps_reconciliation = new HashSet<ft_fin_eps_reconciliation>();
             this.ft_fin_incometaxes_minorityinterest_extras = new HashSet<ft_fin_incometaxes_minorityinterest_extras>();
@@ -47,11 +47,11 @@ namespace DLL
         public int Job_id { get; set; }
         public System.DateTime Start_Time { get; set; }
     
-        public virtual ICollection<finviz_Financials> finviz_Financials { get; set; }
-        public virtual ICollection<finviz_Insider_Trading> finviz_Insider_Trading { get; set; }
-        public virtual ICollection<finviz_Market_Movers> finviz_Market_Movers { get; set; }
-        public virtual ICollection<finviz_News> finviz_News { get; set; }
-        public virtual ICollection<finviz_Recommendations> finviz_Recommendations { get; set; }
+        public virtual ICollection<fin_Financials> fin_Financials { get; set; }
+        public virtual ICollection<fin_Insider_Trading> fin_Insider_Trading { get; set; }
+        public virtual ICollection<fin_Market_Movers> fin_Market_Movers { get; set; }
+        public virtual ICollection<fin_News> fin_News { get; set; }
+        public virtual ICollection<fin_Recommendations> fin_Recommendations { get; set; }
         public virtual ICollection<ft_fin_common_stock_dividends> ft_fin_common_stock_dividends { get; set; }
         public virtual ICollection<ft_fin_eps_reconciliation> ft_fin_eps_reconciliation { get; set; }
         public virtual ICollection<ft_fin_incometaxes_minorityinterest_extras> ft_fin_incometaxes_minorityinterest_extras { get; set; }
