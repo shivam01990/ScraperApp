@@ -16,7 +16,6 @@ namespace DLL
     {
         public long finviz_calendar_id { get; set; }
         public int job_run_id { get; set; }
-        public int stock_id { get; set; }
         public string calendar_date_text { get; set; }
         public string calendar_yyyy { get; set; }
         public string calendar_mm { get; set; }
@@ -29,5 +28,7 @@ namespace DLL
         public Nullable<bool> official_market_closure { get; set; }
         public string market_closure_notes { get; set; }
         public byte[] CreatedOn { get; set; }
+    
+        public virtual ws_Jobs ws_Jobs { get; set; }
     }
 }

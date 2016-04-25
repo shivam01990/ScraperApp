@@ -55,6 +55,9 @@ namespace BLL
                         temp.Exchange_Abbr = ss.Exchange_Abbr;
                         temp.Exchange_Letter = ss.Exchange_Letter;
                         temp.StatusState_Id = ss.StatusState_Id;
+                        temp.company_desc_finviz = ss.company_desc_finviz;
+                        temp.sub_sector = ss.sub_sector;
+                        temp.country = ss.country;
                     }
                 }
                 else
@@ -70,6 +73,22 @@ namespace BLL
             }
 
             return Market_MoverId;
+        }
+        #endregion
+
+        #region--Get StockIDByTicker--
+        public int StockIDByTicker(string Ticker)
+        {
+            int stockid = 0;
+            using (DBEntities db = new DBEntities())
+            {
+                try
+                {
+                    stockid = db.ws_Stocks.Where(s => s.Ticker == Ticker).FirstOrDefault().Stock_Id;
+                }
+                catch { }
+            }
+            return stockid;
         }
         #endregion
     }

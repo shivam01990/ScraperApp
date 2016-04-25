@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="finviz_CalendarServices.cs" />
     <Compile Include="finviz_FinancialsServices.cs" />
     <Compile Include="finviz_Insider_TradingServices.cs" />
     <Compile Include="finviz_Market_MoversServices.cs" />

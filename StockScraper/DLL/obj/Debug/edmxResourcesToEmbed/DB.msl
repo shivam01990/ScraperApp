@@ -16,7 +16,6 @@
           <ScalarProperty Name="calendar_mm" ColumnName="calendar_mm" />
           <ScalarProperty Name="calendar_yyyy" ColumnName="calendar_yyyy" />
           <ScalarProperty Name="calendar_date_text" ColumnName="calendar_date_text" />
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
           <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
           <ScalarProperty Name="finviz_calendar_id" ColumnName="finviz_calendar_id" />
         </MappingFragment>
@@ -66,6 +65,7 @@
           <ScalarProperty Name="ticker" ColumnName="ticker" />
           <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
           <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
           <ScalarProperty Name="finviz_market_movers_id" ColumnName="finviz_market_movers_id" />
         </MappingFragment>
       </EntityTypeMapping>

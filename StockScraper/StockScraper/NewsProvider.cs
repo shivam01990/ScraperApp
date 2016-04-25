@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace StockScraper
 {
     public class NewsProvider
     {
-        public static List<finviz_News> GetData(HtmlDocument doc, int job_id, int stock_id,string URL)
+        public static List<finviz_News> GetData(HtmlDocument doc, int job_id, int stock_id, string URL)
         {
             List<finviz_News> rType = new List<finviz_News>();
 
@@ -33,7 +34,16 @@ namespace StockScraper
                                 temp.news_date = _date;
                             }
                             catch { }
-                            temp.news_message = tr1.ChildNodes[1].InnerText;                            
+                            temp.news_message = tr1.ChildNodes[1].InnerText;
+                            try
+                            {
+                                temp.news_link = XElement.Parse("<th>" + tr1.ChildNodes[1].InnerHtml + "</th>")
+                                                   .Descendants("a")
+                                                   .Select(x => x.Attribute("href").Value)
+                                                   .FirstOrDefault(); 
+                            }
+                            catch
+                            { }
                             temp.stock_id = stock_id;
                             temp.job_run_id = job_id;
                             rType.Add(temp);

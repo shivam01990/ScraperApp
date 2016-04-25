@@ -18,7 +18,13 @@ namespace StockScraper
                 if (rowcollection.Count > 0)
                 {
                     DateTime? lastUpdated = null;
-                    string strlastupdateddate = rowcollection[0].SelectNodes("div[@class='moduleBody']//table[@class='dataTable']//tr[@class='stripe']//td")[3].InnerText ?? "";
+                    string strlastupdateddate = "";
+                    try
+                    {
+                      strlastupdateddate = rowcollection[0].SelectNodes("div[@class='moduleBody']//table[@class='dataTable']//tr[@class='stripe']//td")[3].InnerText ?? "";
+
+                    }
+                    catch { }
                     if (strlastupdateddate != string.Empty)
                     {
                         try

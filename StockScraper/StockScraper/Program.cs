@@ -20,6 +20,53 @@ namespace StockScraper
                 obj.Start_Time = DateTime.Now;
                 job_id = ws_JobsServices.Instance.SaveJob(obj);
                 Helper.AddtoLog("New Job_ID=" + job_id);
+
+
+                try
+                {
+                    var timeUtc = DateTime.UtcNow;
+                    TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+                    DateTime easternTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
+                    string EffectiveTime = "";
+                    if (finviz_CalendarServices.Instance.IsEffectiveDateExist(timeUtc.ToString("dd"), timeUtc.ToString("MM"), timeUtc.ToString("yyyy")))
+                    {
+                        EffectiveTime = easternTime.ToString("yyyy.MM.dd-hh:mm");
+                    }
+                    else
+                    {
+                        EffectiveTime = "";
+                    }
+                    //Market Movers
+                    List<finviz_Market_Movers> lst_marketmovers = finviz_Market_MoversProvider.GetData(job_id);
+
+                    foreach (finviz_Market_Movers item in lst_marketmovers)
+                    {
+                        item.EffectiveDate = EffectiveTime;
+                        finviz_Market_MoversServices.Instance.Save_fin_Market_Movers(item);
+                    }
+                    Console.WriteLine("Total " + lst_marketmovers.Count + " records Grabbed for table: finviz_Market_Movers");
+           
+                }
+                catch (Exception ex)
+                {
+                    Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+                }
+
+                 try
+                {
+                    List<finviz_Calendar> lst_Calendar = finviz_CalendarProvider.GetData(job_id);
+               
+                    foreach (finviz_Calendar item in lst_Calendar)
+                    {
+                        finviz_CalendarServices.Instance.Save_finviz_Calendar(item);
+                    }
+                    Console.WriteLine("Total " + lst_Calendar.Count + " records Grabbed for table: finviz_Calendar");
+                }
+                catch (Exception ex)
+                {
+                    Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+                }
+
                 List<ws_Stocks> lststock = ws_StocksServices.Instance.GetStock(0);
                 Helper.AddtoLog("Total Stocks:" + lststock.Count());
                 Console.WriteLine("Total Stocks:" + lststock.Count());
@@ -54,7 +101,7 @@ namespace StockScraper
                     }
                 }
 
-                finviz_Market_MoversProvider.GetData(0);
+
                 Helper.AddtoLog("=============Import End " + DateTime.Now + "============");
                 Console.WriteLine("=============Import End " + DateTime.Now + "============");
             }

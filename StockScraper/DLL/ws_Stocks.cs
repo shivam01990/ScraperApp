@@ -18,6 +18,7 @@ namespace DLL
         {
             this.finviz_Financials = new HashSet<finviz_Financials>();
             this.finviz_Insider_Trading = new HashSet<finviz_Insider_Trading>();
+            this.finviz_Market_Movers = new HashSet<finviz_Market_Movers>();
             this.finviz_News = new HashSet<finviz_News>();
             this.finviz_Recommendations = new HashSet<finviz_Recommendations>();
             this.ft_Consensus = new HashSet<ft_Consensus>();
@@ -54,6 +55,7 @@ namespace DLL
     
         public virtual ICollection<finviz_Financials> finviz_Financials { get; set; }
         public virtual ICollection<finviz_Insider_Trading> finviz_Insider_Trading { get; set; }
+        public virtual ICollection<finviz_Market_Movers> finviz_Market_Movers { get; set; }
         public virtual ICollection<finviz_News> finviz_News { get; set; }
         public virtual ICollection<finviz_Recommendations> finviz_Recommendations { get; set; }
         public virtual ICollection<ft_Consensus> ft_Consensus { get; set; }

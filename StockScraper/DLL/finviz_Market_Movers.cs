@@ -15,6 +15,7 @@ namespace DLL
     public partial class finviz_Market_Movers
     {
         public long finviz_market_movers_id { get; set; }
+        public int stock_id { get; set; }
         public int job_run_id { get; set; }
         public string EffectiveDate { get; set; }
         public string ticker { get; set; }
@@ -25,5 +26,6 @@ namespace DLL
         public byte[] CreatedOn { get; set; }
     
         public virtual ws_Jobs ws_Jobs { get; set; }
+        public virtual ws_Stocks ws_Stocks { get; set; }
     }
 }

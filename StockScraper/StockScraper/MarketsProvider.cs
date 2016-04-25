@@ -23,6 +23,7 @@ namespace StockScraper
             try
             {
                 ft_Consensus _ft_Consensus = ft_ConsensusProvider.GetData(doc1, job_id, stock.Stock_Id);
+                _ft_Consensus.effective_date = _ft_Consensus.effective_date ?? "";
                 EffectiveDate = _ft_Consensus.effective_date;
                 ft_ConsensusServices.Instance.Save_ft_Consensus(_ft_Consensus);
                 Console.WriteLine(" records Grabbed for table: ft_Consensus");

@@ -23,6 +23,10 @@
     <EntitySet Name="ws_Jobs" EntityType="DBModel.ws_Jobs" />
     <EntitySet Name="ws_Logs" EntityType="DBModel.ws_Logs" />
     <EntitySet Name="ws_Stocks" EntityType="DBModel.ws_Stocks" />
+    <AssociationSet Name="FK_finviz_Calendar_ws_Jobs" Association="DBModel.FK_finviz_Calendar_ws_Jobs">
+      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
+      <End Role="finviz_Calendar" EntitySet="finviz_Calendar" />
+    </AssociationSet>
     <AssociationSet Name="FK_Finviz_Financials_Jobs" Association="DBModel.FK_Finviz_Financials_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
       <End Role="finviz_Financials" EntitySet="finviz_Financials" />
@@ -41,6 +45,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_finviz_MARKET_MOVERS_ws_Jobs" Association="DBModel.FK_finviz_MARKET_MOVERS_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
+      <End Role="finviz_Market_Movers" EntitySet="finviz_Market_Movers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_finviz_Market_Movers_ws_Stocks" Association="DBModel.FK_finviz_Market_Movers_ws_Stocks">
+      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
       <End Role="finviz_Market_Movers" EntitySet="finviz_Market_Movers" />
     </AssociationSet>
     <AssociationSet Name="FK_News_Jobs" Association="DBModel.FK_News_Jobs">
@@ -174,19 +182,19 @@
     </Key>
     <Property Name="finviz_calendar_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="job_run_id" Type="Int32" Nullable="false" />
-    <Property Name="stock_id" Type="Int32" Nullable="false" />
-    <Property Name="calendar_date_text" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="calendar_yyyy" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
-    <Property Name="calendar_mm" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-    <Property Name="calendar_dd" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-    <Property Name="calendar_day" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="banner_date" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="false" />
-    <Property Name="time_zone" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-    <Property Name="calendar_date" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="false" />
+    <Property Name="calendar_date_text" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="calendar_yyyy" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="calendar_mm" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="calendar_dd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="calendar_day" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="banner_date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="time_zone" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="calendar_date" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="market_closed" Type="Boolean" />
     <Property Name="official_market_closure" Type="Boolean" />
     <Property Name="market_closure_notes" Type="String" MaxLength="1027" FixedLength="false" Unicode="true" />
     <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ws_Jobs" Relationship="DBModel.FK_finviz_Calendar_ws_Jobs" FromRole="finviz_Calendar" ToRole="ws_Jobs" />
   </EntityType>
   <EntityType Name="finviz_Financials">
     <Key>
@@ -228,6 +236,7 @@
       <PropertyRef Name="finviz_market_movers_id" />
     </Key>
     <Property Name="finviz_market_movers_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="stock_id" Type="Int32" Nullable="false" />
     <Property Name="job_run_id" Type="Int32" Nullable="false" />
     <Property Name="EffectiveDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="ticker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -237,6 +246,7 @@
     <Property Name="signal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="ws_Jobs" Relationship="DBModel.FK_finviz_MARKET_MOVERS_ws_Jobs" FromRole="finviz_Market_Movers" ToRole="ws_Jobs" />
+    <NavigationProperty Name="ws_Stocks" Relationship="DBModel.FK_finviz_Market_Movers_ws_Stocks" FromRole="finviz_Market_Movers" ToRole="ws_Stocks" />
   </EntityType>
   <EntityType Name="finviz_News">
     <Key>
@@ -381,7 +391,7 @@
     <Property Name="Reuters_FinancialsEfficiency_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Stock_Id" Type="Int32" Nullable="false" />
     <Property Name="run_job_id" Type="Int32" Nullable="false" />
-    <Property Name="EffectiveDate" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Industry" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -477,7 +487,7 @@
     <Property Name="Reuters_FinancialsStrength_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Stock_Id" Type="Int32" Nullable="false" />
     <Property Name="job_run_Id" Type="Int32" Nullable="false" />
-    <Property Name="EffectiveDate" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Industry" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -493,7 +503,7 @@
     <Property Name="Reuters_FinancialsValuationRatio_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Stock_Id" Type="Int32" Nullable="false" />
     <Property Name="job_run_Id" Type="Int32" Nullable="false" />
-    <Property Name="EffectiveDate" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -526,6 +536,7 @@
     <Property Name="Job_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Start_Time" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="finviz_Calendar" Relationship="DBModel.FK_finviz_Calendar_ws_Jobs" FromRole="ws_Jobs" ToRole="finviz_Calendar" />
     <NavigationProperty Name="finviz_Financials" Relationship="DBModel.FK_Finviz_Financials_Jobs" FromRole="ws_Jobs" ToRole="finviz_Financials" />
     <NavigationProperty Name="finviz_Insider_Trading" Relationship="DBModel.FK_finviz_Insider_Trading_ws_Jobs" FromRole="ws_Jobs" ToRole="finviz_Insider_Trading" />
     <NavigationProperty Name="finviz_Market_Movers" Relationship="DBModel.FK_finviz_MARKET_MOVERS_ws_Jobs" FromRole="ws_Jobs" ToRole="finviz_Market_Movers" />
@@ -579,6 +590,7 @@
     <Property Name="UpdatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="finviz_Financials" Relationship="DBModel.FK_Finviz_Financials_Stocks" FromRole="ws_Stocks" ToRole="finviz_Financials" />
     <NavigationProperty Name="finviz_Insider_Trading" Relationship="DBModel.FK_finviz_Insider_Trading_ws_Stocks" FromRole="ws_Stocks" ToRole="finviz_Insider_Trading" />
+    <NavigationProperty Name="finviz_Market_Movers" Relationship="DBModel.FK_finviz_Market_Movers_ws_Stocks" FromRole="ws_Stocks" ToRole="finviz_Market_Movers" />
     <NavigationProperty Name="finviz_News" Relationship="DBModel.FK_News_Stocks1" FromRole="ws_Stocks" ToRole="finviz_News" />
     <NavigationProperty Name="finviz_Recommendations" Relationship="DBModel.FK_fin_Recommendations_ws_Stocks" FromRole="ws_Stocks" ToRole="finviz_Recommendations" />
     <NavigationProperty Name="ft_Consensus" Relationship="DBModel.FK_finviz_Recommendations_ws_Stocks" FromRole="ws_Stocks" ToRole="ft_Consensus" />
@@ -595,6 +607,18 @@
     <NavigationProperty Name="reuters_Financials_ValuationRatios" Relationship="DBModel.FK_Reuters_Financials_ValuationRatios_Stocks" FromRole="ws_Stocks" ToRole="reuters_Financials_ValuationRatios" />
     <NavigationProperty Name="reuters_RecommendationsRevisions" Relationship="DBModel.FK_Reuters_RecommendationsRevisions_Stocks" FromRole="ws_Stocks" ToRole="reuters_RecommendationsRevisions" />
   </EntityType>
+  <Association Name="FK_finviz_Calendar_ws_Jobs">
+    <End Type="DBModel.ws_Jobs" Role="ws_Jobs" Multiplicity="1" />
+    <End Type="DBModel.finviz_Calendar" Role="finviz_Calendar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_Jobs">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="finviz_Calendar">
+        <PropertyRef Name="job_run_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Finviz_Financials_Jobs">
     <End Type="DBModel.ws_Jobs" Role="ws_Jobs" Multiplicity="1" />
     <End Type="DBModel.finviz_Financials" Role="finviz_Financials" Multiplicity="*" />
@@ -652,6 +676,18 @@
       </Principal>
       <Dependent Role="finviz_Market_Movers">
         <PropertyRef Name="job_run_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_finviz_Market_Movers_ws_Stocks">
+    <End Type="DBModel.ws_Stocks" Role="ws_Stocks" Multiplicity="1" />
+    <End Type="DBModel.finviz_Market_Movers" Role="finviz_Market_Movers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_Stocks">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="finviz_Market_Movers">
+        <PropertyRef Name="stock_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

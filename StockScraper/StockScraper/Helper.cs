@@ -106,7 +106,12 @@ namespace StockScraper
         }
         #endregion
 
-
+        #region--finviz Calendar Url--
+        public static string finvizCalendarURL()
+        {
+            return "http://finviz.com/calendar.ashx"; 
+        }
+        #endregion
 
         public static List<string> ExtractFromString(
             string text, string startString, string endString)

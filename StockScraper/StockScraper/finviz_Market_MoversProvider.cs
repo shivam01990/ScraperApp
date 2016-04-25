@@ -1,4 +1,5 @@
-﻿using DLL;
+﻿using BLL;
+using DLL;
 using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,9 @@ namespace StockScraper
         {
 
             HtmlWeb web = new HtmlWeb();
+            Console.WriteLine("Loading URL: http://finviz.com/");
             HtmlDocument doc = web.Load("http://finviz.com/");
+            Console.WriteLine("Loading complete");
             List<finviz_Market_Movers> rType = new List<finviz_Market_Movers>();
             string EffectiveDate = DateTime.Now.ToString("yyyy.MM.dd");
 
@@ -29,7 +32,7 @@ namespace StockScraper
                         try
                         {
                             decimal percent_change = 0;
-                            decimal.TryParse(tr1.ChildNodes[3].InnerText,out percent_change);
+                            decimal.TryParse(tr1.ChildNodes[3].InnerText, out percent_change);
 
                             decimal last_quote = 0;
                             decimal.TryParse(tr1.ChildNodes[2].InnerText, out last_quote);
@@ -41,10 +44,22 @@ namespace StockScraper
 
                             finviz_Market_Movers temp = new finviz_Market_Movers();
                             temp.ticker = tr1.ChildNodes[1].InnerText;
+
+                            int StockID = ws_StocksServices.Instance.StockIDByTicker(temp.ticker);
+
+                            if (StockID == 0)
+                            {
+                                if (temp.ticker.ToLower() != "ticker")
+                                {
+                                    Console.WriteLine("Inserting a new Stock for Ticker:" + temp.ticker);
+                                    StockID = UpdateNewStocks.StartUpdate(temp.ticker);
+                                }
+                            }
+                            temp.stock_id = StockID;
                             temp.last_quote = last_quote;
                             temp.percent_change = percent_change;
                             temp.volume = volume;
-                            temp.signal = tr1.ChildNodes[6].InnerText;                           
+                            temp.signal = tr1.ChildNodes[6].InnerText;
                             temp.job_run_id = job_id;
                             temp.EffectiveDate = EffectiveDate;
                             rType.Add(temp);
@@ -57,7 +72,7 @@ namespace StockScraper
                 }
             }
             finviz_Market_Movers tmp = rType.Where(r => r.ticker == "Ticker").FirstOrDefault();
-            if(tmp!=null)
+            if (tmp != null)
             {
                 rType.Remove(tmp);
             }

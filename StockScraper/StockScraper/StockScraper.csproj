@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="finvizProvider.cs" />
+    <Compile Include="finviz_CalendarProvider.cs" />
     <Compile Include="finviz_FinancialsProvider.cs" />
     <Compile Include="finviz_Insider_TradingProvider.cs" />
     <Compile Include="finviz_Market_MoversProvider.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="reuters_Financials_StrengthProvider.cs" />
     <Compile Include="reuters_Financials_ValuationRatiosProvider.cs" />
     <Compile Include="reuters_RecommendationsRevisionsProvider.cs" />
+    <Compile Include="UpdateNewStocks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

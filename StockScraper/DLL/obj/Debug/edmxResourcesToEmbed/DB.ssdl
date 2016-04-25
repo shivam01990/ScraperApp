@@ -6,15 +6,14 @@
     </Key>
     <Property Name="finviz_calendar_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="job_run_id" Type="int" Nullable="false" />
-    <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="calendar_date_text" Type="varchar" MaxLength="10" />
-    <Property Name="calendar_yyyy" Type="char" MaxLength="4" />
-    <Property Name="calendar_mm" Type="char" MaxLength="2" />
-    <Property Name="calendar_dd" Type="char" MaxLength="2" />
-    <Property Name="calendar_day" Type="char" MaxLength="3" />
-    <Property Name="banner_date" Type="varchar" MaxLength="26" Nullable="false" />
-    <Property Name="time_zone" Type="varchar" MaxLength="4" />
-    <Property Name="calendar_date" Type="varchar" MaxLength="19" Nullable="false" />
+    <Property Name="calendar_date_text" Type="varchar" MaxLength="30" />
+    <Property Name="calendar_yyyy" Type="varchar" MaxLength="5" />
+    <Property Name="calendar_mm" Type="varchar" MaxLength="5" />
+    <Property Name="calendar_dd" Type="varchar" MaxLength="5" />
+    <Property Name="calendar_day" Type="varchar" MaxLength="5" />
+    <Property Name="banner_date" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="time_zone" Type="varchar" MaxLength="6" />
+    <Property Name="calendar_date" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="market_closed" Type="bit" />
     <Property Name="official_market_closure" Type="bit" />
     <Property Name="market_closure_notes" Type="nvarchar" MaxLength="1027" />
@@ -56,6 +55,7 @@
       <PropertyRef Name="finviz_market_movers_id" />
     </Key>
     <Property Name="finviz_market_movers_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stock_id" Type="int" Nullable="false" />
     <Property Name="job_run_id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="nvarchar" MaxLength="30" />
     <Property Name="ticker" Type="nvarchar" MaxLength="50" />
@@ -196,7 +196,7 @@
     <Property Name="Reuters_FinancialsEfficiency_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="run_job_id" Type="int" Nullable="false" />
-    <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="100" />
     <Property Name="Company" Type="nvarchar" MaxLength="100" />
     <Property Name="Industry" Type="nvarchar" MaxLength="100" />
@@ -280,7 +280,7 @@
     <Property Name="Reuters_FinancialsStrength_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_Id" Type="int" Nullable="false" />
-    <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="100" />
     <Property Name="Company" Type="nvarchar" MaxLength="100" />
     <Property Name="Industry" Type="nvarchar" MaxLength="100" />
@@ -294,7 +294,7 @@
     <Property Name="Reuters_FinancialsValuationRatio_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_Id" Type="int" Nullable="false" />
-    <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="100" />
     <Property Name="Company" Type="nvarchar" MaxLength="100" />
     <Property Name="Industry" Type="nvarchar" MaxLength="50" />
@@ -379,6 +379,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_finviz_Calendar_ws_Jobs">
+    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
+    <End Role="finviz_Calendar" Type="Self.finviz_Calendar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_Jobs">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="finviz_Calendar">
+        <PropertyRef Name="job_run_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Finviz_Financials_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
     <End Role="finviz_Financials" Type="Self.finviz_Financials" Multiplicity="*" />
@@ -436,6 +448,18 @@
       </Principal>
       <Dependent Role="finviz_Market_Movers">
         <PropertyRef Name="job_run_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_finviz_Market_Movers_ws_Stocks">
+    <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
+    <End Role="finviz_Market_Movers" Type="Self.finviz_Market_Movers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_Stocks">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="finviz_Market_Movers">
+        <PropertyRef Name="stock_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -818,6 +842,10 @@
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
       <End Role="finviz_Recommendations" EntitySet="finviz_Recommendations" />
     </AssociationSet>
+    <AssociationSet Name="FK_finviz_Calendar_ws_Jobs" Association="Self.FK_finviz_Calendar_ws_Jobs">
+      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
+      <End Role="finviz_Calendar" EntitySet="finviz_Calendar" />
+    </AssociationSet>
     <AssociationSet Name="FK_Finviz_Financials_Jobs" Association="Self.FK_Finviz_Financials_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
       <End Role="finviz_Financials" EntitySet="finviz_Financials" />
@@ -836,6 +864,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_finviz_MARKET_MOVERS_ws_Jobs" Association="Self.FK_finviz_MARKET_MOVERS_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
+      <End Role="finviz_Market_Movers" EntitySet="finviz_Market_Movers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_finviz_Market_Movers_ws_Stocks" Association="Self.FK_finviz_Market_Movers_ws_Stocks">
+      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
       <End Role="finviz_Market_Movers" EntitySet="finviz_Market_Movers" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_Recommendations_ws_Jobs" Association="Self.FK_finviz_Recommendations_ws_Jobs">

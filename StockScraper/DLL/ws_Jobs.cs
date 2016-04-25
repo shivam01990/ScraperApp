@@ -16,6 +16,7 @@ namespace DLL
     {
         public ws_Jobs()
         {
+            this.finviz_Calendar = new HashSet<finviz_Calendar>();
             this.finviz_Financials = new HashSet<finviz_Financials>();
             this.finviz_Insider_Trading = new HashSet<finviz_Insider_Trading>();
             this.finviz_Market_Movers = new HashSet<finviz_Market_Movers>();
@@ -41,6 +42,7 @@ namespace DLL
         public System.DateTime Start_Time { get; set; }
         public byte[] CreatedOn { get; set; }
     
+        public virtual ICollection<finviz_Calendar> finviz_Calendar { get; set; }
         public virtual ICollection<finviz_Financials> finviz_Financials { get; set; }
         public virtual ICollection<finviz_Insider_Trading> finviz_Insider_Trading { get; set; }
         public virtual ICollection<finviz_Market_Movers> finviz_Market_Movers { get; set; }
