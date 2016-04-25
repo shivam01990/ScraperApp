@@ -14,7 +14,7 @@ namespace DLL
     
     public partial class reuters_Financials_Efficiencies
     {
-        public long Reuters_FinancialsEfficiency_Id { get; set; }
+        public int Reuters_FinancialsEfficiency_Id { get; set; }
         public int Stock_Id { get; set; }
         public int run_job_id { get; set; }
         public string EffectiveDate { get; set; }

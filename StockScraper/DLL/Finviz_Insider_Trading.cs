@@ -17,15 +17,16 @@ namespace DLL
         public long Finviz_Insider_TradingId { get; set; }
         public int stock_Id { get; set; }
         public int Job_run_Id { get; set; }
-        public string Insider_Trading { get; set; }
-        public string Relashionship { get; set; }
+        public string EffectiveDate { get; set; }
+        public string insider_Trading { get; set; }
+        public string relationship { get; set; }
         public string Date { get; set; }
-        public string Transaction { get; set; }
-        public string Cost { get; set; }
-        public string Shares { get; set; }
-        public string Value { get; set; }
-        public string Shares_Total { get; set; }
-        public string SECForm4 { get; set; }
+        public string it_transaction { get; set; }
+        public string cost { get; set; }
+        public string shares { get; set; }
+        public string value { get; set; }
+        public string shares_Total { get; set; }
+        public string SEC_Form_4 { get; set; }
         public byte[] CreatedOn { get; set; }
     
         public virtual ws_Jobs ws_Jobs { get; set; }

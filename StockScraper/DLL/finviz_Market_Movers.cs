@@ -14,13 +14,14 @@ namespace DLL
     
     public partial class finviz_Market_Movers
     {
-        public long Market_Movers_Id { get; set; }
-        public int Job_run_Id { get; set; }
-        public string Ticker { get; set; }
-        public string Last { get; set; }
-        public string Change { get; set; }
-        public string Volume { get; set; }
-        public string Signal { get; set; }
+        public long finviz_market_movers_id { get; set; }
+        public int job_run_id { get; set; }
+        public string EffectiveDate { get; set; }
+        public string ticker { get; set; }
+        public Nullable<decimal> last_quote { get; set; }
+        public Nullable<decimal> percent_change { get; set; }
+        public Nullable<int> volume { get; set; }
+        public string signal { get; set; }
         public byte[] CreatedOn { get; set; }
     
         public virtual ws_Jobs ws_Jobs { get; set; }

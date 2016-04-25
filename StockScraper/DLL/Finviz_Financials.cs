@@ -17,11 +17,10 @@ namespace DLL
         public long Finviz_FinancialId { get; set; }
         public int Stock_Id { get; set; }
         public int job_run_Id { get; set; }
-        public string Data_Points { get; set; }
-        public string Descriptor { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
-        public Nullable<System.DateTime> UpdatedOn { get; set; }
-        public byte[] Time_ST { get; set; }
+        public string EffectiveDate { get; set; }
+        public string value { get; set; }
+        public string descriptor { get; set; }
+        public byte[] CreatedOn { get; set; }
     
         public virtual ws_Jobs ws_Jobs { get; set; }
         public virtual ws_Stocks ws_Stocks { get; set; }

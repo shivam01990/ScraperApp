@@ -65,49 +65,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="fin_Financials.cs">
+    <Compile Include="finviz_Calendar.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="fin_Insider_Trading.cs">
+    <Compile Include="finviz_Financials.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="fin_Market_Movers.cs">
+    <Compile Include="finviz_Insider_Trading.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="fin_News.cs">
+    <Compile Include="finviz_Market_Movers.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="fin_Recommendations.cs">
+    <Compile Include="finviz_News.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ft_fin_common_stock_dividends.cs">
+    <Compile Include="finviz_Recommendations.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ft_fin_eps_reconciliation.cs">
+    <Compile Include="ft_Consensus.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ft_fin_incometaxes_minorityinterest_extras.cs">
+    <Compile Include="ft_Financials.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ft_fin_normalized_income.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ft_fin_operating_expenses.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ft_fin_proforma_income.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ft_fin_revenue_and_gross_profit.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ft_fin_supplemetal_income.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ft_forecasts_prices.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ft_forecasts_recommendations.cs">
+    <Compile Include="ft_Forecasts.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,12 +121,6 @@
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="reuters_RecommendationsRevisions.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Stocks_TXT_NASDAQ.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Stocks_TXT_NYSE.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="ws_Jobs.cs">

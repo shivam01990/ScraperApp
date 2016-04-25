@@ -14,7 +14,7 @@ namespace DLL
     
     public partial class reuters_Financials_Dividends
     {
-        public long Reuters_FinancialsDividend_Id { get; set; }
+        public int Reuters_FinancialsDividend_Id { get; set; }
         public int Stock_Id { get; set; }
         public int run_job_Id { get; set; }
         public string EffectiveDate { get; set; }

@@ -15,10 +15,10 @@ namespace DLL
     public partial class ws_Logs
     {
         public int Log_Id { get; set; }
-        public int Job_Id { get; set; }
-        public string LogMsg { get; set; }
-        public byte[] Time_ST { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
+        public int job_run_Id { get; set; }
+        public string log_msg { get; set; }
+        public string log_status { get; set; }
+        public byte[] CreatedOn { get; set; }
     
         public virtual ws_Jobs ws_Jobs { get; set; }
     }

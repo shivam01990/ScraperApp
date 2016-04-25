@@ -10,7 +10,7 @@ namespace BLL
     public class ws_JobsServices
     {
         #region--Instance--
-        public ws_JobsServices Instance = new ws_JobsServices();
+        public static ws_JobsServices Instance = new ws_JobsServices();
         #endregion
 
         #region--Save Job--

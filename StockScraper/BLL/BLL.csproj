@@ -50,17 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fin_FinancialsServices.cs" />
-    <Compile Include="ft_fin_common_stock_dividendsServices.cs" />
-    <Compile Include="ft_fin_eps_reconciliationServices.cs" />
-    <Compile Include="ft_fin_incometaxes_minorityinterest_extrasServices.cs" />
-    <Compile Include="ft_fin_normalized_incomeServices.cs" />
-    <Compile Include="ft_fin_operating_expensesServices.cs" />
-    <Compile Include="ft_fin_proforma_incomeServices.cs" />
-    <Compile Include="ft_fin_revenue_and_gross_profitServices.cs" />
-    <Compile Include="ft_fin_supplemetal_incomeServices.cs" />
-    <Compile Include="ft_forecasts_pricesServices.cs" />
-    <Compile Include="ft_forecasts_recommendationsServices.cs" />
+    <Compile Include="finviz_FinancialsServices.cs" />
+    <Compile Include="finviz_Insider_TradingServices.cs" />
+    <Compile Include="finviz_Market_MoversServices.cs" />
+    <Compile Include="finviz_NewsServices.cs" />
+    <Compile Include="finviz_RecommendationsServices.cs" />
+    <Compile Include="ft_FinancialsSevices.cs" />
+    <Compile Include="ft_ConsensusServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ft_ForecastsServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="reuters_Financials_InstitutionsServices.cs" />
     <Compile Include="reuters_Financials_ProfitabilityRatios_Services.cs" />
     <Compile Include="reuters_Financials_SalesEstimatesSevices.cs" />

@@ -21,7 +21,7 @@ namespace BLL
             {
                 if (rr.Reuters_RecommendationsRevisions_Id > 0)
                 {
-                    reuters_RecommendationsRevisions temp = db.reuters_RecommendationsRevisions.Where(u => u.Reuters_RecommendationsRevisions_Id == rr.Reuters_FinancialsDividend_Id).FirstOrDefault();
+                    reuters_RecommendationsRevisions temp = db.reuters_RecommendationsRevisions.Where(u => u.Reuters_RecommendationsRevisions_Id == rr.Reuters_RecommendationsRevisions_Id).FirstOrDefault();
 
                     if (temp != null)
                     {

@@ -14,14 +14,13 @@ namespace DLL
     
     public partial class finviz_News
     {
-        public long NewsId { get; set; }
-        public int Stock_Id { get; set; }
-        public int Job_Id { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public string NewsMsg { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
-        public Nullable<System.DateTime> UpdatedOn { get; set; }
-        public byte[] Time_ST { get; set; }
+        public long finviz_news_id { get; set; }
+        public int stock_id { get; set; }
+        public int job_run_id { get; set; }
+        public string news_date { get; set; }
+        public string news_message { get; set; }
+        public string news_link { get; set; }
+        public byte[] CreatedOn { get; set; }
     
         public virtual ws_Jobs ws_Jobs { get; set; }
         public virtual ws_Stocks ws_Stocks { get; set; }

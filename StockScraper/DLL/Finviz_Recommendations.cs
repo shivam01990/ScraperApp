@@ -14,9 +14,10 @@ namespace DLL
     
     public partial class finviz_Recommendations
     {
-        public long RecommendationId { get; set; }
-        public int Job_run_id { get; set; }
-        public int Stock_id { get; set; }
+        public long finviz_recommendationId { get; set; }
+        public int job_run_id { get; set; }
+        public int stock_id { get; set; }
+        public string EffectiveDate { get; set; }
         public string Date { get; set; }
         public string RecommendationType { get; set; }
         public string Analyst { get; set; }

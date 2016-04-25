@@ -10,11 +10,11 @@ namespace StockScraper
 {
     public class finviz_RecommendationsProvider
     {
-        public static List<fin_Recommendations> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<finviz_Recommendations> GetData(HtmlDocument doc, int job_id, int stock_id,string URL)
         {
-            List<fin_Recommendations> rType = new List<fin_Recommendations>();
+            List<finviz_Recommendations> rType = new List<finviz_Recommendations>();
 
-
+            string EffectiveDate = DateTime.Now.ToString("yyyy.MM.dd");
             var tblrows1 = doc.DocumentNode.SelectNodes("//table[@class='fullview-ratings-outer']//tr[@class='body-table-rating-neutral']//tr");
             if (tblrows1 != null)
             {
@@ -26,14 +26,15 @@ namespace StockScraper
                         try
                         {
 
-                            fin_Recommendations temp = new fin_Recommendations();
+                            finviz_Recommendations temp = new finviz_Recommendations();
                             temp.Date = tr1.ChildNodes[0].InnerText;
                             temp.RecommendationType = tr1.ChildNodes[1].InnerText;
                             temp.Analyst = tr1.ChildNodes[3].InnerText;
                             temp.Recommendation = tr1.ChildNodes[5].InnerText;
                             temp.Target = tr1.ChildNodes[7].InnerText;
-                            temp.Stock_id = stock_id;
-                            temp.Job_run_id = job_id;
+                            temp.stock_id = stock_id;
+                            temp.job_run_id = job_id;
+                            temp.EffectiveDate = EffectiveDate;
                             rType.Add(temp);
                         }
                         catch
@@ -42,6 +43,11 @@ namespace StockScraper
                     }
 
                 }
+            }
+            else
+            {
+                string warningmsg = Helper.GetWarningMSG(stock_id, "finviz_Recommendations", URL);
+                Helper.AddtoLog(warningmsg, job_id, true, Helper.LogStatus.warning);
             }
 
             return rType;

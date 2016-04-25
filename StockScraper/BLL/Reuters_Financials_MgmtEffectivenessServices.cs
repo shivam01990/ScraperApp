@@ -10,11 +10,11 @@ namespace BLL
    public class reuters_Financials_MgmtEffectivenessServices
    {
        #region--Instance--
-       public reuters_Financials_MgmtEffectivenessServices Instance = new reuters_Financials_MgmtEffectivenessServices();
+       public static reuters_Financials_MgmtEffectivenessServices Instance = new reuters_Financials_MgmtEffectivenessServices();
        #endregion
 
        #region-- Get Reuters Financials MgmtEffectiveness--
-       public long Save_Reuters_Financials_Efficiencies(reuters_Financials_MgmtEffectiveness rr)
+       public long Save_reuters_Financials_MgmtEffectiveness(reuters_Financials_MgmtEffectiveness rr)
        {
            long Reuters_FinancialsEfficiency_Id = 0;
            using (DBEntities db = new DBEntities())

@@ -1,229 +1,187 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
-    <EntitySetMapping Name="fin_Financials">
-      <EntityTypeMapping TypeName="DBModel.fin_Financials">
-        <MappingFragment StoreEntitySet="fin_Financials">
-          <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
-          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+    <EntitySetMapping Name="finviz_Calendar">
+      <EntityTypeMapping TypeName="DBModel.finviz_Calendar">
+        <MappingFragment StoreEntitySet="finviz_Calendar">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Descriptor" ColumnName="Descriptor" />
-          <ScalarProperty Name="Data_Points" ColumnName="Data_Points" />
+          <ScalarProperty Name="market_closure_notes" ColumnName="market_closure_notes" />
+          <ScalarProperty Name="official_market_closure" ColumnName="official_market_closure" />
+          <ScalarProperty Name="market_closed" ColumnName="market_closed" />
+          <ScalarProperty Name="calendar_date" ColumnName="calendar_date" />
+          <ScalarProperty Name="time_zone" ColumnName="time_zone" />
+          <ScalarProperty Name="banner_date" ColumnName="banner_date" />
+          <ScalarProperty Name="calendar_day" ColumnName="calendar_day" />
+          <ScalarProperty Name="calendar_dd" ColumnName="calendar_dd" />
+          <ScalarProperty Name="calendar_mm" ColumnName="calendar_mm" />
+          <ScalarProperty Name="calendar_yyyy" ColumnName="calendar_yyyy" />
+          <ScalarProperty Name="calendar_date_text" ColumnName="calendar_date_text" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
+          <ScalarProperty Name="finviz_calendar_id" ColumnName="finviz_calendar_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="finviz_Financials">
+      <EntityTypeMapping TypeName="DBModel.finviz_Financials">
+        <MappingFragment StoreEntitySet="finviz_Financials">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="descriptor" ColumnName="descriptor" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
           <ScalarProperty Name="job_run_Id" ColumnName="job_run_Id" />
           <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
           <ScalarProperty Name="Finviz_FinancialId" ColumnName="Finviz_FinancialId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="fin_Insider_Trading">
-      <EntityTypeMapping TypeName="DBModel.fin_Insider_Trading">
-        <MappingFragment StoreEntitySet="fin_Insider_Trading">
+    <EntitySetMapping Name="finviz_Insider_Trading">
+      <EntityTypeMapping TypeName="DBModel.finviz_Insider_Trading">
+        <MappingFragment StoreEntitySet="finviz_Insider_Trading">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="SECForm4" ColumnName="SECForm4" />
-          <ScalarProperty Name="Shares_Total" ColumnName="Shares_Total" />
-          <ScalarProperty Name="Value" ColumnName="Value" />
-          <ScalarProperty Name="Shares" ColumnName="Shares" />
-          <ScalarProperty Name="Cost" ColumnName="Cost" />
-          <ScalarProperty Name="Transaction" ColumnName="Transaction" />
+          <ScalarProperty Name="SEC_Form_4" ColumnName="SEC_Form_4" />
+          <ScalarProperty Name="shares_Total" ColumnName="shares_Total" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="shares" ColumnName="shares" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="it_transaction" ColumnName="it_transaction" />
           <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Relashionship" ColumnName="Relashionship" />
-          <ScalarProperty Name="Insider_Trading" ColumnName="Insider_Trading" />
+          <ScalarProperty Name="relationship" ColumnName="relationship" />
+          <ScalarProperty Name="insider_Trading" ColumnName="insider_Trading" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
           <ScalarProperty Name="Job_run_Id" ColumnName="Job_run_Id" />
           <ScalarProperty Name="stock_Id" ColumnName="stock_Id" />
           <ScalarProperty Name="Finviz_Insider_TradingId" ColumnName="Finviz_Insider_TradingId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="fin_Market_Movers">
-      <EntityTypeMapping TypeName="DBModel.fin_Market_Movers">
-        <MappingFragment StoreEntitySet="fin_Market_Movers">
+    <EntitySetMapping Name="finviz_Market_Movers">
+      <EntityTypeMapping TypeName="DBModel.finviz_Market_Movers">
+        <MappingFragment StoreEntitySet="finviz_Market_Movers">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Signal" ColumnName="Signal" />
-          <ScalarProperty Name="Volume" ColumnName="Volume" />
-          <ScalarProperty Name="Change" ColumnName="Change" />
-          <ScalarProperty Name="Last" ColumnName="Last" />
-          <ScalarProperty Name="Ticker" ColumnName="Ticker" />
-          <ScalarProperty Name="Job_run_Id" ColumnName="Job_run_Id" />
-          <ScalarProperty Name="Market_Movers_Id" ColumnName="Market_Movers_Id" />
+          <ScalarProperty Name="signal" ColumnName="signal" />
+          <ScalarProperty Name="volume" ColumnName="volume" />
+          <ScalarProperty Name="percent_change" ColumnName="percent_change" />
+          <ScalarProperty Name="last_quote" ColumnName="last_quote" />
+          <ScalarProperty Name="ticker" ColumnName="ticker" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
+          <ScalarProperty Name="finviz_market_movers_id" ColumnName="finviz_market_movers_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="fin_News">
-      <EntityTypeMapping TypeName="DBModel.fin_News">
-        <MappingFragment StoreEntitySet="fin_News">
-          <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
-          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+    <EntitySetMapping Name="finviz_News">
+      <EntityTypeMapping TypeName="DBModel.finviz_News">
+        <MappingFragment StoreEntitySet="finviz_News">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="NewsMsg" ColumnName="NewsMsg" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
-          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+          <ScalarProperty Name="news_link" ColumnName="news_link" />
+          <ScalarProperty Name="news_message" ColumnName="news_message" />
+          <ScalarProperty Name="news_date" ColumnName="news_date" />
+          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+          <ScalarProperty Name="finviz_news_id" ColumnName="finviz_news_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="fin_Recommendations">
-      <EntityTypeMapping TypeName="DBModel.fin_Recommendations">
-        <MappingFragment StoreEntitySet="fin_Recommendations">
+    <EntitySetMapping Name="finviz_Recommendations">
+      <EntityTypeMapping TypeName="DBModel.finviz_Recommendations">
+        <MappingFragment StoreEntitySet="finviz_Recommendations">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Target" ColumnName="Target" />
           <ScalarProperty Name="Recommendation" ColumnName="Recommendation" />
           <ScalarProperty Name="Analyst" ColumnName="Analyst" />
           <ScalarProperty Name="RecommendationType" ColumnName="RecommendationType" />
           <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Stock_id" ColumnName="Stock_id" />
-          <ScalarProperty Name="Job_run_id" ColumnName="Job_run_id" />
-          <ScalarProperty Name="RecommendationId" ColumnName="RecommendationId" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
+          <ScalarProperty Name="finviz_recommendationId" ColumnName="finviz_recommendationId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ft_fin_common_stock_dividends">
-      <EntityTypeMapping TypeName="DBModel.ft_fin_common_stock_dividends">
-        <MappingFragment StoreEntitySet="ft_fin_common_stock_dividends">
+    <EntitySetMapping Name="ft_Consensus">
+      <EntityTypeMapping TypeName="DBModel.ft_Consensus">
+        <MappingFragment StoreEntitySet="ft_Consensus">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Third_Year" ColumnName="Third_Year" />
-          <ScalarProperty Name="Second_Year" ColumnName="Second_Year" />
-          <ScalarProperty Name="First_Year" ColumnName="First_Year" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="no_opinion_analyst_count" ColumnName="no_opinion_analyst_count" />
+          <ScalarProperty Name="sell_analyst_count" ColumnName="sell_analyst_count" />
+          <ScalarProperty Name="underperform_analyst_count" ColumnName="underperform_analyst_count" />
+          <ScalarProperty Name="hold_analyst_count" ColumnName="hold_analyst_count" />
+          <ScalarProperty Name="outperform_analyst_count" ColumnName="outperform_analyst_count" />
+          <ScalarProperty Name="buy_analyst_count" ColumnName="buy_analyst_count" />
+          <ScalarProperty Name="consensus" ColumnName="consensus" />
           <ScalarProperty Name="effective_date" ColumnName="effective_date" />
           <ScalarProperty Name="stock_id" ColumnName="stock_id" />
           <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
-          <ScalarProperty Name="common_stock_dividends_id" ColumnName="common_stock_dividends_id" />
+          <ScalarProperty Name="ConsensusId" ColumnName="ConsensusId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ft_fin_eps_reconciliation">
-      <EntityTypeMapping TypeName="DBModel.ft_fin_eps_reconciliation">
-        <MappingFragment StoreEntitySet="ft_fin_eps_reconciliation">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Third_Year" ColumnName="Third_Year" />
-          <ScalarProperty Name="Second_Year" ColumnName="Second_Year" />
-          <ScalarProperty Name="First_Year" ColumnName="First_Year" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
+    <EntitySetMapping Name="ft_Financials">
+      <EntityTypeMapping TypeName="DBModel.ft_Financials">
+        <MappingFragment StoreEntitySet="ft_Financials">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="ni_diluted_normalized_eps" ColumnName="ni_diluted_normalized_eps" />
+          <ScalarProperty Name="ni_basic_normalized_eps" ColumnName="ni_basic_normalized_eps" />
+          <ScalarProperty Name="ni_normalized_income_avail_to_common" ColumnName="ni_normalized_income_avail_to_common" />
+          <ScalarProperty Name="ni_normalized_income_after_tax" ColumnName="ni_normalized_income_after_tax" />
+          <ScalarProperty Name="ni_income_tax_excluding_impact_of_special_items" ColumnName="ni_income_tax_excluding_impact_of_special_items" />
+          <ScalarProperty Name="ni_effect_of_special_items_on_income_taxes" ColumnName="ni_effect_of_special_items_on_income_taxes" />
+          <ScalarProperty Name="ni_normalized_income_before_taxes" ColumnName="ni_normalized_income_before_taxes" />
+          <ScalarProperty Name="si_total_special_items" ColumnName="si_total_special_items" />
+          <ScalarProperty Name="si_depreciation_supplemental" ColumnName="si_depreciation_supplemental" />
+          <ScalarProperty Name="pfi_interest_expense_supplemental" ColumnName="pfi_interest_expense_supplemental" />
+          <ScalarProperty Name="pfi_pro_forma_net_income" ColumnName="pfi_pro_forma_net_income" />
+          <ScalarProperty Name="csd_gross_dividend_common_stock" ColumnName="csd_gross_dividend_common_stock" />
+          <ScalarProperty Name="csd_dps_common_stock_primary_issue" ColumnName="csd_dps_common_stock_primary_issue" />
+          <ScalarProperty Name="epsr_diluted_eps_incl_extra_items" ColumnName="epsr_diluted_eps_incl_extra_items" />
+          <ScalarProperty Name="epsr_diluted_eps_excl_extra_items" ColumnName="epsr_diluted_eps_excl_extra_items" />
+          <ScalarProperty Name="epsr_diluted_weighted_average_shares" ColumnName="epsr_diluted_weighted_average_shares" />
+          <ScalarProperty Name="epsr_dilution_adjustment" ColumnName="epsr_dilution_adjustment" />
+          <ScalarProperty Name="epsr_basic_eps_incl_extra_items" ColumnName="epsr_basic_eps_incl_extra_items" />
+          <ScalarProperty Name="epsr_basic_eps_excl_extra_items" ColumnName="epsr_basic_eps_excl_extra_items" />
+          <ScalarProperty Name="epsr_basic_weighted_average_shares" ColumnName="epsr_basic_weighted_average_shares" />
+          <ScalarProperty Name="itmiei_inc_to_common_incl_extra_items" ColumnName="itmiei_inc_to_common_incl_extra_items" />
+          <ScalarProperty Name="itmiei_inc_to_common_excl_extra_items" ColumnName="itmiei_inc_to_common_excl_extra_items" />
+          <ScalarProperty Name="itmiei_net_income" ColumnName="itmiei_net_income" />
+          <ScalarProperty Name="itmiei_total_extraordinary_items" ColumnName="itmiei_total_extraordinary_items" />
+          <ScalarProperty Name="itmiei_net_income_before_extra_items" ColumnName="itmiei_net_income_before_extra_items" />
+          <ScalarProperty Name="itmiei_minority_interest" ColumnName="itmiei_minority_interest" />
+          <ScalarProperty Name="itmiei_net_income_after_taxes" ColumnName="itmiei_net_income_after_taxes" />
+          <ScalarProperty Name="itmiei_provision_for_income_taxes" ColumnName="itmiei_provision_for_income_taxes" />
+          <ScalarProperty Name="itmiei_net_income_before_taxes" ColumnName="itmiei_net_income_before_taxes" />
+          <ScalarProperty Name="oe_other_net" ColumnName="oe_other_net" />
+          <ScalarProperty Name="oe_operating_income" ColumnName="oe_operating_income" />
+          <ScalarProperty Name="oe_total_operating_expense" ColumnName="oe_total_operating_expense" />
+          <ScalarProperty Name="oe_other_operating_expenses_total" ColumnName="oe_other_operating_expenses_total" />
+          <ScalarProperty Name="oe_unusual_expense_income" ColumnName="oe_unusual_expense_income" />
+          <ScalarProperty Name="oe_depreciation_amort" ColumnName="oe_depreciation_amort" />
+          <ScalarProperty Name="oe_selling_generalexpenses_total" ColumnName="oe_selling_generalexpenses_total" />
+          <ScalarProperty Name="oe_cost_of_revenue_total" ColumnName="oe_cost_of_revenue_total" />
+          <ScalarProperty Name="ragp_total_revenue" ColumnName="ragp_total_revenue" />
+          <ScalarProperty Name="year" ColumnName="year" />
           <ScalarProperty Name="effective_date" ColumnName="effective_date" />
           <ScalarProperty Name="stock_id" ColumnName="stock_id" />
           <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
-          <ScalarProperty Name="eps_reconciliation_id" ColumnName="eps_reconciliation_id" />
+          <ScalarProperty Name="financial_id" ColumnName="financial_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ft_fin_incometaxes_minorityinterest_extras">
-      <EntityTypeMapping TypeName="DBModel.ft_fin_incometaxes_minorityinterest_extras">
-        <MappingFragment StoreEntitySet="ft_fin_incometaxes_minorityinterest_extras">
+    <EntitySetMapping Name="ft_Forecasts">
+      <EntityTypeMapping TypeName="DBModel.ft_Forecasts">
+        <MappingFragment StoreEntitySet="ft_Forecasts">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Third_Year" ColumnName="Third_Year" />
-          <ScalarProperty Name="Second_Year" ColumnName="Second_Year" />
-          <ScalarProperty Name="First_Year" ColumnName="First_Year" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
-          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
-          <ScalarProperty Name="incometaxes_minorityinterest_extras_id" ColumnName="incometaxes_minorityinterest_extras_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ft_fin_normalized_income">
-      <EntityTypeMapping TypeName="DBModel.ft_fin_normalized_income">
-        <MappingFragment StoreEntitySet="ft_fin_normalized_income">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Third_Year" ColumnName="Third_Year" />
-          <ScalarProperty Name="Second_Year" ColumnName="Second_Year" />
-          <ScalarProperty Name="First_Year" ColumnName="First_Year" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
-          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
-          <ScalarProperty Name="normalized_income_id" ColumnName="normalized_income_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ft_fin_operating_expenses">
-      <EntityTypeMapping TypeName="DBModel.ft_fin_operating_expenses">
-        <MappingFragment StoreEntitySet="ft_fin_operating_expenses">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Third_Year" ColumnName="Third_Year" />
-          <ScalarProperty Name="Second_Year" ColumnName="Second_Year" />
-          <ScalarProperty Name="First_Year" ColumnName="First_Year" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
-          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
-          <ScalarProperty Name="operating_expenses_id" ColumnName="operating_expenses_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ft_fin_proforma_income">
-      <EntityTypeMapping TypeName="DBModel.ft_fin_proforma_income">
-        <MappingFragment StoreEntitySet="ft_fin_proforma_income">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Third_Year" ColumnName="Third_Year" />
-          <ScalarProperty Name="Second_Year" ColumnName="Second_Year" />
-          <ScalarProperty Name="First_Year" ColumnName="First_Year" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
-          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
-          <ScalarProperty Name="proforma_income_id" ColumnName="proforma_income_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ft_fin_revenue_and_gross_profit">
-      <EntityTypeMapping TypeName="DBModel.ft_fin_revenue_and_gross_profit">
-        <MappingFragment StoreEntitySet="ft_fin_revenue_and_gross_profit">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Third_Year" ColumnName="Third_Year" />
-          <ScalarProperty Name="Second_Year" ColumnName="Second_Year" />
-          <ScalarProperty Name="First_Year" ColumnName="First_Year" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
-          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
-          <ScalarProperty Name="revenue_and_gross_profit_id" ColumnName="revenue_and_gross_profit_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ft_fin_supplemetal_income">
-      <EntityTypeMapping TypeName="DBModel.ft_fin_supplemetal_income">
-        <MappingFragment StoreEntitySet="ft_fin_supplemetal_income">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Third_Year" ColumnName="Third_Year" />
-          <ScalarProperty Name="Second_Year" ColumnName="Second_Year" />
-          <ScalarProperty Name="First_Year" ColumnName="First_Year" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
-          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
-          <ScalarProperty Name="supplemetal_income_id" ColumnName="supplemetal_income_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ft_forecasts_prices">
-      <EntityTypeMapping TypeName="DBModel.ft_forecasts_prices">
-        <MappingFragment StoreEntitySet="ft_forecasts_prices">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="target_price" ColumnName="target_price" />
-          <ScalarProperty Name="target_level" ColumnName="target_level" />
+          <ScalarProperty Name="time_period" ColumnName="time_period" />
+          <ScalarProperty Name="time_period_unit" ColumnName="time_period_unit" />
+          <ScalarProperty Name="low_target_price" ColumnName="low_target_price" />
+          <ScalarProperty Name="medium_target_price" ColumnName="medium_target_price" />
+          <ScalarProperty Name="high_target_price" ColumnName="high_target_price" />
           <ScalarProperty Name="current_price" ColumnName="current_price" />
-          <ScalarProperty Name="share_price_forecast" ColumnName="share_price_forecast" />
+          <ScalarProperty Name="forecast_description" ColumnName="forecast_description" />
           <ScalarProperty Name="effective_date" ColumnName="effective_date" />
           <ScalarProperty Name="stock_id" ColumnName="stock_id" />
           <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
-          <ScalarProperty Name="forecasts_prices_Id" ColumnName="forecasts_prices_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ft_forecasts_recommendations">
-      <EntityTypeMapping TypeName="DBModel.ft_forecasts_recommendations">
-        <MappingFragment StoreEntitySet="ft_forecasts_recommendations">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Target" ColumnName="Target" />
-          <ScalarProperty Name="Analyst" ColumnName="Analyst" />
-          <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
-          <ScalarProperty Name="Recommendation_type" ColumnName="Recommendation_type" />
-          <ScalarProperty Name="Recommendation_consensus" ColumnName="Recommendation_consensus" />
-          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
-          <ScalarProperty Name="job_run_id" ColumnName="job_run_id" />
-          <ScalarProperty Name="forecast_recommendation_Id" ColumnName="forecast_recommendation_Id" />
+          <ScalarProperty Name="forecast_id" ColumnName="forecast_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -381,6 +339,7 @@
     <EntitySetMapping Name="ws_Jobs">
       <EntityTypeMapping TypeName="DBModel.ws_Jobs">
         <MappingFragment StoreEntitySet="ws_Jobs">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
           <ScalarProperty Name="Job_id" ColumnName="Job_id" />
         </MappingFragment>
@@ -390,9 +349,9 @@
       <EntityTypeMapping TypeName="DBModel.ws_Logs">
         <MappingFragment StoreEntitySet="ws_Logs">
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Time_ST" ColumnName="Time_ST" />
-          <ScalarProperty Name="LogMsg" ColumnName="LogMsg" />
-          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="log_status" ColumnName="log_status" />
+          <ScalarProperty Name="log_msg" ColumnName="log_msg" />
+          <ScalarProperty Name="job_run_Id" ColumnName="job_run_Id" />
           <ScalarProperty Name="Log_Id" ColumnName="Log_Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -402,6 +361,9 @@
         <MappingFragment StoreEntitySet="ws_Stocks">
           <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="sub_sector" ColumnName="sub_sector" />
+          <ScalarProperty Name="company_desc_finviz" ColumnName="company_desc_finviz" />
           <ScalarProperty Name="Source" ColumnName="Source" />
           <ScalarProperty Name="StatusState_Id" ColumnName="StatusState_Id" />
           <ScalarProperty Name="Format_Issue_Symbol" ColumnName="Format_Issue_Symbol" />
@@ -413,26 +375,6 @@
           <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
           <ScalarProperty Name="Ticker" ColumnName="Ticker" />
           <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Stocks_TXT_NASDAQ">
-      <EntityTypeMapping TypeName="DBModel.Stocks_TXT_NASDAQ">
-        <MappingFragment StoreEntitySet="Stocks_TXT_NASDAQ">
-          <ScalarProperty Name="Source" ColumnName="Source" />
-          <ScalarProperty Name="Exchange_Abbr" ColumnName="Exchange_Abbr" />
-          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
-          <ScalarProperty Name="Ticker" ColumnName="Ticker" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Stocks_TXT_NYSE">
-      <EntityTypeMapping TypeName="DBModel.Stocks_TXT_NYSE">
-        <MappingFragment StoreEntitySet="Stocks_TXT_NYSE">
-          <ScalarProperty Name="Source" ColumnName="Source" />
-          <ScalarProperty Name="Exchange_Abbr" ColumnName="Exchange_Abbr" />
-          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
-          <ScalarProperty Name="Ticker" ColumnName="Ticker" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

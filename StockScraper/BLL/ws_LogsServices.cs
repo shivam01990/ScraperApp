@@ -26,8 +26,9 @@ namespace BLL
 
                     if (temp != null)
                     {
-                        temp.Job_Id = l.Job_Id;
-                        temp.LogMsg = l.LogMsg;                        
+                        temp.job_run_Id = l.job_run_Id;
+                        temp.log_msg = l.log_msg;
+                        temp.log_status = l.log_status;                        
                     }
                 }
                 else

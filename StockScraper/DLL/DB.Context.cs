@@ -25,21 +25,15 @@ namespace DLL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<fin_Financials> fin_Financials { get; set; }
-        public virtual DbSet<fin_Insider_Trading> fin_Insider_Trading { get; set; }
-        public virtual DbSet<fin_Market_Movers> fin_Market_Movers { get; set; }
-        public virtual DbSet<fin_News> fin_News { get; set; }
-        public virtual DbSet<fin_Recommendations> fin_Recommendations { get; set; }
-        public virtual DbSet<ft_fin_common_stock_dividends> ft_fin_common_stock_dividends { get; set; }
-        public virtual DbSet<ft_fin_eps_reconciliation> ft_fin_eps_reconciliation { get; set; }
-        public virtual DbSet<ft_fin_incometaxes_minorityinterest_extras> ft_fin_incometaxes_minorityinterest_extras { get; set; }
-        public virtual DbSet<ft_fin_normalized_income> ft_fin_normalized_income { get; set; }
-        public virtual DbSet<ft_fin_operating_expenses> ft_fin_operating_expenses { get; set; }
-        public virtual DbSet<ft_fin_proforma_income> ft_fin_proforma_income { get; set; }
-        public virtual DbSet<ft_fin_revenue_and_gross_profit> ft_fin_revenue_and_gross_profit { get; set; }
-        public virtual DbSet<ft_fin_supplemetal_income> ft_fin_supplemetal_income { get; set; }
-        public virtual DbSet<ft_forecasts_prices> ft_forecasts_prices { get; set; }
-        public virtual DbSet<ft_forecasts_recommendations> ft_forecasts_recommendations { get; set; }
+        public virtual DbSet<finviz_Calendar> finviz_Calendar { get; set; }
+        public virtual DbSet<finviz_Financials> finviz_Financials { get; set; }
+        public virtual DbSet<finviz_Insider_Trading> finviz_Insider_Trading { get; set; }
+        public virtual DbSet<finviz_Market_Movers> finviz_Market_Movers { get; set; }
+        public virtual DbSet<finviz_News> finviz_News { get; set; }
+        public virtual DbSet<finviz_Recommendations> finviz_Recommendations { get; set; }
+        public virtual DbSet<ft_Consensus> ft_Consensus { get; set; }
+        public virtual DbSet<ft_Financials> ft_Financials { get; set; }
+        public virtual DbSet<ft_Forecasts> ft_Forecasts { get; set; }
         public virtual DbSet<reuters_Financials_Dividends> reuters_Financials_Dividends { get; set; }
         public virtual DbSet<reuters_Financials_Efficiencies> reuters_Financials_Efficiencies { get; set; }
         public virtual DbSet<reuters_Financials_GrowthRates> reuters_Financials_GrowthRates { get; set; }
@@ -53,7 +47,5 @@ namespace DLL
         public virtual DbSet<ws_Jobs> ws_Jobs { get; set; }
         public virtual DbSet<ws_Logs> ws_Logs { get; set; }
         public virtual DbSet<ws_Stocks> ws_Stocks { get; set; }
-        public virtual DbSet<Stocks_TXT_NASDAQ> Stocks_TXT_NASDAQ { get; set; }
-        public virtual DbSet<Stocks_TXT_NYSE> Stocks_TXT_NYSE { get; set; }
     }
 }

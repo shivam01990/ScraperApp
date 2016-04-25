@@ -1,221 +1,185 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="fin_Financials">
+  <EntityType Name="finviz_Calendar">
+    <Key>
+      <PropertyRef Name="finviz_calendar_id" />
+    </Key>
+    <Property Name="finviz_calendar_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="job_run_id" Type="int" Nullable="false" />
+    <Property Name="stock_id" Type="int" Nullable="false" />
+    <Property Name="calendar_date_text" Type="varchar" MaxLength="10" />
+    <Property Name="calendar_yyyy" Type="char" MaxLength="4" />
+    <Property Name="calendar_mm" Type="char" MaxLength="2" />
+    <Property Name="calendar_dd" Type="char" MaxLength="2" />
+    <Property Name="calendar_day" Type="char" MaxLength="3" />
+    <Property Name="banner_date" Type="varchar" MaxLength="26" Nullable="false" />
+    <Property Name="time_zone" Type="varchar" MaxLength="4" />
+    <Property Name="calendar_date" Type="varchar" MaxLength="19" Nullable="false" />
+    <Property Name="market_closed" Type="bit" />
+    <Property Name="official_market_closure" Type="bit" />
+    <Property Name="market_closure_notes" Type="nvarchar" MaxLength="1027" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="finviz_Financials">
     <Key>
       <PropertyRef Name="Finviz_FinancialId" />
     </Key>
     <Property Name="Finviz_FinancialId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_Id" Type="int" Nullable="false" />
-    <Property Name="Data_Points" Type="nvarchar" MaxLength="500" />
-    <Property Name="Descriptor" Type="nvarchar" MaxLength="500" />
-    <Property Name="CreatedOn" Type="datetime" />
-    <Property Name="UpdatedOn" Type="datetime" />
-    <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="EffectiveDate" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="value" Type="nvarchar" MaxLength="50" />
+    <Property Name="descriptor" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <EntityType Name="fin_Insider_Trading">
+  <EntityType Name="finviz_Insider_Trading">
     <Key>
       <PropertyRef Name="Finviz_Insider_TradingId" />
     </Key>
     <Property Name="Finviz_Insider_TradingId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="stock_Id" Type="int" Nullable="false" />
     <Property Name="Job_run_Id" Type="int" Nullable="false" />
-    <Property Name="Insider_Trading" Type="nvarchar" MaxLength="500" />
-    <Property Name="Relashionship" Type="nvarchar" MaxLength="500" />
-    <Property Name="Date" Type="nvarchar" MaxLength="50" />
-    <Property Name="Transaction" Type="nvarchar" MaxLength="50" />
-    <Property Name="Cost" Type="nvarchar" MaxLength="50" />
-    <Property Name="Shares" Type="nvarchar" MaxLength="50" />
-    <Property Name="Value" Type="nvarchar" MaxLength="50" />
-    <Property Name="Shares_Total" Type="nvarchar" MaxLength="50" />
-    <Property Name="SECForm4" Type="nvarchar" MaxLength="50" />
+    <Property Name="EffectiveDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="insider_Trading" Type="nvarchar" MaxLength="127" />
+    <Property Name="relationship" Type="nvarchar" MaxLength="127" />
+    <Property Name="Date" Type="nvarchar" MaxLength="63" />
+    <Property Name="it_transaction" Type="nvarchar" MaxLength="63" />
+    <Property Name="cost" Type="nvarchar" MaxLength="63" />
+    <Property Name="shares" Type="nvarchar" MaxLength="63" />
+    <Property Name="value" Type="nvarchar" MaxLength="63" />
+    <Property Name="shares_Total" Type="nvarchar" MaxLength="63" />
+    <Property Name="SEC_Form_4" Type="nvarchar" MaxLength="63" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" />
   </EntityType>
-  <EntityType Name="fin_Market_Movers">
+  <EntityType Name="finviz_Market_Movers">
     <Key>
-      <PropertyRef Name="Market_Movers_Id" />
+      <PropertyRef Name="finviz_market_movers_id" />
     </Key>
-    <Property Name="Market_Movers_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Job_run_Id" Type="int" Nullable="false" />
-    <Property Name="Ticker" Type="nvarchar" MaxLength="50" />
-    <Property Name="Last" Type="nvarchar" MaxLength="50" />
-    <Property Name="Change" Type="nvarchar" MaxLength="50" />
-    <Property Name="Volume" Type="nvarchar" MaxLength="50" />
-    <Property Name="Signal" Type="nvarchar" MaxLength="50" />
+    <Property Name="finviz_market_movers_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="job_run_id" Type="int" Nullable="false" />
+    <Property Name="EffectiveDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="ticker" Type="nvarchar" MaxLength="50" />
+    <Property Name="last_quote" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="percent_change" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="volume" Type="int" />
+    <Property Name="signal" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <EntityType Name="fin_News">
+  <EntityType Name="finviz_News">
     <Key>
-      <PropertyRef Name="NewsId" />
+      <PropertyRef Name="finviz_news_id" />
     </Key>
-    <Property Name="NewsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Stock_Id" Type="int" Nullable="false" />
-    <Property Name="Job_Id" Type="int" Nullable="false" />
-    <Property Name="Date" Type="datetime" />
-    <Property Name="NewsMsg" Type="nvarchar(max)" />
-    <Property Name="CreatedOn" Type="datetime" />
-    <Property Name="UpdatedOn" Type="datetime" />
-    <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="finviz_news_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stock_id" Type="int" Nullable="false" />
+    <Property Name="job_run_id" Type="int" Nullable="false" />
+    <Property Name="news_date" Type="nvarchar" MaxLength="23" Nullable="false" />
+    <Property Name="news_message" Type="nvarchar(max)" />
+    <Property Name="news_link" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <EntityType Name="fin_Recommendations">
+  <EntityType Name="finviz_Recommendations">
     <Key>
-      <PropertyRef Name="RecommendationId" />
+      <PropertyRef Name="finviz_recommendationId" />
     </Key>
-    <Property Name="RecommendationId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Job_run_id" Type="int" Nullable="false" />
-    <Property Name="Stock_id" Type="int" Nullable="false" />
+    <Property Name="finviz_recommendationId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="job_run_id" Type="int" Nullable="false" />
+    <Property Name="stock_id" Type="int" Nullable="false" />
+    <Property Name="EffectiveDate" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Date" Type="nvarchar" MaxLength="50" />
     <Property Name="RecommendationType" Type="nvarchar" MaxLength="100" />
     <Property Name="Analyst" Type="nvarchar" MaxLength="100" />
     <Property Name="Recommendation" Type="nvarchar" MaxLength="100" />
     <Property Name="Target" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ft_Consensus">
+    <Key>
+      <PropertyRef Name="ConsensusId" />
+    </Key>
+    <Property Name="ConsensusId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="job_run_id" Type="int" Nullable="false" />
+    <Property Name="stock_id" Type="int" Nullable="false" />
+    <Property Name="effective_date" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="consensus" Type="varchar(max)" />
+    <Property Name="buy_analyst_count" Type="smallint" />
+    <Property Name="outperform_analyst_count" Type="smallint" />
+    <Property Name="hold_analyst_count" Type="smallint" />
+    <Property Name="underperform_analyst_count" Type="smallint" />
+    <Property Name="sell_analyst_count" Type="smallint" />
+    <Property Name="no_opinion_analyst_count" Type="smallint" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" />
   </EntityType>
-  <EntityType Name="ft_fin_common_stock_dividends">
+  <EntityType Name="ft_Financials">
     <Key>
-      <PropertyRef Name="common_stock_dividends_id" />
+      <PropertyRef Name="financial_id" />
     </Key>
-    <Property Name="common_stock_dividends_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="financial_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="job_run_id" Type="int" Nullable="false" />
     <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="effective_date" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="First_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Second_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Third_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="effective_date" Type="varchar" MaxLength="17" Nullable="false" />
+    <Property Name="year" Type="char" MaxLength="4" />
+    <Property Name="ragp_total_revenue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="oe_cost_of_revenue_total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="oe_selling_generalexpenses_total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="oe_depreciation_amort" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="oe_unusual_expense_income" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="oe_other_operating_expenses_total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="oe_total_operating_expense" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="oe_operating_income" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="oe_other_net" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="itmiei_net_income_before_taxes" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="itmiei_provision_for_income_taxes" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="itmiei_net_income_after_taxes" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="itmiei_minority_interest" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="itmiei_net_income_before_extra_items" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="itmiei_total_extraordinary_items" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="itmiei_net_income" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="itmiei_inc_to_common_excl_extra_items" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="itmiei_inc_to_common_incl_extra_items" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="epsr_basic_weighted_average_shares" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="epsr_basic_eps_excl_extra_items" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="epsr_basic_eps_incl_extra_items" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="epsr_dilution_adjustment" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="epsr_diluted_weighted_average_shares" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="epsr_diluted_eps_excl_extra_items" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="epsr_diluted_eps_incl_extra_items" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="csd_dps_common_stock_primary_issue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="csd_gross_dividend_common_stock" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="pfi_pro_forma_net_income" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="pfi_interest_expense_supplemental" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="si_depreciation_supplemental" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="si_total_special_items" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ni_normalized_income_before_taxes" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ni_effect_of_special_items_on_income_taxes" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ni_income_tax_excluding_impact_of_special_items" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ni_normalized_income_after_tax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ni_normalized_income_avail_to_common" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ni_basic_normalized_eps" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ni_diluted_normalized_eps" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="created_on" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <EntityType Name="ft_fin_eps_reconciliation">
+  <EntityType Name="ft_Forecasts">
     <Key>
-      <PropertyRef Name="eps_reconciliation_id" />
+      <PropertyRef Name="forecast_id" />
     </Key>
-    <Property Name="eps_reconciliation_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="forecast_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="job_run_id" Type="int" Nullable="false" />
     <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="effective_date" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="First_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Second_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Third_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ft_fin_incometaxes_minorityinterest_extras">
-    <Key>
-      <PropertyRef Name="incometaxes_minorityinterest_extras_id" />
-    </Key>
-    <Property Name="incometaxes_minorityinterest_extras_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="job_run_id" Type="int" Nullable="false" />
-    <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="effective_date" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="First_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Second_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Third_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ft_fin_normalized_income">
-    <Key>
-      <PropertyRef Name="normalized_income_id" />
-    </Key>
-    <Property Name="normalized_income_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="job_run_id" Type="int" Nullable="false" />
-    <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="effective_date" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="First_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Second_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Third_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ft_fin_operating_expenses">
-    <Key>
-      <PropertyRef Name="operating_expenses_id" />
-    </Key>
-    <Property Name="operating_expenses_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="job_run_id" Type="int" Nullable="false" />
-    <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="effective_date" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="First_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Second_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Third_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ft_fin_proforma_income">
-    <Key>
-      <PropertyRef Name="proforma_income_id" />
-    </Key>
-    <Property Name="proforma_income_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="job_run_id" Type="int" Nullable="false" />
-    <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="effective_date" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="First_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Second_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Third_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ft_fin_revenue_and_gross_profit">
-    <Key>
-      <PropertyRef Name="revenue_and_gross_profit_id" />
-    </Key>
-    <Property Name="revenue_and_gross_profit_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="job_run_id" Type="int" Nullable="false" />
-    <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="First_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Second_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Third_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ft_fin_supplemetal_income">
-    <Key>
-      <PropertyRef Name="supplemetal_income_id" />
-    </Key>
-    <Property Name="supplemetal_income_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="job_run_id" Type="int" Nullable="false" />
-    <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="effective_date" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" />
-    <Property Name="First_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Second_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="Third_Year" Type="nvarchar" MaxLength="50" />
-    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ft_forecasts_prices">
-    <Key>
-      <PropertyRef Name="forecasts_prices_Id" />
-    </Key>
-    <Property Name="forecasts_prices_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="job_run_id" Type="int" Nullable="false" />
-    <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="effective_date" Type="char" MaxLength="14" Nullable="false" />
-    <Property Name="share_price_forecast" Type="nvarchar(max)" />
-    <Property Name="current_price" Type="decimal" Precision="7" Scale="2" />
-    <Property Name="target_level" Type="nvarchar" MaxLength="6" />
-    <Property Name="target_price" Type="decimal" Precision="7" Scale="2" />
-    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ft_forecasts_recommendations">
-    <Key>
-      <PropertyRef Name="forecast_recommendation_Id" />
-    </Key>
-    <Property Name="forecast_recommendation_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="job_run_id" Type="int" Nullable="false" />
-    <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="effective_date" Type="char" MaxLength="14" Nullable="false" />
-    <Property Name="Recommendation_consensus" Type="nvarchar(max)" />
-    <Property Name="Recommendation_type" Type="nvarchar(max)" />
-    <Property Name="Recommendations" Type="smallint" />
-    <Property Name="Analyst" Type="nvarchar(max)" />
-    <Property Name="Target" Type="nvarchar(max)" />
-    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="effective_date" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="forecast_description" Type="varchar(max)" />
+    <Property Name="current_price" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="high_target_price" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="medium_target_price" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="low_target_price" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="time_period_unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="time_period" Type="smallint" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" />
   </EntityType>
   <EntityType Name="reuters_Financials_Dividends">
     <Key>
       <PropertyRef Name="Reuters_FinancialsDividend_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsDividend_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsDividend_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="run_job_Id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="nvarchar" MaxLength="30" />
@@ -229,7 +193,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsEfficiency_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsEfficiency_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsEfficiency_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="run_job_id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
@@ -243,7 +207,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsGrowthRate_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsGrowthRate_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsGrowthRate_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="run_job_id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="30" />
@@ -257,7 +221,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsInstitutions_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsInstitutions_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsInstitutions_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="30" Nullable="false" />
@@ -269,7 +233,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsMgmtEffectiveness_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsMgmtEffectiveness_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsMgmtEffectiveness_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_Id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="30" Nullable="false" />
@@ -297,7 +261,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsSalesEstimates_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsSalesEstimates_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsSalesEstimates_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="nvarchar" MaxLength="30" />
@@ -313,7 +277,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsStrength_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsStrength_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsStrength_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_Id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
@@ -327,7 +291,7 @@
     <Key>
       <PropertyRef Name="Reuters_FinancialsValuationRatio_Id" />
     </Key>
-    <Property Name="Reuters_FinancialsValuationRatio_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reuters_FinancialsValuationRatio_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_Id" Type="int" Nullable="false" />
     <Property Name="EffectiveDate" Type="varchar" MaxLength="14" Nullable="false" />
@@ -341,7 +305,7 @@
     <Key>
       <PropertyRef Name="Reuters_RecommendationsRevisions_Id" />
     </Key>
-    <Property Name="Reuters_RecommendationsRevisions_Id" Type="bigint" Nullable="false" />
+    <Property Name="Reuters_RecommendationsRevisions_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Stock_Id" Type="int" Nullable="false" />
     <Property Name="job_run_Id" Type="int" Nullable="false" />
     <Property Name="LastRecommendationDate" Type="date" />
@@ -352,46 +316,23 @@
     <Property Name="AnalystRecommend_Month_3" Type="nvarchar(max)" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NASDAQ' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Stocks_TXT_NASDAQ">
-    <Key>
-      <PropertyRef Name="Ticker" />
-      <PropertyRef Name="Company_Name" />
-    </Key>
-    <Property Name="Ticker" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Company_Name" Type="nvarchar" MaxLength="1280" Nullable="false" />
-    <Property Name="Exchange_Abbr" Type="nvarchar" MaxLength="50" />
-    <Property Name="Source" Type="nvarchar" MaxLength="16" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Stocks_TXT_NYSE">
-    <Key>
-      <PropertyRef Name="Ticker" />
-      <PropertyRef Name="Company_Name" />
-    </Key>
-    <Property Name="Ticker" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Company_Name" Type="nvarchar" MaxLength="1280" Nullable="false" />
-    <Property Name="Exchange_Abbr" Type="nvarchar" MaxLength="50" />
-    <Property Name="Source" Type="nvarchar" MaxLength="16" />
-  </EntityType>
   <EntityType Name="ws_Jobs">
     <Key>
       <PropertyRef Name="Job_id" />
     </Key>
     <Property Name="Job_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Start_Time" Type="datetime" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <EntityType Name="ws_Logs">
     <Key>
       <PropertyRef Name="Log_Id" />
     </Key>
     <Property Name="Log_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Job_Id" Type="int" Nullable="false" />
-    <Property Name="LogMsg" Type="nvarchar(max)" />
-    <Property Name="Time_ST" Type="timestamp" StoreGeneratedPattern="Computed" />
-    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="job_run_Id" Type="int" Nullable="false" />
+    <Property Name="log_msg" Type="nvarchar(max)" />
+    <Property Name="log_status" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" />
   </EntityType>
   <EntityType Name="ws_Stocks">
     <Key>
@@ -408,329 +349,164 @@ warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a pri
     <Property Name="Format_Issue_Symbol" Type="nvarchar" MaxLength="50" />
     <Property Name="StatusState_Id" Type="tinyint" />
     <Property Name="Source" Type="nvarchar" MaxLength="16" />
+    <Property Name="company_desc_finviz" Type="nvarchar(max)" />
+    <Property Name="sub_sector" Type="nvarchar" MaxLength="50" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="UpdatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <Association Name="FK_Finviz_Financials_Jobs">
+  <Association Name="FK_fin_Recommendations_ws_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="fin_Financials" Type="Self.fin_Financials" Multiplicity="*" />
+    <End Role="finviz_Recommendations" Type="Self.finviz_Recommendations" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="fin_Financials">
+      <Dependent Role="finviz_Recommendations">
+        <PropertyRef Name="job_run_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_fin_Recommendations_ws_Stocks">
+    <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
+    <End Role="finviz_Recommendations" Type="Self.finviz_Recommendations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_Stocks">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="finviz_Recommendations">
+        <PropertyRef Name="stock_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Finviz_Financials_Jobs">
+    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
+    <End Role="finviz_Financials" Type="Self.finviz_Financials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_Jobs">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="finviz_Financials">
         <PropertyRef Name="job_run_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Finviz_Financials_Stocks">
     <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="fin_Financials" Type="Self.fin_Financials" Multiplicity="*" />
+    <End Role="finviz_Financials" Type="Self.finviz_Financials" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="fin_Financials">
+      <Dependent Role="finviz_Financials">
         <PropertyRef Name="Stock_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_finviz_Insider_Trading_ws_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="fin_Insider_Trading" Type="Self.fin_Insider_Trading" Multiplicity="*" />
+    <End Role="finviz_Insider_Trading" Type="Self.finviz_Insider_Trading" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="fin_Insider_Trading">
+      <Dependent Role="finviz_Insider_Trading">
         <PropertyRef Name="Job_run_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_finviz_Insider_Trading_ws_Stocks">
     <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="fin_Insider_Trading" Type="Self.fin_Insider_Trading" Multiplicity="*" />
+    <End Role="finviz_Insider_Trading" Type="Self.finviz_Insider_Trading" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="fin_Insider_Trading">
+      <Dependent Role="finviz_Insider_Trading">
         <PropertyRef Name="stock_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_finviz_MARKET_MOVERS_ws_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="fin_Market_Movers" Type="Self.fin_Market_Movers" Multiplicity="*" />
+    <End Role="finviz_Market_Movers" Type="Self.finviz_Market_Movers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="fin_Market_Movers">
-        <PropertyRef Name="Job_run_Id" />
+      <Dependent Role="finviz_Market_Movers">
+        <PropertyRef Name="job_run_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_finviz_Recommendations_ws_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="fin_Recommendations" Type="Self.fin_Recommendations" Multiplicity="*" />
+    <End Role="ft_Consensus" Type="Self.ft_Consensus" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="fin_Recommendations">
-        <PropertyRef Name="Job_run_id" />
+      <Dependent Role="ft_Consensus">
+        <PropertyRef Name="job_run_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_finviz_Recommendations_ws_Stocks">
     <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="fin_Recommendations" Type="Self.fin_Recommendations" Multiplicity="*" />
+    <End Role="ft_Consensus" Type="Self.ft_Consensus" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="fin_Recommendations">
-        <PropertyRef Name="Stock_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_common_stock_dividends_ws_Jobs">
-    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="ft_fin_common_stock_dividends" Type="Self.ft_fin_common_stock_dividends" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Jobs">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="ft_fin_common_stock_dividends">
-        <PropertyRef Name="job_run_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_common_stock_dividends_ws_Stocks">
-    <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="ft_fin_common_stock_dividends" Type="Self.ft_fin_common_stock_dividends" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Stocks">
-        <PropertyRef Name="Stock_Id" />
-      </Principal>
-      <Dependent Role="ft_fin_common_stock_dividends">
+      <Dependent Role="ft_Consensus">
         <PropertyRef Name="stock_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ft_fin_eps_reconciliation_ws_Jobs">
+  <Association Name="FK_ft_Financials_ws_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="ft_fin_eps_reconciliation" Type="Self.ft_fin_eps_reconciliation" Multiplicity="*" />
+    <End Role="ft_Financials" Type="Self.ft_Financials" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="ft_fin_eps_reconciliation">
+      <Dependent Role="ft_Financials">
         <PropertyRef Name="job_run_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ft_fin_eps_reconciliation_ws_Stocks">
+  <Association Name="FK_ft_Financials_ws_Stocks">
     <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="ft_fin_eps_reconciliation" Type="Self.ft_fin_eps_reconciliation" Multiplicity="*" />
+    <End Role="ft_Financials" Type="Self.ft_Financials" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="ft_fin_eps_reconciliation">
+      <Dependent Role="ft_Financials">
         <PropertyRef Name="stock_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ft_fin_incometaxes_minorityinterest_extras_ws_Jobs">
+  <Association Name="FK_ft_Forecasts_ws_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="ft_fin_incometaxes_minorityinterest_extras" Type="Self.ft_fin_incometaxes_minorityinterest_extras" Multiplicity="*" />
+    <End Role="ft_Forecasts" Type="Self.ft_Forecasts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="ft_fin_incometaxes_minorityinterest_extras">
+      <Dependent Role="ft_Forecasts">
         <PropertyRef Name="job_run_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ft_fin_incometaxes_minorityinterest_extras_ws_Stocks">
+  <Association Name="FK_ft_Forecasts_ws_Stocks">
     <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="ft_fin_incometaxes_minorityinterest_extras" Type="Self.ft_fin_incometaxes_minorityinterest_extras" Multiplicity="*" />
+    <End Role="ft_Forecasts" Type="Self.ft_Forecasts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="ft_fin_incometaxes_minorityinterest_extras">
-        <PropertyRef Name="stock_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_normalized_income_ws_Jobs">
-    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="ft_fin_normalized_income" Type="Self.ft_fin_normalized_income" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Jobs">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="ft_fin_normalized_income">
-        <PropertyRef Name="job_run_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_normalized_income_ws_Stocks">
-    <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="ft_fin_normalized_income" Type="Self.ft_fin_normalized_income" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Stocks">
-        <PropertyRef Name="Stock_Id" />
-      </Principal>
-      <Dependent Role="ft_fin_normalized_income">
-        <PropertyRef Name="stock_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_operating_expenses_ws_Jobs">
-    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="ft_fin_operating_expenses" Type="Self.ft_fin_operating_expenses" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Jobs">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="ft_fin_operating_expenses">
-        <PropertyRef Name="job_run_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_operating_expenses_ws_Stocks">
-    <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="ft_fin_operating_expenses" Type="Self.ft_fin_operating_expenses" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Stocks">
-        <PropertyRef Name="Stock_Id" />
-      </Principal>
-      <Dependent Role="ft_fin_operating_expenses">
-        <PropertyRef Name="stock_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_proforma_income_ws_Jobs">
-    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="ft_fin_proforma_income" Type="Self.ft_fin_proforma_income" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Jobs">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="ft_fin_proforma_income">
-        <PropertyRef Name="job_run_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_proforma_income_ws_Stocks">
-    <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="ft_fin_proforma_income" Type="Self.ft_fin_proforma_income" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Stocks">
-        <PropertyRef Name="Stock_Id" />
-      </Principal>
-      <Dependent Role="ft_fin_proforma_income">
-        <PropertyRef Name="stock_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_revenue_and_gross_profit_ws_Jobs">
-    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="ft_fin_revenue_and_gross_profit" Type="Self.ft_fin_revenue_and_gross_profit" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Jobs">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="ft_fin_revenue_and_gross_profit">
-        <PropertyRef Name="job_run_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_revenue_and_gross_profit_ws_Stocks">
-    <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="ft_fin_revenue_and_gross_profit" Type="Self.ft_fin_revenue_and_gross_profit" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Stocks">
-        <PropertyRef Name="Stock_Id" />
-      </Principal>
-      <Dependent Role="ft_fin_revenue_and_gross_profit">
-        <PropertyRef Name="stock_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_supplemetal_income_ws_Jobs">
-    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="ft_fin_supplemetal_income" Type="Self.ft_fin_supplemetal_income" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Jobs">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="ft_fin_supplemetal_income">
-        <PropertyRef Name="job_run_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_fin_supplemetal_income_ws_Stocks">
-    <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="ft_fin_supplemetal_income" Type="Self.ft_fin_supplemetal_income" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Stocks">
-        <PropertyRef Name="Stock_Id" />
-      </Principal>
-      <Dependent Role="ft_fin_supplemetal_income">
-        <PropertyRef Name="stock_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_forecasts_prices_ws_Jobs">
-    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="ft_forecasts_prices" Type="Self.ft_forecasts_prices" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Jobs">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="ft_forecasts_prices">
-        <PropertyRef Name="job_run_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_forecasts_prices_ws_Stocks">
-    <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="ft_forecasts_prices" Type="Self.ft_forecasts_prices" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Stocks">
-        <PropertyRef Name="Stock_Id" />
-      </Principal>
-      <Dependent Role="ft_forecasts_prices">
-        <PropertyRef Name="stock_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_forecasts_recommendations_ws_Jobs">
-    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="ft_forecasts_recommendations" Type="Self.ft_forecasts_recommendations" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Jobs">
-        <PropertyRef Name="Job_id" />
-      </Principal>
-      <Dependent Role="ft_forecasts_recommendations">
-        <PropertyRef Name="job_run_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ft_forecasts_recommendations_ws_Stocks">
-    <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="ft_forecasts_recommendations" Type="Self.ft_forecasts_recommendations" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ws_Stocks">
-        <PropertyRef Name="Stock_Id" />
-      </Principal>
-      <Dependent Role="ft_forecasts_recommendations">
+      <Dependent Role="ft_Forecasts">
         <PropertyRef Name="stock_id" />
       </Dependent>
     </ReferentialConstraint>
@@ -743,31 +519,31 @@ warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a pri
         <PropertyRef Name="Job_id" />
       </Principal>
       <Dependent Role="ws_Logs">
-        <PropertyRef Name="Job_Id" />
+        <PropertyRef Name="job_run_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_News_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
-    <End Role="fin_News" Type="Self.fin_News" Multiplicity="*" />
+    <End Role="finviz_News" Type="Self.finviz_News" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Jobs">
         <PropertyRef Name="Job_id" />
       </Principal>
-      <Dependent Role="fin_News">
-        <PropertyRef Name="Job_Id" />
+      <Dependent Role="finviz_News">
+        <PropertyRef Name="job_run_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_News_Stocks1">
     <End Role="ws_Stocks" Type="Self.ws_Stocks" Multiplicity="1" />
-    <End Role="fin_News" Type="Self.fin_News" Multiplicity="*" />
+    <End Role="finviz_News" Type="Self.finviz_News" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ws_Stocks">
         <PropertyRef Name="Stock_Id" />
       </Principal>
-      <Dependent Role="fin_News">
-        <PropertyRef Name="Stock_Id" />
+      <Dependent Role="finviz_News">
+        <PropertyRef Name="stock_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1012,21 +788,15 @@ warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a pri
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="DBModelStoreContainer">
-    <EntitySet Name="fin_Financials" EntityType="Self.fin_Financials" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="fin_Insider_Trading" EntityType="Self.fin_Insider_Trading" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="fin_Market_Movers" EntityType="Self.fin_Market_Movers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="fin_News" EntityType="Self.fin_News" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="fin_Recommendations" EntityType="Self.fin_Recommendations" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ft_fin_common_stock_dividends" EntityType="Self.ft_fin_common_stock_dividends" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ft_fin_eps_reconciliation" EntityType="Self.ft_fin_eps_reconciliation" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ft_fin_incometaxes_minorityinterest_extras" EntityType="Self.ft_fin_incometaxes_minorityinterest_extras" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ft_fin_normalized_income" EntityType="Self.ft_fin_normalized_income" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ft_fin_operating_expenses" EntityType="Self.ft_fin_operating_expenses" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ft_fin_proforma_income" EntityType="Self.ft_fin_proforma_income" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ft_fin_revenue_and_gross_profit" EntityType="Self.ft_fin_revenue_and_gross_profit" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ft_fin_supplemetal_income" EntityType="Self.ft_fin_supplemetal_income" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ft_forecasts_prices" EntityType="Self.ft_forecasts_prices" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ft_forecasts_recommendations" EntityType="Self.ft_forecasts_recommendations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="finviz_Calendar" EntityType="Self.finviz_Calendar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="finviz_Financials" EntityType="Self.finviz_Financials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="finviz_Insider_Trading" EntityType="Self.finviz_Insider_Trading" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="finviz_Market_Movers" EntityType="Self.finviz_Market_Movers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="finviz_News" EntityType="Self.finviz_News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="finviz_Recommendations" EntityType="Self.finviz_Recommendations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ft_Consensus" EntityType="Self.ft_Consensus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ft_Financials" EntityType="Self.ft_Financials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ft_Forecasts" EntityType="Self.ft_Forecasts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reuters_Financials_Dividends" EntityType="Self.reuters_Financials_Dividends" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reuters_Financials_Efficiencies" EntityType="Self.reuters_Financials_Efficiencies" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reuters_Financials_GrowthRates" EntityType="Self.reuters_Financials_GrowthRates" Schema="dbo" store:Type="Tables" />
@@ -1040,129 +810,57 @@ warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a pri
     <EntitySet Name="ws_Jobs" EntityType="Self.ws_Jobs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_Logs" EntityType="Self.ws_Logs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_Stocks" EntityType="Self.ws_Stocks" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Stocks_TXT_NASDAQ" EntityType="Self.Stocks_TXT_NASDAQ" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Stocks_TXT_NASDAQ].[Ticker] AS [Ticker], 
-    [Stocks_TXT_NASDAQ].[Company_Name] AS [Company_Name], 
-    [Stocks_TXT_NASDAQ].[Exchange_Abbr] AS [Exchange_Abbr], 
-    [Stocks_TXT_NASDAQ].[Source] AS [Source]
-    FROM [dbo].[Stocks_TXT_NASDAQ] AS [Stocks_TXT_NASDAQ]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Stocks_TXT_NYSE" EntityType="Self.Stocks_TXT_NYSE" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Stocks_TXT_NYSE].[Ticker] AS [Ticker], 
-    [Stocks_TXT_NYSE].[Company_Name] AS [Company_Name], 
-    [Stocks_TXT_NYSE].[Exchange_Abbr] AS [Exchange_Abbr], 
-    [Stocks_TXT_NYSE].[Source] AS [Source]
-    FROM [dbo].[Stocks_TXT_NYSE] AS [Stocks_TXT_NYSE]</DefiningQuery>
-    </EntitySet>
+    <AssociationSet Name="FK_fin_Recommendations_ws_Jobs" Association="Self.FK_fin_Recommendations_ws_Jobs">
+      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
+      <End Role="finviz_Recommendations" EntitySet="finviz_Recommendations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_fin_Recommendations_ws_Stocks" Association="Self.FK_fin_Recommendations_ws_Stocks">
+      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
+      <End Role="finviz_Recommendations" EntitySet="finviz_Recommendations" />
+    </AssociationSet>
     <AssociationSet Name="FK_Finviz_Financials_Jobs" Association="Self.FK_Finviz_Financials_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="fin_Financials" EntitySet="fin_Financials" />
+      <End Role="finviz_Financials" EntitySet="finviz_Financials" />
     </AssociationSet>
     <AssociationSet Name="FK_Finviz_Financials_Stocks" Association="Self.FK_Finviz_Financials_Stocks">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="fin_Financials" EntitySet="fin_Financials" />
+      <End Role="finviz_Financials" EntitySet="finviz_Financials" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_Insider_Trading_ws_Jobs" Association="Self.FK_finviz_Insider_Trading_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="fin_Insider_Trading" EntitySet="fin_Insider_Trading" />
+      <End Role="finviz_Insider_Trading" EntitySet="finviz_Insider_Trading" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_Insider_Trading_ws_Stocks" Association="Self.FK_finviz_Insider_Trading_ws_Stocks">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="fin_Insider_Trading" EntitySet="fin_Insider_Trading" />
+      <End Role="finviz_Insider_Trading" EntitySet="finviz_Insider_Trading" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_MARKET_MOVERS_ws_Jobs" Association="Self.FK_finviz_MARKET_MOVERS_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="fin_Market_Movers" EntitySet="fin_Market_Movers" />
+      <End Role="finviz_Market_Movers" EntitySet="finviz_Market_Movers" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_Recommendations_ws_Jobs" Association="Self.FK_finviz_Recommendations_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="fin_Recommendations" EntitySet="fin_Recommendations" />
+      <End Role="ft_Consensus" EntitySet="ft_Consensus" />
     </AssociationSet>
     <AssociationSet Name="FK_finviz_Recommendations_ws_Stocks" Association="Self.FK_finviz_Recommendations_ws_Stocks">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="fin_Recommendations" EntitySet="fin_Recommendations" />
+      <End Role="ft_Consensus" EntitySet="ft_Consensus" />
     </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_common_stock_dividends_ws_Jobs" Association="Self.FK_ft_fin_common_stock_dividends_ws_Jobs">
+    <AssociationSet Name="FK_ft_Financials_ws_Jobs" Association="Self.FK_ft_Financials_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="ft_fin_common_stock_dividends" EntitySet="ft_fin_common_stock_dividends" />
+      <End Role="ft_Financials" EntitySet="ft_Financials" />
     </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_common_stock_dividends_ws_Stocks" Association="Self.FK_ft_fin_common_stock_dividends_ws_Stocks">
+    <AssociationSet Name="FK_ft_Financials_ws_Stocks" Association="Self.FK_ft_Financials_ws_Stocks">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="ft_fin_common_stock_dividends" EntitySet="ft_fin_common_stock_dividends" />
+      <End Role="ft_Financials" EntitySet="ft_Financials" />
     </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_eps_reconciliation_ws_Jobs" Association="Self.FK_ft_fin_eps_reconciliation_ws_Jobs">
+    <AssociationSet Name="FK_ft_Forecasts_ws_Jobs" Association="Self.FK_ft_Forecasts_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="ft_fin_eps_reconciliation" EntitySet="ft_fin_eps_reconciliation" />
+      <End Role="ft_Forecasts" EntitySet="ft_Forecasts" />
     </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_eps_reconciliation_ws_Stocks" Association="Self.FK_ft_fin_eps_reconciliation_ws_Stocks">
+    <AssociationSet Name="FK_ft_Forecasts_ws_Stocks" Association="Self.FK_ft_Forecasts_ws_Stocks">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="ft_fin_eps_reconciliation" EntitySet="ft_fin_eps_reconciliation" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_incometaxes_minorityinterest_extras_ws_Jobs" Association="Self.FK_ft_fin_incometaxes_minorityinterest_extras_ws_Jobs">
-      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="ft_fin_incometaxes_minorityinterest_extras" EntitySet="ft_fin_incometaxes_minorityinterest_extras" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_incometaxes_minorityinterest_extras_ws_Stocks" Association="Self.FK_ft_fin_incometaxes_minorityinterest_extras_ws_Stocks">
-      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="ft_fin_incometaxes_minorityinterest_extras" EntitySet="ft_fin_incometaxes_minorityinterest_extras" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_normalized_income_ws_Jobs" Association="Self.FK_ft_fin_normalized_income_ws_Jobs">
-      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="ft_fin_normalized_income" EntitySet="ft_fin_normalized_income" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_normalized_income_ws_Stocks" Association="Self.FK_ft_fin_normalized_income_ws_Stocks">
-      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="ft_fin_normalized_income" EntitySet="ft_fin_normalized_income" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_operating_expenses_ws_Jobs" Association="Self.FK_ft_fin_operating_expenses_ws_Jobs">
-      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="ft_fin_operating_expenses" EntitySet="ft_fin_operating_expenses" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_operating_expenses_ws_Stocks" Association="Self.FK_ft_fin_operating_expenses_ws_Stocks">
-      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="ft_fin_operating_expenses" EntitySet="ft_fin_operating_expenses" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_proforma_income_ws_Jobs" Association="Self.FK_ft_fin_proforma_income_ws_Jobs">
-      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="ft_fin_proforma_income" EntitySet="ft_fin_proforma_income" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_proforma_income_ws_Stocks" Association="Self.FK_ft_fin_proforma_income_ws_Stocks">
-      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="ft_fin_proforma_income" EntitySet="ft_fin_proforma_income" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_revenue_and_gross_profit_ws_Jobs" Association="Self.FK_ft_fin_revenue_and_gross_profit_ws_Jobs">
-      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="ft_fin_revenue_and_gross_profit" EntitySet="ft_fin_revenue_and_gross_profit" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_revenue_and_gross_profit_ws_Stocks" Association="Self.FK_ft_fin_revenue_and_gross_profit_ws_Stocks">
-      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="ft_fin_revenue_and_gross_profit" EntitySet="ft_fin_revenue_and_gross_profit" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_supplemetal_income_ws_Jobs" Association="Self.FK_ft_fin_supplemetal_income_ws_Jobs">
-      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="ft_fin_supplemetal_income" EntitySet="ft_fin_supplemetal_income" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_fin_supplemetal_income_ws_Stocks" Association="Self.FK_ft_fin_supplemetal_income_ws_Stocks">
-      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="ft_fin_supplemetal_income" EntitySet="ft_fin_supplemetal_income" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_forecasts_prices_ws_Jobs" Association="Self.FK_ft_forecasts_prices_ws_Jobs">
-      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="ft_forecasts_prices" EntitySet="ft_forecasts_prices" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_forecasts_prices_ws_Stocks" Association="Self.FK_ft_forecasts_prices_ws_Stocks">
-      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="ft_forecasts_prices" EntitySet="ft_forecasts_prices" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_forecasts_recommendations_ws_Jobs" Association="Self.FK_ft_forecasts_recommendations_ws_Jobs">
-      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="ft_forecasts_recommendations" EntitySet="ft_forecasts_recommendations" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ft_forecasts_recommendations_ws_Stocks" Association="Self.FK_ft_forecasts_recommendations_ws_Stocks">
-      <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="ft_forecasts_recommendations" EntitySet="ft_forecasts_recommendations" />
+      <End Role="ft_Forecasts" EntitySet="ft_Forecasts" />
     </AssociationSet>
     <AssociationSet Name="FK_Logs_Jobs" Association="Self.FK_Logs_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
@@ -1170,11 +868,11 @@ warning 6002: The table/view 'ScraperV2.dbo.Stocks_TXT_NYSE' does not have a pri
     </AssociationSet>
     <AssociationSet Name="FK_News_Jobs" Association="Self.FK_News_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
-      <End Role="fin_News" EntitySet="fin_News" />
+      <End Role="finviz_News" EntitySet="finviz_News" />
     </AssociationSet>
     <AssociationSet Name="FK_News_Stocks1" Association="Self.FK_News_Stocks1">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
-      <End Role="fin_News" EntitySet="fin_News" />
+      <End Role="finviz_News" EntitySet="finviz_News" />
     </AssociationSet>
     <AssociationSet Name="FK_Reuters_Financials_Dividends_Jobs" Association="Self.FK_Reuters_Financials_Dividends_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />

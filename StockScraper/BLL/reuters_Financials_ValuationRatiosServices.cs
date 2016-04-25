@@ -10,7 +10,7 @@ namespace BLL
     public class reuters_Financials_ValuationRatiosServices
     {
         #region--Instance--
-        public static reuters_Financials_DividendsServices Instance = new reuters_Financials_DividendsServices();
+        public static reuters_Financials_ValuationRatiosServices Instance = new reuters_Financials_ValuationRatiosServices();
         #endregion
 
         #region--Save Reuters Financials Dividends--

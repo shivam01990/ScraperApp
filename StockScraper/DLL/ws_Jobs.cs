@@ -16,21 +16,14 @@ namespace DLL
     {
         public ws_Jobs()
         {
-            this.fin_Financials = new HashSet<fin_Financials>();
-            this.fin_Insider_Trading = new HashSet<fin_Insider_Trading>();
-            this.fin_Market_Movers = new HashSet<fin_Market_Movers>();
-            this.fin_News = new HashSet<fin_News>();
-            this.fin_Recommendations = new HashSet<fin_Recommendations>();
-            this.ft_fin_common_stock_dividends = new HashSet<ft_fin_common_stock_dividends>();
-            this.ft_fin_eps_reconciliation = new HashSet<ft_fin_eps_reconciliation>();
-            this.ft_fin_incometaxes_minorityinterest_extras = new HashSet<ft_fin_incometaxes_minorityinterest_extras>();
-            this.ft_fin_normalized_income = new HashSet<ft_fin_normalized_income>();
-            this.ft_fin_operating_expenses = new HashSet<ft_fin_operating_expenses>();
-            this.ft_fin_proforma_income = new HashSet<ft_fin_proforma_income>();
-            this.ft_fin_revenue_and_gross_profit = new HashSet<ft_fin_revenue_and_gross_profit>();
-            this.ft_fin_supplemetal_income = new HashSet<ft_fin_supplemetal_income>();
-            this.ft_forecasts_prices = new HashSet<ft_forecasts_prices>();
-            this.ft_forecasts_recommendations = new HashSet<ft_forecasts_recommendations>();
+            this.finviz_Financials = new HashSet<finviz_Financials>();
+            this.finviz_Insider_Trading = new HashSet<finviz_Insider_Trading>();
+            this.finviz_Market_Movers = new HashSet<finviz_Market_Movers>();
+            this.finviz_News = new HashSet<finviz_News>();
+            this.finviz_Recommendations = new HashSet<finviz_Recommendations>();
+            this.ft_Consensus = new HashSet<ft_Consensus>();
+            this.ft_Financials = new HashSet<ft_Financials>();
+            this.ft_Forecasts = new HashSet<ft_Forecasts>();
             this.reuters_Financials_Dividends = new HashSet<reuters_Financials_Dividends>();
             this.reuters_Financials_Efficiencies = new HashSet<reuters_Financials_Efficiencies>();
             this.reuters_Financials_GrowthRates = new HashSet<reuters_Financials_GrowthRates>();
@@ -46,22 +39,16 @@ namespace DLL
     
         public int Job_id { get; set; }
         public System.DateTime Start_Time { get; set; }
+        public byte[] CreatedOn { get; set; }
     
-        public virtual ICollection<fin_Financials> fin_Financials { get; set; }
-        public virtual ICollection<fin_Insider_Trading> fin_Insider_Trading { get; set; }
-        public virtual ICollection<fin_Market_Movers> fin_Market_Movers { get; set; }
-        public virtual ICollection<fin_News> fin_News { get; set; }
-        public virtual ICollection<fin_Recommendations> fin_Recommendations { get; set; }
-        public virtual ICollection<ft_fin_common_stock_dividends> ft_fin_common_stock_dividends { get; set; }
-        public virtual ICollection<ft_fin_eps_reconciliation> ft_fin_eps_reconciliation { get; set; }
-        public virtual ICollection<ft_fin_incometaxes_minorityinterest_extras> ft_fin_incometaxes_minorityinterest_extras { get; set; }
-        public virtual ICollection<ft_fin_normalized_income> ft_fin_normalized_income { get; set; }
-        public virtual ICollection<ft_fin_operating_expenses> ft_fin_operating_expenses { get; set; }
-        public virtual ICollection<ft_fin_proforma_income> ft_fin_proforma_income { get; set; }
-        public virtual ICollection<ft_fin_revenue_and_gross_profit> ft_fin_revenue_and_gross_profit { get; set; }
-        public virtual ICollection<ft_fin_supplemetal_income> ft_fin_supplemetal_income { get; set; }
-        public virtual ICollection<ft_forecasts_prices> ft_forecasts_prices { get; set; }
-        public virtual ICollection<ft_forecasts_recommendations> ft_forecasts_recommendations { get; set; }
+        public virtual ICollection<finviz_Financials> finviz_Financials { get; set; }
+        public virtual ICollection<finviz_Insider_Trading> finviz_Insider_Trading { get; set; }
+        public virtual ICollection<finviz_Market_Movers> finviz_Market_Movers { get; set; }
+        public virtual ICollection<finviz_News> finviz_News { get; set; }
+        public virtual ICollection<finviz_Recommendations> finviz_Recommendations { get; set; }
+        public virtual ICollection<ft_Consensus> ft_Consensus { get; set; }
+        public virtual ICollection<ft_Financials> ft_Financials { get; set; }
+        public virtual ICollection<ft_Forecasts> ft_Forecasts { get; set; }
         public virtual ICollection<reuters_Financials_Dividends> reuters_Financials_Dividends { get; set; }
         public virtual ICollection<reuters_Financials_Efficiencies> reuters_Financials_Efficiencies { get; set; }
         public virtual ICollection<reuters_Financials_GrowthRates> reuters_Financials_GrowthRates { get; set; }

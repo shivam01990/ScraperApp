@@ -10,9 +10,9 @@ namespace StockScraper
 {
     public class NewsProvider
     {
-        public static List<fin_News> GetData(HtmlDocument doc, int job_id, int stock_id)
+        public static List<finviz_News> GetData(HtmlDocument doc, int job_id, int stock_id,string URL)
         {
-            List<fin_News> rType = new List<fin_News>();
+            List<finviz_News> rType = new List<finviz_News>();
 
             var tblrows1 = doc.DocumentNode.SelectNodes("//table[@id='news-table']//tr");
             if (tblrows1 != null)
@@ -25,16 +25,17 @@ namespace StockScraper
                         try
                         {
 
-                            fin_News temp = new fin_News();
+                            finviz_News temp = new finviz_News();
                             string _date = tr1.ChildNodes[0].InnerText.Replace("&nbsp;", " "); ;
                             try
                             {
-                                temp.Date = DateTime.Parse(_date);
+                                //temp.news_date = DateTime.Parse(_date);
+                                temp.news_date = _date;
                             }
                             catch { }
-                            temp.NewsMsg = tr1.ChildNodes[1].InnerText;                            
-                            temp.Stock_Id = stock_id;
-                            temp.Job_Id = job_id;
+                            temp.news_message = tr1.ChildNodes[1].InnerText;                            
+                            temp.stock_id = stock_id;
+                            temp.job_run_id = job_id;
                             rType.Add(temp);
                         }
                         catch
@@ -43,6 +44,11 @@ namespace StockScraper
                     }
 
                 }
+            }
+            else
+            {
+                string warningmsg = Helper.GetWarningMSG(stock_id, "finviz_News", URL);
+                Helper.AddtoLog(warningmsg, job_id, true, Helper.LogStatus.warning);
             }
 
             return rType;

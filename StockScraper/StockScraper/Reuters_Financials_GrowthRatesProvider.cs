@@ -10,42 +10,50 @@ namespace StockScraper
 {
   public  class reuters_Financials_GrowthRatesProvider
     {
-      public static List<reuters_Financials_GrowthRates> GetData(HtmlDocument doc, int job_id, int stock_id)
+      public static List<reuters_Financials_GrowthRates> GetData(HtmlDocument doc, int job_id, int stock_id, string URL)
       {
           List<reuters_Financials_GrowthRates> rType = new List<reuters_Financials_GrowthRates>();
           HtmlNodeCollection rowcollection = doc.DocumentNode.SelectNodes("//div[contains(@class, 'column1') and contains(@class, 'gridPanel') and contains(@class, 'grid8')]//div[@class='module']");
-          if (rowcollection.Count > 0)
+          if (rowcollection != null)
           {
-              string EffectiveTime = Helper.GetEffetiveTime(doc);
-
-              var tblrows = rowcollection[4].SelectNodes("div[@class='moduleBody']//table[@class='dataTable']//tr");
-              if (tblrows != null)
+              if (rowcollection.Count > 0)
               {
-                  for (int k = 1; k < tblrows.Count; k++)
+                  string EffectiveTime = Helper.GetEffetiveTime(doc);
+
+                  var tblrows = rowcollection[4].SelectNodes("div[@class='moduleBody']//table[@class='dataTable']//tr");
+                  if (tblrows != null)
                   {
-                      HtmlNode tr = tblrows[k];
-                      reuters_Financials_GrowthRates temp = new reuters_Financials_GrowthRates();
-                      if (tr.ChildNodes.Count() == 9)
+                      for (int k = 1; k < tblrows.Count; k++)
                       {
-                          try
+                          HtmlNode tr = tblrows[k];
+                          reuters_Financials_GrowthRates temp = new reuters_Financials_GrowthRates();
+                          if (tr.ChildNodes.Count() == 9)
                           {
-                              temp.Title = tr.ChildNodes[1].InnerText.Replace("&nbsp;", " ");
+                              try
+                              {
+                                  temp.Title = tr.ChildNodes[1].InnerText.Replace("&nbsp;", " ");
 
-                              temp.Company = tr.ChildNodes[3].InnerText;
-                              temp.Industry = tr.ChildNodes[5].InnerText;
-                              temp.Sector = tr.ChildNodes[7].InnerText;
-                              temp.EffectiveDate = EffectiveTime;
-                              temp.run_job_id = job_id;
-                              temp.Stock_Id = stock_id;
-                              rType.Add(temp);
+                                  temp.Company = tr.ChildNodes[3].InnerText;
+                                  temp.Industry = tr.ChildNodes[5].InnerText;
+                                  temp.Sector = tr.ChildNodes[7].InnerText;
+                                  temp.EffectiveDate = EffectiveTime;
+                                  temp.run_job_id = job_id;
+                                  temp.Stock_Id = stock_id;
+                                  rType.Add(temp);
+                              }
+                              catch
+                              {
+                              }
                           }
-                          catch
-                          {
-                          }
+
                       }
-
                   }
               }
+          }
+          else
+          {
+              string warningmsg = Helper.GetWarningMSG(stock_id, "reuters_Financials_GrowthRates", URL);
+              Helper.AddtoLog(warningmsg, job_id, true, Helper.LogStatus.warning);
           }
           return rType;
       }
