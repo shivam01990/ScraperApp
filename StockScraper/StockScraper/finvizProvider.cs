@@ -25,7 +25,7 @@ namespace StockScraper
             TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
             DateTime easternTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
             string EffectiveTime = "";
-            if (finviz_CalendarServices.Instance.IsEffectiveDateExist(timeUtc.ToString("dd"), timeUtc.ToString("MM"), timeUtc.ToString("yyyy")))
+            if (finviz_CalendarServices.Instance.IsEffectiveDateExist(timeUtc.ToString("dd"), timeUtc.ToString("MMM"), timeUtc.ToString("yyyy")))
             {
                 EffectiveTime = easternTime.ToString("yyyy.MM.dd-hh:mm");
             }

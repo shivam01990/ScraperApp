@@ -58,6 +58,7 @@ namespace BLL
                         temp.company_desc_finviz = ss.company_desc_finviz;
                         temp.sub_sector = ss.sub_sector;
                         temp.country = ss.country;
+                        temp.Format_Issue_Symbol = temp.Format_Issue_Symbol;
                     }
                 }
                 else

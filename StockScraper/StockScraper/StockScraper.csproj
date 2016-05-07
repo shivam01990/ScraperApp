@@ -83,6 +83,7 @@
     <Compile Include="reuters_Financials_ValuationRatiosProvider.cs" />
     <Compile Include="reuters_RecommendationsRevisionsProvider.cs" />
     <Compile Include="UpdateNewStocks.cs" />
+    <Compile Include="UpdateOldStock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

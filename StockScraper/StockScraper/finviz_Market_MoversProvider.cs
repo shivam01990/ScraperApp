@@ -54,15 +54,18 @@ namespace StockScraper
                                     Console.WriteLine("Inserting a new Stock for Ticker:" + temp.ticker);
                                     StockID = UpdateNewStocks.StartUpdate(temp.ticker);
                                 }
+                            } if (StockID > 0)
+                            {
+
+                                temp.stock_id = StockID;
+                                temp.last_quote = last_quote;
+                                temp.percent_change = percent_change;
+                                temp.volume = volume;
+                                temp.signal = tr1.ChildNodes[6].InnerText;
+                                temp.job_run_id = job_id;
+                                temp.EffectiveDate = EffectiveDate;
+                                rType.Add(temp);
                             }
-                            temp.stock_id = StockID;
-                            temp.last_quote = last_quote;
-                            temp.percent_change = percent_change;
-                            temp.volume = volume;
-                            temp.signal = tr1.ChildNodes[6].InnerText;
-                            temp.job_run_id = job_id;
-                            temp.EffectiveDate = EffectiveDate;
-                            rType.Add(temp);
                         }
                         catch
                         {

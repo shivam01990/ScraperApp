@@ -13,6 +13,10 @@ namespace StockScraper
     {
         public static void StartImport(int job_id, ws_Stocks stock)
         {
+            if(string.IsNullOrWhiteSpace(stock.Format_Issue_Symbol))
+            {
+                stock = UpdateOldStock.StartUpdate(stock);
+            }
             string format_issue_symbol = string.IsNullOrWhiteSpace(stock.Format_Issue_Symbol) ? stock.Ticker : stock.Format_Issue_Symbol.Trim();
             HtmlWeb web = new HtmlWeb();
             string marketUrl = Helper.GetMarketsUrls(format_issue_symbol);
@@ -41,7 +45,7 @@ namespace StockScraper
             }
             catch (Exception ex)
             {
-                Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+               // Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
             }
 
             /////////////////////////////////////////////////////////////////////////////////////
