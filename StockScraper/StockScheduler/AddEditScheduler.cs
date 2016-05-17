@@ -39,6 +39,20 @@ namespace StockScheduler
             dtExpireTime.Enabled = false;
             rdoDaily.Checked = true;
             rdoYearly_Every.Checked = true;
+           
+
+            string[] months = new string[] {"January", "February", "March", "April", "May",
+  "June", "July", "August", "September", "October", "November", "December"};
+            string[] monthsweek = new string[] {"January", "February", "March", "April", "May",
+  "June", "July", "August", "September", "October", "November", "December"};
+
+            string[] dayno = new string[] {"1","2","3","4","5"};
+            string[] Weekday = new string[] { "Monday", "Tuesday", "Wednesday", "Thuresday", "Friday" ,"Saturday","Sunday"};
+           
+            cmbYearlyDay.DataSource = dayno;
+            cmbYearly_Month.DataSource = months;
+            cmbYearlyWeekDay.DataSource = Weekday;
+            cmbYearlyMonthWeek.DataSource = monthsweek;
             cmbYearlyDay.SelectedIndex = 0;
             cmbYearly_Month.SelectedIndex = 0;
             cmbYearlyMonthWeek.SelectedIndex = 0;
@@ -233,6 +247,37 @@ namespace StockScheduler
 
                 }
 
+                if(rdoMonthly.Checked)
+                {
+                    ws_JobScheduler_Monthly _monthly = new ws_JobScheduler_Monthly();
+
+                    _monthly.schedulder_id = scheduler_id;
+                    int nominal_day = 0;
+                    int.TryParse(numericMonthly_day.Value.ToString(), out nominal_day);
+                    _monthly.monthly_nominal_day = nominal_day;
+
+                    int nominal_month = 0;
+                    int.TryParse(numericMonthly_MonthRec.Value.ToString(), out nominal_month);
+                    _monthly.monthly_nominal_month = nominal_month;
+
+                    int day = 0;
+                    int.TryParse((cmbMonthlyWeek.SelectedIndex + 1).ToString(), out day);
+
+                    int week_of_day = 0;
+                    int.TryParse((cmbMonthWeekDay.SelectedIndex + 1).ToString(), out week_of_day);
+
+                    int MonthRec = 0;
+                    int.TryParse(numericMonthly_MonthRec.Value.ToString(), out MonthRec);
+                    _monthly.monthly_freq = MonthRec;
+
+                  if(rdoMonthly_Day.Checked)
+                  {
+                      
+                  }
+
+
+                }
+
                 if (rdoYearly.Checked)
                 {
                     ws_JobScheduler_Yearly _yearly = new ws_JobScheduler_Yearly();
@@ -241,19 +286,19 @@ namespace StockScheduler
                     int.TryParse(numeric_YearlyNominalDay.Value.ToString(), out nominalDay);
                     _yearly.yearly_nominal_day = nominalDay;
                     int nominalmonth = 0;
-                    int.TryParse(cmbYearly_Month.SelectedValue.ToString(), out nominalmonth);
+                    int.TryParse((cmbYearly_Month.SelectedIndex+1).ToString(), out nominalmonth);
                     _yearly.yearly_nominal_month = nominalmonth;
                     int yearly_day = 0;
 
-                    int.TryParse(cmbYearlyDay.SelectedValue.ToString(), out yearly_day);
+                    int.TryParse((cmbYearlyDay.SelectedIndex+1).ToString(), out yearly_day);
                     _yearly.yearly_day = yearly_day;
 
                     int yearly_week_of_day = 0;
-                    int.TryParse(cmbYearlyWeekDay.SelectedValue.ToString(), out yearly_week_of_day);
+                    int.TryParse((cmbYearlyWeekDay.SelectedIndex+1).ToString(), out yearly_week_of_day);
                     _yearly.yearly_week_of_day = yearly_week_of_day;
 
                     int yearly_month = 0;
-                    int.TryParse(cmbYearlyMonthWeek.SelectedValue.ToString(), out yearly_month);
+                    int.TryParse((cmbYearlyMonthWeek.SelectedIndex+1).ToString(), out yearly_month);
                     _yearly.yearly_month = yearly_month;
 
                     if (rdoYearly_Every.Checked)

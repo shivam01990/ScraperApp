@@ -45,10 +45,10 @@
             this.rdoYearly_Every = new System.Windows.Forms.RadioButton();
             this.pnlMonthly = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericFreq = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbMonthlyWeek = new System.Windows.Forms.ComboBox();
+            this.cmbMonthWeekDay = new System.Windows.Forms.ComboBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.rdoMonthly_Day = new System.Windows.Forms.RadioButton();
@@ -93,7 +93,7 @@
             this.pnlYearly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_YearlyNominalDay)).BeginInit();
             this.pnlMonthly.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFreq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMonthly_MonthRec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMonthly_day)).BeginInit();
             this.pnlWeekly.SuspendLayout();
@@ -223,19 +223,6 @@
             // 
             this.cmbYearlyMonthWeek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYearlyMonthWeek.FormattingEnabled = true;
-            this.cmbYearlyMonthWeek.Items.AddRange(new object[] {
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec"});
             this.cmbYearlyMonthWeek.Location = new System.Drawing.Point(95, 126);
             this.cmbYearlyMonthWeek.Name = "cmbYearlyMonthWeek";
             this.cmbYearlyMonthWeek.Size = new System.Drawing.Size(82, 21);
@@ -245,14 +232,6 @@
             // 
             this.cmbYearlyWeekDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYearlyWeekDay.FormattingEnabled = true;
-            this.cmbYearlyWeekDay.Items.AddRange(new object[] {
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"});
             this.cmbYearlyWeekDay.Location = new System.Drawing.Point(95, 99);
             this.cmbYearlyWeekDay.Name = "cmbYearlyWeekDay";
             this.cmbYearlyWeekDay.Size = new System.Drawing.Size(82, 21);
@@ -262,12 +241,6 @@
             // 
             this.cmbYearlyDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYearlyDay.FormattingEnabled = true;
-            this.cmbYearlyDay.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
             this.cmbYearlyDay.Location = new System.Drawing.Point(95, 72);
             this.cmbYearlyDay.Name = "cmbYearlyDay";
             this.cmbYearlyDay.Size = new System.Drawing.Size(82, 21);
@@ -299,19 +272,6 @@
             // 
             this.cmbYearly_Month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYearly_Month.FormattingEnabled = true;
-            this.cmbYearly_Month.Items.AddRange(new object[] {
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec"});
             this.cmbYearly_Month.Location = new System.Drawing.Point(95, 15);
             this.cmbYearly_Month.Name = "cmbYearly_Month";
             this.cmbYearly_Month.Size = new System.Drawing.Size(82, 21);
@@ -342,10 +302,10 @@
             // pnlMonthly
             // 
             this.pnlMonthly.Controls.Add(this.label10);
-            this.pnlMonthly.Controls.Add(this.numericUpDown1);
+            this.pnlMonthly.Controls.Add(this.numericFreq);
             this.pnlMonthly.Controls.Add(this.label9);
-            this.pnlMonthly.Controls.Add(this.comboBox2);
-            this.pnlMonthly.Controls.Add(this.comboBox1);
+            this.pnlMonthly.Controls.Add(this.cmbMonthlyWeek);
+            this.pnlMonthly.Controls.Add(this.cmbMonthWeekDay);
             this.pnlMonthly.Controls.Add(this.radioButton1);
             this.pnlMonthly.Controls.Add(this.label7);
             this.pnlMonthly.Controls.Add(this.rdoMonthly_Day);
@@ -367,23 +327,23 @@
             this.label10.TabIndex = 93;
             this.label10.Text = "month(s)";
             // 
-            // numericUpDown1
+            // numericFreq
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(65, 127);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericFreq.Location = new System.Drawing.Point(65, 127);
+            this.numericFreq.Maximum = new decimal(new int[] {
             12,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numericFreq.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(82, 20);
-            this.numericUpDown1.TabIndex = 92;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numericFreq.Name = "numericFreq";
+            this.numericFreq.Size = new System.Drawing.Size(82, 20);
+            this.numericFreq.TabIndex = 92;
+            this.numericFreq.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -398,11 +358,11 @@
             this.label9.TabIndex = 91;
             this.label9.Text = "Of Every";
             // 
-            // comboBox2
+            // cmbMonthlyWeek
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbMonthlyWeek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMonthlyWeek.FormattingEnabled = true;
+            this.cmbMonthlyWeek.Items.AddRange(new object[] {
             "Monday",
             "Tuesday",
             "Wednesday",
@@ -410,25 +370,25 @@
             "Friday",
             "Saturday",
             "Sunday"});
-            this.comboBox2.Location = new System.Drawing.Point(65, 99);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(82, 21);
-            this.comboBox2.TabIndex = 90;
+            this.cmbMonthlyWeek.Location = new System.Drawing.Point(65, 99);
+            this.cmbMonthlyWeek.Name = "cmbMonthlyWeek";
+            this.cmbMonthlyWeek.Size = new System.Drawing.Size(82, 21);
+            this.cmbMonthlyWeek.TabIndex = 90;
             // 
-            // comboBox1
+            // cmbMonthWeekDay
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbMonthWeekDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMonthWeekDay.FormattingEnabled = true;
+            this.cmbMonthWeekDay.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
             "4",
             "5"});
-            this.comboBox1.Location = new System.Drawing.Point(65, 72);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(82, 21);
-            this.comboBox1.TabIndex = 89;
+            this.cmbMonthWeekDay.Location = new System.Drawing.Point(65, 72);
+            this.cmbMonthWeekDay.Name = "cmbMonthWeekDay";
+            this.cmbMonthWeekDay.Size = new System.Drawing.Size(82, 21);
+            this.cmbMonthWeekDay.TabIndex = 89;
             // 
             // radioButton1
             // 
@@ -861,7 +821,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numeric_YearlyNominalDay)).EndInit();
             this.pnlMonthly.ResumeLayout(false);
             this.pnlMonthly.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFreq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMonthly_MonthRec)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMonthly_day)).EndInit();
             this.pnlWeekly.ResumeLayout(false);
@@ -919,10 +879,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericFreq;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbMonthlyWeek;
+        private System.Windows.Forms.ComboBox cmbMonthWeekDay;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel pnlYearly;
         private System.Windows.Forms.ComboBox cmbYearly_Month;
