@@ -69,6 +69,12 @@
     <Compile Include="reuters_Financials_StrengthServices.cs" />
     <Compile Include="reuters_Financials_ValuationRatiosServices.cs" />
     <Compile Include="reuters_RecommendationsRevisionsServices.cs" />
+    <Compile Include="wslu_JobTypesServices.cs" />
+    <Compile Include="ws_JobSchedulerServices.cs" />
+    <Compile Include="ws_JobScheduler_DailyServices.cs" />
+    <Compile Include="ws_JobScheduler_MonthlyServices.cs" />
+    <Compile Include="ws_JobScheduler_WeeklyService.cs" />
+    <Compile Include="ws_JobScheduler_YearlyServices.cs" />
     <Compile Include="ws_JobsServices.cs" />
     <Compile Include="ws_LogsServices.cs" />
     <Compile Include="reuters_Financials_DividendsServices.cs" />

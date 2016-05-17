@@ -12,6 +12,8 @@ namespace DLL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DBEntities : DbContext
     {
@@ -44,8 +46,38 @@ namespace DLL
         public virtual DbSet<reuters_Financials_Strength> reuters_Financials_Strength { get; set; }
         public virtual DbSet<reuters_Financials_ValuationRatios> reuters_Financials_ValuationRatios { get; set; }
         public virtual DbSet<reuters_RecommendationsRevisions> reuters_RecommendationsRevisions { get; set; }
+        public virtual DbSet<ws_JobRuns> ws_JobRuns { get; set; }
         public virtual DbSet<ws_Jobs> ws_Jobs { get; set; }
+        public virtual DbSet<ws_JobScheduler> ws_JobScheduler { get; set; }
+        public virtual DbSet<ws_JobScheduler_Daily> ws_JobScheduler_Daily { get; set; }
+        public virtual DbSet<ws_JobScheduler_Monthly> ws_JobScheduler_Monthly { get; set; }
+        public virtual DbSet<ws_JobScheduler_Weekly> ws_JobScheduler_Weekly { get; set; }
+        public virtual DbSet<ws_JobScheduler_Yearly> ws_JobScheduler_Yearly { get; set; }
         public virtual DbSet<ws_Logs> ws_Logs { get; set; }
         public virtual DbSet<ws_Stocks> ws_Stocks { get; set; }
+        public virtual DbSet<wslu_JobSchedulerTypes> wslu_JobSchedulerTypes { get; set; }
+        public virtual DbSet<wslu_JobTypes> wslu_JobTypes { get; set; }
+    
+        public virtual ObjectResult<p_GetJobScheduler_Result> p_GetJobScheduler(Nullable<int> scheduler_id, string name)
+        {
+            var scheduler_idParameter = scheduler_id.HasValue ?
+                new ObjectParameter("scheduler_id", scheduler_id) :
+                new ObjectParameter("scheduler_id", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<p_GetJobScheduler_Result>("p_GetJobScheduler", scheduler_idParameter, nameParameter);
+        }
+    
+        public virtual ObjectResult<p_GetAllFieldsForJobScheduler_Result> p_GetAllFieldsForJobScheduler(Nullable<int> scheduler_id)
+        {
+            var scheduler_idParameter = scheduler_id.HasValue ?
+                new ObjectParameter("scheduler_id", scheduler_id) :
+                new ObjectParameter("scheduler_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<p_GetAllFieldsForJobScheduler_Result>("p_GetAllFieldsForJobScheduler", scheduler_idParameter);
+        }
     }
 }

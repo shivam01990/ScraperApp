@@ -20,9 +20,17 @@
     <EntitySet Name="reuters_Financials_Strength" EntityType="DBModel.reuters_Financials_Strength" />
     <EntitySet Name="reuters_Financials_ValuationRatios" EntityType="DBModel.reuters_Financials_ValuationRatios" />
     <EntitySet Name="reuters_RecommendationsRevisions" EntityType="DBModel.reuters_RecommendationsRevisions" />
+    <EntitySet Name="ws_JobRuns" EntityType="DBModel.ws_JobRuns" />
     <EntitySet Name="ws_Jobs" EntityType="DBModel.ws_Jobs" />
+    <EntitySet Name="ws_JobScheduler" EntityType="DBModel.ws_JobScheduler" />
+    <EntitySet Name="ws_JobScheduler_Daily" EntityType="DBModel.ws_JobScheduler_Daily" />
+    <EntitySet Name="ws_JobScheduler_Monthly" EntityType="DBModel.ws_JobScheduler_Monthly" />
+    <EntitySet Name="ws_JobScheduler_Weekly" EntityType="DBModel.ws_JobScheduler_Weekly" />
+    <EntitySet Name="ws_JobScheduler_Yearly" EntityType="DBModel.ws_JobScheduler_Yearly" />
     <EntitySet Name="ws_Logs" EntityType="DBModel.ws_Logs" />
     <EntitySet Name="ws_Stocks" EntityType="DBModel.ws_Stocks" />
+    <EntitySet Name="wslu_JobSchedulerTypes" EntityType="DBModel.wslu_JobSchedulerTypes" />
+    <EntitySet Name="wslu_JobTypes" EntityType="DBModel.wslu_JobTypes" />
     <AssociationSet Name="FK_finviz_Calendar_ws_Jobs" Association="DBModel.FK_finviz_Calendar_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
       <End Role="finviz_Calendar" EntitySet="finviz_Calendar" />
@@ -171,10 +179,49 @@
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
       <End Role="reuters_RecommendationsRevisions" EntitySet="reuters_RecommendationsRevisions" />
     </AssociationSet>
+    <AssociationSet Name="FK_ws_JobRuns_ws_Jobs" Association="DBModel.FK_ws_JobRuns_ws_Jobs">
+      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
+      <End Role="ws_JobRuns" EntitySet="ws_JobRuns" />
+    </AssociationSet>
     <AssociationSet Name="FK_Logs_Jobs" Association="DBModel.FK_Logs_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
       <End Role="ws_Logs" EntitySet="ws_Logs" />
     </AssociationSet>
+    <AssociationSet Name="FK_ws_Jobs_ws_JobScheduler" Association="DBModel.FK_ws_Jobs_ws_JobScheduler">
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_Daily_ws_JobScheduler" Association="DBModel.FK_ws_JobScheduler_Daily_ws_JobScheduler">
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+      <End Role="ws_JobScheduler_Daily" EntitySet="ws_JobScheduler_Daily" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_Monthly_ws_JobScheduler" Association="DBModel.FK_ws_JobScheduler_Monthly_ws_JobScheduler">
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+      <End Role="ws_JobScheduler_Monthly" EntitySet="ws_JobScheduler_Monthly" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_Weekly_ws_JobScheduler" Association="DBModel.FK_ws_JobScheduler_Weekly_ws_JobScheduler">
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+      <End Role="ws_JobScheduler_Weekly" EntitySet="ws_JobScheduler_Weekly" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_ws_JobSchedulerType" Association="DBModel.FK_ws_JobScheduler_ws_JobSchedulerType">
+      <End Role="wslu_JobSchedulerTypes" EntitySet="wslu_JobSchedulerTypes" />
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_wslu_JobTypes" Association="DBModel.FK_ws_JobScheduler_wslu_JobTypes">
+      <End Role="wslu_JobTypes" EntitySet="wslu_JobTypes" />
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_Yearly_ws_JobScheduler" Association="DBModel.FK_ws_JobScheduler_Yearly_ws_JobScheduler">
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+      <End Role="ws_JobScheduler_Yearly" EntitySet="ws_JobScheduler_Yearly" />
+    </AssociationSet>
+    <FunctionImport Name="p_GetJobScheduler" ReturnType="Collection(DBModel.p_GetJobScheduler_Result)">
+      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_GetAllFieldsForJobScheduler" ReturnType="Collection(DBModel.p_GetAllFieldsForJobScheduler_Result)">
+      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="finviz_Calendar">
     <Key>
@@ -529,11 +576,24 @@
     <NavigationProperty Name="ws_Jobs" Relationship="DBModel.FK_Reuters_RecommendationsRevisions_Jobs" FromRole="reuters_RecommendationsRevisions" ToRole="ws_Jobs" />
     <NavigationProperty Name="ws_Stocks" Relationship="DBModel.FK_Reuters_RecommendationsRevisions_Stocks" FromRole="reuters_RecommendationsRevisions" ToRole="ws_Stocks" />
   </EntityType>
+  <EntityType Name="ws_JobRuns">
+    <Key>
+      <PropertyRef Name="run_id" />
+    </Key>
+    <Property Name="run_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="job_run_id" Type="Int32" Nullable="false" />
+    <Property Name="web_calls_total" Type="Int32" Nullable="false" />
+    <Property Name="web_calls_success" Type="Int32" Nullable="false" />
+    <Property Name="web_calls_failures" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ws_Jobs" Relationship="DBModel.FK_ws_JobRuns_ws_Jobs" FromRole="ws_JobRuns" ToRole="ws_Jobs" />
+  </EntityType>
   <EntityType Name="ws_Jobs">
     <Key>
       <PropertyRef Name="Job_id" />
     </Key>
     <Property Name="Job_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="scheduler_id" Type="Int32" Nullable="false" />
     <Property Name="Start_Time" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="finviz_Calendar" Relationship="DBModel.FK_finviz_Calendar_ws_Jobs" FromRole="ws_Jobs" ToRole="finviz_Calendar" />
@@ -555,7 +615,91 @@
     <NavigationProperty Name="reuters_Financials_Strength" Relationship="DBModel.FK_Reuters_Financials_Strength_Jobs" FromRole="ws_Jobs" ToRole="reuters_Financials_Strength" />
     <NavigationProperty Name="reuters_Financials_ValuationRatios" Relationship="DBModel.FK_Reuters_Financials_ValuationRatios_Jobs" FromRole="ws_Jobs" ToRole="reuters_Financials_ValuationRatios" />
     <NavigationProperty Name="reuters_RecommendationsRevisions" Relationship="DBModel.FK_Reuters_RecommendationsRevisions_Jobs" FromRole="ws_Jobs" ToRole="reuters_RecommendationsRevisions" />
+    <NavigationProperty Name="ws_JobRuns" Relationship="DBModel.FK_ws_JobRuns_ws_Jobs" FromRole="ws_Jobs" ToRole="ws_JobRuns" />
     <NavigationProperty Name="ws_Logs" Relationship="DBModel.FK_Logs_Jobs" FromRole="ws_Jobs" ToRole="ws_Logs" />
+    <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_Jobs_ws_JobScheduler" FromRole="ws_Jobs" ToRole="ws_JobScheduler" />
+  </EntityType>
+  <EntityType Name="ws_JobScheduler">
+    <Key>
+      <PropertyRef Name="scheduler_id" />
+    </Key>
+    <Property Name="scheduler_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="jobtype_id" Type="Int32" Nullable="false" />
+    <Property Name="start_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="start_time" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="end_date" Type="DateTime" Precision="0" />
+    <Property Name="end_time" Type="Time" Precision="7" />
+    <Property Name="schedulertype_id" Type="Int32" Nullable="false" />
+    <Property Name="current_run_count" Type="Int32" Nullable="false" />
+    <Property Name="max_run_count" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ws_Jobs" Relationship="DBModel.FK_ws_Jobs_ws_JobScheduler" FromRole="ws_JobScheduler" ToRole="ws_Jobs" />
+    <NavigationProperty Name="ws_JobScheduler_Daily" Relationship="DBModel.FK_ws_JobScheduler_Daily_ws_JobScheduler" FromRole="ws_JobScheduler" ToRole="ws_JobScheduler_Daily" />
+    <NavigationProperty Name="ws_JobScheduler_Monthly" Relationship="DBModel.FK_ws_JobScheduler_Monthly_ws_JobScheduler" FromRole="ws_JobScheduler" ToRole="ws_JobScheduler_Monthly" />
+    <NavigationProperty Name="ws_JobScheduler_Weekly" Relationship="DBModel.FK_ws_JobScheduler_Weekly_ws_JobScheduler" FromRole="ws_JobScheduler" ToRole="ws_JobScheduler_Weekly" />
+    <NavigationProperty Name="wslu_JobSchedulerTypes" Relationship="DBModel.FK_ws_JobScheduler_ws_JobSchedulerType" FromRole="ws_JobScheduler" ToRole="wslu_JobSchedulerTypes" />
+    <NavigationProperty Name="wslu_JobTypes" Relationship="DBModel.FK_ws_JobScheduler_wslu_JobTypes" FromRole="ws_JobScheduler" ToRole="wslu_JobTypes" />
+    <NavigationProperty Name="ws_JobScheduler_Yearly" Relationship="DBModel.FK_ws_JobScheduler_Yearly_ws_JobScheduler" FromRole="ws_JobScheduler" ToRole="ws_JobScheduler_Yearly" />
+  </EntityType>
+  <EntityType Name="ws_JobScheduler_Daily">
+    <Key>
+      <PropertyRef Name="schedule_daily_id" />
+    </Key>
+    <Property Name="schedule_daily_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="scheduler_id" Type="Int32" Nullable="false" />
+    <Property Name="recur_days" Type="Int32" Nullable="false" />
+    <Property Name="IsWeekDay" Type="Boolean" />
+    <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_JobScheduler_Daily_ws_JobScheduler" FromRole="ws_JobScheduler_Daily" ToRole="ws_JobScheduler" />
+  </EntityType>
+  <EntityType Name="ws_JobScheduler_Monthly">
+    <Key>
+      <PropertyRef Name="scheduler_monthly_id" />
+    </Key>
+    <Property Name="scheduler_monthly_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="schedulder_id" Type="Int32" Nullable="false" />
+    <Property Name="monthly_nominal_day" Type="Int32" Nullable="false" />
+    <Property Name="monthly_nominal_month" Type="Int32" Nullable="false" />
+    <Property Name="monthly_day" Type="Int32" Nullable="false" />
+    <Property Name="monthly_week_of_day" Type="Int32" Nullable="false" />
+    <Property Name="monthly_freq" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_JobScheduler_Monthly_ws_JobScheduler" FromRole="ws_JobScheduler_Monthly" ToRole="ws_JobScheduler" />
+  </EntityType>
+  <EntityType Name="ws_JobScheduler_Weekly">
+    <Key>
+      <PropertyRef Name="scheduler_weekly_id" />
+    </Key>
+    <Property Name="scheduler_weekly_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="scheduler_id" Type="Int32" Nullable="false" />
+    <Property Name="weekly_freq" Type="Int32" Nullable="false" />
+    <Property Name="weekly_sunday" Type="Boolean" Nullable="false" />
+    <Property Name="weekly_monday" Type="Boolean" Nullable="false" />
+    <Property Name="weekly_tuesday" Type="Boolean" Nullable="false" />
+    <Property Name="weekly_wednesday" Type="Boolean" Nullable="false" />
+    <Property Name="weekly_thursday" Type="Boolean" Nullable="false" />
+    <Property Name="weekly_friday" Type="Boolean" Nullable="false" />
+    <Property Name="weekly_saturday" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_JobScheduler_Weekly_ws_JobScheduler" FromRole="ws_JobScheduler_Weekly" ToRole="ws_JobScheduler" />
+  </EntityType>
+  <EntityType Name="ws_JobScheduler_Yearly">
+    <Key>
+      <PropertyRef Name="scheduler_yearly_id" />
+    </Key>
+    <Property Name="scheduler_yearly_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="scheduler_id" Type="Int32" Nullable="false" />
+    <Property Name="yearly_nominal_day" Type="Int32" Nullable="false" />
+    <Property Name="yearly_nominal_month" Type="Int32" Nullable="false" />
+    <Property Name="yearly_day" Type="Int32" Nullable="false" />
+    <Property Name="yearly_week_of_day" Type="Int32" Nullable="false" />
+    <Property Name="yearly_month" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_JobScheduler_Yearly_ws_JobScheduler" FromRole="ws_JobScheduler_Yearly" ToRole="ws_JobScheduler" />
+    <Property Name="yearly_isweekday" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="ws_Logs">
     <Key>
@@ -606,6 +750,22 @@
     <NavigationProperty Name="reuters_Financials_Strength" Relationship="DBModel.FK_Reuters_Financials_Strength_Stocks" FromRole="ws_Stocks" ToRole="reuters_Financials_Strength" />
     <NavigationProperty Name="reuters_Financials_ValuationRatios" Relationship="DBModel.FK_Reuters_Financials_ValuationRatios_Stocks" FromRole="ws_Stocks" ToRole="reuters_Financials_ValuationRatios" />
     <NavigationProperty Name="reuters_RecommendationsRevisions" Relationship="DBModel.FK_Reuters_RecommendationsRevisions_Stocks" FromRole="ws_Stocks" ToRole="reuters_RecommendationsRevisions" />
+  </EntityType>
+  <EntityType Name="wslu_JobSchedulerTypes">
+    <Key>
+      <PropertyRef Name="schedulertype_id" />
+    </Key>
+    <Property Name="schedulertype_id" Type="Int32" Nullable="false" />
+    <Property Name="schedulartype_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_JobScheduler_ws_JobSchedulerType" FromRole="wslu_JobSchedulerTypes" ToRole="ws_JobScheduler" />
+  </EntityType>
+  <EntityType Name="wslu_JobTypes">
+    <Key>
+      <PropertyRef Name="jobtype_id" />
+    </Key>
+    <Property Name="jobtype_id" Type="Int32" Nullable="false" />
+    <Property Name="jobtype_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_JobScheduler_wslu_JobTypes" FromRole="wslu_JobTypes" ToRole="ws_JobScheduler" />
   </EntityType>
   <Association Name="FK_finviz_Calendar_ws_Jobs">
     <End Type="DBModel.ws_Jobs" Role="ws_Jobs" Multiplicity="1" />
@@ -1051,6 +1211,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ws_JobRuns_ws_Jobs">
+    <End Type="DBModel.ws_Jobs" Role="ws_Jobs" Multiplicity="1" />
+    <End Type="DBModel.ws_JobRuns" Role="ws_JobRuns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_Jobs">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="ws_JobRuns">
+        <PropertyRef Name="job_run_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Logs_Jobs">
     <End Type="DBModel.ws_Jobs" Role="ws_Jobs" Multiplicity="1" />
     <End Type="DBModel.ws_Logs" Role="ws_Logs" Multiplicity="*" />
@@ -1063,4 +1235,127 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ws_Jobs_ws_JobScheduler">
+    <End Type="DBModel.ws_JobScheduler" Role="ws_JobScheduler" Multiplicity="1" />
+    <End Type="DBModel.ws_Jobs" Role="ws_Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_JobScheduler">
+        <PropertyRef Name="scheduler_id" />
+      </Principal>
+      <Dependent Role="ws_Jobs">
+        <PropertyRef Name="scheduler_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_Daily_ws_JobScheduler">
+    <End Type="DBModel.ws_JobScheduler" Role="ws_JobScheduler" Multiplicity="1" />
+    <End Type="DBModel.ws_JobScheduler_Daily" Role="ws_JobScheduler_Daily" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_JobScheduler">
+        <PropertyRef Name="scheduler_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler_Daily">
+        <PropertyRef Name="scheduler_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_Monthly_ws_JobScheduler">
+    <End Type="DBModel.ws_JobScheduler" Role="ws_JobScheduler" Multiplicity="1" />
+    <End Type="DBModel.ws_JobScheduler_Monthly" Role="ws_JobScheduler_Monthly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_JobScheduler">
+        <PropertyRef Name="scheduler_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler_Monthly">
+        <PropertyRef Name="schedulder_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_Weekly_ws_JobScheduler">
+    <End Type="DBModel.ws_JobScheduler" Role="ws_JobScheduler" Multiplicity="1" />
+    <End Type="DBModel.ws_JobScheduler_Weekly" Role="ws_JobScheduler_Weekly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_JobScheduler">
+        <PropertyRef Name="scheduler_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler_Weekly">
+        <PropertyRef Name="scheduler_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_ws_JobSchedulerType">
+    <End Type="DBModel.wslu_JobSchedulerTypes" Role="wslu_JobSchedulerTypes" Multiplicity="1" />
+    <End Type="DBModel.ws_JobScheduler" Role="ws_JobScheduler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wslu_JobSchedulerTypes">
+        <PropertyRef Name="schedulertype_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler">
+        <PropertyRef Name="schedulertype_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_wslu_JobTypes">
+    <End Type="DBModel.wslu_JobTypes" Role="wslu_JobTypes" Multiplicity="1" />
+    <End Type="DBModel.ws_JobScheduler" Role="ws_JobScheduler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wslu_JobTypes">
+        <PropertyRef Name="jobtype_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler">
+        <PropertyRef Name="jobtype_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_Yearly_ws_JobScheduler">
+    <End Type="DBModel.ws_JobScheduler" Role="ws_JobScheduler" Multiplicity="1" />
+    <End Type="DBModel.ws_JobScheduler_Yearly" Role="ws_JobScheduler_Yearly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_JobScheduler">
+        <PropertyRef Name="scheduler_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler_Yearly">
+        <PropertyRef Name="scheduler_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="p_GetJobScheduler_Result">
+    <Property Type="Int32" Name="SchedulerId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="JobType" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" />
+    <Property Type="Time" Name="StarTime" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" />
+    <Property Type="Time" Name="EndTime" Nullable="true" />
+    <Property Type="String" Name="SchedularType" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CurrentRunCount" Nullable="false" />
+    <Property Type="Int32" Name="MaxRunCount" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="p_GetAllFieldsForJobScheduler_Result">
+    <Property Type="Int32" Name="scheduler_id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="jobtype_id" Nullable="false" />
+    <Property Type="DateTime" Name="start_date" Nullable="false" />
+    <Property Type="Time" Name="start_time" Nullable="false" />
+    <Property Type="DateTime" Name="end_date" Nullable="true" />
+    <Property Type="Time" Name="end_time" Nullable="true" />
+    <Property Type="Int32" Name="schedulertype_id" Nullable="false" />
+    <Property Type="Int32" Name="current_run_count" Nullable="false" />
+    <Property Type="Int32" Name="max_run_count" Nullable="false" />
+    <Property Type="Boolean" Name="Status" Nullable="false" />
+    <Property Type="Int32" Name="schedule_daily_id" Nullable="false" />
+    <Property Type="Int32" Name="recur_days_daily" Nullable="false" />
+    <Property Type="Boolean" Name="IsWeekDay_daily" Nullable="true" />
+    <Property Type="Int32" Name="scheduler_weekly_id" Nullable="false" />
+    <Property Type="Int32" Name="weekly_freq" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_sunday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_monday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_tuesday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_wednesday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_thursday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_friday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_saturday" Nullable="false" />
+  </ComplexType>
 </Schema>

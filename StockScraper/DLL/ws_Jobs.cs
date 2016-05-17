@@ -35,10 +35,12 @@ namespace DLL
             this.reuters_Financials_Strength = new HashSet<reuters_Financials_Strength>();
             this.reuters_Financials_ValuationRatios = new HashSet<reuters_Financials_ValuationRatios>();
             this.reuters_RecommendationsRevisions = new HashSet<reuters_RecommendationsRevisions>();
+            this.ws_JobRuns = new HashSet<ws_JobRuns>();
             this.ws_Logs = new HashSet<ws_Logs>();
         }
     
         public int Job_id { get; set; }
+        public int scheduler_id { get; set; }
         public System.DateTime Start_Time { get; set; }
         public byte[] CreatedOn { get; set; }
     
@@ -61,6 +63,8 @@ namespace DLL
         public virtual ICollection<reuters_Financials_Strength> reuters_Financials_Strength { get; set; }
         public virtual ICollection<reuters_Financials_ValuationRatios> reuters_Financials_ValuationRatios { get; set; }
         public virtual ICollection<reuters_RecommendationsRevisions> reuters_RecommendationsRevisions { get; set; }
+        public virtual ICollection<ws_JobRuns> ws_JobRuns { get; set; }
         public virtual ICollection<ws_Logs> ws_Logs { get; set; }
+        public virtual ws_JobScheduler ws_JobScheduler { get; set; }
     }
 }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLL", "DLL\DLL.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{8267E8D9-B756-4A04-AC4E-F8F4C3580B35}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockScheduler", "StockScheduler\StockScheduler.csproj", "{5DED6E3C-2BCC-493F-B836-0FA4696EE454}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8267E8D9-B756-4A04-AC4E-F8F4C3580B35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8267E8D9-B756-4A04-AC4E-F8F4C3580B35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8267E8D9-B756-4A04-AC4E-F8F4C3580B35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DED6E3C-2BCC-493F-B836-0FA4696EE454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DED6E3C-2BCC-493F-B836-0FA4696EE454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DED6E3C-2BCC-493F-B836-0FA4696EE454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DED6E3C-2BCC-493F-B836-0FA4696EE454}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

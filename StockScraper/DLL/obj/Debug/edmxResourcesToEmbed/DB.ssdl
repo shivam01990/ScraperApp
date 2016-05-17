@@ -316,12 +316,95 @@
     <Property Name="AnalystRecommend_Month_3" Type="nvarchar(max)" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
+  <EntityType Name="ws_JobRuns">
+    <Key>
+      <PropertyRef Name="run_id" />
+    </Key>
+    <Property Name="run_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="job_run_id" Type="int" Nullable="false" />
+    <Property Name="web_calls_total" Type="int" Nullable="false" />
+    <Property Name="web_calls_success" Type="int" Nullable="false" />
+    <Property Name="web_calls_failures" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
   <EntityType Name="ws_Jobs">
     <Key>
       <PropertyRef Name="Job_id" />
     </Key>
     <Property Name="Job_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="scheduler_id" Type="int" Nullable="false" />
     <Property Name="Start_Time" Type="datetime" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ws_JobScheduler">
+    <Key>
+      <PropertyRef Name="scheduler_id" />
+    </Key>
+    <Property Name="scheduler_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="250" />
+    <Property Name="jobtype_id" Type="int" Nullable="false" />
+    <Property Name="start_date" Type="date" Nullable="false" />
+    <Property Name="start_time" Type="time" Precision="7" Nullable="false" />
+    <Property Name="end_date" Type="date" />
+    <Property Name="end_time" Type="time" Precision="7" />
+    <Property Name="schedulertype_id" Type="int" Nullable="false" />
+    <Property Name="current_run_count" Type="int" Nullable="false" />
+    <Property Name="max_run_count" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ws_JobScheduler_Daily">
+    <Key>
+      <PropertyRef Name="schedule_daily_id" />
+    </Key>
+    <Property Name="schedule_daily_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="scheduler_id" Type="int" Nullable="false" />
+    <Property Name="recur_days" Type="int" Nullable="false" />
+    <Property Name="IsWeekDay" Type="bit" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ws_JobScheduler_Monthly">
+    <Key>
+      <PropertyRef Name="scheduler_monthly_id" />
+    </Key>
+    <Property Name="scheduler_monthly_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="schedulder_id" Type="int" Nullable="false" />
+    <Property Name="monthly_nominal_day" Type="int" Nullable="false" />
+    <Property Name="monthly_nominal_month" Type="int" Nullable="false" />
+    <Property Name="monthly_day" Type="int" Nullable="false" />
+    <Property Name="monthly_week_of_day" Type="int" Nullable="false" />
+    <Property Name="monthly_freq" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ws_JobScheduler_Weekly">
+    <Key>
+      <PropertyRef Name="scheduler_weekly_id" />
+    </Key>
+    <Property Name="scheduler_weekly_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="scheduler_id" Type="int" Nullable="false" />
+    <Property Name="weekly_freq" Type="int" Nullable="false" />
+    <Property Name="weekly_sunday" Type="bit" Nullable="false" />
+    <Property Name="weekly_monday" Type="bit" Nullable="false" />
+    <Property Name="weekly_tuesday" Type="bit" Nullable="false" />
+    <Property Name="weekly_wednesday" Type="bit" Nullable="false" />
+    <Property Name="weekly_thursday" Type="bit" Nullable="false" />
+    <Property Name="weekly_friday" Type="bit" Nullable="false" />
+    <Property Name="weekly_saturday" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ws_JobScheduler_Yearly">
+    <Key>
+      <PropertyRef Name="scheduler_yearly_id" />
+    </Key>
+    <Property Name="scheduler_yearly_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="scheduler_id" Type="int" Nullable="false" />
+    <Property Name="yearly_nominal_day" Type="int" Nullable="false" />
+    <Property Name="yearly_nominal_month" Type="int" Nullable="false" />
+    <Property Name="yearly_day" Type="int" Nullable="false" />
+    <Property Name="yearly_week_of_day" Type="int" Nullable="false" />
+    <Property Name="yearly_month" Type="int" Nullable="false" />
+    <Property Name="yearly_isweekday" Type="bit" Nullable="false" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <EntityType Name="ws_Logs">
@@ -354,6 +437,20 @@
     <Property Name="country" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="UpdatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wslu_JobSchedulerTypes">
+    <Key>
+      <PropertyRef Name="schedulertype_id" />
+    </Key>
+    <Property Name="schedulertype_id" Type="int" Nullable="false" />
+    <Property Name="schedulartype_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wslu_JobTypes">
+    <Key>
+      <PropertyRef Name="jobtype_id" />
+    </Key>
+    <Property Name="jobtype_id" Type="int" Nullable="false" />
+    <Property Name="jobtype_name" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <Association Name="FK_fin_Recommendations_ws_Jobs">
     <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
@@ -811,6 +908,109 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ws_JobRuns_ws_Jobs">
+    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="1" />
+    <End Role="ws_JobRuns" Type="Self.ws_JobRuns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_Jobs">
+        <PropertyRef Name="Job_id" />
+      </Principal>
+      <Dependent Role="ws_JobRuns">
+        <PropertyRef Name="job_run_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_Jobs_ws_JobScheduler">
+    <End Role="ws_JobScheduler" Type="Self.ws_JobScheduler" Multiplicity="1" />
+    <End Role="ws_Jobs" Type="Self.ws_Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_JobScheduler">
+        <PropertyRef Name="scheduler_id" />
+      </Principal>
+      <Dependent Role="ws_Jobs">
+        <PropertyRef Name="scheduler_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_Daily_ws_JobScheduler">
+    <End Role="ws_JobScheduler" Type="Self.ws_JobScheduler" Multiplicity="1" />
+    <End Role="ws_JobScheduler_Daily" Type="Self.ws_JobScheduler_Daily" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_JobScheduler">
+        <PropertyRef Name="scheduler_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler_Daily">
+        <PropertyRef Name="scheduler_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_Monthly_ws_JobScheduler">
+    <End Role="ws_JobScheduler" Type="Self.ws_JobScheduler" Multiplicity="1" />
+    <End Role="ws_JobScheduler_Monthly" Type="Self.ws_JobScheduler_Monthly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_JobScheduler">
+        <PropertyRef Name="scheduler_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler_Monthly">
+        <PropertyRef Name="schedulder_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_Weekly_ws_JobScheduler">
+    <End Role="ws_JobScheduler" Type="Self.ws_JobScheduler" Multiplicity="1" />
+    <End Role="ws_JobScheduler_Weekly" Type="Self.ws_JobScheduler_Weekly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_JobScheduler">
+        <PropertyRef Name="scheduler_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler_Weekly">
+        <PropertyRef Name="scheduler_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_ws_JobSchedulerType">
+    <End Role="wslu_JobSchedulerTypes" Type="Self.wslu_JobSchedulerTypes" Multiplicity="1" />
+    <End Role="ws_JobScheduler" Type="Self.ws_JobScheduler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wslu_JobSchedulerTypes">
+        <PropertyRef Name="schedulertype_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler">
+        <PropertyRef Name="schedulertype_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_wslu_JobTypes">
+    <End Role="wslu_JobTypes" Type="Self.wslu_JobTypes" Multiplicity="1" />
+    <End Role="ws_JobScheduler" Type="Self.ws_JobScheduler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wslu_JobTypes">
+        <PropertyRef Name="jobtype_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler">
+        <PropertyRef Name="jobtype_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ws_JobScheduler_Yearly_ws_JobScheduler">
+    <End Role="ws_JobScheduler" Type="Self.ws_JobScheduler" Multiplicity="1" />
+    <End Role="ws_JobScheduler_Yearly" Type="Self.ws_JobScheduler_Yearly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ws_JobScheduler">
+        <PropertyRef Name="scheduler_id" />
+      </Principal>
+      <Dependent Role="ws_JobScheduler_Yearly">
+        <PropertyRef Name="scheduler_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="p_GetAllFieldsForJobScheduler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="scheduler_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="p_GetJobScheduler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="scheduler_id" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar(max)" Mode="In" />
+  </Function>
   <EntityContainer Name="DBModelStoreContainer">
     <EntitySet Name="finviz_Calendar" EntityType="Self.finviz_Calendar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="finviz_Financials" EntityType="Self.finviz_Financials" Schema="dbo" store:Type="Tables" />
@@ -831,9 +1031,17 @@
     <EntitySet Name="reuters_Financials_Strength" EntityType="Self.reuters_Financials_Strength" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reuters_Financials_ValuationRatios" EntityType="Self.reuters_Financials_ValuationRatios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reuters_RecommendationsRevisions" EntityType="Self.reuters_RecommendationsRevisions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ws_JobRuns" EntityType="Self.ws_JobRuns" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_Jobs" EntityType="Self.ws_Jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ws_JobScheduler" EntityType="Self.ws_JobScheduler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ws_JobScheduler_Daily" EntityType="Self.ws_JobScheduler_Daily" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ws_JobScheduler_Monthly" EntityType="Self.ws_JobScheduler_Monthly" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ws_JobScheduler_Weekly" EntityType="Self.ws_JobScheduler_Weekly" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ws_JobScheduler_Yearly" EntityType="Self.ws_JobScheduler_Yearly" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_Logs" EntityType="Self.ws_Logs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_Stocks" EntityType="Self.ws_Stocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wslu_JobSchedulerTypes" EntityType="Self.wslu_JobSchedulerTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wslu_JobTypes" EntityType="Self.wslu_JobTypes" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_fin_Recommendations_ws_Jobs" Association="Self.FK_fin_Recommendations_ws_Jobs">
       <End Role="ws_Jobs" EntitySet="ws_Jobs" />
       <End Role="finviz_Recommendations" EntitySet="finviz_Recommendations" />
@@ -985,6 +1193,38 @@
     <AssociationSet Name="FK_Reuters_RecommendationsRevisions_Stocks" Association="Self.FK_Reuters_RecommendationsRevisions_Stocks">
       <End Role="ws_Stocks" EntitySet="ws_Stocks" />
       <End Role="reuters_RecommendationsRevisions" EntitySet="reuters_RecommendationsRevisions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobRuns_ws_Jobs" Association="Self.FK_ws_JobRuns_ws_Jobs">
+      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
+      <End Role="ws_JobRuns" EntitySet="ws_JobRuns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_Jobs_ws_JobScheduler" Association="Self.FK_ws_Jobs_ws_JobScheduler">
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+      <End Role="ws_Jobs" EntitySet="ws_Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_Daily_ws_JobScheduler" Association="Self.FK_ws_JobScheduler_Daily_ws_JobScheduler">
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+      <End Role="ws_JobScheduler_Daily" EntitySet="ws_JobScheduler_Daily" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_Monthly_ws_JobScheduler" Association="Self.FK_ws_JobScheduler_Monthly_ws_JobScheduler">
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+      <End Role="ws_JobScheduler_Monthly" EntitySet="ws_JobScheduler_Monthly" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_Weekly_ws_JobScheduler" Association="Self.FK_ws_JobScheduler_Weekly_ws_JobScheduler">
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+      <End Role="ws_JobScheduler_Weekly" EntitySet="ws_JobScheduler_Weekly" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_ws_JobSchedulerType" Association="Self.FK_ws_JobScheduler_ws_JobSchedulerType">
+      <End Role="wslu_JobSchedulerTypes" EntitySet="wslu_JobSchedulerTypes" />
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_wslu_JobTypes" Association="Self.FK_ws_JobScheduler_wslu_JobTypes">
+      <End Role="wslu_JobTypes" EntitySet="wslu_JobTypes" />
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ws_JobScheduler_Yearly_ws_JobScheduler" Association="Self.FK_ws_JobScheduler_Yearly_ws_JobScheduler">
+      <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
+      <End Role="ws_JobScheduler_Yearly" EntitySet="ws_JobScheduler_Yearly" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
