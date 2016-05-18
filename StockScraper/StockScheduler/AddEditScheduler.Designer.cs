@@ -201,7 +201,7 @@
             this.panel1.Controls.Add(this.pnlDaily);
             this.panel1.Location = new System.Drawing.Point(108, 172);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(665, 232);
+            this.panel1.Size = new System.Drawing.Size(665, 206);
             this.panel1.TabIndex = 73;
             // 
             // pnlYearly

@@ -42,6 +42,7 @@ namespace BLL
                         temp.current_run_count = rr.current_run_count;
                         temp.max_run_count = rr.max_run_count;
                         temp.Status = rr.Status;
+                        
                     }
                 }
                 else

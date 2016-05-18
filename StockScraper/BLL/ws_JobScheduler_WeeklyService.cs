@@ -42,6 +42,7 @@ namespace BLL
                         temp.weekly_friday = rr.weekly_friday;
                         temp.weekly_saturday = rr.weekly_saturday;
                        
+                       
                     }
                 }
                 else

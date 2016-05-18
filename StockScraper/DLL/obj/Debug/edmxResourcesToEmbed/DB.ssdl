@@ -375,6 +375,7 @@
     <Property Name="monthly_day" Type="int" Nullable="false" />
     <Property Name="monthly_week_of_day" Type="int" Nullable="false" />
     <Property Name="monthly_freq" Type="int" Nullable="false" />
+    <Property Name="monthly_isweekday" Type="bit" Nullable="false" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <EntityType Name="ws_JobScheduler_Weekly">

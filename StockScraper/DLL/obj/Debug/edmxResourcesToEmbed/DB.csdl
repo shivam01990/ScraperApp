@@ -668,6 +668,7 @@
     <Property Name="monthly_freq" Type="Int32" Nullable="false" />
     <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_JobScheduler_Monthly_ws_JobScheduler" FromRole="ws_JobScheduler_Monthly" ToRole="ws_JobScheduler" />
+    <Property Name="monthly_isweekday" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="ws_JobScheduler_Weekly">
     <Key>
@@ -1357,5 +1358,19 @@
     <Property Type="Boolean" Name="weekly_thursday" Nullable="false" />
     <Property Type="Boolean" Name="weekly_friday" Nullable="false" />
     <Property Type="Boolean" Name="weekly_saturday" Nullable="false" />
+    <Property Type="Int32" Name="scheduler_monthly_id" Nullable="false" />
+    <Property Type="Int32" Name="monthly_nominal_day" Nullable="false" />
+    <Property Type="Int32" Name="monthly_nominal_month" Nullable="false" />
+    <Property Type="Int32" Name="monthly_day" Nullable="false" />
+    <Property Type="Int32" Name="monthly_week_of_day" Nullable="false" />
+    <Property Type="Int32" Name="monthly_freq" Nullable="false" />
+    <Property Type="Boolean" Name="monthly_isweekday" Nullable="false" />
+    <Property Type="Int32" Name="scheduler_yearly_id" Nullable="false" />
+    <Property Type="Int32" Name="yearly_nominal_day" Nullable="false" />
+    <Property Type="Int32" Name="yearly_nominal_month" Nullable="false" />
+    <Property Type="Int32" Name="yearly_day" Nullable="false" />
+    <Property Type="Int32" Name="yearly_week_of_day" Nullable="false" />
+    <Property Type="Int32" Name="yearly_month" Nullable="false" />
+    <Property Type="Boolean" Name="yearly_isweekday" Nullable="false" />
   </ComplexType>
 </Schema>

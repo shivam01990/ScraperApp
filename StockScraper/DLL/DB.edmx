@@ -380,6 +380,7 @@
           <Property Name="monthly_day" Type="int" Nullable="false" />
           <Property Name="monthly_week_of_day" Type="int" Nullable="false" />
           <Property Name="monthly_freq" Type="int" Nullable="false" />
+          <Property Name="monthly_isweekday" Type="bit" Nullable="false" />
           <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
         </EntityType>
         <EntityType Name="ws_JobScheduler_Weekly">
@@ -1904,6 +1905,7 @@
           <Property Name="monthly_freq" Type="Int32" Nullable="false" />
           <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_JobScheduler_Monthly_ws_JobScheduler" FromRole="ws_JobScheduler_Monthly" ToRole="ws_JobScheduler" />
+          <Property Name="monthly_isweekday" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="ws_JobScheduler_Weekly">
           <Key>
@@ -2593,6 +2595,20 @@
           <Property Type="Boolean" Name="weekly_thursday" Nullable="false" />
           <Property Type="Boolean" Name="weekly_friday" Nullable="false" />
           <Property Type="Boolean" Name="weekly_saturday" Nullable="false" />
+          <Property Type="Int32" Name="scheduler_monthly_id" Nullable="false" />
+          <Property Type="Int32" Name="monthly_nominal_day" Nullable="false" />
+          <Property Type="Int32" Name="monthly_nominal_month" Nullable="false" />
+          <Property Type="Int32" Name="monthly_day" Nullable="false" />
+          <Property Type="Int32" Name="monthly_week_of_day" Nullable="false" />
+          <Property Type="Int32" Name="monthly_freq" Nullable="false" />
+          <Property Type="Boolean" Name="monthly_isweekday" Nullable="false" />
+          <Property Type="Int32" Name="scheduler_yearly_id" Nullable="false" />
+          <Property Type="Int32" Name="yearly_nominal_day" Nullable="false" />
+          <Property Type="Int32" Name="yearly_nominal_month" Nullable="false" />
+          <Property Type="Int32" Name="yearly_day" Nullable="false" />
+          <Property Type="Int32" Name="yearly_week_of_day" Nullable="false" />
+          <Property Type="Int32" Name="yearly_month" Nullable="false" />
+          <Property Type="Boolean" Name="yearly_isweekday" Nullable="false" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2990,6 +3006,7 @@
           <EntitySetMapping Name="ws_JobScheduler_Monthly">
             <EntityTypeMapping TypeName="DBModel.ws_JobScheduler_Monthly">
               <MappingFragment StoreEntitySet="ws_JobScheduler_Monthly">
+                <ScalarProperty Name="monthly_isweekday" ColumnName="monthly_isweekday" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="monthly_freq" ColumnName="monthly_freq" />
                 <ScalarProperty Name="monthly_week_of_day" ColumnName="monthly_week_of_day" />
@@ -3126,6 +3143,20 @@
                 <ScalarProperty Name="weekly_thursday" ColumnName="weekly_thursday" />
                 <ScalarProperty Name="weekly_friday" ColumnName="weekly_friday" />
                 <ScalarProperty Name="weekly_saturday" ColumnName="weekly_saturday" />
+                <ScalarProperty Name="scheduler_monthly_id" ColumnName="scheduler_monthly_id" />
+                <ScalarProperty Name="monthly_nominal_day" ColumnName="monthly_nominal_day" />
+                <ScalarProperty Name="monthly_nominal_month" ColumnName="monthly_nominal_month" />
+                <ScalarProperty Name="monthly_day" ColumnName="monthly_day" />
+                <ScalarProperty Name="monthly_week_of_day" ColumnName="monthly_week_of_day" />
+                <ScalarProperty Name="monthly_freq" ColumnName="monthly_freq" />
+                <ScalarProperty Name="monthly_isweekday" ColumnName="monthly_isweekday" />
+                <ScalarProperty Name="scheduler_yearly_id" ColumnName="scheduler_yearly_id" />
+                <ScalarProperty Name="yearly_nominal_day" ColumnName="yearly_nominal_day" />
+                <ScalarProperty Name="yearly_nominal_month" ColumnName="yearly_nominal_month" />
+                <ScalarProperty Name="yearly_day" ColumnName="yearly_day" />
+                <ScalarProperty Name="yearly_week_of_day" ColumnName="yearly_week_of_day" />
+                <ScalarProperty Name="yearly_month" ColumnName="yearly_month" />
+                <ScalarProperty Name="yearly_isweekday" ColumnName="yearly_isweekday" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

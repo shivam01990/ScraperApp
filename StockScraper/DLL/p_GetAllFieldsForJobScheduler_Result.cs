@@ -37,5 +37,19 @@ namespace DLL
         public bool weekly_thursday { get; set; }
         public bool weekly_friday { get; set; }
         public bool weekly_saturday { get; set; }
+        public int scheduler_monthly_id { get; set; }
+        public int monthly_nominal_day { get; set; }
+        public int monthly_nominal_month { get; set; }
+        public int monthly_day { get; set; }
+        public int monthly_week_of_day { get; set; }
+        public int monthly_freq { get; set; }
+        public bool monthly_isweekday { get; set; }
+        public int scheduler_yearly_id { get; set; }
+        public int yearly_nominal_day { get; set; }
+        public int yearly_nominal_month { get; set; }
+        public int yearly_day { get; set; }
+        public int yearly_week_of_day { get; set; }
+        public int yearly_month { get; set; }
+        public bool yearly_isweekday { get; set; }
     }
 }

@@ -14,35 +14,45 @@ namespace BLL
         #endregion
 
         #region--Save ws_JobScheduler_Monthly--
-        public int Save_ws_JobScheduler_Monthly(ws_JobScheduler_Daily rr)
+        public int Save_ws_JobScheduler_Monthly(ws_JobScheduler_Monthly rr)
         {
-            int schedule_daily_id = 0;
+            int scheduler_monthly_id = 0;
             using (DBEntities db = new DBEntities())
             {
-                if (rr.schedule_daily_id > 0)
+                ws_JobScheduler_Monthly exists = db.ws_JobScheduler_Monthly.Where(u => u.schedulder_id == rr.schedulder_id).FirstOrDefault();
+                if (exists != null)
                 {
-                    ws_JobScheduler_Daily temp = db.ws_JobScheduler_Daily.Where(u => u.schedule_daily_id == rr.schedule_daily_id).FirstOrDefault();
+                    rr.scheduler_monthly_id = exists.scheduler_monthly_id;
+                }
+                if (rr.scheduler_monthly_id > 0)
+                {
+                    ws_JobScheduler_Monthly temp = db.ws_JobScheduler_Monthly.Where(u => u.scheduler_monthly_id == rr.scheduler_monthly_id).FirstOrDefault();
 
                     if (temp != null)
                     {
-                        temp.scheduler_id = rr.scheduler_id;
-                        temp.recur_days = rr.recur_days;
-                        temp.IsWeekDay = rr.IsWeekDay;
+                        temp.schedulder_id = rr.schedulder_id;
+                        temp.monthly_nominal_month = rr.monthly_nominal_month;
+                        temp.monthly_nominal_day = rr.monthly_nominal_day;
+                        temp.monthly_day = rr.monthly_day;
+                        temp.monthly_week_of_day = rr.monthly_week_of_day;
+                        temp.monthly_freq = rr.monthly_freq;
+                        temp.monthly_isweekday = rr.monthly_isweekday;                       
+                       
                     }
                 }
                 else
                 {
-                    db.ws_JobScheduler_Daily.Add(rr);
+                    db.ws_JobScheduler_Monthly.Add(rr);
                 }
 
                 int x = db.SaveChanges();
                 if (x > 0)
                 {
-                    schedule_daily_id = rr.schedule_daily_id;
+                    scheduler_monthly_id = rr.scheduler_monthly_id;
                 }
             }
 
-            return schedule_daily_id;
+            return scheduler_monthly_id;
         }
         #endregion
     }

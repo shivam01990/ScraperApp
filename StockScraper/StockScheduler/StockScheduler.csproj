@@ -40,6 +40,10 @@
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.4.2.0, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Win32.TaskScheduler.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -69,6 +73,7 @@
     <Compile Include="SchedulerJobs.Designer.cs">
       <DependentUpon>SchedulerJobs.cs</DependentUpon>
     </Compile>
+    <Compile Include="SchedulerProvider.cs" />
     <EmbeddedResource Include="AddEditScheduler.resx">
       <DependentUpon>AddEditScheduler.cs</DependentUpon>
     </EmbeddedResource>
