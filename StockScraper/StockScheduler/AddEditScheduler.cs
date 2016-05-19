@@ -338,6 +338,11 @@ namespace StockScheduler
 
                 if (scheduler_id > 0)
                 {
+                     p_GetAllFieldsForJobScheduler_Result _scheduler = ws_JobSchedulerServices.Instance.GetAllFieldsForScheduler(scheduler_id).FirstOrDefault();
+                     if (_scheduler != null)
+                     {
+                         SchedulerProvider.Instance.GenerateTask(_scheduler);
+                     }
                     MessageBox.Show("Job Saved");
                 }
             }

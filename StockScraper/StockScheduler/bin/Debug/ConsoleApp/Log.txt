@@ -1,0 +1,3 @@
+Total Arguments:2
+Argument Value:1,Finviz
+Argument Value:Daily
