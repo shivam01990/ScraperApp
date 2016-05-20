@@ -22,6 +22,11 @@ namespace StockScheduler
                 CreateTaskRunDaily(_scheduler);
             }
 
+            if (_scheduler.schedulertype_id == 2)
+            {
+                DeleteTask(_scheduler.name);
+                CreateWeeklyTask(_scheduler);
+            }
         }
 
 
@@ -66,10 +71,9 @@ namespace StockScheduler
                             td.RegistrationInfo.Description = _scheduler.description;
 
                             WeeklyTrigger week = new WeeklyTrigger();
-                            week.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + _scheduler.start_time.ToString("hh:mm:tt"));
+                            week.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
                             week.WeeksInterval = 1;
-                            week.DaysOfWeek = Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Saturday |
-                                               Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Sunday;
+                            week.DaysOfWeek = Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Monday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Tuesday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Wednesday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Thursday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Friday;
                             td.Triggers.Add(week);
 
                             td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + "," + _scheduler.name, null));
@@ -82,6 +86,85 @@ namespace StockScheduler
 
         #endregion
 
+        #region--Create Weekly Task--
+        public void CreateWeeklyTask(p_GetAllFieldsForJobScheduler_Result _scheduler)
+        {
+            if (_scheduler != null)
+            {
+                if (_scheduler.schedulertype_id == 2)
+                {
+                    using (TaskService ts = new TaskService())
+                    {
+                        TaskDefinition td = ts.NewTask();
+                        td.RegistrationInfo.Description = _scheduler.description;
+
+                        WeeklyTrigger week = new WeeklyTrigger();
+                        week.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
+                        week.WeeksInterval = 1;
+                        if (_scheduler.weekly_monday)
+                        {
+                            week.DaysOfWeek = week.DaysOfWeek | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Monday;
+                        }
+                        if (_scheduler.weekly_tuesday)
+                        {
+                            week.DaysOfWeek = week.DaysOfWeek | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Tuesday;
+                        }
+                        if (_scheduler.weekly_wednesday)
+                        {
+                            week.DaysOfWeek = week.DaysOfWeek | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Wednesday;
+                        }
+                        if (_scheduler.weekly_thursday)
+                        {
+                            week.DaysOfWeek = week.DaysOfWeek | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Thursday;
+                        }
+                        if (_scheduler.weekly_friday)
+                        {
+                            week.DaysOfWeek = week.DaysOfWeek | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Friday;
+                        }
+                        if (_scheduler.weekly_saturday)
+                        {
+                            week.DaysOfWeek = week.DaysOfWeek | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Saturday;
+                        }
+                        if (_scheduler.weekly_sunday)
+                        {
+                            week.DaysOfWeek = week.DaysOfWeek | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Sunday;
+                        }
+
+                        td.Triggers.Add(week);
+
+                        td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + "," + _scheduler.name, null));
+                        ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td);
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region--Monthly Jobs--
+        public void CreateMonthlyJobs(p_GetAllFieldsForJobScheduler_Result _scheduler)
+        {
+            if (_scheduler != null)
+            {
+                if (_scheduler.schedulertype_id == 2)
+                {
+                    using (TaskService ts = new TaskService())
+                    {
+                        TaskDefinition td = ts.NewTask();
+                        td.RegistrationInfo.Description = _scheduler.description;
+                        MonthlyTrigger mTrigger = new MonthlyTrigger();
+                        mTrigger.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
+                        mTrigger.DaysOfMonth = new int[] { 10, 20 };
+                        mTrigger.MonthsOfYear = MonthsOfTheYear.July | MonthsOfTheYear.November;
+                       // mTrigger.RunOnLastDayOfMonth = true; // V2 only
+                        td.Triggers.Add(mTrigger);
+
+                        td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + "," + _scheduler.name, null));
+                        ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td);
+                    }
+                }
+            }
+        }
+        #endregion
 
         #region--Delete Tasks--
         private void DeleteTask(string TaskName)
