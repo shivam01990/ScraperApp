@@ -331,7 +331,7 @@
             // 
             this.numericFreq.Location = new System.Drawing.Point(65, 127);
             this.numericFreq.Maximum = new decimal(new int[] {
-            12,
+            4,
             0,
             0,
             0});
@@ -425,7 +425,7 @@
             // 
             this.numericMonthly_MonthRec.Location = new System.Drawing.Point(65, 39);
             this.numericMonthly_MonthRec.Maximum = new decimal(new int[] {
-            12,
+            4,
             0,
             0,
             0});

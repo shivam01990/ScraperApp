@@ -58,6 +58,7 @@ namespace StockScheduler
             cmbYearlyMonthWeek.SelectedIndex = 0;
             cmbYearlyWeekDay.SelectedIndex = 0;
 
+            rdoMonthly_Day.Checked = true;
             cmbMonthlyWeek.SelectedIndex = 0;
             cmbMonthWeekDay.SelectedIndex = 0;
 

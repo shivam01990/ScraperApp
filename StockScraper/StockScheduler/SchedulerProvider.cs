@@ -16,16 +16,20 @@ namespace StockScheduler
 
         public void GenerateTask(p_GetAllFieldsForJobScheduler_Result _scheduler)
         {
+            DeleteTask(_scheduler.name);
             if (_scheduler.schedulertype_id == 1)
             {
-                DeleteTask(_scheduler.name);
                 CreateTaskRunDaily(_scheduler);
             }
 
             if (_scheduler.schedulertype_id == 2)
             {
-                DeleteTask(_scheduler.name);
                 CreateWeeklyTask(_scheduler);
+            }
+
+            if (_scheduler.schedulertype_id == 3)
+            {
+                CreateMonthlyJobs(_scheduler);
             }
         }
 
@@ -145,7 +149,7 @@ namespace StockScheduler
         {
             if (_scheduler != null)
             {
-                if (_scheduler.schedulertype_id == 2)
+                if (_scheduler.schedulertype_id == 3)
                 {
                     using (TaskService ts = new TaskService())
                     {
@@ -153,9 +157,25 @@ namespace StockScheduler
                         td.RegistrationInfo.Description = _scheduler.description;
                         MonthlyTrigger mTrigger = new MonthlyTrigger();
                         mTrigger.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
-                        mTrigger.DaysOfMonth = new int[] { 10, 20 };
-                        mTrigger.MonthsOfYear = MonthsOfTheYear.July | MonthsOfTheYear.November;
-                       // mTrigger.RunOnLastDayOfMonth = true; // V2 only
+
+
+                        mTrigger.DaysOfMonth = new int[] { _scheduler.monthly_nominal_day };
+
+
+                        int currentmonth = DateTime.Now.Month;
+
+                        if(_scheduler.monthly_nominal_month==1)
+                        {
+                            mTrigger.MonthsOfYear = MonthsOfTheYear.AllMonths;
+                        }
+
+                        if(_scheduler.monthly_nominal_month==2||_scheduler.monthly_nominal_month==3||_scheduler.monthly_nominal_month==4)
+                        {
+                            mTrigger.MonthsOfYear = GetMonthsOfYear(currentmonth, _scheduler.monthly_nominal_month);
+                        }
+
+                        
+                        // mTrigger.RunOnLastDayOfMonth = true; // V2 only
                         td.Triggers.Add(mTrigger);
 
                         td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + "," + _scheduler.name, null));
@@ -163,6 +183,82 @@ namespace StockScheduler
                     }
                 }
             }
+        }
+        #endregion
+
+        #region--Retrun Month of Year--
+        public MonthsOfTheYear GetMonthsOfYear(int CurrentMonthnum,int MonthFreq)
+        {
+            MonthsOfTheYear obj = new MonthsOfTheYear();
+            int runningmonth = CurrentMonthnum;
+            obj = GetMonthBySeqNo(runningmonth);
+            do
+            {
+                int temp = runningmonth+MonthFreq;
+                if(temp>12)
+                {
+                    runningmonth = 12 - runningmonth;
+                }
+                runningmonth = runningmonth + MonthFreq;
+                obj =obj | GetMonthBySeqNo(runningmonth);
+            } while (CurrentMonthnum != runningmonth);
+            return obj;
+        }
+        #endregion
+
+        #region--Get  Monthby SeqNo--
+        public MonthsOfTheYear GetMonthBySeqNo(int CurrentMonthnum)
+        {
+            MonthsOfTheYear obj = new MonthsOfTheYear();
+            if (CurrentMonthnum == 1)
+            {
+                obj = MonthsOfTheYear.January;
+            }
+            if (CurrentMonthnum == 2)
+            {
+                obj = MonthsOfTheYear.February;
+            }
+            if (CurrentMonthnum == 3)
+            {
+                obj = MonthsOfTheYear.March;
+            }
+            if (CurrentMonthnum == 4)
+            {
+                obj = MonthsOfTheYear.April;
+            }
+            if (CurrentMonthnum == 5)
+            {
+                obj = MonthsOfTheYear.May;
+            }
+            if (CurrentMonthnum == 6)
+            {
+                obj = MonthsOfTheYear.June;
+            }
+            if (CurrentMonthnum == 7)
+            {
+                obj = MonthsOfTheYear.July;
+            }
+            if (CurrentMonthnum == 8)
+            {
+                obj = MonthsOfTheYear.August;
+            }
+            if (CurrentMonthnum == 9)
+            {
+                obj = MonthsOfTheYear.September;
+            }
+            if (CurrentMonthnum == 10)
+            {
+                obj = MonthsOfTheYear.October;
+            }
+            if (CurrentMonthnum == 11)
+            {
+                obj = MonthsOfTheYear.November;
+            }
+            if (CurrentMonthnum == 12)
+            {
+                obj = MonthsOfTheYear.December;
+            }
+            return obj;
         }
         #endregion
 
