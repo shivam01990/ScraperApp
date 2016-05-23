@@ -49,7 +49,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cmbMonthlyWeek = new System.Windows.Forms.ComboBox();
             this.cmbMonthWeekDay = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdoMonthly_week = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.rdoMonthly_Day = new System.Windows.Forms.RadioButton();
             this.numericMonthly_MonthRec = new System.Windows.Forms.NumericUpDown();
@@ -306,7 +306,7 @@
             this.pnlMonthly.Controls.Add(this.label9);
             this.pnlMonthly.Controls.Add(this.cmbMonthlyWeek);
             this.pnlMonthly.Controls.Add(this.cmbMonthWeekDay);
-            this.pnlMonthly.Controls.Add(this.radioButton1);
+            this.pnlMonthly.Controls.Add(this.rdoMonthly_week);
             this.pnlMonthly.Controls.Add(this.label7);
             this.pnlMonthly.Controls.Add(this.rdoMonthly_Day);
             this.pnlMonthly.Controls.Add(this.numericMonthly_MonthRec);
@@ -384,22 +384,22 @@
             "2",
             "3",
             "4",
-            "5"});
+            "Last Week "});
             this.cmbMonthWeekDay.Location = new System.Drawing.Point(65, 72);
             this.cmbMonthWeekDay.Name = "cmbMonthWeekDay";
             this.cmbMonthWeekDay.Size = new System.Drawing.Size(82, 21);
             this.cmbMonthWeekDay.TabIndex = 89;
             // 
-            // radioButton1
+            // rdoMonthly_week
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(16, 73);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(44, 17);
-            this.radioButton1.TabIndex = 88;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "The";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoMonthly_week.AutoSize = true;
+            this.rdoMonthly_week.Location = new System.Drawing.Point(16, 73);
+            this.rdoMonthly_week.Name = "rdoMonthly_week";
+            this.rdoMonthly_week.Size = new System.Drawing.Size(44, 17);
+            this.rdoMonthly_week.TabIndex = 88;
+            this.rdoMonthly_week.TabStop = true;
+            this.rdoMonthly_week.Text = "The";
+            this.rdoMonthly_week.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -883,7 +883,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbMonthlyWeek;
         private System.Windows.Forms.ComboBox cmbMonthWeekDay;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdoMonthly_week;
         private System.Windows.Forms.Panel pnlYearly;
         private System.Windows.Forms.ComboBox cmbYearly_Month;
         private System.Windows.Forms.RadioButton rdoYearly_The;

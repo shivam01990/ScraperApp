@@ -40,7 +40,6 @@ namespace StockScheduler
             rdoDaily.Checked = true;
             rdoYearly_Every.Checked = true;
 
-
             string[] months = new string[] {"January", "February", "March", "April", "May",
   "June", "July", "August", "September", "October", "November", "December"};
             string[] monthsweek = new string[] {"January", "February", "March", "April", "May",
@@ -120,22 +119,33 @@ namespace StockScheduler
                         cmbMonthlyWeek.SelectedIndex = _scheduler.monthly_day == 0 ? 0 : _scheduler.monthly_day - 1;
                         cmbMonthWeekDay.SelectedIndex = _scheduler.monthly_week_of_day == 0 ? 0 : _scheduler.monthly_week_of_day - 1;
                         numericMonthly_MonthRec.Value = _scheduler.monthly_freq;
-                        rdoMonthly_Day.Checked = _scheduler.monthly_isweekday;                        
+                        if (_scheduler.monthly_isweekday)
+                        {
+                            rdoMonthly_week.Checked = true;
+                        }
+                        else
+                        {
+                            rdoMonthly_Day.Checked = true;
+                        }
 
                     }
                     if (_scheduler.schedulertype_id == 4)
                     {
                         rdoYearly.Checked = true;
                         numeric_YearlyNominalDay.Value = _scheduler.yearly_nominal_day;
-                        cmbYearly_Month.SelectedIndex = _scheduler.yearly_nominal_month==0 ? 0 : _scheduler.yearly_nominal_month - 1;
+                        cmbYearly_Month.SelectedIndex = _scheduler.yearly_nominal_month == 0 ? 0 : _scheduler.yearly_nominal_month - 1;
                         cmbYearlyDay.SelectedIndex = _scheduler.yearly_day == 0 ? 0 : _scheduler.yearly_day - 1;
                         cmbYearlyWeekDay.SelectedIndex = _scheduler.yearly_week_of_day == 0 ? 0 : _scheduler.yearly_week_of_day - 1;
                         cmbYearlyMonthWeek.SelectedIndex = _scheduler.yearly_month == 0 ? 0 : _scheduler.yearly_month - 1;
-                        rdoYearly_Every.Checked = _scheduler.yearly_isweekday;           
-                       
+                        if (_scheduler.yearly_isweekday)
+                        {
+                            rdoYearly_The.Checked = true;
+                        }
+                        {
+                            rdoYearly_Every.Checked = true;
+                        }
+
                     }
-
-
                     txtMaxRunCount.Value = _scheduler.max_run_count;
                 }
                 else
@@ -185,6 +195,7 @@ namespace StockScheduler
             HideAllPanels();
             pnlMonthly.Location = pnlDaily.Location;
             pnlMonthly.Visible = true;
+            rdoMonthly_Day.Checked = true;
         }
 
         private void rdoYearly_CheckedChanged(object sender, EventArgs e)
@@ -217,6 +228,20 @@ namespace StockScheduler
                 TimeSpan starttime = new TimeSpan(startdate.Hour, startdate.Minute, startdate.Second);
                 objJob.start_date = startdate;
                 objJob.start_time = starttime;
+
+                if (chkExpire.Checked)
+                {
+                    string strenddate = dtExpireDate.Text + " " + dtExpireTime.Text;
+                    DateTime enddate = DateTime.Parse(strenddate);
+                    TimeSpan endtime = new TimeSpan(enddate.Hour, enddate.Minute, enddate.Second);
+                    objJob.end_date = enddate;
+                    objJob.end_time = endtime;
+                }
+                else
+                {
+                    objJob.end_date = null;
+                    objJob.end_time = null;
+                }
 
                 if (chkExpire.Checked)
                 {
@@ -339,11 +364,11 @@ namespace StockScheduler
 
                 if (scheduler_id > 0)
                 {
-                     p_GetAllFieldsForJobScheduler_Result _scheduler = ws_JobSchedulerServices.Instance.GetAllFieldsForScheduler(scheduler_id).FirstOrDefault();
-                     if (_scheduler != null)
-                     {
-                         SchedulerProvider.Instance.GenerateTask(_scheduler);
-                     }
+                    p_GetAllFieldsForJobScheduler_Result _scheduler = ws_JobSchedulerServices.Instance.GetAllFieldsForScheduler(scheduler_id).FirstOrDefault();
+                    if (_scheduler != null)
+                    {
+                        SchedulerProvider.Instance.GenerateTask(_scheduler);
+                    }
                     MessageBox.Show("Job Saved");
                 }
             }

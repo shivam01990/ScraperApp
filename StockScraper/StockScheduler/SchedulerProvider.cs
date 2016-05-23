@@ -29,7 +29,12 @@ namespace StockScheduler
 
             if (_scheduler.schedulertype_id == 3)
             {
-                CreateMonthlyJobs(_scheduler);
+                CreateMonthlyDayJobs(_scheduler);
+            }
+
+            if (_scheduler.schedulertype_id == 4)
+            {
+                CreateYearlyDayJobs(_scheduler);
             }
         }
 
@@ -46,15 +51,20 @@ namespace StockScheduler
                         using (TaskService ts = new TaskService())
                         {
                             TaskDefinition td = ts.NewTask();
+                            td.Settings.DisallowStartIfOnBatteries = false;
                             td.RegistrationInfo.Description = _scheduler.description;
 
                             DailyTrigger daily = new DailyTrigger();
                             daily.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
+                            if(_scheduler.end_date!=null && _scheduler.end_time!=null)
+                            {
+                                daily.EndBoundary = Convert.ToDateTime((_scheduler.end_date==null?DateTime.Now.ToShortDateString():((DateTime)_scheduler.end_date).ToShortDateString()) + " " + _scheduler.end_time.ToString());                   
+                            }
                             daily.DaysInterval = (short)(_scheduler.recur_days_daily == 0 ? 1 : _scheduler.recur_days_daily);
                             td.Triggers.Add(daily);
 
                             td.Actions.Add(new ExecAction(Helper.GetExePath(), _scheduler.scheduler_id + "," + _scheduler.name, null));
-                            ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td);
+                            ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
                         }
                     }
                 }
@@ -72,16 +82,22 @@ namespace StockScheduler
                         using (TaskService ts = new TaskService())
                         {
                             TaskDefinition td = ts.NewTask();
+                            td.Settings.DisallowStartIfOnBatteries = false;
                             td.RegistrationInfo.Description = _scheduler.description;
 
                             WeeklyTrigger week = new WeeklyTrigger();
+                            
                             week.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
+                            if (_scheduler.end_date != null && _scheduler.end_time != null)
+                            {
+                                week.EndBoundary = Convert.ToDateTime((_scheduler.end_date == null ? DateTime.Now.ToShortDateString() : ((DateTime)_scheduler.end_date).ToShortDateString()) + " " + _scheduler.end_time.ToString());
+                            }
                             week.WeeksInterval = 1;
                             week.DaysOfWeek = Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Monday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Tuesday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Wednesday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Thursday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Friday;
                             td.Triggers.Add(week);
 
                             td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + "," + _scheduler.name, null));
-                            ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td);
+                            ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
                         }
                     }
                 }
@@ -100,10 +116,15 @@ namespace StockScheduler
                     using (TaskService ts = new TaskService())
                     {
                         TaskDefinition td = ts.NewTask();
+                        td.Settings.DisallowStartIfOnBatteries = false;
                         td.RegistrationInfo.Description = _scheduler.description;
 
                         WeeklyTrigger week = new WeeklyTrigger();
                         week.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
+                        if (_scheduler.end_date != null && _scheduler.end_time != null)
+                        {
+                            week.EndBoundary = Convert.ToDateTime((_scheduler.end_date == null ? DateTime.Now.ToShortDateString() : ((DateTime)_scheduler.end_date).ToShortDateString()) + " " + _scheduler.end_time.ToString());
+                        }
                         week.WeeksInterval = 1;
                         if (_scheduler.weekly_monday)
                         {
@@ -137,76 +158,240 @@ namespace StockScheduler
                         td.Triggers.Add(week);
 
                         td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + "," + _scheduler.name, null));
-                        ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td);
+                        ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
                     }
                 }
             }
         }
         #endregion
 
-        #region--Monthly Jobs--
-        public void CreateMonthlyJobs(p_GetAllFieldsForJobScheduler_Result _scheduler)
+        #region--Monthly Day Jobs--
+        public void CreateMonthlyDayJobs(p_GetAllFieldsForJobScheduler_Result _scheduler)
         {
             if (_scheduler != null)
             {
                 if (_scheduler.schedulertype_id == 3)
                 {
-                    using (TaskService ts = new TaskService())
+                    if (!_scheduler.monthly_isweekday)
                     {
-                        TaskDefinition td = ts.NewTask();
-                        td.RegistrationInfo.Description = _scheduler.description;
-                        MonthlyTrigger mTrigger = new MonthlyTrigger();
-                        mTrigger.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
-
-
-                        mTrigger.DaysOfMonth = new int[] { _scheduler.monthly_nominal_day };
-
-
-                        int currentmonth = DateTime.Now.Month;
-
-                        if(_scheduler.monthly_nominal_month==1)
+                        using (TaskService ts = new TaskService())
                         {
-                            mTrigger.MonthsOfYear = MonthsOfTheYear.AllMonths;
+                            TaskDefinition td = ts.NewTask();
+                            td.Settings.DisallowStartIfOnBatteries = false;
+                            td.RegistrationInfo.Description = _scheduler.description;
+                            MonthlyTrigger mTrigger = new MonthlyTrigger();
+                            mTrigger.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
+                            if (_scheduler.end_date != null && _scheduler.end_time != null)
+                            {
+                                mTrigger.EndBoundary = Convert.ToDateTime((_scheduler.end_date == null ? DateTime.Now.ToShortDateString() : ((DateTime)_scheduler.end_date).ToShortDateString()) + " " + _scheduler.end_time.ToString());
+                            }
+
+                            mTrigger.DaysOfMonth = new int[] { _scheduler.monthly_nominal_day };
+
+
+                            int currentmonth = DateTime.Now.Month;
+
+                            if (_scheduler.monthly_nominal_month == 1)
+                            {
+                                mTrigger.MonthsOfYear = MonthsOfTheYear.AllMonths;
+                            }
+
+                            if (_scheduler.monthly_nominal_month == 2 || _scheduler.monthly_nominal_month == 3 || _scheduler.monthly_nominal_month == 4)
+                            {
+                                mTrigger.MonthsOfYear = GetMonthsOfYear(currentmonth, _scheduler.monthly_nominal_month);
+                            }
+
+
+                            // mTrigger.RunOnLastDayOfMonth = true; // V2 only
+                            td.Triggers.Add(mTrigger);
+
+                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + " " + _scheduler.name, null));
+                            ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
                         }
-
-                        if(_scheduler.monthly_nominal_month==2||_scheduler.monthly_nominal_month==3||_scheduler.monthly_nominal_month==4)
-                        {
-                            mTrigger.MonthsOfYear = GetMonthsOfYear(currentmonth, _scheduler.monthly_nominal_month);
-                        }
-
-                        
-                        // mTrigger.RunOnLastDayOfMonth = true; // V2 only
-                        td.Triggers.Add(mTrigger);
-
-                        td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + "," + _scheduler.name, null));
-                        ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td);
+                    }
+                    else
+                    {
+                        CreateMonthlyWeekJobs(_scheduler);
                     }
                 }
             }
         }
         #endregion
 
+        #region--Monthly Week Jobs--
+        public void CreateMonthlyWeekJobs(p_GetAllFieldsForJobScheduler_Result _scheduler)
+        {
+            if (_scheduler != null)
+            {
+                if (_scheduler.schedulertype_id == 3)
+                {
+                    if (_scheduler.monthly_isweekday)
+                    {
+                        using (TaskService ts = new TaskService())
+                        {
+                            TaskDefinition td = ts.NewTask();
+                            td.Settings.DisallowStartIfOnBatteries = false;
+
+                            td.RegistrationInfo.Description = _scheduler.description;
+                            MonthlyDOWTrigger mTrigger = new MonthlyDOWTrigger();
+                            mTrigger.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
+                            if (_scheduler.end_date != null && _scheduler.end_time != null)
+                            {
+                                mTrigger.EndBoundary = Convert.ToDateTime((_scheduler.end_date == null ? DateTime.Now.ToShortDateString() : ((DateTime)_scheduler.end_date).ToShortDateString()) + " " + _scheduler.end_time.ToString());
+                            }
+                            mTrigger.DaysOfWeek = GetWeekDayBySeqNo(_scheduler.monthly_week_of_day);
+
+                            mTrigger.WeeksOfMonth = GetWeekBySeqNo(_scheduler.monthly_week_of_day);
+                            int currentmonth = DateTime.Now.Month;
+
+                            if (_scheduler.monthly_freq == 1)
+                            {
+                                mTrigger.MonthsOfYear = MonthsOfTheYear.AllMonths;
+                            }
+
+                            if (_scheduler.monthly_freq == 2 || _scheduler.monthly_freq == 3 || _scheduler.monthly_freq == 4)
+                            {
+                                mTrigger.MonthsOfYear = GetMonthsOfYear(currentmonth, _scheduler.monthly_nominal_month);
+                            }
+
+                            td.Triggers.Add(mTrigger);
+
+                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + " " + _scheduler.name, null));
+                            ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
+
+                        }
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region--Yearly Job--
+        public void CreateYearlyDayJobs(p_GetAllFieldsForJobScheduler_Result _scheduler)
+        {
+            if (_scheduler != null)
+            {
+                if (_scheduler.schedulertype_id == 4)
+                {
+                    if (!_scheduler.yearly_isweekday)
+                    {
+                        using (TaskService ts = new TaskService())
+                        {
+                            TaskDefinition td = ts.NewTask();
+                            td.Settings.DisallowStartIfOnBatteries = false;
+                            td.RegistrationInfo.Description = _scheduler.description;
+                            MonthlyTrigger mTrigger = new MonthlyTrigger();
+                            mTrigger.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
+                            if (_scheduler.end_date != null && _scheduler.end_time != null)
+                            {
+                                mTrigger.EndBoundary = Convert.ToDateTime((_scheduler.end_date == null ? DateTime.Now.ToShortDateString() : ((DateTime)_scheduler.end_date).ToShortDateString()) + " " + _scheduler.end_time.ToString());
+                            }
+                            mTrigger.DaysOfMonth = new int[] { _scheduler.yearly_nominal_day };
+
+                            mTrigger.MonthsOfYear = GetMonthBySeqNo(_scheduler.yearly_nominal_month);
+                            // mTrigger.RunOnLastDayOfMonth = true; // V2 only
+                            td.Triggers.Add(mTrigger);
+                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + " " + _scheduler.name, null));
+                            ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
+
+                        }
+                    }
+                    else
+                    {
+                        CreateYearlyWeekJobs(_scheduler);
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        #region--Yearly Week Job--
+        public void CreateYearlyWeekJobs(p_GetAllFieldsForJobScheduler_Result _scheduler)
+        {
+            if (_scheduler != null)
+            {
+                if (_scheduler.schedulertype_id == 4)
+                {
+                    if (_scheduler.yearly_isweekday)
+                    {
+                        using (TaskService ts = new TaskService())
+                        {
+                            TaskDefinition td = ts.NewTask();
+                            td.Settings.DisallowStartIfOnBatteries = false;
+                            td.RegistrationInfo.Description = _scheduler.description;
+                            MonthlyDOWTrigger mTrigger = new MonthlyDOWTrigger();
+                            mTrigger.StartBoundary = Convert.ToDateTime(_scheduler.start_date.ToShortDateString() + " " + _scheduler.start_time.ToString());
+                            if (_scheduler.end_date != null && _scheduler.end_time != null)
+                            {
+                                mTrigger.EndBoundary = Convert.ToDateTime((_scheduler.end_date == null ? DateTime.Now.ToShortDateString() : ((DateTime)_scheduler.end_date).ToShortDateString()) + " " + _scheduler.end_time.ToString());
+                            }
+                            mTrigger.WeeksOfMonth = GetWeekBySeqNo(_scheduler.yearly_week_of_day);
+                            mTrigger.DaysOfWeek = GetWeekDayBySeqNo(_scheduler.yearly_day);
+                            mTrigger.MonthsOfYear = GetMonthBySeqNo(_scheduler.yearly_month);
+                            // mTrigger.RunOnLastDayOfMonth = true; // V2 only
+                            td.Triggers.Add(mTrigger);
+                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + " " + _scheduler.name, null));
+                            ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
+
+                        }
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        #region--Get Week By SeqNo
+        public WhichWeek GetWeekBySeqNo(int SeqNo)
+        {
+            if (SeqNo == 1)
+            {
+                return WhichWeek.FirstWeek;
+            }
+            if (SeqNo == 2)
+            {
+                return WhichWeek.SecondWeek;
+            }
+            if (SeqNo == 3)
+            {
+                return WhichWeek.ThirdWeek;
+            }
+            if (SeqNo == 4)
+            {
+                return WhichWeek.FourthWeek;
+            }
+            if (SeqNo == 5)
+            {
+                return WhichWeek.LastWeek;
+            }
+            return WhichWeek.AllWeeks;
+        }
+
+        #endregion
         #region--Retrun Month of Year--
-        public MonthsOfTheYear GetMonthsOfYear(int CurrentMonthnum,int MonthFreq)
+        public MonthsOfTheYear GetMonthsOfYear(int CurrentMonthnum, int MonthFreq)
         {
             MonthsOfTheYear obj = new MonthsOfTheYear();
             int runningmonth = CurrentMonthnum;
-            obj = GetMonthBySeqNo(runningmonth);
             do
             {
-                int temp = runningmonth+MonthFreq;
-                if(temp>12)
+                obj = obj | GetMonthBySeqNo(runningmonth);
+                int temp = runningmonth + MonthFreq;
+                if (temp > 12)
                 {
                     runningmonth = 12 - runningmonth;
+                    obj = obj | GetMonthBySeqNo(runningmonth);
                 }
+
                 runningmonth = runningmonth + MonthFreq;
-                obj =obj | GetMonthBySeqNo(runningmonth);
+
             } while (CurrentMonthnum != runningmonth);
             return obj;
         }
         #endregion
 
-        #region--Get  Monthby SeqNo--
+        #region--Get Month by SeqNo--
         public MonthsOfTheYear GetMonthBySeqNo(int CurrentMonthnum)
         {
             MonthsOfTheYear obj = new MonthsOfTheYear();
@@ -257,6 +442,42 @@ namespace StockScheduler
             if (CurrentMonthnum == 12)
             {
                 obj = MonthsOfTheYear.December;
+            }
+            return obj;
+        }
+        #endregion
+
+        #region--Get Weekday by SeqNo
+        public DaysOfTheWeek GetWeekDayBySeqNo(int SeqNo)
+        {
+            DaysOfTheWeek obj = new DaysOfTheWeek();
+            if (SeqNo == 1)
+            {
+                obj = DaysOfTheWeek.Monday;
+            }
+            if (SeqNo == 2)
+            {
+                obj = DaysOfTheWeek.Tuesday;
+            }
+            if (SeqNo == 3)
+            {
+                obj = DaysOfTheWeek.Wednesday;
+            }
+            if (SeqNo == 4)
+            {
+                obj = DaysOfTheWeek.Thursday;
+            }
+            if (SeqNo == 5)
+            {
+                obj = DaysOfTheWeek.Friday;
+            }
+            if (SeqNo == 6)
+            {
+                obj = DaysOfTheWeek.Saturday;
+            }
+            if (SeqNo == 7)
+            {
+                obj = DaysOfTheWeek.Sunday;
             }
             return obj;
         }
