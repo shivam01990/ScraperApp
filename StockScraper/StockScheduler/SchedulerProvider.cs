@@ -63,7 +63,7 @@ namespace StockScheduler
                             daily.DaysInterval = (short)(_scheduler.recur_days_daily == 0 ? 1 : _scheduler.recur_days_daily);
                             td.Triggers.Add(daily);
 
-                            td.Actions.Add(new ExecAction(Helper.GetExePath(), _scheduler.scheduler_id + "," + _scheduler.name, null));
+                            td.Actions.Add(new ExecAction(Helper.GetExePath(), _scheduler.scheduler_id.ToString(), null));
                             ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
                         }
                     }
@@ -96,7 +96,7 @@ namespace StockScheduler
                             week.DaysOfWeek = Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Monday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Tuesday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Wednesday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Thursday | Microsoft.Win32.TaskScheduler.DaysOfTheWeek.Friday;
                             td.Triggers.Add(week);
 
-                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + "," + _scheduler.name, null));
+                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id.ToString(), null));
                             ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
                         }
                     }
@@ -157,7 +157,7 @@ namespace StockScheduler
 
                         td.Triggers.Add(week);
 
-                        td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + "," + _scheduler.name, null));
+                        td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id.ToString(), null));
                         ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
                     }
                 }
@@ -205,7 +205,7 @@ namespace StockScheduler
                             // mTrigger.RunOnLastDayOfMonth = true; // V2 only
                             td.Triggers.Add(mTrigger);
 
-                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + " " + _scheduler.name, null));
+                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id.ToString(), null));
                             ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
                         }
                     }
@@ -256,7 +256,7 @@ namespace StockScheduler
 
                             td.Triggers.Add(mTrigger);
 
-                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + " " + _scheduler.name, null));
+                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id.ToString(), null));
                             ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
 
                         }
@@ -291,7 +291,7 @@ namespace StockScheduler
                             mTrigger.MonthsOfYear = GetMonthBySeqNo(_scheduler.yearly_nominal_month);
                             // mTrigger.RunOnLastDayOfMonth = true; // V2 only
                             td.Triggers.Add(mTrigger);
-                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + " " + _scheduler.name, null));
+                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id.ToString(), null));
                             ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
 
                         }
@@ -331,7 +331,7 @@ namespace StockScheduler
                             mTrigger.MonthsOfYear = GetMonthBySeqNo(_scheduler.yearly_month);
                             // mTrigger.RunOnLastDayOfMonth = true; // V2 only
                             td.Triggers.Add(mTrigger);
-                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id + " " + _scheduler.name, null));
+                            td.Actions.Add(new ExecAction(AppSettings.EXEPath, _scheduler.scheduler_id.ToString(), null));
                             ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
 
                         }

@@ -11,6 +11,12 @@ namespace StockScraper
     {
         static void Main(string[] args)
         {
+            int Scheduler_Id = 0;
+            if(args.Count()>0)
+            {
+                int.TryParse(args[0],out Scheduler_Id);
+            }
+
             int job_id = 0;
             Helper.AddtoLog("=============Import Start " + DateTime.Now + "============");
             Console.WriteLine("=============Import Start " + DateTime.Now + "============");
