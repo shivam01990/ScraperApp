@@ -316,6 +316,16 @@
     <Property Name="AnalystRecommend_Month_3" Type="nvarchar(max)" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
+  <EntityType Name="ws_FailRecords">
+    <Key>
+      <PropertyRef Name="fail_record_id" />
+    </Key>
+    <Property Name="fail_record_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stock_id" Type="int" Nullable="false" />
+    <Property Name="scheduler_id" Type="int" Nullable="false" />
+    <Property Name="run_job_id" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
   <EntityType Name="ws_JobRuns">
     <Key>
       <PropertyRef Name="run_id" />
@@ -1032,6 +1042,7 @@
     <EntitySet Name="reuters_Financials_Strength" EntityType="Self.reuters_Financials_Strength" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reuters_Financials_ValuationRatios" EntityType="Self.reuters_Financials_ValuationRatios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reuters_RecommendationsRevisions" EntityType="Self.reuters_RecommendationsRevisions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ws_FailRecords" EntityType="Self.ws_FailRecords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_JobRuns" EntityType="Self.ws_JobRuns" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_Jobs" EntityType="Self.ws_Jobs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_JobScheduler" EntityType="Self.ws_JobScheduler" Schema="dbo" store:Type="Tables" />

@@ -135,6 +135,9 @@
     <Compile Include="wslu_JobTypes.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ws_FailRecords.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="ws_JobRuns.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>

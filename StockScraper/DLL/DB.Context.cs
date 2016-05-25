@@ -57,6 +57,7 @@ namespace DLL
         public virtual DbSet<ws_Stocks> ws_Stocks { get; set; }
         public virtual DbSet<wslu_JobSchedulerTypes> wslu_JobSchedulerTypes { get; set; }
         public virtual DbSet<wslu_JobTypes> wslu_JobTypes { get; set; }
+        public virtual DbSet<ws_FailRecords> ws_FailRecords { get; set; }
     
         public virtual ObjectResult<p_GetJobScheduler_Result> p_GetJobScheduler(Nullable<int> scheduler_id, string name)
         {

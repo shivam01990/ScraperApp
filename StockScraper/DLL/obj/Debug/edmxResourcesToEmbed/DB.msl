@@ -545,5 +545,16 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="ws_FailRecords">
+      <EntityTypeMapping TypeName="DBModel.ws_FailRecords">
+        <MappingFragment StoreEntitySet="ws_FailRecords">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="run_job_id" ColumnName="run_job_id" />
+          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+          <ScalarProperty Name="fail_record_id" ColumnName="fail_record_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

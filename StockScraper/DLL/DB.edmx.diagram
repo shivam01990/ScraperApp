@@ -81,6 +81,7 @@
         <AssociationConnector Association="DBModel.FK_ws_JobScheduler_ws_JobSchedulerType" />
         <AssociationConnector Association="DBModel.FK_ws_JobScheduler_wslu_JobTypes" />
         <AssociationConnector Association="DBModel.FK_ws_JobScheduler_Yearly_ws_JobScheduler" />
+        <EntityTypeShape EntityType="DBModel.ws_FailRecords" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

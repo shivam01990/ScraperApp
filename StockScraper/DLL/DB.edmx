@@ -321,6 +321,16 @@
           <Property Name="AnalystRecommend_Month_3" Type="nvarchar(max)" />
           <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
         </EntityType>
+        <EntityType Name="ws_FailRecords">
+          <Key>
+            <PropertyRef Name="fail_record_id" />
+          </Key>
+          <Property Name="fail_record_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stock_id" Type="int" Nullable="false" />
+          <Property Name="scheduler_id" Type="int" Nullable="false" />
+          <Property Name="run_job_id" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
         <EntityType Name="ws_JobRuns">
           <Key>
             <PropertyRef Name="run_id" />
@@ -1037,6 +1047,7 @@
           <EntitySet Name="reuters_Financials_Strength" EntityType="Self.reuters_Financials_Strength" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="reuters_Financials_ValuationRatios" EntityType="Self.reuters_Financials_ValuationRatios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="reuters_RecommendationsRevisions" EntityType="Self.reuters_RecommendationsRevisions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ws_FailRecords" EntityType="Self.ws_FailRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ws_JobRuns" EntityType="Self.ws_JobRuns" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ws_Jobs" EntityType="Self.ws_Jobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ws_JobScheduler" EntityType="Self.ws_JobScheduler" Schema="dbo" store:Type="Tables" />
@@ -1459,6 +1470,7 @@
           <FunctionImport Name="p_GetAllFieldsForJobScheduler" ReturnType="Collection(DBModel.p_GetAllFieldsForJobScheduler_Result)">
           <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="ws_FailRecords" EntityType="DBModel.ws_FailRecords" />
         </EntityContainer>
         <EntityType Name="finviz_Calendar">
           <Key>
@@ -2610,6 +2622,16 @@
           <Property Type="Int32" Name="yearly_month" Nullable="false" />
           <Property Type="Boolean" Name="yearly_isweekday" Nullable="false" />
         </ComplexType>
+        <EntityType Name="ws_FailRecords">
+          <Key>
+            <PropertyRef Name="fail_record_id" />
+          </Key>
+          <Property Name="fail_record_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stock_id" Type="Int32" Nullable="false" />
+          <Property Name="scheduler_id" Type="Int32" Nullable="false" />
+          <Property Name="run_job_id" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3160,6 +3182,17 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="ws_FailRecords">
+            <EntityTypeMapping TypeName="DBModel.ws_FailRecords">
+              <MappingFragment StoreEntitySet="ws_FailRecords">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="run_job_id" ColumnName="run_job_id" />
+                <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
+                <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+                <ScalarProperty Name="fail_record_id" ColumnName="fail_record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

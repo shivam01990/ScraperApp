@@ -11,15 +11,22 @@ namespace StockScraper
     {
         static void Main(string[] args)
         {
-            int Scheduler_Id = 0;
-            if(args.Count()>0)
-            {
-                int.TryParse(args[0],out Scheduler_Id);
-            }
-
-            int job_id = 0;
             Helper.AddtoLog("=============Import Start " + DateTime.Now + "============");
             Console.WriteLine("=============Import Start " + DateTime.Now + "============");
+
+            int scheduler_id = 0;
+            if (args.Count() > 0)
+            {
+                int.TryParse(args[0], out scheduler_id);
+            }
+            p_GetAllFieldsForJobScheduler_Result _scheduler = ws_JobSchedulerServices.Instance.GetAllFieldsForScheduler(scheduler_id).FirstOrDefault();
+            if (_scheduler == null)
+            {
+                return;
+            }
+            Helper.AddtoLog("scheduler_id: " + _scheduler.scheduler_id);
+
+            int job_id = 0;
             try
             {
                 ws_Jobs obj = new ws_Jobs();
@@ -51,17 +58,17 @@ namespace StockScraper
                         finviz_Market_MoversServices.Instance.Save_fin_Market_Movers(item);
                     }
                     Console.WriteLine("Total " + lst_marketmovers.Count + " records Grabbed for table: finviz_Market_Movers");
-           
+
                 }
                 catch (Exception ex)
                 {
                     Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
                 }
 
-                 try
+                try
                 {
                     List<finviz_Calendar> lst_Calendar = finviz_CalendarProvider.GetData(job_id);
-               
+
                     foreach (finviz_Calendar item in lst_Calendar)
                     {
                         finviz_CalendarServices.Instance.Save_finviz_Calendar(item);

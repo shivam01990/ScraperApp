@@ -222,6 +222,7 @@
     <FunctionImport Name="p_GetAllFieldsForJobScheduler" ReturnType="Collection(DBModel.p_GetAllFieldsForJobScheduler_Result)">
       <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="ws_FailRecords" EntityType="DBModel.ws_FailRecords" />
   </EntityContainer>
   <EntityType Name="finviz_Calendar">
     <Key>
@@ -1373,4 +1374,14 @@
     <Property Type="Int32" Name="yearly_month" Nullable="false" />
     <Property Type="Boolean" Name="yearly_isweekday" Nullable="false" />
   </ComplexType>
+  <EntityType Name="ws_FailRecords">
+    <Key>
+      <PropertyRef Name="fail_record_id" />
+    </Key>
+    <Property Name="fail_record_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="stock_id" Type="Int32" Nullable="false" />
+    <Property Name="scheduler_id" Type="Int32" Nullable="false" />
+    <Property Name="run_job_id" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
 </Schema>
