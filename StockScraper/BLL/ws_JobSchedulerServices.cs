@@ -72,8 +72,7 @@ namespace BLL
             return rType;
         }
         #endregion
-
-
+        
         #region--Get Scheduler--
         public List<p_GetAllFieldsForJobScheduler_Result> GetAllFieldsForScheduler(int scheduler_id)
         {
@@ -81,6 +80,18 @@ namespace BLL
             using (DBEntities db = new DBEntities())
             {
                 rType = db.p_GetAllFieldsForJobScheduler(scheduler_id).ToList();
+            }
+            return rType;
+        }
+        #endregion
+
+        #region--Get Scheduler--
+        public ws_JobScheduler Getws_JobScheduler(int schedulerid)
+        {
+            ws_JobScheduler rType = new ws_JobScheduler();
+            using (DBEntities db = new DBEntities())
+            {
+                rType = db.ws_JobScheduler.Where(s => s.scheduler_id == schedulerid).FirstOrDefault();
             }
             return rType;
         }

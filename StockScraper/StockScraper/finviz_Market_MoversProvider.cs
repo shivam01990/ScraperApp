@@ -11,12 +11,13 @@ namespace StockScraper
 {
     class finviz_Market_MoversProvider
     {
-        public static List<finviz_Market_Movers> GetData(int job_id)
+        public static List<finviz_Market_Movers> GetData(int job_id,ws_JobRuns objJobRun)
         {
-
+            objJobRun.web_calls_total = 1;
             HtmlWeb web = new HtmlWeb();
             Console.WriteLine("Loading URL: http://finviz.com/");
             HtmlDocument doc = web.Load("http://finviz.com/");
+            objJobRun.web_calls_success = 1;
             Console.WriteLine("Loading complete");
             List<finviz_Market_Movers> rType = new List<finviz_Market_Movers>();
             string EffectiveDate = DateTime.Now.ToString("yyyy.MM.dd");
@@ -52,7 +53,7 @@ namespace StockScraper
                                 if (temp.ticker.ToLower() != "ticker")
                                 {
                                     Console.WriteLine("Inserting a new Stock for Ticker:" + temp.ticker);
-                                    StockID = UpdateNewStocks.StartUpdate(temp.ticker);
+                                    StockID = UpdateNewStocks.StartUpdate(temp.ticker,objJobRun);
                                 }
                             } if (StockID > 0)
                             {

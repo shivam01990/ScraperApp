@@ -32,9 +32,9 @@ namespace BLL
             using (DBEntities db = new DBEntities())
             {
 
-                if (rr.job_run_id > 0)
+                if (rr.run_id > 0)
                 {
-                    ws_JobRuns temp = db.ws_JobRuns.Where(u => u.job_run_id == rr.job_run_id).FirstOrDefault();
+                    ws_JobRuns temp = db.ws_JobRuns.Where(u => u.run_id == rr.run_id).FirstOrDefault();
 
                     if (temp != null)
                     {

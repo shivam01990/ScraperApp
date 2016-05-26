@@ -169,11 +169,6 @@
             // txtMaxRunCount
             // 
             this.txtMaxRunCount.Location = new System.Drawing.Point(108, 384);
-            this.txtMaxRunCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.txtMaxRunCount.Name = "txtMaxRunCount";
             this.txtMaxRunCount.Size = new System.Drawing.Size(82, 20);
             this.txtMaxRunCount.TabIndex = 75;

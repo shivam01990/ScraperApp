@@ -1,3 +1,6 @@
-Total Arguments:2
-Argument Value:1,Finviz
-Argument Value:Daily
+=============Import Start 5/26/2016 8:10:45 AM============
+scheduler_id: 2
+New Job_ID=2
+************Running for Company Stock*************
+************End for Company Stock*************
+=============Import End 5/26/2016 8:11:02 AM============

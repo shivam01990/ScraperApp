@@ -11,16 +11,18 @@ namespace StockScraper
 {
     public class UpdateNewStocks
     {
-        public static int StartUpdate(string Ticker)
+        public static int StartUpdate(string Ticker,ws_JobRuns objjobrun)
         {
             ws_Stocks obj = new ws_Stocks();
                
             int stock_id = 0;
             try
             {
+                objjobrun.web_calls_total = objjobrun.web_calls_total + 1;
                 HtmlWeb web = new HtmlWeb();
                 string finvizUrl = Helper.finvizUrl(Ticker);
                 HtmlDocument doc = web.Load(finvizUrl);
+                objjobrun.web_calls_total = objjobrun.web_calls_success + 1;               
                 var tdrows1 = doc.DocumentNode.SelectNodes("//table[@class='fullview-title']//tr//td");
                 string Exchange_abbr = "";
                 if (tdrows1 != null)
@@ -140,6 +142,7 @@ namespace StockScraper
             }
             catch (Exception ex)
             {
+                objjobrun.web_calls_failures = objjobrun.web_calls_failures + 1;
                 //Helper.AddtoLogFile("Error:" + ex.ToString());
             }
             return stock_id;

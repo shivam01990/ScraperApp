@@ -26,8 +26,7 @@ namespace BLL
                     if (temp != null)
                     {
                         temp.Start_Time = DateTime.Now;
-
-
+                        temp.scheduler_id = jj.scheduler_id;
                     }
                 }
                 else
