@@ -11,7 +11,7 @@ namespace StockScraper
 {
     public class UpdateNewStocks
     {
-        public static int StartUpdate(string Ticker,ws_JobRuns objjobrun)
+        public static int StartUpdate(string Ticker,ws_JobRuns objjobrun, ws_JobScheduler objJobScheduler)
         {
             ws_Stocks obj = new ws_Stocks();
                
@@ -56,7 +56,7 @@ namespace StockScraper
                             string exchanging = marketdoc.DocumentNode.SelectNodes("//div[@class='freestyle']//ul[@class='wsodModuleContent']//li")[0].InnerText;
                             exchanging = exchanging.ToLower().Contains("exchange:") ? exchanging.Replace("Exchange:", "") : "";
                             obj.Exchange = exchanging;
-                            // Helper.AddtoLogFile("Exchange:" + obj.Exchange);
+                            //Helper.AddtoLogFile("Exchange:" + obj.Exchange);
                         }
                     }
                     catch { }

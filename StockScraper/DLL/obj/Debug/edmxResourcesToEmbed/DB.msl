@@ -438,6 +438,8 @@
     <EntitySetMapping Name="ws_Logs">
       <EntityTypeMapping TypeName="DBModel.ws_Logs">
         <MappingFragment StoreEntitySet="ws_Logs">
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="log_status" ColumnName="log_status" />
           <ScalarProperty Name="log_msg" ColumnName="log_msg" />

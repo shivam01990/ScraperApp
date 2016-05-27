@@ -19,6 +19,8 @@ namespace DLL
         public string log_msg { get; set; }
         public string log_status { get; set; }
         public byte[] CreatedOn { get; set; }
+        public int scheduler_id { get; set; }
+        public int stock_id { get; set; }
     
         public virtual ws_Jobs ws_Jobs { get; set; }
     }

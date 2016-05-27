@@ -12,7 +12,7 @@ namespace StockScraper
     public class Helper
     {
         #region--Generate Logs--
-        public static void AddtoLog(string Message, int run_job_id, bool SaveToDB, LogStatus status)
+        public static void AddtoLog(string Message, int run_job_id,int scheduler_id,int stock_id, bool SaveToDB, LogStatus status)
         {
             try
             {
@@ -46,6 +46,8 @@ namespace StockScraper
                     obj.log_msg = Message;
                     obj.log_status = _status;
                     obj.job_run_Id = run_job_id;
+                    obj.scheduler_id = scheduler_id;
+                    obj.stock_id = stock_id;
                     ws_LogsServices.Instance.SaveLogs(obj);
                 }
             }
@@ -55,7 +57,7 @@ namespace StockScraper
 
         public static void AddtoLog(string Message)
         {
-            AddtoLog(Message,0,false,LogStatus.warning);
+            //AddtoLog(Message,0,false,LogStatus.warning);
         }
         #endregion
 

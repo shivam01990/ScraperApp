@@ -429,6 +429,8 @@
           </Key>
           <Property Name="Log_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="job_run_Id" Type="int" Nullable="false" />
+          <Property Name="scheduler_id" Type="int" Nullable="false" />
+          <Property Name="stock_id" Type="int" Nullable="false" />
           <Property Name="log_msg" Type="nvarchar(max)" />
           <Property Name="log_status" Type="nvarchar" MaxLength="20" />
           <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" />
@@ -1961,6 +1963,8 @@
           <Property Name="log_status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="ws_Jobs" Relationship="DBModel.FK_Logs_Jobs" FromRole="ws_Logs" ToRole="ws_Jobs" />
+          <Property Name="scheduler_id" Type="Int32" Nullable="false" />
+          <Property Name="stock_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ws_Stocks">
           <Key>
@@ -3075,6 +3079,8 @@
           <EntitySetMapping Name="ws_Logs">
             <EntityTypeMapping TypeName="DBModel.ws_Logs">
               <MappingFragment StoreEntitySet="ws_Logs">
+                <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+                <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="log_status" ColumnName="log_status" />
                 <ScalarProperty Name="log_msg" ColumnName="log_msg" />

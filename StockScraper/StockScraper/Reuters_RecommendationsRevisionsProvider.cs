@@ -73,7 +73,7 @@ namespace StockScraper
             else
             {
                 string warningmsg = Helper.GetWarningMSG(stock_id, "reuters_RecommendationsRevisions",URL);
-                Helper.AddtoLog(warningmsg, job_id, true, Helper.LogStatus.warning);
+                //Helper.AddtoLog(warningmsg, job_id, true, Helper.LogStatus.warning);
             }
             return rType;
         }

@@ -48,7 +48,7 @@ namespace StockScraper
             }
             catch (Exception ex)
             {
-                Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+                //Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
             }
 
             try
@@ -64,7 +64,7 @@ namespace StockScraper
             }
             catch (Exception ex)
             {
-                Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+                //Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
             }
 
             try
@@ -80,7 +80,7 @@ namespace StockScraper
             }
             catch (Exception ex)
             {
-                Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+               // Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
             }
 
             try
@@ -96,7 +96,7 @@ namespace StockScraper
             }
             catch (Exception ex)
             {
-                Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+              //  Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
             }
 
             try
@@ -107,7 +107,7 @@ namespace StockScraper
             }
             catch (Exception ex)
             {
-                Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+               // Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
             }
         }
     }

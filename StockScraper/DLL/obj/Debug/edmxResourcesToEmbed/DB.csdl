@@ -713,6 +713,8 @@
     <Property Name="log_status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="CreatedOn" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="ws_Jobs" Relationship="DBModel.FK_Logs_Jobs" FromRole="ws_Logs" ToRole="ws_Jobs" />
+    <Property Name="scheduler_id" Type="Int32" Nullable="false" />
+    <Property Name="stock_id" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="ws_Stocks">
     <Key>

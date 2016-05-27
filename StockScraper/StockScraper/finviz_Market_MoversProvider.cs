@@ -11,7 +11,7 @@ namespace StockScraper
 {
     class finviz_Market_MoversProvider
     {
-        public static List<finviz_Market_Movers> GetData(int job_id,ws_JobRuns objJobRun)
+        public static List<finviz_Market_Movers> GetData(int job_id,ws_JobRuns objJobRun, ws_JobScheduler objJobScheduler)
         {
             objJobRun.web_calls_total = 1;
             HtmlWeb web = new HtmlWeb();
@@ -53,7 +53,7 @@ namespace StockScraper
                                 if (temp.ticker.ToLower() != "ticker")
                                 {
                                     Console.WriteLine("Inserting a new Stock for Ticker:" + temp.ticker);
-                                    StockID = UpdateNewStocks.StartUpdate(temp.ticker,objJobRun);
+                                    StockID = UpdateNewStocks.StartUpdate(temp.ticker,objJobRun,objJobScheduler);
                                 }
                             } if (StockID > 0)
                             {

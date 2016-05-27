@@ -11,22 +11,29 @@ namespace StockScraper
     {
         static void Main(string[] args)
         {
-            Helper.AddtoLog("=============Import Start " + DateTime.Now + "============");
-            Console.WriteLine("=============Import Start " + DateTime.Now + "============");
-
-            int scheduler_id = 2;
+            
+            int scheduler_id = 3;
             if (args.Count() > 0)
             {
                 int.TryParse(args[0], out scheduler_id);
             }
-            p_GetAllFieldsForJobScheduler_Result _scheduler = ws_JobSchedulerServices.Instance.GetAllFieldsForScheduler(scheduler_id).FirstOrDefault();
-            ws_JobScheduler objscheduler = ws_JobSchedulerServices.Instance.Getws_JobScheduler(_scheduler.scheduler_id);
-            ws_JobRuns jobRun = new ws_JobRuns();
-            if (objscheduler == null)
+            //p_GetAllFieldsForJobScheduler_Result _scheduler = ws_JobSchedulerServices.Instance.GetAllFieldsForScheduler(scheduler_id).FirstOrDefault();
+            ws_JobScheduler objJobScheduler = ws_JobSchedulerServices.Instance.Getws_JobScheduler(scheduler_id);
+            if (!((objJobScheduler.current_run_count <= objJobScheduler.max_run_count) || (objJobScheduler.current_run_count == 0)))
+            {
+                objJobScheduler.Status = false;
+                ws_JobSchedulerServices.Instance.Save_ws_JobScheduler(objJobScheduler);
+                return;
+            }
+            Helper.AddtoLog("=============Import Start " + DateTime.Now + "============");
+            Console.WriteLine("=============Import Start " + DateTime.Now + "============");
+
+            ws_JobRuns objJobRun = new ws_JobRuns();
+            if (objJobScheduler == null)
             {
                 return;
             }
-            Helper.AddtoLog("scheduler_id: " + objscheduler.scheduler_id);
+            Helper.AddtoLog("scheduler_id: " + objJobScheduler.scheduler_id);
             int job_id = 0;
             try
             {
@@ -35,51 +42,48 @@ namespace StockScraper
                 obj.scheduler_id = scheduler_id;
                 job_id = ws_JobsServices.Instance.SaveJob(obj);
                 Helper.AddtoLog("New Job_ID=" + job_id);
-               
-                jobRun.job_run_id = job_id;
-          
-                //************Check for Company Stock*************//
-                if (AppSettings.companystockjobid == objscheduler.jobtype_id)
+
+                objJobRun.job_run_id = job_id;
+
+                //************Check for Company Stock Job*************//
+                if (AppSettings.companystockjobid == objJobScheduler.jobtype_id)
                 {
-                    if ((objscheduler.current_run_count <= objscheduler.max_run_count) || (objscheduler.current_run_count==0))
+                    Helper.AddtoLog("************Running for Company Stock Job*************");
+                    try
                     {
-                        Helper.AddtoLog("************Running for Company Stock*************");
-                        try
+                        var timeUtc = DateTime.UtcNow;
+                        TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+                        DateTime easternTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
+                        string EffectiveTime = "";
+                        if (finviz_CalendarServices.Instance.IsEffectiveDateExist(timeUtc.ToString("dd"), timeUtc.ToString("MM"), timeUtc.ToString("yyyy")))
                         {
-                            var timeUtc = DateTime.UtcNow;
-                            TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-                            DateTime easternTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
-                            string EffectiveTime = "";
-                            if (finviz_CalendarServices.Instance.IsEffectiveDateExist(timeUtc.ToString("dd"), timeUtc.ToString("MM"), timeUtc.ToString("yyyy")))
-                            {
-                                EffectiveTime = easternTime.ToString("yyyy.MM.dd-hh:mm");
-                            }
-                            else
-                            {
-                                EffectiveTime = "";
-                            }
-                            //Market Movers
-                            List<finviz_Market_Movers> lst_marketmovers = finviz_Market_MoversProvider.GetData(job_id,jobRun);
-
-                            foreach (finviz_Market_Movers item in lst_marketmovers)
-                            {
-                                item.EffectiveDate = EffectiveTime;
-                                finviz_Market_MoversServices.Instance.Save_fin_Market_Movers(item);
-                            }
-                            Console.WriteLine("Total " + lst_marketmovers.Count + " records Grabbed for table: finviz_Market_Movers");
-
+                            EffectiveTime = easternTime.ToString("yyyy.MM.dd-hh:mm");
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+                            EffectiveTime = "";
                         }
-                        _scheduler.current_run_count = _scheduler.current_run_count + 1;
-                        Helper.AddtoLog("************End for Company Stock*************");
+                        //Market Movers
+                        List<finviz_Market_Movers> lst_marketmovers = finviz_Market_MoversProvider.GetData(job_id, objJobRun,objJobScheduler);
+
+                        foreach (finviz_Market_Movers item in lst_marketmovers)
+                        {
+                            item.EffectiveDate = EffectiveTime;
+                            finviz_Market_MoversServices.Instance.Save_fin_Market_Movers(item);
+                        }
+                        Console.WriteLine("Total " + lst_marketmovers.Count + " records Grabbed for table: finviz_Market_Movers");
 
                     }
-                }
+                    catch (Exception ex)
+                    {
+                        Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,0, true, Helper.LogStatus.fail);
+                    }
+                    objJobScheduler.current_run_count = objJobScheduler.current_run_count + 1;
+                    Helper.AddtoLog("************End for Company Stock Job*************");
 
-               //************End for Company Stock*************//
+
+                }
+                //************End for Company Stock Job*************//
 
                 //try
                 //{
@@ -96,49 +100,63 @@ namespace StockScraper
                 //    Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
                 //}
 
-                //List<ws_Stocks> lststock = ws_StocksServices.Instance.GetStock(0);
-                //Helper.AddtoLog("Total Stocks:" + lststock.Count());
-                //Console.WriteLine("Total Stocks:" + lststock.Count());
-                //foreach (var running_stock in lststock)
-                //{
-                //    Console.WriteLine("start looping for stock_id:" + lststock.Count());
-                //    try
-                //    {
-                //        ReutersProvider.StartImport(job_id, running_stock);
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-                //    }
+                List<ws_Stocks> lststock = ws_StocksServices.Instance.GetStock(0);
+                Helper.AddtoLog("Total Stocks:" + lststock.Count());
+                Console.WriteLine("Total Stocks:" + lststock.Count());
+                foreach (var running_stock in lststock)
+                {
+                    Console.WriteLine("start looping for stock_id:" + lststock.Count());
+                    try
+                    {
+                        //**************************Start Finance Statement Job********************//       
+                        if (objJobScheduler.schedulertype_id == AppSettings.financestatementjobid)
+                        {
+                            ReutersProvider.StartImport(job_id, running_stock, objJobScheduler, objJobRun);
+                        }
+                        //**************************End Finance Statement Job********************//
 
-                //    try
-                //    {
-                //        MarketsProvider.StartImport(job_id, running_stock);
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-                //    }
+                    }
+                    catch (Exception ex)
+                    {
+                        objJobRun.web_calls_failures += 1;
+                        Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, running_stock.Stock_Id, true, Helper.LogStatus.fail);
+                    }
 
-                //    try
-                //    {
-                //        finvizProvider.StartImport(job_id, running_stock);
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-                //    }
-                //}
+                    try
+                    {
+                        //**************************Start Finance Statement Job********************//       
+                        if (objJobScheduler.schedulertype_id == AppSettings.financestatementjobid)
+                        {
+                            MarketsProvider.StartImport(job_id, running_stock, objJobScheduler, objJobRun);
+                        }
+                        //**************************End Finance Statement Job********************//
 
+                    }
+                    catch (Exception ex)
+                    {
+                        objJobRun.web_calls_failures += 1;
+                        Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, running_stock.Stock_Id, true, Helper.LogStatus.fail);
+                    }
+
+                    //try
+                    //{
+                    //    finvizProvider.StartImport(job_id, running_stock);
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+                    //}
+                }
 
                 Helper.AddtoLog("=============Import End " + DateTime.Now + "============");
                 Console.WriteLine("=============Import End " + DateTime.Now + "============");
-                ws_JobRunsService.Instance.Save_ws_JobRuns(jobRun);
-              
+                ws_JobRunsService.Instance.Save_ws_JobRuns(objJobRun);
+                objJobScheduler.current_run_count += 1;
+                ws_JobSchedulerServices.Instance.Save_ws_JobScheduler(objJobScheduler);
             }
             catch (Exception ex)
             {
-                Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+                Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, 0, true, Helper.LogStatus.fail);
             }
         }
     }

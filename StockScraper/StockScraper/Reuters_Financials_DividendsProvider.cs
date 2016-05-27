@@ -10,7 +10,7 @@ namespace StockScraper
 {
     public class reuters_Financials_DividendsProvider
     {
-        public static List<reuters_Financials_Dividends> GetData(HtmlDocument doc, int job_id, int stock_id, string URL)
+        public static List<reuters_Financials_Dividends> GetData(HtmlDocument doc, int job_id,int scheduler_id, int stock_id, string URL)
         {
             List<reuters_Financials_Dividends> rType = new List<reuters_Financials_Dividends>();
             HtmlNodeCollection rowcollection = doc.DocumentNode.SelectNodes("//div[contains(@class, 'column1') and contains(@class, 'gridPanel') and contains(@class, 'grid8')]//div[@class='module']");
@@ -52,7 +52,7 @@ namespace StockScraper
             else
             {
                 string warningmsg = Helper.GetWarningMSG(stock_id, "reuters_Financials_Dividends", URL);
-                Helper.AddtoLog(warningmsg, job_id, true, Helper.LogStatus.warning);
+                Helper.AddtoLog(warningmsg, job_id,scheduler_id,stock_id, true, Helper.LogStatus.warning);
             }
 
             return rType;

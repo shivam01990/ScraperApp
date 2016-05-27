@@ -28,7 +28,9 @@ namespace BLL
                     {
                         temp.job_run_Id = l.job_run_Id;
                         temp.log_msg = l.log_msg;
-                        temp.log_status = l.log_status;                        
+                        temp.log_status = l.log_status;
+                        temp.stock_id = l.stock_id;
+                        temp.scheduler_id = l.scheduler_id;
                     }
                 }
                 else

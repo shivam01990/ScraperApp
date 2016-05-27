@@ -10,7 +10,7 @@ namespace StockScraper
 {
    public class reuters_Financials_InstitutionsProvider
     {
-       public static List<reuters_Financials_Institutions> GetData(HtmlDocument doc, int job_id, int stock_id,string URL)
+       public static List<reuters_Financials_Institutions> GetData(HtmlDocument doc, int job_id,int scheduler_id, int stock_id,string URL)
        {
            List<reuters_Financials_Institutions> rType = new List<reuters_Financials_Institutions>();
            HtmlNodeCollection rowcollection = doc.DocumentNode.SelectNodes("//div[contains(@class, 'column2') and contains(@class, 'gridPanel') and contains(@class, 'grid4')]//div[@class='module']");
@@ -50,7 +50,7 @@ namespace StockScraper
            else
            {
                string warningmsg = Helper.GetWarningMSG(stock_id, "reuters_Financials_Institutions", URL);
-               Helper.AddtoLog(warningmsg, job_id, true, Helper.LogStatus.warning);
+               Helper.AddtoLog(warningmsg, job_id,scheduler_id,stock_id, true, Helper.LogStatus.warning);
            }
            return rType;
        }
