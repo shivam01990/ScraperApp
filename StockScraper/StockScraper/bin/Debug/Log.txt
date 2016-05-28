@@ -65,3 +65,4 @@ No data found for table: reuters_Financials_Strength & Stock ID:22 Please check 
 No data found for table: reuters_Financials_Efficiencies & Stock ID:22 Please check url:http://www.reuters.com/finance/stocks/financialHighlights?symbol=ABILW
 No data found for table: reuters_Financials_MgmtEffectiveness & Stock ID:22 Please check url:http://www.reuters.com/finance/stocks/financialHighlights?symbol=ABILW
 No data found for table: reuters_Financials_Institutions & Stock ID:22 Please check url:http://www.reuters.com/finance/stocks/financialHighlights?symbol=ABILW
+No records found for reuters_Financials tables

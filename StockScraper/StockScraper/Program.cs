@@ -12,14 +12,14 @@ namespace StockScraper
         static void Main(string[] args)
         {
             
-            int scheduler_id = 3;
+            int scheduler_id = 1;
             if (args.Count() > 0)
             {
                 int.TryParse(args[0], out scheduler_id);
             }
             //p_GetAllFieldsForJobScheduler_Result _scheduler = ws_JobSchedulerServices.Instance.GetAllFieldsForScheduler(scheduler_id).FirstOrDefault();
             ws_JobScheduler objJobScheduler = ws_JobSchedulerServices.Instance.Getws_JobScheduler(scheduler_id);
-            if (!((objJobScheduler.current_run_count <= objJobScheduler.max_run_count) || (objJobScheduler.current_run_count == 0)))
+            if (!((objJobScheduler.current_run_count < objJobScheduler.max_run_count) || (objJobScheduler.current_run_count == 0)))
             {
                 objJobScheduler.Status = false;
                 ws_JobSchedulerServices.Instance.Save_ws_JobScheduler(objJobScheduler);
@@ -76,6 +76,7 @@ namespace StockScraper
                     }
                     catch (Exception ex)
                     {
+                        objJobRun.web_calls_failures += 1;
                         Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,0, true, Helper.LogStatus.fail);
                     }
                     objJobScheduler.current_run_count = objJobScheduler.current_run_count + 1;
@@ -99,8 +100,17 @@ namespace StockScraper
                 //{
                 //    Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
                 //}
-
-                List<ws_Stocks> lststock = ws_StocksServices.Instance.GetStock(0);
+                List<ws_Stocks> lststock = new List<ws_Stocks>();
+                if(objJobScheduler.current_run_count==0 || objJobScheduler.max_run_count ==0)
+                {
+                    lststock = ws_StocksServices.Instance.GetStock(0);
+                }
+                else
+                {
+                    List<p_GetLastFailRecords_Result> lastrunfailrecords = ws_LogsServices.Instance.GetLastFailRecords(objJobScheduler.scheduler_id);
+                    lststock = ws_StocksServices.Instance.GetStockbyFailRecords(lastrunfailrecords);
+                }
+                
                 Helper.AddtoLog("Total Stocks:" + lststock.Count());
                 Console.WriteLine("Total Stocks:" + lststock.Count());
                 foreach (var running_stock in lststock)

@@ -223,6 +223,9 @@
       <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
     </FunctionImport>
     <EntitySet Name="ws_FailRecords" EntityType="DBModel.ws_FailRecords" />
+    <FunctionImport Name="p_GetLastFailRecords" ReturnType="Collection(DBModel.p_GetLastFailRecords_Result)">
+      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="finviz_Calendar">
     <Key>
@@ -1335,6 +1338,7 @@
     <Property Type="String" Name="SchedularType" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="CurrentRunCount" Nullable="false" />
     <Property Type="Int32" Name="MaxRunCount" Nullable="false" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="8" />
   </ComplexType>
   <ComplexType Name="p_GetAllFieldsForJobScheduler_Result">
     <Property Type="Int32" Name="scheduler_id" Nullable="false" />
@@ -1386,4 +1390,9 @@
     <Property Name="run_job_id" Type="Int32" Nullable="false" />
     <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
   </EntityType>
+  <ComplexType Name="p_GetLastFailRecords_Result">
+    <Property Type="Int32" Name="job_run_Id" Nullable="false" />
+    <Property Type="Int32" Name="scheduler_id" Nullable="false" />
+    <Property Type="Int32" Name="stock_id" Nullable="false" />
+  </ComplexType>
 </Schema>

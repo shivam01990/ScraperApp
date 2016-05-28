@@ -80,5 +80,14 @@ namespace DLL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<p_GetAllFieldsForJobScheduler_Result>("p_GetAllFieldsForJobScheduler", scheduler_idParameter);
         }
+    
+        public virtual ObjectResult<p_GetLastFailRecords_Result> p_GetLastFailRecords(Nullable<int> scheduler_id)
+        {
+            var scheduler_idParameter = scheduler_id.HasValue ?
+                new ObjectParameter("scheduler_id", scheduler_id) :
+                new ObjectParameter("scheduler_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<p_GetLastFailRecords_Result>("p_GetLastFailRecords", scheduler_idParameter);
+        }
     }
 }

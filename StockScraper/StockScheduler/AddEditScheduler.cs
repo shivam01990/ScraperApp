@@ -61,6 +61,7 @@ namespace StockScheduler
             cmbMonthlyWeek.SelectedIndex = 0;
             cmbMonthWeekDay.SelectedIndex = 0;
 
+            cmbStatus.SelectedIndex = 0;
             BindJobType();
             BindJob();
         }
@@ -147,6 +148,16 @@ namespace StockScheduler
 
                     }
                     txtMaxRunCount.Value = _scheduler.max_run_count;
+                    txtCurrRunCount.Value = _scheduler.current_run_count;
+
+                    if(_scheduler.Status==true)
+                    {
+                        cmbStatus.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        cmbStatus.SelectedIndex = 1;
+                    }
                 }
                 else
                 {
@@ -254,11 +265,17 @@ namespace StockScheduler
                 int jobtype_id = 0;
                 int.TryParse(cmbJobType.SelectedValue.ToString(), out jobtype_id);
                 objJob.jobtype_id = jobtype_id;
+               
                 int max_run_count = 0;
                 int.TryParse(txtMaxRunCount.Text, out max_run_count);
                 objJob.schedulertype_id = GetSchedulerTypeID();
                 objJob.max_run_count = max_run_count;
-                objJob.Status = true;
+                                
+                int current_run_count = 0;
+                int.TryParse(txtCurrRunCount.Text, out current_run_count);
+                objJob.current_run_count = current_run_count;
+
+                objJob.Status = cmbStatus.SelectedIndex==0?true:false;
 
                 scheduler_id = ws_JobSchedulerServices.Instance.Save_ws_JobScheduler(objJob);
                 if (rdoDaily.Checked)

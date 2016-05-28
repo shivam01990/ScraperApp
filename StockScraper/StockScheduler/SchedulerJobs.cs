@@ -57,14 +57,14 @@ namespace StockScheduler
             grdJobs.DataSource = jobRecord;
             
 
-            DataGridViewLinkColumn DeleteFeedLink = new DataGridViewLinkColumn();
-            DeleteFeedLink.UseColumnTextForLinkValue = true;
-            DeleteFeedLink.HeaderText = "Delete";
-            DeleteFeedLink.Name = "DeleteJob";
-            DeleteFeedLink.LinkColor = Color.Blue;
-            DeleteFeedLink.TrackVisitedState = false;
-            DeleteFeedLink.Text = "Delete";
-            grdJobs.Columns.Add(DeleteFeedLink);
+            //DataGridViewLinkColumn DeleteFeedLink = new DataGridViewLinkColumn();
+            //DeleteFeedLink.UseColumnTextForLinkValue = true;
+            //DeleteFeedLink.HeaderText = "Delete";
+            //DeleteFeedLink.Name = "DeleteJob";
+            //DeleteFeedLink.LinkColor = Color.Blue;
+            //DeleteFeedLink.TrackVisitedState = false;
+            //DeleteFeedLink.Text = "Delete";
+            //grdJobs.Columns.Add(DeleteFeedLink);
 
             DataGridViewLinkColumn EditFeedLink = new DataGridViewLinkColumn();
             EditFeedLink.UseColumnTextForLinkValue = true;
@@ -98,7 +98,7 @@ namespace StockScheduler
 
         private void grdJobs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int DeleteJobindex = grdJobs.Columns["DeleteJob"].Index;
+            //int DeleteJobindex = grdJobs.Columns["DeleteJob"].Index;
             int Editcolindex = grdJobs.Columns["Edit"].Index;
             if (e.ColumnIndex == Editcolindex)
             {
@@ -108,10 +108,10 @@ namespace StockScheduler
                 obj.ShowDialog();
             }
 
-            if (e.ColumnIndex == DeleteJobindex)
-            {
+            //if (e.ColumnIndex == DeleteJobindex)
+            //{
 
-            }
+            //}
         }
 
     }

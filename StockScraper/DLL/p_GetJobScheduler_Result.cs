@@ -24,5 +24,6 @@ namespace DLL
         public string SchedularType { get; set; }
         public int CurrentRunCount { get; set; }
         public int MaxRunCount { get; set; }
+        public string Status { get; set; }
     }
 }

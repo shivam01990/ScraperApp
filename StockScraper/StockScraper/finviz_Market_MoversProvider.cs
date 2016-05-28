@@ -13,11 +13,11 @@ namespace StockScraper
     {
         public static List<finviz_Market_Movers> GetData(int job_id,ws_JobRuns objJobRun, ws_JobScheduler objJobScheduler)
         {
-            objJobRun.web_calls_total = 1;
+            objJobRun.web_calls_total =objJobRun.web_calls_total + 1;
             HtmlWeb web = new HtmlWeb();
             Console.WriteLine("Loading URL: http://finviz.com/");
             HtmlDocument doc = web.Load("http://finviz.com/");
-            objJobRun.web_calls_success = 1;
+            objJobRun.web_calls_success =objJobRun.web_calls_success+ 1;
             Console.WriteLine("Loading complete");
             List<finviz_Market_Movers> rType = new List<finviz_Market_Movers>();
             string EffectiveDate = DateTime.Now.ToString("yyyy.MM.dd");

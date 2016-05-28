@@ -48,5 +48,15 @@ namespace BLL
             return Log_Id;
         }
         #endregion
+
+        #region--Get 
+        public List<p_GetLastFailRecords_Result> GetLastFailRecords(int _SchedulerId)
+        {
+            using (DBEntities db = new DBEntities())
+            {
+               return db.p_GetLastFailRecords(_SchedulerId).ToList();
+            }
+        }
+        #endregion
     }
 }

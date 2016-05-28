@@ -99,6 +99,9 @@
     <Compile Include="p_GetJobScheduler_Result.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="p_GetLastFailRecords_Result.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="reuters_Financials_Dividends.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>

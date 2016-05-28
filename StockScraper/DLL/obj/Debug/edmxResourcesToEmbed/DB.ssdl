@@ -1024,6 +1024,9 @@
     <Parameter Name="scheduler_id" Type="int" Mode="In" />
     <Parameter Name="Name" Type="nvarchar(max)" Mode="In" />
   </Function>
+  <Function Name="p_GetLastFailRecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="scheduler_id" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="DBModelStoreContainer">
     <EntitySet Name="finviz_Calendar" EntityType="Self.finviz_Calendar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="finviz_Financials" EntityType="Self.finviz_Financials" Schema="dbo" store:Type="Tables" />

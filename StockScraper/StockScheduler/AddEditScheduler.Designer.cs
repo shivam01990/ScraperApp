@@ -86,6 +86,10 @@
             this.rdoDaily = new System.Windows.Forms.RadioButton();
             this.cmbJobType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtCurrRunCount = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaxRunCount)).BeginInit();
@@ -100,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericWeekly)).BeginInit();
             this.pnlDaily.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericDailyDays)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCurrRunCount)).BeginInit();
             this.SuspendLayout();
             // 
             // Header
@@ -123,11 +128,15 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 56);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(784, 505);
+            this.tabControl1.Size = new System.Drawing.Size(784, 606);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cmbStatus);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.txtCurrRunCount);
             this.tabPage1.Controls.Add(this.btnSaveJob);
             this.tabPage1.Controls.Add(this.txtMaxRunCount);
             this.tabPage1.Controls.Add(this.label11);
@@ -151,16 +160,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(776, 479);
+            this.tabPage1.Size = new System.Drawing.Size(776, 580);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Scheduler";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnSaveJob
             // 
-            this.btnSaveJob.Location = new System.Drawing.Point(18, 428);
+            this.btnSaveJob.Location = new System.Drawing.Point(106, 526);
             this.btnSaveJob.Name = "btnSaveJob";
-            this.btnSaveJob.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveJob.Size = new System.Drawing.Size(128, 36);
             this.btnSaveJob.TabIndex = 76;
             this.btnSaveJob.Text = "Create Job";
             this.btnSaveJob.UseVisualStyleBackColor = true;
@@ -168,7 +177,7 @@
             // 
             // txtMaxRunCount
             // 
-            this.txtMaxRunCount.Location = new System.Drawing.Point(108, 384);
+            this.txtMaxRunCount.Location = new System.Drawing.Point(108, 414);
             this.txtMaxRunCount.Name = "txtMaxRunCount";
             this.txtMaxRunCount.Size = new System.Drawing.Size(82, 20);
             this.txtMaxRunCount.TabIndex = 75;
@@ -181,7 +190,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 386);
+            this.label11.Location = new System.Drawing.Point(20, 416);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 13);
             this.label11.TabIndex = 74;
@@ -797,11 +806,53 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Job Type";
             // 
+            // txtCurrRunCount
+            // 
+            this.txtCurrRunCount.Location = new System.Drawing.Point(108, 452);
+            this.txtCurrRunCount.Name = "txtCurrRunCount";
+            this.txtCurrRunCount.Size = new System.Drawing.Size(82, 20);
+            this.txtCurrRunCount.TabIndex = 77;
+            this.txtCurrRunCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(-1, 454);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(95, 13);
+            this.label12.TabIndex = 78;
+            this.label12.Text = "Current Run Count";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(56, 492);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 79;
+            this.label13.Text = "Status";
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Active",
+            "In-Active"});
+            this.cmbStatus.Location = new System.Drawing.Point(106, 489);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(82, 21);
+            this.cmbStatus.TabIndex = 91;
+            // 
             // AddEditScheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(784, 661);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.Header);
             this.Name = "AddEditScheduler";
@@ -825,6 +876,7 @@
             this.pnlDaily.ResumeLayout(false);
             this.pnlDaily.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericDailyDays)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCurrRunCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -890,6 +942,10 @@
         private System.Windows.Forms.NumericUpDown txtMaxRunCount;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbYearlyWeekDay;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown txtCurrRunCount;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label label13;
     }
 }
 

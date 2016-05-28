@@ -41,6 +41,8 @@ namespace StockScraper
             //}
 
             //Get reuters_Financials
+
+            bool isFinancialFail = false;
             if (objJobScheduler.schedulertype_id == AppSettings.financestatementjobid)
             {
                 try
@@ -56,6 +58,7 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
+                    isFinancialFail = true;
                     //Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
                 }
 
@@ -79,7 +82,8 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
-                    Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                    isFinancialFail = true;                   
+                    //Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
                 }
 
                 //Get reuters_Financials_Dividends
@@ -95,7 +99,8 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
-                    Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                    isFinancialFail = true;                   
+                    //Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
                 }
 
                 //Get reuters_Financials_GrowthRates
@@ -110,7 +115,8 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
-                    Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                    isFinancialFail = true;                   
+                    //Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
                 }
 
                 //Get reuters_Financials_Strength
@@ -126,7 +132,8 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
-                    Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                    isFinancialFail = true;                   
+                    //Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
                 }
 
                 //Get reuters_Financials_ProfitabilityRatios
@@ -143,7 +150,9 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
-                    Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                    isFinancialFail = true;                 
+                  
+                    //Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
                 }
 
                 //Get reuters_Financials_Efficiencies
@@ -159,7 +168,9 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
-                    Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                    isFinancialFail = true;                  
+                  
+                  //  Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
                 }
 
                 //Get reuters_Financials_MgmtEffectiveness
@@ -174,7 +185,8 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
-                    Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                    isFinancialFail = true; 
+                    //Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
                 }
 
                 //Get reuters_Financials_Institutions
@@ -190,7 +202,13 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
-                    Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                    isFinancialFail = true;
+                    //Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                }
+
+                if (!isFinancialFail)
+                {
+                    Helper.AddtoLog("No records found for reuters_Financials tables", job_id, objJobScheduler.scheduler_id, stock.Stock_Id, true, Helper.LogStatus.fail);
                 }
             }
         }

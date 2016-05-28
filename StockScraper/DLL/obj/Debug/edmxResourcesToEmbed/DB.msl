@@ -500,6 +500,7 @@
           <ScalarProperty Name="SchedularType" ColumnName="SchedularType" />
           <ScalarProperty Name="CurrentRunCount" ColumnName="CurrentRunCount" />
           <ScalarProperty Name="MaxRunCount" ColumnName="MaxRunCount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -558,5 +559,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="p_GetLastFailRecords" FunctionName="DBModel.Store.p_GetLastFailRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.p_GetLastFailRecords_Result">
+          <ScalarProperty Name="job_run_Id" ColumnName="job_run_Id" />
+          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

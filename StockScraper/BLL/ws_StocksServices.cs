@@ -92,5 +92,16 @@ namespace BLL
             return stockid;
         }
         #endregion
+
+        #region--Get stock by FailRecords--
+        public List<ws_Stocks> GetStockbyFailRecords(List<p_GetLastFailRecords_Result> failrecords)
+        {
+            List<int> stockids= failrecords.Select(s=>s.stock_id).ToList();
+            using (DBEntities db = new DBEntities())
+            {
+              return db.ws_Stocks.Where(s => stockids.Contains(s.Stock_Id)).ToList();
+            }
+        }
+        #endregion
     }
 }
