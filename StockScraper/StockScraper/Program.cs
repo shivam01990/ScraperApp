@@ -11,8 +11,8 @@ namespace StockScraper
     {
         static void Main(string[] args)
         {
-            
-            int scheduler_id = 1;
+
+            int scheduler_id = 4;
             if (args.Count() > 0)
             {
                 int.TryParse(args[0], out scheduler_id);
@@ -64,7 +64,7 @@ namespace StockScraper
                             EffectiveTime = "";
                         }
                         //Market Movers
-                        List<finviz_Market_Movers> lst_marketmovers = finviz_Market_MoversProvider.GetData(job_id, objJobRun,objJobScheduler);
+                        List<finviz_Market_Movers> lst_marketmovers = finviz_Market_MoversProvider.GetData(job_id, objJobRun, objJobScheduler);
 
                         foreach (finviz_Market_Movers item in lst_marketmovers)
                         {
@@ -77,7 +77,7 @@ namespace StockScraper
                     catch (Exception ex)
                     {
                         objJobRun.web_calls_failures += 1;
-                        Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,0, true, Helper.LogStatus.fail);
+                        Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, 0, true, Helper.LogStatus.fail);
                     }
                     objJobScheduler.current_run_count = objJobScheduler.current_run_count + 1;
                     Helper.AddtoLog("************End for Company Stock Job*************");
@@ -101,7 +101,7 @@ namespace StockScraper
                 //    Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
                 //}
                 List<ws_Stocks> lststock = new List<ws_Stocks>();
-                if(objJobScheduler.current_run_count==0 || objJobScheduler.max_run_count ==0)
+                if (objJobScheduler.current_run_count == 0 || objJobScheduler.max_run_count == 0)
                 {
                     lststock = ws_StocksServices.Instance.GetStock(0);
                 }
@@ -110,7 +110,7 @@ namespace StockScraper
                     List<p_GetLastFailRecords_Result> lastrunfailrecords = ws_LogsServices.Instance.GetLastFailRecords(objJobScheduler.scheduler_id);
                     lststock = ws_StocksServices.Instance.GetStockbyFailRecords(lastrunfailrecords);
                 }
-                
+
                 Helper.AddtoLog("Total Stocks:" + lststock.Count());
                 Console.WriteLine("Total Stocks:" + lststock.Count());
                 foreach (var running_stock in lststock)
@@ -118,12 +118,12 @@ namespace StockScraper
                     Console.WriteLine("start looping for stock_id:" + lststock.Count());
                     try
                     {
-                        //**************************Start Finance Statement Job********************//       
-                        if (objJobScheduler.schedulertype_id == AppSettings.financestatementjobid)
+                        //**************************Start Finance Statement, Forecast Job********************//       
+                        if ((objJobScheduler.jobtype_id == AppSettings.financestatementjobid) || (objJobScheduler.jobtype_id == AppSettings.forecastjobid))
                         {
                             ReutersProvider.StartImport(job_id, running_stock, objJobScheduler, objJobRun);
                         }
-                        //**************************End Finance Statement Job********************//
+                        //**************************End Finance Statement, Forecast Job Job********************//
 
                     }
                     catch (Exception ex)
@@ -134,8 +134,8 @@ namespace StockScraper
 
                     try
                     {
-                        //**************************Start Finance Statement Job********************//       
-                        if (objJobScheduler.schedulertype_id == AppSettings.financestatementjobid)
+                        //**************************Start Finance Statemen Job********************//       
+                        if (objJobScheduler.jobtype_id == AppSettings.financestatementjobid)
                         {
                             MarketsProvider.StartImport(job_id, running_stock, objJobScheduler, objJobRun);
                         }
@@ -148,14 +148,19 @@ namespace StockScraper
                         Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, running_stock.Stock_Id, true, Helper.LogStatus.fail);
                     }
 
-                    //try
-                    //{
-                    //    finvizProvider.StartImport(job_id, running_stock);
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-                    //}
+                    try
+                    {
+                         //**************************Start Forecast Job********************//       
+                        if (objJobScheduler.jobtype_id == AppSettings.forecastjobid)
+                        {
+                            finvizProvider.StartImport(job_id,running_stock,objJobScheduler,objJobRun);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                         objJobRun.web_calls_failures += 1;
+                        Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,running_stock.Stock_Id, true, Helper.LogStatus.fail);
+                    }
                 }
 
                 Helper.AddtoLog("=============Import End " + DateTime.Now + "============");

@@ -22,28 +22,31 @@ namespace StockScraper
             Console.WriteLine("Document Loaded: " + analyticUrl);
             jobRun.web_calls_success += 1;
           
-            // Get reuters_RecommendationsRevisions
-            //try
-            //{
-            //    List<reuters_RecommendationsRevisions> lst_reuters_RecommendationsRevisions = reuters_RecommendationsRevisionsProvider.GetData(doc1, job_id, stock.Stock_Id, analyticUrl);
+            //Get reuters_RecommendationsRevisions
+            if (objJobScheduler.jobtype_id == AppSettings.forecastjobid)
+            {
+                try
+                {
+                    List<reuters_RecommendationsRevisions> lst_reuters_RecommendationsRevisions = reuters_RecommendationsRevisionsProvider.GetData(doc1, job_id, stock.Stock_Id, analyticUrl);
 
-            //    foreach (reuters_RecommendationsRevisions item in lst_reuters_RecommendationsRevisions)
-            //    {
-            //        reuters_RecommendationsRevisionsServices.Instance.Save_reuters_RecommendationsRevisions(item);
-            //    }
+                    foreach (reuters_RecommendationsRevisions item in lst_reuters_RecommendationsRevisions)
+                    {
+                        reuters_RecommendationsRevisionsServices.Instance.Save_reuters_RecommendationsRevisions(item);
+                    }
 
-            //    Console.WriteLine("Total " + lst_reuters_RecommendationsRevisions.Count + " records Grabbed for table: reuters_RecommendationsRevisions");
+                    Console.WriteLine("Total " + lst_reuters_RecommendationsRevisions.Count + " records Grabbed for table: reuters_RecommendationsRevisions");
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-            //}
+                }
+                catch (Exception ex)
+                {
+                    Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.schedulertype_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                }
+            }
 
             //Get reuters_Financials
 
             bool isFinancialFail = false;
-            if (objJobScheduler.schedulertype_id == AppSettings.financestatementjobid)
+            if (objJobScheduler.jobtype_id == AppSettings.financestatementjobid)
             {
                 try
                 {

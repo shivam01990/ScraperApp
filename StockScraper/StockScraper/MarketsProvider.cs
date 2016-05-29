@@ -51,7 +51,7 @@ namespace StockScraper
             //}
 
             /////////////////////////////////////////////////////////////////////////////////////
-            if (objJobScheduler.schedulertype_id == AppSettings.financestatementjobid)
+            if (objJobScheduler.jobtype_id == AppSettings.financestatementjobid)
             {
                 string marketfinancials = Helper.GetMarketsFinancialUrls(format_issue_symbol);
                 Console.WriteLine("Loading URL: " + marketfinancials);
