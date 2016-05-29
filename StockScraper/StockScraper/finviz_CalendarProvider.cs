@@ -12,13 +12,15 @@ namespace StockScraper
     public class finviz_CalendarProvider
     {
         #region--Get finviz_calendar--
-        public static List<finviz_Calendar> GetData(int job_id)
+        public static List<finviz_Calendar> GetData(int job_id, ws_JobRuns jobRun)
         {
             List<finviz_Calendar> rType = new List<finviz_Calendar>();
             HtmlWeb web = new HtmlWeb();
             string finvizUrl = Helper.finvizCalendarURL();
             Console.WriteLine("Loading URL: " + finvizUrl);
+            jobRun.web_calls_total += 1;          
             HtmlDocument doc = web.Load(finvizUrl);
+            jobRun.web_calls_success += 1;          
             Console.WriteLine("Document Loaded: " + finvizUrl);
             string banner_date = "";
             try

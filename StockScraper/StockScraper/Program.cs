@@ -45,8 +45,8 @@ namespace StockScraper
 
                 objJobRun.job_run_id = job_id;
 
-                //************Check for Company Stock Job*************//
-                if (AppSettings.companystockjobid == objJobScheduler.jobtype_id)
+                //************Check for Company Stock, Finviz Job *************//
+                if ((AppSettings.companystockjobid == objJobScheduler.jobtype_id) || (AppSettings.finvizjobid == objJobScheduler.jobtype_id))
                 {
                     Helper.AddtoLog("************Running for Company Stock Job*************");
                     try
@@ -86,20 +86,27 @@ namespace StockScraper
                 }
                 //************End for Company Stock Job*************//
 
-                //try
-                //{
-                //    List<finviz_Calendar> lst_Calendar = finviz_CalendarProvider.GetData(job_id);
 
-                //    foreach (finviz_Calendar item in lst_Calendar)
-                //    {
-                //        finviz_CalendarServices.Instance.Save_finviz_Calendar(item);
-                //    }
-                //    Console.WriteLine("Total " + lst_Calendar.Count + " records Grabbed for table: finviz_Calendar");
-                //}
-                //catch (Exception ex)
-                //{
-                //    Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-                //}
+                //************Check for Finviz Job*************//
+                if (AppSettings.finvizjobid == objJobScheduler.jobtype_id)
+                {
+                    try
+                    {
+                        List<finviz_Calendar> lst_Calendar = finviz_CalendarProvider.GetData(job_id,objJobRun);
+
+                        foreach (finviz_Calendar item in lst_Calendar)
+                        {
+                            finviz_CalendarServices.Instance.Save_finviz_Calendar(item);
+                        }
+                        Console.WriteLine("Total " + lst_Calendar.Count + " records Grabbed for table: finviz_Calendar");
+                    }
+                    catch (Exception ex)
+                    {
+                        objJobRun.web_calls_failures += 1;
+                        Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, 0, true, Helper.LogStatus.fail);
+                    }
+                }
+                //************End Check for Finviz Job*************//
                 List<ws_Stocks> lststock = new List<ws_Stocks>();
                 if (objJobScheduler.current_run_count == 0 || objJobScheduler.max_run_count == 0)
                 {
@@ -124,7 +131,6 @@ namespace StockScraper
                             ReutersProvider.StartImport(job_id, running_stock, objJobScheduler, objJobRun);
                         }
                         //**************************End Finance Statement, Forecast Job Job********************//
-
                     }
                     catch (Exception ex)
                     {
@@ -151,7 +157,7 @@ namespace StockScraper
                     try
                     {
                          //**************************Start Forecast Job********************//       
-                        if (objJobScheduler.jobtype_id == AppSettings.forecastjobid)
+                        if ((objJobScheduler.jobtype_id == AppSettings.forecastjobid) || (objJobScheduler.jobtype_id == AppSettings.finvizjobid))
                         {
                             finvizProvider.StartImport(job_id,running_stock,objJobScheduler,objJobRun);
                         }

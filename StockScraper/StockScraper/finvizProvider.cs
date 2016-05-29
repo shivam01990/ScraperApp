@@ -22,7 +22,7 @@ namespace StockScraper
             HtmlDocument doc = web.Load(finvizUrl);
             Console.WriteLine("Document Loaded: " + finvizUrl);
             jobRun.web_calls_success += 1;
-          
+
             var timeUtc = DateTime.UtcNow;
             TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
             DateTime easternTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
@@ -36,25 +36,29 @@ namespace StockScraper
                 EffectiveTime = "";
             }
 
+            bool IsFinvizFail = false;
+            if (objJobScheduler.jobtype_id == AppSettings.finvizjobid)
+            {
+                // Get finviz_Financials
+                try
+                {
+                    List<finviz_Financials> lst_finviz_Financials = finviz_FinancialsProvider.GetData(doc, job_id, stock.Stock_Id, finvizUrl);
+                    foreach (finviz_Financials item in lst_finviz_Financials)
+                    {
+                        item.EffectiveDate = EffectiveTime;
+                        finviz_FinancialsServices.Instance.Save_fin_Financials(item);
+                    }
+                    Console.WriteLine("Total " + lst_finviz_Financials.Count + " records Grabbed for table: finviz_Financials");
 
-            //// Get finviz_Financials
-            //try
-            //{
-            //    List<finviz_Financials> lst_finviz_Financials = finviz_FinancialsProvider.GetData(doc, job_id, stock.Stock_Id, finvizUrl);
-            //    foreach (finviz_Financials item in lst_finviz_Financials)
-            //    {
-            //        item.EffectiveDate = EffectiveTime;
-            //        finviz_FinancialsServices.Instance.Save_fin_Financials(item);
-            //    }
-            //    Console.WriteLine("Total " + lst_finviz_Financials.Count + " records Grabbed for table: finviz_Financials");
+                }
+                catch (Exception ex)
+                {
+                    IsFinvizFail = true;
+                    //Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, stock.Stock_Id, true, Helper.LogStatus.fail);
+                }
+            }
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    //Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-            //}
-
-            if (objJobScheduler.jobtype_id == AppSettings.forecastjobid)
+            if ((objJobScheduler.jobtype_id == AppSettings.forecastjobid) || (objJobScheduler.jobtype_id == AppSettings.finvizjobid))
             {
                 try
                 {
@@ -69,52 +73,64 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
-                    Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
+                    IsFinvizFail = true;
+                    //Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, stock.Stock_Id, true, Helper.LogStatus.fail);
                 }
             }
 
-            //try
-            //{
-            //    List<finviz_News> lst_finviz_News = NewsProvider.GetData(doc, job_id, stock.Stock_Id, finvizUrl);
-            //    foreach (finviz_News item in lst_finviz_News)
-            //    {                   
-            //        finviz_NewsServices.Instance.Save_fin_News(item);
-            //    }
-            //    Console.WriteLine("Total " + lst_finviz_News.Count + " records Grabbed for table: finviz_News");
+            if (objJobScheduler.jobtype_id == AppSettings.finvizjobid)
+            {
+                try
+                {
+                    List<finviz_News> lst_finviz_News = NewsProvider.GetData(doc, job_id, stock.Stock_Id, finvizUrl);
+                    foreach (finviz_News item in lst_finviz_News)
+                    {
+                        finviz_NewsServices.Instance.Save_fin_News(item);
+                    }
+                    Console.WriteLine("Total " + lst_finviz_News.Count + " records Grabbed for table: finviz_News");
 
 
-            //}
-            //catch (Exception ex)
-            //{
-            //   // Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-            //}
+                }
+                catch (Exception ex)
+                {
+                    IsFinvizFail = true;
+                    //Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, stock.Stock_Id, true, Helper.LogStatus.fail);
+                }
 
-            //try
-            //{
-            //    List<finviz_Insider_Trading> lst_finviz_Insider_Trading = finviz_Insider_TradingProvider.GetData(doc, job_id, stock.Stock_Id, finvizUrl);
-            //    foreach (finviz_Insider_Trading item in lst_finviz_Insider_Trading)
-            //    {
-            //        item.EffectiveDate = EffectiveTime;
-            //        finviz_Insider_TradingServices.Instance.Save_fin_Insider_Trading(item);
-            //    }
-            //    Console.WriteLine("Total " + lst_finviz_Insider_Trading.Count + " records Grabbed for table: finviz_Insider_Trading");
+                try
+                {
+                    List<finviz_Insider_Trading> lst_finviz_Insider_Trading = finviz_Insider_TradingProvider.GetData(doc, job_id, stock.Stock_Id, finvizUrl);
+                    foreach (finviz_Insider_Trading item in lst_finviz_Insider_Trading)
+                    {
+                        item.EffectiveDate = EffectiveTime;
+                        finviz_Insider_TradingServices.Instance.Save_fin_Insider_Trading(item);
+                    }
+                    Console.WriteLine("Total " + lst_finviz_Insider_Trading.Count + " records Grabbed for table: finviz_Insider_Trading");
 
-            //}
-            //catch (Exception ex)
-            //{
-            //  //  Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-            //}
+                }
+                catch (Exception ex)
+                {
+                    IsFinvizFail = true;
+                    //Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, stock.Stock_Id, true, Helper.LogStatus.fail);
+                }
+            }
 
-            //try
-            //{
-            //    stock = finviz_StocksUpdateProvider.GetData(doc, stock);
-            //    ws_StocksServices.Instance.SaveStock(stock);
-            //    Console.WriteLine("Stock Table is successfully updated.");
-            //}
-            //catch (Exception ex)
-            //{
-            //   // Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-            //}
+            try
+            {
+                stock = finviz_StocksUpdateProvider.GetData(doc, stock);
+                ws_StocksServices.Instance.SaveStock(stock);
+                Console.WriteLine("Stock Table is successfully updated.");
+            }
+            catch (Exception ex)
+            {
+                //IsFinvizFail = true;
+                // Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, stock.Stock_Id, true, Helper.LogStatus.fail);
+            }
+
+            if (IsFinvizFail)
+            {
+                Helper.AddtoLog("Fail to fetch records from Finviz table.", job_id, objJobScheduler.scheduler_id, stock.Stock_Id, true, Helper.LogStatus.fail);
+            }
         }
     }
 }
