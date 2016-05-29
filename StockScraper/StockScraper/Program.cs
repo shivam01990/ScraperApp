@@ -12,7 +12,7 @@ namespace StockScraper
         static void Main(string[] args)
         {
 
-            int scheduler_id = 4;
+            int scheduler_id = 1;
             if (args.Count() > 0)
             {
                 int.TryParse(args[0], out scheduler_id);
@@ -79,7 +79,7 @@ namespace StockScraper
                         objJobRun.web_calls_failures += 1;
                         Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, 0, true, Helper.LogStatus.fail);
                     }
-                    objJobScheduler.current_run_count = objJobScheduler.current_run_count + 1;
+                    //objJobScheduler.current_run_count = objJobScheduler.current_run_count + 1;
                     Helper.AddtoLog("************End for Company Stock Job*************");
 
 
@@ -92,7 +92,7 @@ namespace StockScraper
                 {
                     try
                     {
-                        List<finviz_Calendar> lst_Calendar = finviz_CalendarProvider.GetData(job_id,objJobRun);
+                        List<finviz_Calendar> lst_Calendar = finviz_CalendarProvider.GetData(job_id, objJobRun);
 
                         foreach (finviz_Calendar item in lst_Calendar)
                         {
@@ -141,7 +141,7 @@ namespace StockScraper
                     try
                     {
                         //**************************Start Finance Statemen Job********************//       
-                        if (objJobScheduler.jobtype_id == AppSettings.financestatementjobid)
+                        if ((objJobScheduler.jobtype_id == AppSettings.financestatementjobid) || (objJobScheduler.jobtype_id == AppSettings.forecastjobid))
                         {
                             MarketsProvider.StartImport(job_id, running_stock, objJobScheduler, objJobRun);
                         }
@@ -156,16 +156,16 @@ namespace StockScraper
 
                     try
                     {
-                         //**************************Start Forecast Job********************//       
+                        //**************************Start Forecast Job********************//       
                         if ((objJobScheduler.jobtype_id == AppSettings.forecastjobid) || (objJobScheduler.jobtype_id == AppSettings.finvizjobid))
                         {
-                            finvizProvider.StartImport(job_id,running_stock,objJobScheduler,objJobRun);
+                            finvizProvider.StartImport(job_id, running_stock, objJobScheduler, objJobRun);
                         }
                     }
                     catch (Exception ex)
                     {
-                         objJobRun.web_calls_failures += 1;
-                        Helper.AddtoLog(ex.ToString(), job_id,objJobScheduler.scheduler_id,running_stock.Stock_Id, true, Helper.LogStatus.fail);
+                        objJobRun.web_calls_failures += 1;
+                        Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, running_stock.Stock_Id, true, Helper.LogStatus.fail);
                     }
                 }
 

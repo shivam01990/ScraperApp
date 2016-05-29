@@ -34,6 +34,21 @@ namespace StockScheduler
             grdJobs.GridColor = SystemColors.ControlDarkDark;
         }
 
+        private void InitilizeJobRunDataGridViewStyle()
+        {
+            // Setting the style of the DataGridView control
+            grdJobRuns.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold, GraphicsUnit.Point);
+            grdJobRuns.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.ControlDark;
+            grdJobRuns.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            grdJobRuns.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grdJobRuns.DefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular, GraphicsUnit.Point);
+            grdJobRuns.DefaultCellStyle.BackColor = Color.Empty;
+            grdJobRuns.AlternatingRowsDefaultCellStyle.BackColor = SystemColors.Info;
+            grdJobRuns.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            grdJobRuns.GridColor = SystemColors.ControlDarkDark;
+        }
+
+
         protected void BindGrid()
         {
             grdJobs.DataSource = null;
@@ -55,16 +70,12 @@ namespace StockScheduler
         {
             InitilizeDataGridViewStyle();
             grdJobs.DataSource = jobRecord;
-            
 
-            //DataGridViewLinkColumn DeleteFeedLink = new DataGridViewLinkColumn();
-            //DeleteFeedLink.UseColumnTextForLinkValue = true;
-            //DeleteFeedLink.HeaderText = "Delete";
-            //DeleteFeedLink.Name = "DeleteJob";
-            //DeleteFeedLink.LinkColor = Color.Blue;
-            //DeleteFeedLink.TrackVisitedState = false;
-            //DeleteFeedLink.Text = "Delete";
-            //grdJobs.Columns.Add(DeleteFeedLink);
+            cmbRunStatus.ValueMember = "SchedulerId";
+            cmbRunStatus.DisplayMember = "Name";
+            cmbRunStatus.DataSource = jobRecord;
+
+            BindJobRunGrid();
 
             DataGridViewLinkColumn EditFeedLink = new DataGridViewLinkColumn();
             EditFeedLink.UseColumnTextForLinkValue = true;
@@ -75,14 +86,7 @@ namespace StockScheduler
             EditFeedLink.Text = "Edit";
             EditFeedLink.DisplayIndex = 0;
             grdJobs.Columns.Add(EditFeedLink);
-
-            //grdFeed.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            //grdJobs.Columns["NetworkID"].Visible = false;
-            //grdFeed.Columns["AgencyID"].Visible = false;
-            //grdFeed.Columns["MerchantID"].Visible = false;
-            //grdFeed.Columns["IsActive"].Width = 70;
-            //grdFeed.Columns["OrderNo"].Width = 70;
-            //grdFeed.Columns["MerchantProductURL"].Width = 200;
+         
         }
 
         private void btnAddNewJob_Click(object sender, EventArgs e)
@@ -114,5 +118,37 @@ namespace StockScheduler
             //}
         }
 
+        private void cmbRunStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int.TryParse(cmbRunStatus.SelectedValue.ToString(), out temp_schedulerid);
+            BindJobRunGrid();
+        }
+
+        protected void BindJobRunGrid()
+        {
+
+            grdJobRuns.DataSource = null;
+            grdJobRuns.Rows.Clear();
+            grdJobRuns.Columns.Clear();
+
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += new DoWorkEventHandler(worker_JobRunDoWork);
+            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_JobRunRunWorkerCompleted);
+            worker.RunWorkerAsync();
+        }
+
+        List<p_GetJobRunForScheduler_Result> jobRunRecord = new List<p_GetJobRunForScheduler_Result>();
+        int temp_schedulerid = 0;
+        void worker_JobRunDoWork(object sender, DoWorkEventArgs e)
+        {     
+            
+            jobRunRecord = ws_JobRunsService.Instance.GetJobRunForScheduler(temp_schedulerid);
+        }
+
+        void worker_JobRunRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            InitilizeJobRunDataGridViewStyle();
+            grdJobRuns.DataSource = jobRunRecord;
+        }
     }
 }

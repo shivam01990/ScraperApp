@@ -21,8 +21,8 @@ namespace DLL
         public int yearly_day { get; set; }
         public int yearly_week_of_day { get; set; }
         public int yearly_month { get; set; }
-        public byte[] CreatedOn { get; set; }
         public bool yearly_isweekday { get; set; }
+        public byte[] CreatedOn { get; set; }
     
         public virtual ws_JobScheduler ws_JobScheduler { get; set; }
     }

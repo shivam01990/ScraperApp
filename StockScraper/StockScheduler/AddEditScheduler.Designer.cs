@@ -31,6 +31,10 @@
             this.Header = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtCurrRunCount = new System.Windows.Forms.NumericUpDown();
             this.btnSaveJob = new System.Windows.Forms.Button();
             this.txtMaxRunCount = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
@@ -86,12 +90,9 @@
             this.rdoDaily = new System.Windows.Forms.RadioButton();
             this.cmbJobType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCurrRunCount = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCurrRunCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaxRunCount)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlYearly.SuspendLayout();
@@ -104,7 +105,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericWeekly)).BeginInit();
             this.pnlDaily.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericDailyDays)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCurrRunCount)).BeginInit();
             this.SuspendLayout();
             // 
             // Header
@@ -165,6 +165,43 @@
             this.tabPage1.Text = "Scheduler";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Active",
+            "In-Active"});
+            this.cmbStatus.Location = new System.Drawing.Point(106, 489);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(82, 21);
+            this.cmbStatus.TabIndex = 91;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(56, 492);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 79;
+            this.label13.Text = "Status";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(-1, 454);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(95, 13);
+            this.label12.TabIndex = 78;
+            this.label12.Text = "Current Run Count";
+            // 
+            // txtCurrRunCount
+            // 
+            this.txtCurrRunCount.Location = new System.Drawing.Point(108, 452);
+            this.txtCurrRunCount.Name = "txtCurrRunCount";
+            this.txtCurrRunCount.Size = new System.Drawing.Size(82, 20);
+            this.txtCurrRunCount.TabIndex = 77;
+            // 
             // btnSaveJob
             // 
             this.btnSaveJob.Location = new System.Drawing.Point(106, 526);
@@ -181,11 +218,6 @@
             this.txtMaxRunCount.Name = "txtMaxRunCount";
             this.txtMaxRunCount.Size = new System.Drawing.Size(82, 20);
             this.txtMaxRunCount.TabIndex = 75;
-            this.txtMaxRunCount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label11
             // 
@@ -806,48 +838,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Job Type";
             // 
-            // txtCurrRunCount
-            // 
-            this.txtCurrRunCount.Location = new System.Drawing.Point(108, 452);
-            this.txtCurrRunCount.Name = "txtCurrRunCount";
-            this.txtCurrRunCount.Size = new System.Drawing.Size(82, 20);
-            this.txtCurrRunCount.TabIndex = 77;
-            this.txtCurrRunCount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(-1, 454);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 13);
-            this.label12.TabIndex = 78;
-            this.label12.Text = "Current Run Count";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(56, 492);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
-            this.label13.TabIndex = 79;
-            this.label13.Text = "Status";
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Active",
-            "In-Active"});
-            this.cmbStatus.Location = new System.Drawing.Point(106, 489);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(82, 21);
-            this.cmbStatus.TabIndex = 91;
-            // 
             // AddEditScheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -860,6 +850,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCurrRunCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaxRunCount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.pnlYearly.ResumeLayout(false);
@@ -876,7 +867,6 @@
             this.pnlDaily.ResumeLayout(false);
             this.pnlDaily.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericDailyDays)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCurrRunCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,16 +12,12 @@ namespace DLL
     using System;
     using System.Collections.Generic;
     
-    public partial class ws_Logs
+    public partial class sysdiagram
     {
-        public int Log_Id { get; set; }
-        public int job_run_Id { get; set; }
-        public int scheduler_id { get; set; }
-        public int stock_id { get; set; }
-        public string log_msg { get; set; }
-        public string log_status { get; set; }
-        public byte[] CreatedOn { get; set; }
-    
-        public virtual ws_Jobs ws_Jobs { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -1,6 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="p_GetJobScheduler" ReturnType="Collection(DBModel.p_GetJobScheduler_Result)">
+      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_GetAllFieldsForJobScheduler" ReturnType="Collection(DBModel.p_GetAllFieldsForJobScheduler_Result)">
+      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="p_GetLastFailRecords" ReturnType="Collection(DBModel.p_GetLastFailRecords_Result)">
+      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="p_GetJobRunForScheduler" ReturnType="Collection(DBModel.p_GetJobRunForScheduler_Result)">
+      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
+    </FunctionImport>
     <EntitySet Name="finviz_Calendar" EntityType="DBModel.finviz_Calendar" />
     <EntitySet Name="finviz_Financials" EntityType="DBModel.finviz_Financials" />
     <EntitySet Name="finviz_Insider_Trading" EntityType="DBModel.finviz_Insider_Trading" />
@@ -20,6 +33,7 @@
     <EntitySet Name="reuters_Financials_Strength" EntityType="DBModel.reuters_Financials_Strength" />
     <EntitySet Name="reuters_Financials_ValuationRatios" EntityType="DBModel.reuters_Financials_ValuationRatios" />
     <EntitySet Name="reuters_RecommendationsRevisions" EntityType="DBModel.reuters_RecommendationsRevisions" />
+    <EntitySet Name="sysdiagrams" EntityType="DBModel.sysdiagram" />
     <EntitySet Name="ws_JobRuns" EntityType="DBModel.ws_JobRuns" />
     <EntitySet Name="ws_Jobs" EntityType="DBModel.ws_Jobs" />
     <EntitySet Name="ws_JobScheduler" EntityType="DBModel.ws_JobScheduler" />
@@ -215,18 +229,74 @@
       <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
       <End Role="ws_JobScheduler_Yearly" EntitySet="ws_JobScheduler_Yearly" />
     </AssociationSet>
-    <FunctionImport Name="p_GetJobScheduler" ReturnType="Collection(DBModel.p_GetJobScheduler_Result)">
-      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
-      <Parameter Name="Name" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="p_GetAllFieldsForJobScheduler" ReturnType="Collection(DBModel.p_GetAllFieldsForJobScheduler_Result)">
-      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <EntitySet Name="ws_FailRecords" EntityType="DBModel.ws_FailRecords" />
-    <FunctionImport Name="p_GetLastFailRecords" ReturnType="Collection(DBModel.p_GetLastFailRecords_Result)">
-      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
-    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="p_GetJobScheduler_Result">
+    <Property Type="Int32" Name="SchedulerId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="JobType" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" />
+    <Property Type="Time" Name="StarTime" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" />
+    <Property Type="Time" Name="EndTime" Nullable="true" />
+    <Property Type="String" Name="SchedularType" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CurrentRunCount" Nullable="false" />
+    <Property Type="Int32" Name="MaxRunCount" Nullable="false" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="p_GetAllFieldsForJobScheduler_Result">
+    <Property Type="Int32" Name="scheduler_id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="jobtype_id" Nullable="false" />
+    <Property Type="DateTime" Name="start_date" Nullable="false" />
+    <Property Type="Time" Name="start_time" Nullable="false" />
+    <Property Type="DateTime" Name="end_date" Nullable="true" />
+    <Property Type="Time" Name="end_time" Nullable="true" />
+    <Property Type="Int32" Name="schedulertype_id" Nullable="false" />
+    <Property Type="Int32" Name="current_run_count" Nullable="false" />
+    <Property Type="Int32" Name="max_run_count" Nullable="false" />
+    <Property Type="Boolean" Name="Status" Nullable="false" />
+    <Property Type="Int32" Name="schedule_daily_id" Nullable="false" />
+    <Property Type="Int32" Name="recur_days_daily" Nullable="false" />
+    <Property Type="Boolean" Name="IsWeekDay_daily" Nullable="true" />
+    <Property Type="Int32" Name="scheduler_weekly_id" Nullable="false" />
+    <Property Type="Int32" Name="weekly_freq" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_sunday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_monday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_tuesday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_wednesday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_thursday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_friday" Nullable="false" />
+    <Property Type="Boolean" Name="weekly_saturday" Nullable="false" />
+    <Property Type="Int32" Name="scheduler_monthly_id" Nullable="false" />
+    <Property Type="Int32" Name="monthly_nominal_day" Nullable="false" />
+    <Property Type="Int32" Name="monthly_nominal_month" Nullable="false" />
+    <Property Type="Int32" Name="monthly_day" Nullable="false" />
+    <Property Type="Int32" Name="monthly_week_of_day" Nullable="false" />
+    <Property Type="Int32" Name="monthly_freq" Nullable="false" />
+    <Property Type="Boolean" Name="monthly_isweekday" Nullable="false" />
+    <Property Type="Int32" Name="scheduler_yearly_id" Nullable="false" />
+    <Property Type="Int32" Name="yearly_nominal_day" Nullable="false" />
+    <Property Type="Int32" Name="yearly_nominal_month" Nullable="false" />
+    <Property Type="Int32" Name="yearly_day" Nullable="false" />
+    <Property Type="Int32" Name="yearly_week_of_day" Nullable="false" />
+    <Property Type="Int32" Name="yearly_month" Nullable="false" />
+    <Property Type="Boolean" Name="yearly_isweekday" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="p_GetLastFailRecords_Result">
+    <Property Type="Int32" Name="job_run_Id" Nullable="false" />
+    <Property Type="Int32" Name="scheduler_id" Nullable="false" />
+    <Property Type="Int32" Name="stock_id" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="p_GetJobRunForScheduler_Result">
+    <Property Type="Int32" Name="scheduler_id" Nullable="false" />
+    <Property Type="Int32" Name="Job_id" Nullable="false" />
+    <Property Type="Int32" Name="web_calls_total" Nullable="false" />
+    <Property Type="Int32" Name="web_calls_success" Nullable="false" />
+    <Property Type="Int32" Name="web_calls_failures" Nullable="false" />
+    <Property Type="String" Name="SchedulerName" Nullable="false" MaxLength="150" />
+  </ComplexType>
   <EntityType Name="finviz_Calendar">
     <Key>
       <PropertyRef Name="finviz_calendar_id" />
@@ -580,6 +650,16 @@
     <NavigationProperty Name="ws_Jobs" Relationship="DBModel.FK_Reuters_RecommendationsRevisions_Jobs" FromRole="reuters_RecommendationsRevisions" ToRole="ws_Jobs" />
     <NavigationProperty Name="ws_Stocks" Relationship="DBModel.FK_Reuters_RecommendationsRevisions_Stocks" FromRole="reuters_RecommendationsRevisions" ToRole="ws_Stocks" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="ws_JobRuns">
     <Key>
       <PropertyRef Name="run_id" />
@@ -670,9 +750,9 @@
     <Property Name="monthly_day" Type="Int32" Nullable="false" />
     <Property Name="monthly_week_of_day" Type="Int32" Nullable="false" />
     <Property Name="monthly_freq" Type="Int32" Nullable="false" />
+    <Property Name="monthly_isweekday" Type="Boolean" Nullable="false" />
     <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_JobScheduler_Monthly_ws_JobScheduler" FromRole="ws_JobScheduler_Monthly" ToRole="ws_JobScheduler" />
-    <Property Name="monthly_isweekday" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="ws_JobScheduler_Weekly">
     <Key>
@@ -702,9 +782,9 @@
     <Property Name="yearly_day" Type="Int32" Nullable="false" />
     <Property Name="yearly_week_of_day" Type="Int32" Nullable="false" />
     <Property Name="yearly_month" Type="Int32" Nullable="false" />
+    <Property Name="yearly_isweekday" Type="Boolean" Nullable="false" />
     <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="ws_JobScheduler" Relationship="DBModel.FK_ws_JobScheduler_Yearly_ws_JobScheduler" FromRole="ws_JobScheduler_Yearly" ToRole="ws_JobScheduler" />
-    <Property Name="yearly_isweekday" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="ws_Logs">
     <Key>
@@ -712,12 +792,12 @@
     </Key>
     <Property Name="Log_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="job_run_Id" Type="Int32" Nullable="false" />
+    <Property Name="scheduler_id" Type="Int32" Nullable="false" />
+    <Property Name="stock_id" Type="Int32" Nullable="false" />
     <Property Name="log_msg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="log_status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="CreatedOn" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="ws_Jobs" Relationship="DBModel.FK_Logs_Jobs" FromRole="ws_Logs" ToRole="ws_Jobs" />
-    <Property Name="scheduler_id" Type="Int32" Nullable="false" />
-    <Property Name="stock_id" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="ws_Stocks">
     <Key>
@@ -1326,73 +1406,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="p_GetJobScheduler_Result">
-    <Property Type="Int32" Name="SchedulerId" Nullable="false" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" />
-    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
-    <Property Type="String" Name="JobType" Nullable="true" MaxLength="100" />
-    <Property Type="DateTime" Name="StartDate" Nullable="false" />
-    <Property Type="Time" Name="StarTime" Nullable="false" />
-    <Property Type="DateTime" Name="EndDate" Nullable="true" />
-    <Property Type="Time" Name="EndTime" Nullable="true" />
-    <Property Type="String" Name="SchedularType" Nullable="true" MaxLength="50" />
-    <Property Type="Int32" Name="CurrentRunCount" Nullable="false" />
-    <Property Type="Int32" Name="MaxRunCount" Nullable="false" />
-    <Property Type="String" Name="Status" Nullable="false" MaxLength="8" />
-  </ComplexType>
-  <ComplexType Name="p_GetAllFieldsForJobScheduler_Result">
-    <Property Type="Int32" Name="scheduler_id" Nullable="false" />
-    <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
-    <Property Type="String" Name="description" Nullable="true" MaxLength="250" />
-    <Property Type="Int32" Name="jobtype_id" Nullable="false" />
-    <Property Type="DateTime" Name="start_date" Nullable="false" />
-    <Property Type="Time" Name="start_time" Nullable="false" />
-    <Property Type="DateTime" Name="end_date" Nullable="true" />
-    <Property Type="Time" Name="end_time" Nullable="true" />
-    <Property Type="Int32" Name="schedulertype_id" Nullable="false" />
-    <Property Type="Int32" Name="current_run_count" Nullable="false" />
-    <Property Type="Int32" Name="max_run_count" Nullable="false" />
-    <Property Type="Boolean" Name="Status" Nullable="false" />
-    <Property Type="Int32" Name="schedule_daily_id" Nullable="false" />
-    <Property Type="Int32" Name="recur_days_daily" Nullable="false" />
-    <Property Type="Boolean" Name="IsWeekDay_daily" Nullable="true" />
-    <Property Type="Int32" Name="scheduler_weekly_id" Nullable="false" />
-    <Property Type="Int32" Name="weekly_freq" Nullable="false" />
-    <Property Type="Boolean" Name="weekly_sunday" Nullable="false" />
-    <Property Type="Boolean" Name="weekly_monday" Nullable="false" />
-    <Property Type="Boolean" Name="weekly_tuesday" Nullable="false" />
-    <Property Type="Boolean" Name="weekly_wednesday" Nullable="false" />
-    <Property Type="Boolean" Name="weekly_thursday" Nullable="false" />
-    <Property Type="Boolean" Name="weekly_friday" Nullable="false" />
-    <Property Type="Boolean" Name="weekly_saturday" Nullable="false" />
-    <Property Type="Int32" Name="scheduler_monthly_id" Nullable="false" />
-    <Property Type="Int32" Name="monthly_nominal_day" Nullable="false" />
-    <Property Type="Int32" Name="monthly_nominal_month" Nullable="false" />
-    <Property Type="Int32" Name="monthly_day" Nullable="false" />
-    <Property Type="Int32" Name="monthly_week_of_day" Nullable="false" />
-    <Property Type="Int32" Name="monthly_freq" Nullable="false" />
-    <Property Type="Boolean" Name="monthly_isweekday" Nullable="false" />
-    <Property Type="Int32" Name="scheduler_yearly_id" Nullable="false" />
-    <Property Type="Int32" Name="yearly_nominal_day" Nullable="false" />
-    <Property Type="Int32" Name="yearly_nominal_month" Nullable="false" />
-    <Property Type="Int32" Name="yearly_day" Nullable="false" />
-    <Property Type="Int32" Name="yearly_week_of_day" Nullable="false" />
-    <Property Type="Int32" Name="yearly_month" Nullable="false" />
-    <Property Type="Boolean" Name="yearly_isweekday" Nullable="false" />
-  </ComplexType>
-  <EntityType Name="ws_FailRecords">
-    <Key>
-      <PropertyRef Name="fail_record_id" />
-    </Key>
-    <Property Name="fail_record_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="stock_id" Type="Int32" Nullable="false" />
-    <Property Name="scheduler_id" Type="Int32" Nullable="false" />
-    <Property Name="run_job_id" Type="Int32" Nullable="false" />
-    <Property Name="CreatedOn" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-  </EntityType>
-  <ComplexType Name="p_GetLastFailRecords_Result">
-    <Property Type="Int32" Name="job_run_Id" Nullable="false" />
-    <Property Type="Int32" Name="scheduler_id" Nullable="false" />
-    <Property Type="Int32" Name="stock_id" Nullable="false" />
-  </ComplexType>
 </Schema>

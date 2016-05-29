@@ -11,10 +11,10 @@ namespace StockScraper
 {
     public class UpdateNewStocks
     {
-        public static int StartUpdate(string Ticker,ws_JobRuns objjobrun, ws_JobScheduler objJobScheduler)
+        public static int StartUpdate(string Ticker, ws_JobRuns objjobrun, ws_JobScheduler objJobScheduler)
         {
             ws_Stocks obj = new ws_Stocks();
-               
+
             int stock_id = 0;
             try
             {
@@ -22,7 +22,7 @@ namespace StockScraper
                 HtmlWeb web = new HtmlWeb();
                 string finvizUrl = Helper.finvizUrl(Ticker);
                 HtmlDocument doc = web.Load(finvizUrl);
-                objjobrun.web_calls_total = objjobrun.web_calls_success + 1;               
+                objjobrun.web_calls_success = objjobrun.web_calls_success + 1;
                 var tdrows1 = doc.DocumentNode.SelectNodes("//table[@class='fullview-title']//tr//td");
                 string Exchange_abbr = "";
                 if (tdrows1 != null)
@@ -129,6 +129,27 @@ namespace StockScraper
                         obj.StatusState_Id = 1;
                         obj.Company_Name = obj.Company_Name ?? "";
                         stock_id = ws_StocksServices.Instance.SaveStock(obj);
+
+                        //try
+                        //{
+                        //    ReutersProvider.StartImport(objjobrun.job_run_id, obj, objJobScheduler, objjobrun);
+                        //}
+                        //catch (Exception ex)
+                        //{
+                        //    objjobrun.web_calls_failures += 1;
+                        //    Helper.AddtoLog(ex.ToString(), objjobrun.job_run_id, objJobScheduler.scheduler_id, obj.Stock_Id, true, Helper.LogStatus.fail);
+                        //}
+
+                        try
+                        {
+                            finvizProvider.StartImport(objjobrun.job_run_id, obj, objJobScheduler, objjobrun);
+                        }
+                        catch(Exception ex)
+                        {
+                            objjobrun.web_calls_failures += 1;
+                            Helper.AddtoLog(ex.ToString(), objjobrun.job_run_id, objJobScheduler.scheduler_id, obj.Stock_Id, true, Helper.LogStatus.fail);
+                        }
+
                     }
                     catch (Exception ex)
                     {

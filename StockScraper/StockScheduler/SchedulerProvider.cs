@@ -67,6 +67,10 @@ namespace StockScheduler
                             ts.RootFolder.RegisterTaskDefinition(_scheduler.name, td, TaskCreation.Create, @"NT AUTHORITY\SYSTEM", null, TaskLogonType.ServiceAccount, null);
                         }
                     }
+                    else
+                    {
+                        CreateTaskRunWeeklyForDaily(_scheduler);
+                    }
                 }
             }
         }
@@ -484,7 +488,7 @@ namespace StockScheduler
         #endregion
 
         #region--Delete Tasks--
-        private void DeleteTask(string TaskName)
+        public void DeleteTask(string TaskName)
         {
             using (TaskService ts = new TaskService())
             {

@@ -70,7 +70,6 @@
     <Compile Include="reuters_Financials_ValuationRatiosServices.cs" />
     <Compile Include="reuters_RecommendationsRevisionsServices.cs" />
     <Compile Include="wslu_JobTypesServices.cs" />
-    <Compile Include="ws_FailRecordsServices.cs" />
     <Compile Include="ws_JobRunsService.cs" />
     <Compile Include="ws_JobSchedulerServices.cs" />
     <Compile Include="ws_JobScheduler_DailyServices.cs" />

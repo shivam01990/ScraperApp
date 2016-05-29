@@ -46,6 +46,7 @@ namespace DLL
         public virtual DbSet<reuters_Financials_Strength> reuters_Financials_Strength { get; set; }
         public virtual DbSet<reuters_Financials_ValuationRatios> reuters_Financials_ValuationRatios { get; set; }
         public virtual DbSet<reuters_RecommendationsRevisions> reuters_RecommendationsRevisions { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<ws_JobRuns> ws_JobRuns { get; set; }
         public virtual DbSet<ws_Jobs> ws_Jobs { get; set; }
         public virtual DbSet<ws_JobScheduler> ws_JobScheduler { get; set; }
@@ -57,7 +58,6 @@ namespace DLL
         public virtual DbSet<ws_Stocks> ws_Stocks { get; set; }
         public virtual DbSet<wslu_JobSchedulerTypes> wslu_JobSchedulerTypes { get; set; }
         public virtual DbSet<wslu_JobTypes> wslu_JobTypes { get; set; }
-        public virtual DbSet<ws_FailRecords> ws_FailRecords { get; set; }
     
         public virtual ObjectResult<p_GetJobScheduler_Result> p_GetJobScheduler(Nullable<int> scheduler_id, string name)
         {
@@ -88,6 +88,15 @@ namespace DLL
                 new ObjectParameter("scheduler_id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<p_GetLastFailRecords_Result>("p_GetLastFailRecords", scheduler_idParameter);
+        }
+    
+        public virtual ObjectResult<p_GetJobRunForScheduler_Result> p_GetJobRunForScheduler(Nullable<int> scheduler_id)
+        {
+            var scheduler_idParameter = scheduler_id.HasValue ?
+                new ObjectParameter("scheduler_id", scheduler_id) :
+                new ObjectParameter("scheduler_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<p_GetJobRunForScheduler_Result>("p_GetJobRunForScheduler", scheduler_idParameter);
         }
     }
 }

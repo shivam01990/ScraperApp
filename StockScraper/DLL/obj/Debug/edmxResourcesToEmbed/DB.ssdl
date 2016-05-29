@@ -316,15 +316,15 @@
     <Property Name="AnalystRecommend_Month_3" Type="nvarchar(max)" />
     <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <EntityType Name="ws_FailRecords">
+  <EntityType Name="sysdiagrams">
     <Key>
-      <PropertyRef Name="fail_record_id" />
+      <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="fail_record_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="stock_id" Type="int" Nullable="false" />
-    <Property Name="scheduler_id" Type="int" Nullable="false" />
-    <Property Name="run_job_id" Type="int" Nullable="false" />
-    <Property Name="CreatedOn" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="ws_JobRuns">
     <Key>
@@ -1020,6 +1020,9 @@
   <Function Name="p_GetAllFieldsForJobScheduler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="scheduler_id" Type="int" Mode="In" />
   </Function>
+  <Function Name="p_GetJobRunForScheduler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="scheduler_id" Type="int" Mode="In" />
+  </Function>
   <Function Name="p_GetJobScheduler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="scheduler_id" Type="int" Mode="In" />
     <Parameter Name="Name" Type="nvarchar(max)" Mode="In" />
@@ -1047,7 +1050,7 @@
     <EntitySet Name="reuters_Financials_Strength" EntityType="Self.reuters_Financials_Strength" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reuters_Financials_ValuationRatios" EntityType="Self.reuters_Financials_ValuationRatios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reuters_RecommendationsRevisions" EntityType="Self.reuters_RecommendationsRevisions" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ws_FailRecords" EntityType="Self.ws_FailRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_JobRuns" EntityType="Self.ws_JobRuns" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_Jobs" EntityType="Self.ws_Jobs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ws_JobScheduler" EntityType="Self.ws_JobScheduler" Schema="dbo" store:Type="Tables" />

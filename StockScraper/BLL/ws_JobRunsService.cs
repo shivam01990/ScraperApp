@@ -19,7 +19,7 @@ namespace BLL
             List<ws_JobRuns> rType = new List<ws_JobRuns>();
             using (DBEntities db = new DBEntities())
             {
-                rType = db.ws_JobRuns.Where(s=>s.run_id==run_id ||run_id==0).ToList();
+                rType = db.ws_JobRuns.Where(s => s.run_id == run_id || run_id == 0).ToList();
             }
             return rType;
         }
@@ -60,6 +60,16 @@ namespace BLL
         }
         #endregion
 
-
+        #region--Get JobRunForScheduler--
+        public List<p_GetJobRunForScheduler_Result> GetJobRunForScheduler(int scheduler_id)
+        {
+            List<p_GetJobRunForScheduler_Result> rType = new List<p_GetJobRunForScheduler_Result>();
+            using (DBEntities db = new DBEntities())
+            {
+                rType = db.p_GetJobRunForScheduler(scheduler_id).ToList();
+            }
+            return rType;
+        }
+        #endregion
     }
 }

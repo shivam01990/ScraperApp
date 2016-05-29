@@ -1,6 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+    <FunctionImportMapping FunctionImportName="p_GetJobScheduler" FunctionName="DBModel.Store.p_GetJobScheduler">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.p_GetJobScheduler_Result">
+          <ScalarProperty Name="SchedulerId" ColumnName="SchedulerId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="JobType" ColumnName="JobType" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="StarTime" ColumnName="StarTime" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="SchedularType" ColumnName="SchedularType" />
+          <ScalarProperty Name="CurrentRunCount" ColumnName="CurrentRunCount" />
+          <ScalarProperty Name="MaxRunCount" ColumnName="MaxRunCount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="p_GetAllFieldsForJobScheduler" FunctionName="DBModel.Store.p_GetAllFieldsForJobScheduler">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.p_GetAllFieldsForJobScheduler_Result">
+          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="jobtype_id" ColumnName="jobtype_id" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="schedulertype_id" ColumnName="schedulertype_id" />
+          <ScalarProperty Name="current_run_count" ColumnName="current_run_count" />
+          <ScalarProperty Name="max_run_count" ColumnName="max_run_count" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="schedule_daily_id" ColumnName="schedule_daily_id" />
+          <ScalarProperty Name="recur_days_daily" ColumnName="recur_days_daily" />
+          <ScalarProperty Name="IsWeekDay_daily" ColumnName="IsWeekDay_daily" />
+          <ScalarProperty Name="scheduler_weekly_id" ColumnName="scheduler_weekly_id" />
+          <ScalarProperty Name="weekly_freq" ColumnName="weekly_freq" />
+          <ScalarProperty Name="weekly_sunday" ColumnName="weekly_sunday" />
+          <ScalarProperty Name="weekly_monday" ColumnName="weekly_monday" />
+          <ScalarProperty Name="weekly_tuesday" ColumnName="weekly_tuesday" />
+          <ScalarProperty Name="weekly_wednesday" ColumnName="weekly_wednesday" />
+          <ScalarProperty Name="weekly_thursday" ColumnName="weekly_thursday" />
+          <ScalarProperty Name="weekly_friday" ColumnName="weekly_friday" />
+          <ScalarProperty Name="weekly_saturday" ColumnName="weekly_saturday" />
+          <ScalarProperty Name="scheduler_monthly_id" ColumnName="scheduler_monthly_id" />
+          <ScalarProperty Name="monthly_nominal_day" ColumnName="monthly_nominal_day" />
+          <ScalarProperty Name="monthly_nominal_month" ColumnName="monthly_nominal_month" />
+          <ScalarProperty Name="monthly_day" ColumnName="monthly_day" />
+          <ScalarProperty Name="monthly_week_of_day" ColumnName="monthly_week_of_day" />
+          <ScalarProperty Name="monthly_freq" ColumnName="monthly_freq" />
+          <ScalarProperty Name="monthly_isweekday" ColumnName="monthly_isweekday" />
+          <ScalarProperty Name="scheduler_yearly_id" ColumnName="scheduler_yearly_id" />
+          <ScalarProperty Name="yearly_nominal_day" ColumnName="yearly_nominal_day" />
+          <ScalarProperty Name="yearly_nominal_month" ColumnName="yearly_nominal_month" />
+          <ScalarProperty Name="yearly_day" ColumnName="yearly_day" />
+          <ScalarProperty Name="yearly_week_of_day" ColumnName="yearly_week_of_day" />
+          <ScalarProperty Name="yearly_month" ColumnName="yearly_month" />
+          <ScalarProperty Name="yearly_isweekday" ColumnName="yearly_isweekday" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="p_GetLastFailRecords" FunctionName="DBModel.Store.p_GetLastFailRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.p_GetLastFailRecords_Result">
+          <ScalarProperty Name="job_run_Id" ColumnName="job_run_Id" />
+          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="p_GetJobRunForScheduler" FunctionName="DBModel.Store.p_GetJobRunForScheduler">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.p_GetJobRunForScheduler_Result">
+          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
+          <ScalarProperty Name="Job_id" ColumnName="Job_id" />
+          <ScalarProperty Name="web_calls_total" ColumnName="web_calls_total" />
+          <ScalarProperty Name="web_calls_success" ColumnName="web_calls_success" />
+          <ScalarProperty Name="web_calls_failures" ColumnName="web_calls_failures" />
+          <ScalarProperty Name="SchedulerName" ColumnName="SchedulerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="finviz_Calendar">
       <EntityTypeMapping TypeName="DBModel.finviz_Calendar">
         <MappingFragment StoreEntitySet="finviz_Calendar">
@@ -336,6 +419,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ws_JobRuns">
       <EntityTypeMapping TypeName="DBModel.ws_JobRuns">
         <MappingFragment StoreEntitySet="ws_JobRuns">
@@ -391,8 +485,8 @@
     <EntitySetMapping Name="ws_JobScheduler_Monthly">
       <EntityTypeMapping TypeName="DBModel.ws_JobScheduler_Monthly">
         <MappingFragment StoreEntitySet="ws_JobScheduler_Monthly">
-          <ScalarProperty Name="monthly_isweekday" ColumnName="monthly_isweekday" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="monthly_isweekday" ColumnName="monthly_isweekday" />
           <ScalarProperty Name="monthly_freq" ColumnName="monthly_freq" />
           <ScalarProperty Name="monthly_week_of_day" ColumnName="monthly_week_of_day" />
           <ScalarProperty Name="monthly_day" ColumnName="monthly_day" />
@@ -423,8 +517,8 @@
     <EntitySetMapping Name="ws_JobScheduler_Yearly">
       <EntityTypeMapping TypeName="DBModel.ws_JobScheduler_Yearly">
         <MappingFragment StoreEntitySet="ws_JobScheduler_Yearly">
-          <ScalarProperty Name="yearly_isweekday" ColumnName="yearly_isweekday" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="yearly_isweekday" ColumnName="yearly_isweekday" />
           <ScalarProperty Name="yearly_month" ColumnName="yearly_month" />
           <ScalarProperty Name="yearly_week_of_day" ColumnName="yearly_week_of_day" />
           <ScalarProperty Name="yearly_day" ColumnName="yearly_day" />
@@ -438,11 +532,11 @@
     <EntitySetMapping Name="ws_Logs">
       <EntityTypeMapping TypeName="DBModel.ws_Logs">
         <MappingFragment StoreEntitySet="ws_Logs">
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
-          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="log_status" ColumnName="log_status" />
           <ScalarProperty Name="log_msg" ColumnName="log_msg" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
           <ScalarProperty Name="job_run_Id" ColumnName="job_run_Id" />
           <ScalarProperty Name="Log_Id" ColumnName="Log_Id" />
         </MappingFragment>
@@ -486,87 +580,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="p_GetJobScheduler" FunctionName="DBModel.Store.p_GetJobScheduler">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DBModel.p_GetJobScheduler_Result">
-          <ScalarProperty Name="SchedulerId" ColumnName="SchedulerId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="JobType" ColumnName="JobType" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="StarTime" ColumnName="StarTime" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-          <ScalarProperty Name="SchedularType" ColumnName="SchedularType" />
-          <ScalarProperty Name="CurrentRunCount" ColumnName="CurrentRunCount" />
-          <ScalarProperty Name="MaxRunCount" ColumnName="MaxRunCount" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="p_GetAllFieldsForJobScheduler" FunctionName="DBModel.Store.p_GetAllFieldsForJobScheduler">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DBModel.p_GetAllFieldsForJobScheduler_Result">
-          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="jobtype_id" ColumnName="jobtype_id" />
-          <ScalarProperty Name="start_date" ColumnName="start_date" />
-          <ScalarProperty Name="start_time" ColumnName="start_time" />
-          <ScalarProperty Name="end_date" ColumnName="end_date" />
-          <ScalarProperty Name="end_time" ColumnName="end_time" />
-          <ScalarProperty Name="schedulertype_id" ColumnName="schedulertype_id" />
-          <ScalarProperty Name="current_run_count" ColumnName="current_run_count" />
-          <ScalarProperty Name="max_run_count" ColumnName="max_run_count" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="schedule_daily_id" ColumnName="schedule_daily_id" />
-          <ScalarProperty Name="recur_days_daily" ColumnName="recur_days_daily" />
-          <ScalarProperty Name="IsWeekDay_daily" ColumnName="IsWeekDay_daily" />
-          <ScalarProperty Name="scheduler_weekly_id" ColumnName="scheduler_weekly_id" />
-          <ScalarProperty Name="weekly_freq" ColumnName="weekly_freq" />
-          <ScalarProperty Name="weekly_sunday" ColumnName="weekly_sunday" />
-          <ScalarProperty Name="weekly_monday" ColumnName="weekly_monday" />
-          <ScalarProperty Name="weekly_tuesday" ColumnName="weekly_tuesday" />
-          <ScalarProperty Name="weekly_wednesday" ColumnName="weekly_wednesday" />
-          <ScalarProperty Name="weekly_thursday" ColumnName="weekly_thursday" />
-          <ScalarProperty Name="weekly_friday" ColumnName="weekly_friday" />
-          <ScalarProperty Name="weekly_saturday" ColumnName="weekly_saturday" />
-          <ScalarProperty Name="scheduler_monthly_id" ColumnName="scheduler_monthly_id" />
-          <ScalarProperty Name="monthly_nominal_day" ColumnName="monthly_nominal_day" />
-          <ScalarProperty Name="monthly_nominal_month" ColumnName="monthly_nominal_month" />
-          <ScalarProperty Name="monthly_day" ColumnName="monthly_day" />
-          <ScalarProperty Name="monthly_week_of_day" ColumnName="monthly_week_of_day" />
-          <ScalarProperty Name="monthly_freq" ColumnName="monthly_freq" />
-          <ScalarProperty Name="monthly_isweekday" ColumnName="monthly_isweekday" />
-          <ScalarProperty Name="scheduler_yearly_id" ColumnName="scheduler_yearly_id" />
-          <ScalarProperty Name="yearly_nominal_day" ColumnName="yearly_nominal_day" />
-          <ScalarProperty Name="yearly_nominal_month" ColumnName="yearly_nominal_month" />
-          <ScalarProperty Name="yearly_day" ColumnName="yearly_day" />
-          <ScalarProperty Name="yearly_week_of_day" ColumnName="yearly_week_of_day" />
-          <ScalarProperty Name="yearly_month" ColumnName="yearly_month" />
-          <ScalarProperty Name="yearly_isweekday" ColumnName="yearly_isweekday" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <EntitySetMapping Name="ws_FailRecords">
-      <EntityTypeMapping TypeName="DBModel.ws_FailRecords">
-        <MappingFragment StoreEntitySet="ws_FailRecords">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="run_job_id" ColumnName="run_job_id" />
-          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
-          <ScalarProperty Name="fail_record_id" ColumnName="fail_record_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="p_GetLastFailRecords" FunctionName="DBModel.Store.p_GetLastFailRecords">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DBModel.p_GetLastFailRecords_Result">
-          <ScalarProperty Name="job_run_Id" ColumnName="job_run_Id" />
-          <ScalarProperty Name="scheduler_id" ColumnName="scheduler_id" />
-          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -23,7 +23,7 @@ namespace StockScraper
             jobRun.web_calls_success += 1;
           
             //Get reuters_RecommendationsRevisions
-            if (objJobScheduler.jobtype_id == AppSettings.forecastjobid)
+            if ((objJobScheduler.jobtype_id == AppSettings.forecastjobid) || (objJobScheduler.jobtype_id == AppSettings.finvizjobid))
             {
                 try
                 {

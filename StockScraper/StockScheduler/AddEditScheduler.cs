@@ -150,7 +150,7 @@ namespace StockScheduler
                     txtMaxRunCount.Value = _scheduler.max_run_count;
                     txtCurrRunCount.Value = _scheduler.current_run_count;
 
-                    if(_scheduler.Status==true)
+                    if (_scheduler.Status == true)
                     {
                         cmbStatus.SelectedIndex = 0;
                     }
@@ -227,167 +227,190 @@ namespace StockScheduler
         #region--Save Job--
         private void btnSaveJob_Click(object sender, EventArgs e)
         {
-            if (ValidateFields())
+            try
             {
-                ws_JobScheduler objJob = new ws_JobScheduler();
-                objJob.scheduler_id = scheduler_id;
-                objJob.name = txtName.Text;
-                objJob.description = txtDescription.Text;
-
-                string strstartdate = dtStartDate.Text + " " + dtStartTime.Text;
-                DateTime startdate = DateTime.Parse(strstartdate);
-                TimeSpan starttime = new TimeSpan(startdate.Hour, startdate.Minute, startdate.Second);
-                objJob.start_date = startdate;
-                objJob.start_time = starttime;
-
-                if (chkExpire.Checked)
+                if (ValidateFields())
                 {
-                    string strenddate = dtExpireDate.Text + " " + dtExpireTime.Text;
-                    DateTime enddate = DateTime.Parse(strenddate);
-                    TimeSpan endtime = new TimeSpan(enddate.Hour, enddate.Minute, enddate.Second);
-                    objJob.end_date = enddate;
-                    objJob.end_time = endtime;
-                }
-                else
-                {
-                    objJob.end_date = null;
-                    objJob.end_time = null;
-                }
+                    ws_JobScheduler objJob = new ws_JobScheduler();
+                    objJob.scheduler_id = scheduler_id;
+                    objJob.description = txtDescription.Text;
 
-                if (chkExpire.Checked)
-                {
-                    string strenddate = dtExpireDate.Text + " " + dtExpireTime.Text;
-                    DateTime enddate = DateTime.Parse(strenddate);
-                    TimeSpan endtime = new TimeSpan(enddate.Hour, enddate.Minute, enddate.Second);
-                    objJob.end_date = enddate;
-                    objJob.end_time = endtime;
-                }
-                int jobtype_id = 0;
-                int.TryParse(cmbJobType.SelectedValue.ToString(), out jobtype_id);
-                objJob.jobtype_id = jobtype_id;
-               
-                int max_run_count = 0;
-                int.TryParse(txtMaxRunCount.Text, out max_run_count);
-                objJob.schedulertype_id = GetSchedulerTypeID();
-                objJob.max_run_count = max_run_count;
-                                
-                int current_run_count = 0;
-                int.TryParse(txtCurrRunCount.Text, out current_run_count);
-                objJob.current_run_count = current_run_count;
+                    string strstartdate = dtStartDate.Text + " " + dtStartTime.Text;
+                    DateTime startdate = DateTime.Parse(strstartdate);
+                    TimeSpan starttime = new TimeSpan(startdate.Hour, startdate.Minute, startdate.Second);
+                    objJob.start_date = startdate;
+                    objJob.start_time = starttime;
 
-                objJob.Status = cmbStatus.SelectedIndex==0?true:false;
-
-                scheduler_id = ws_JobSchedulerServices.Instance.Save_ws_JobScheduler(objJob);
-                if (rdoDaily.Checked)
-                {
-                    ws_JobScheduler_Daily _daily = new ws_JobScheduler_Daily();
-                    _daily.scheduler_id = scheduler_id;
-                    int recrday = 1;
-                    int.TryParse(numericDailyDays.Value.ToString(), out recrday);
-                    _daily.recur_days = recrday;
-                    _daily.IsWeekDay = rdoDaily_WeekDay.Checked ? true : false;
-                    ws_JobScheduler_DailyServices.Instance.Save_ws_JobScheduler_Daily(_daily);
-                }
-
-                if (rdoWeekly.Checked)
-                {
-                    ws_JobScheduler_Weekly _weekly = new ws_JobScheduler_Weekly();
-                    _weekly.scheduler_id = scheduler_id;
-                    int recrday = 1;
-                    int.TryParse(numericWeekly.Value.ToString(), out recrday);
-                    _weekly.weekly_freq = recrday;
-                    _weekly.weekly_sunday = chkWeekly_Sunday.Checked;
-                    _weekly.weekly_monday = chkWeekly_Monday.Checked;
-                    _weekly.weekly_tuesday = chkWeekly_Tuesday.Checked;
-                    _weekly.weekly_wednesday = chkWeekly_Wednesday.Checked;
-                    _weekly.weekly_thursday = chkWeekly_Thursday.Checked;
-                    _weekly.weekly_friday = chkWeekly_Friday.Checked;
-                    _weekly.weekly_saturday = chkWeekly_Saturday.Checked;
-                    ws_JobScheduler_WeeklyService.Instance.Save_ws_JobScheduler_Weekly(_weekly);
-
-                }
-
-                if (rdoMonthly.Checked)
-                {
-                    ws_JobScheduler_Monthly _monthly = new ws_JobScheduler_Monthly();
-                    _monthly.schedulder_id = scheduler_id;
-                    int nominal_day = 0;
-                    int.TryParse(numericMonthly_day.Value.ToString(), out nominal_day);
-                    _monthly.monthly_nominal_day = nominal_day;
-
-                    int nominal_month = 0;
-                    int.TryParse(numericMonthly_MonthRec.Value.ToString(), out nominal_month);
-                    _monthly.monthly_nominal_month = nominal_month;
-
-                    int day = 0;
-                    int.TryParse((cmbMonthlyWeek.SelectedIndex + 1).ToString(), out day);
-                    _monthly.monthly_day = day;
-
-                    int week_of_day = 0;
-                    int.TryParse((cmbMonthWeekDay.SelectedIndex + 1).ToString(), out week_of_day);
-                    _monthly.monthly_week_of_day = week_of_day;
-
-                    int MonthRec = 0;
-                    int.TryParse(numericMonthly_MonthRec.Value.ToString(), out MonthRec);
-                    _monthly.monthly_freq = MonthRec;
-
-                    if (rdoMonthly_Day.Checked)
+                    if (chkExpire.Checked)
                     {
-                        _monthly.monthly_isweekday = false;
+                        string strenddate = dtExpireDate.Text + " " + dtExpireTime.Text;
+                        DateTime enddate = DateTime.Parse(strenddate);
+                        TimeSpan endtime = new TimeSpan(enddate.Hour, enddate.Minute, enddate.Second);
+                        objJob.end_date = enddate;
+                        objJob.end_time = endtime;
                     }
                     else
                     {
-                        _monthly.monthly_isweekday = true;
+                        objJob.end_date = null;
+                        objJob.end_time = null;
                     }
-                    ws_JobScheduler_MonthlyServices.Instance.Save_ws_JobScheduler_Monthly(_monthly);
 
-                }
-
-                if (rdoYearly.Checked)
-                {
-                    ws_JobScheduler_Yearly _yearly = new ws_JobScheduler_Yearly();
-                    _yearly.scheduler_id = scheduler_id;
-                    int nominalDay = 1;
-                    int.TryParse(numeric_YearlyNominalDay.Value.ToString(), out nominalDay);
-                    _yearly.yearly_nominal_day = nominalDay;
-                    int nominalmonth = 0;
-                    int.TryParse((cmbYearly_Month.SelectedIndex + 1).ToString(), out nominalmonth);
-                    _yearly.yearly_nominal_month = nominalmonth;
-                    int yearly_day = 0;
-
-                    int.TryParse((cmbYearlyDay.SelectedIndex + 1).ToString(), out yearly_day);
-                    _yearly.yearly_day = yearly_day;
-
-                    int yearly_week_of_day = 0;
-                    int.TryParse((cmbYearlyWeekDay.SelectedIndex + 1).ToString(), out yearly_week_of_day);
-                    _yearly.yearly_week_of_day = yearly_week_of_day;
-
-                    int yearly_month = 0;
-                    int.TryParse((cmbYearlyMonthWeek.SelectedIndex + 1).ToString(), out yearly_month);
-                    _yearly.yearly_month = yearly_month;
-
-                    if (rdoYearly_Every.Checked)
+                    if (chkExpire.Checked)
                     {
-                        _yearly.yearly_isweekday = false;
+                        string strenddate = dtExpireDate.Text + " " + dtExpireTime.Text;
+                        DateTime enddate = DateTime.Parse(strenddate);
+                        TimeSpan endtime = new TimeSpan(enddate.Hour, enddate.Minute, enddate.Second);
+                        objJob.end_date = enddate;
+                        objJob.end_time = endtime;
+                    }
+                    int jobtype_id = 0;
+                    int.TryParse(cmbJobType.SelectedValue.ToString(), out jobtype_id);
+                    objJob.jobtype_id = jobtype_id;
+
+                    int max_run_count = 0;
+                    int.TryParse(txtMaxRunCount.Text, out max_run_count);
+                    objJob.schedulertype_id = GetSchedulerTypeID();
+                    objJob.max_run_count = max_run_count;
+
+                    int current_run_count = 0;
+                    int.TryParse(txtCurrRunCount.Text, out current_run_count);
+                    objJob.current_run_count = current_run_count;
+
+                    objJob.Status = cmbStatus.SelectedIndex == 0 ? true : false;
+
+                    string oldjobname = objJob.name;
+                   
+                    objJob.name = txtName.Text;
+
+                    scheduler_id = ws_JobSchedulerServices.Instance.Save_ws_JobScheduler(objJob);
+                    
+                    if (scheduler_id > 0)
+                    {
+                        try
+                        {
+                            SchedulerProvider.Instance.DeleteTask(oldjobname);
+                        }
+                        catch { }
+                        if (rdoDaily.Checked)
+                        {
+                            ws_JobScheduler_Daily _daily = new ws_JobScheduler_Daily();
+                            _daily.scheduler_id = scheduler_id;
+                            int recrday = 1;
+                            int.TryParse(numericDailyDays.Value.ToString(), out recrday);
+                            _daily.recur_days = recrday;
+                            _daily.IsWeekDay = rdoDaily_WeekDay.Checked ? true : false;
+                            ws_JobScheduler_DailyServices.Instance.Save_ws_JobScheduler_Daily(_daily);
+                        }
+
+                        if (rdoWeekly.Checked)
+                        {
+                            ws_JobScheduler_Weekly _weekly = new ws_JobScheduler_Weekly();
+                            _weekly.scheduler_id = scheduler_id;
+                            int recrday = 1;
+                            int.TryParse(numericWeekly.Value.ToString(), out recrday);
+                            _weekly.weekly_freq = recrday;
+                            _weekly.weekly_sunday = chkWeekly_Sunday.Checked;
+                            _weekly.weekly_monday = chkWeekly_Monday.Checked;
+                            _weekly.weekly_tuesday = chkWeekly_Tuesday.Checked;
+                            _weekly.weekly_wednesday = chkWeekly_Wednesday.Checked;
+                            _weekly.weekly_thursday = chkWeekly_Thursday.Checked;
+                            _weekly.weekly_friday = chkWeekly_Friday.Checked;
+                            _weekly.weekly_saturday = chkWeekly_Saturday.Checked;
+                            ws_JobScheduler_WeeklyService.Instance.Save_ws_JobScheduler_Weekly(_weekly);
+
+                        }
+
+                        if (rdoMonthly.Checked)
+                        {
+                            ws_JobScheduler_Monthly _monthly = new ws_JobScheduler_Monthly();
+                            _monthly.schedulder_id = scheduler_id;
+                            int nominal_day = 0;
+                            int.TryParse(numericMonthly_day.Value.ToString(), out nominal_day);
+                            _monthly.monthly_nominal_day = nominal_day;
+
+                            int nominal_month = 0;
+                            int.TryParse(numericMonthly_MonthRec.Value.ToString(), out nominal_month);
+                            _monthly.monthly_nominal_month = nominal_month;
+
+                            int day = 0;
+                            int.TryParse((cmbMonthlyWeek.SelectedIndex + 1).ToString(), out day);
+                            _monthly.monthly_day = day;
+
+                            int week_of_day = 0;
+                            int.TryParse((cmbMonthWeekDay.SelectedIndex + 1).ToString(), out week_of_day);
+                            _monthly.monthly_week_of_day = week_of_day;
+
+                            int MonthRec = 0;
+                            int.TryParse(numericMonthly_MonthRec.Value.ToString(), out MonthRec);
+                            _monthly.monthly_freq = MonthRec;
+
+                            if (rdoMonthly_Day.Checked)
+                            {
+                                _monthly.monthly_isweekday = false;
+                            }
+                            else
+                            {
+                                _monthly.monthly_isweekday = true;
+                            }
+                            ws_JobScheduler_MonthlyServices.Instance.Save_ws_JobScheduler_Monthly(_monthly);
+
+                        }
+
+                        if (rdoYearly.Checked)
+                        {
+                            ws_JobScheduler_Yearly _yearly = new ws_JobScheduler_Yearly();
+                            _yearly.scheduler_id = scheduler_id;
+                            int nominalDay = 1;
+                            int.TryParse(numeric_YearlyNominalDay.Value.ToString(), out nominalDay);
+                            _yearly.yearly_nominal_day = nominalDay;
+                            int nominalmonth = 0;
+                            int.TryParse((cmbYearly_Month.SelectedIndex + 1).ToString(), out nominalmonth);
+                            _yearly.yearly_nominal_month = nominalmonth;
+                            int yearly_day = 0;
+
+                            int.TryParse((cmbYearlyDay.SelectedIndex + 1).ToString(), out yearly_day);
+                            _yearly.yearly_day = yearly_day;
+
+                            int yearly_week_of_day = 0;
+                            int.TryParse((cmbYearlyWeekDay.SelectedIndex + 1).ToString(), out yearly_week_of_day);
+                            _yearly.yearly_week_of_day = yearly_week_of_day;
+
+                            int yearly_month = 0;
+                            int.TryParse((cmbYearlyMonthWeek.SelectedIndex + 1).ToString(), out yearly_month);
+                            _yearly.yearly_month = yearly_month;
+
+                            if (rdoYearly_Every.Checked)
+                            {
+                                _yearly.yearly_isweekday = false;
+                            }
+                            else
+                            {
+                                _yearly.yearly_isweekday = true;
+                            }
+
+                            ws_JobScheduler_YearlyServices.Instance.Save_ws_JobScheduler_Yearly(_yearly);
+
+                        }
+
+                        if (scheduler_id > 0)
+                        {
+                            p_GetAllFieldsForJobScheduler_Result _scheduler = ws_JobSchedulerServices.Instance.GetAllFieldsForScheduler(scheduler_id).FirstOrDefault();
+                            if (_scheduler != null)
+                            {
+                                SchedulerProvider.Instance.GenerateTask(_scheduler);
+                            }
+                            MessageBox.Show("Job Saved");
+                        }
                     }
                     else
                     {
-                        _yearly.yearly_isweekday = true;
+                        MessageBox.Show("Unable to Save Job");
                     }
-
-                    ws_JobScheduler_YearlyServices.Instance.Save_ws_JobScheduler_Yearly(_yearly);
-
                 }
-
-                if (scheduler_id > 0)
-                {
-                    p_GetAllFieldsForJobScheduler_Result _scheduler = ws_JobSchedulerServices.Instance.GetAllFieldsForScheduler(scheduler_id).FirstOrDefault();
-                    if (_scheduler != null)
-                    {
-                        SchedulerProvider.Instance.GenerateTask(_scheduler);
-                    }
-                    MessageBox.Show("Job Saved");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to save Job Exception:" + ex.ToString());
             }
         }
         #endregion

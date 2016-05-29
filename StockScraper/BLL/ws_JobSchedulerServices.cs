@@ -28,10 +28,12 @@ namespace BLL
                 {
                     ws_JobScheduler temp = db.ws_JobScheduler.Where(u => u.scheduler_id == rr.scheduler_id).FirstOrDefault();
 
+
+
                     if (temp != null)
                     {
                         temp.scheduler_id = rr.scheduler_id;
-                        //temp.name = rr.name;
+                        temp.name = rr.name;
                         temp.description = rr.description;
                         temp.jobtype_id = rr.jobtype_id;
                         temp.start_date = rr.start_date;

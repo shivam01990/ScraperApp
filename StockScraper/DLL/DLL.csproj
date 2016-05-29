@@ -96,6 +96,9 @@
     <Compile Include="p_GetAllFieldsForJobScheduler_Result.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="p_GetJobRunForScheduler_Result.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="p_GetJobScheduler_Result.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
@@ -132,13 +135,13 @@
     <Compile Include="reuters_RecommendationsRevisions.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="wslu_JobSchedulerTypes.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="wslu_JobTypes.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ws_FailRecords.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="ws_JobRuns.cs">

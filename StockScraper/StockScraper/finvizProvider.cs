@@ -37,7 +37,7 @@ namespace StockScraper
             }
 
             bool IsFinvizFail = false;
-            if (objJobScheduler.jobtype_id == AppSettings.finvizjobid)
+            if ((objJobScheduler.jobtype_id == AppSettings.finvizjobid))
             {
                 // Get finviz_Financials
                 try

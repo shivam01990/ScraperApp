@@ -26,29 +26,38 @@ namespace StockScraper
             objJobRun.web_calls_success += 1;
             Console.WriteLine("Document Loaded: " + marketUrl);
             string EffectiveDate = "";
-            //try
-            //{
-            //    ft_Consensus _ft_Consensus = ft_ConsensusProvider.GetData(doc1, job_id, stock.Stock_Id);
-            //    _ft_Consensus.effective_date = _ft_Consensus.effective_date ?? "";
-            //    EffectiveDate = _ft_Consensus.effective_date;
-            //    ft_ConsensusServices.Instance.Save_ft_Consensus(_ft_Consensus);
-            //    Console.WriteLine(" records Grabbed for table: ft_Consensus");
-            //}
-            //catch (Exception ex)
-            //{
-            //    Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-            //}
 
-            //try
-            //{
-            //    ft_Forecasts _ft_Forecasts = ft_ForecastsProvider.GetData(doc1, job_id, stock.Stock_Id);
-            //    ft_ForecastsServices.Instance.Save_ft_Forecasts(_ft_Forecasts);
-            //    Console.WriteLine(" records Grabbed for table: ft_Forecasts");
-            //}
-            //catch (Exception ex)
-            //{
-            //   // Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
-            //}
+            bool IsMarketJobfail = false;
+            if (objJobScheduler.jobtype_id == AppSettings.forecastjobid)
+            {
+                try
+                {
+                    ft_Consensus _ft_Consensus = ft_ConsensusProvider.GetData(doc1, job_id, stock.Stock_Id);
+                    _ft_Consensus.effective_date = _ft_Consensus.effective_date ?? "";
+                    EffectiveDate = _ft_Consensus.effective_date;
+                    ft_ConsensusServices.Instance.Save_ft_Consensus(_ft_Consensus);
+                    Console.WriteLine(" records Grabbed for table: ft_Consensus");
+                }
+                catch (Exception ex)
+                {
+                    IsMarketJobfail = true;
+                    //Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+                }
+
+                try
+                {
+                    ft_Forecasts _ft_Forecasts = ft_ForecastsProvider.GetData(doc1, job_id, stock.Stock_Id);
+                    ft_ForecastsServices.Instance.Save_ft_Forecasts(_ft_Forecasts);
+                    Console.WriteLine(" records Grabbed for table: ft_Forecasts");
+                }
+                catch (Exception ex)
+                {
+                    IsMarketJobfail = true;
+                    // Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+                }
+            }
+
+            
 
             /////////////////////////////////////////////////////////////////////////////////////
             if (objJobScheduler.jobtype_id == AppSettings.financestatementjobid)
@@ -72,8 +81,15 @@ namespace StockScraper
                 }
                 catch (Exception ex)
                 {
-                   // Helper.AddtoLog(ex.ToString(), job_id, true, Helper.LogStatus.fail);
+                    objJobRun.web_calls_failures = objJobRun.web_calls_failures + 1;
+                    Helper.AddtoLog(ex.ToString(), job_id, objJobScheduler.scheduler_id, stock.Stock_Id, true, Helper.LogStatus.fail);
                 }
+            }
+
+            if(IsMarketJobfail)
+            {
+                objJobRun.web_calls_failures = objJobRun.web_calls_failures+ 1;
+                Helper.AddtoLog("Fail to grab market table", job_id,objJobScheduler.scheduler_id,stock.Stock_Id, true, Helper.LogStatus.fail);
             }
         }
     }

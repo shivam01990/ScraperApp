@@ -21,8 +21,8 @@ namespace DLL
         public int monthly_day { get; set; }
         public int monthly_week_of_day { get; set; }
         public int monthly_freq { get; set; }
-        public byte[] CreatedOn { get; set; }
         public bool monthly_isweekday { get; set; }
+        public byte[] CreatedOn { get; set; }
     
         public virtual ws_JobScheduler ws_JobScheduler { get; set; }
     }

@@ -10,18 +10,14 @@
 namespace DLL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class ws_Logs
+    public partial class p_GetJobRunForScheduler_Result
     {
-        public int Log_Id { get; set; }
-        public int job_run_Id { get; set; }
         public int scheduler_id { get; set; }
-        public int stock_id { get; set; }
-        public string log_msg { get; set; }
-        public string log_status { get; set; }
-        public byte[] CreatedOn { get; set; }
-    
-        public virtual ws_Jobs ws_Jobs { get; set; }
+        public int Job_id { get; set; }
+        public int web_calls_total { get; set; }
+        public int web_calls_success { get; set; }
+        public int web_calls_failures { get; set; }
+        public string SchedulerName { get; set; }
     }
 }
