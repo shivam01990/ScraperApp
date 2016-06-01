@@ -98,5 +98,14 @@ namespace DLL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<p_GetJobRunForScheduler_Result>("p_GetJobRunForScheduler", scheduler_idParameter);
         }
+    
+        public virtual ObjectResult<p_GetRecordCountForJob_Result> p_GetRecordCountForJob(Nullable<int> scheduler_id)
+        {
+            var scheduler_idParameter = scheduler_id.HasValue ?
+                new ObjectParameter("scheduler_id", scheduler_id) :
+                new ObjectParameter("scheduler_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<p_GetRecordCountForJob_Result>("p_GetRecordCountForJob", scheduler_idParameter);
+        }
     }
 }

@@ -48,6 +48,21 @@ namespace StockScheduler
             grdJobRuns.GridColor = SystemColors.ControlDarkDark;
         }
 
+        private void InitilizeJobRecordCountDataGridViewStyle()
+        {
+            // Setting the style of the DataGridView control
+
+            grdRecordCount.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold, GraphicsUnit.Point);
+            grdRecordCount.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.ControlDark;
+            grdRecordCount.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            grdRecordCount.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grdRecordCount.DefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular, GraphicsUnit.Point);
+            grdRecordCount.DefaultCellStyle.BackColor = Color.Empty;
+            grdRecordCount.AlternatingRowsDefaultCellStyle.BackColor = SystemColors.Info;
+            grdRecordCount.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            grdRecordCount.GridColor = SystemColors.ControlDarkDark;
+        }
+
 
         protected void BindGrid()
         {
@@ -75,7 +90,13 @@ namespace StockScheduler
             cmbRunStatus.DisplayMember = "Name";
             cmbRunStatus.DataSource = jobRecord;
 
+            cmbScheduler.ValueMember = "SchedulerId";
+            cmbScheduler.DisplayMember = "Name";
+            cmbScheduler.DataSource = jobRecord;
+            
+
             BindJobRunGrid();
+            BindRecordCount();
 
             DataGridViewLinkColumn EditFeedLink = new DataGridViewLinkColumn();
             EditFeedLink.UseColumnTextForLinkValue = true;
@@ -149,6 +170,39 @@ namespace StockScheduler
         {
             InitilizeJobRunDataGridViewStyle();
             grdJobRuns.DataSource = jobRunRecord;
+        }
+
+        private void cmbScheduler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            int.TryParse(cmbScheduler.SelectedValue.ToString(), out temp_schedulerid1);
+            BindRecordCount();
+        }
+
+        public void BindRecordCount()
+        {
+            grdRecordCount.DataSource = null;
+            grdRecordCount.Rows.Clear();
+            grdRecordCount.Columns.Clear();
+
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += new DoWorkEventHandler(worker_RecordCountDoWork);
+            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RecordCountWorkerCompleted);
+            worker.RunWorkerAsync();
+        }
+
+        List<p_GetRecordCountForJob_Result> jobRecordCount = new List<p_GetRecordCountForJob_Result>();
+        int temp_schedulerid1 = 0;
+        void worker_RecordCountDoWork(object sender, DoWorkEventArgs e)
+        {
+
+            jobRecordCount = ws_JobsServices.Instance.GetRecordCountForJob(temp_schedulerid1);
+        }
+
+        void worker_RecordCountWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            InitilizeJobRecordCountDataGridViewStyle();
+            grdRecordCount.DataSource = jobRecordCount;
         }
     }
 }

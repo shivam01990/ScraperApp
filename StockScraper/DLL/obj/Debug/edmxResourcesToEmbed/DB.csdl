@@ -229,6 +229,9 @@
       <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
       <End Role="ws_JobScheduler_Yearly" EntitySet="ws_JobScheduler_Yearly" />
     </AssociationSet>
+    <FunctionImport Name="p_GetRecordCountForJob" ReturnType="Collection(DBModel.p_GetRecordCountForJob_Result)">
+      <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="p_GetJobScheduler_Result">
     <Property Type="Int32" Name="SchedulerId" Nullable="false" />
@@ -1406,4 +1409,25 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="p_GetRecordCountForJob_Result">
+    <Property Type="Int32" Name="Job_id" Nullable="false" />
+    <Property Type="Int32" Name="finviz_Calendar" Nullable="false" />
+    <Property Type="Int32" Name="finviz_Financials" Nullable="false" />
+    <Property Type="Int32" Name="finviz_Insider_Trading" Nullable="false" />
+    <Property Type="Int32" Name="finviz_Market_Movers" Nullable="false" />
+    <Property Type="Int32" Name="finviz_NewsCount" Nullable="false" />
+    <Property Type="Int32" Name="finviz_Recommendations" Nullable="false" />
+    <Property Type="Int32" Name="ft_Consensus" Nullable="false" />
+    <Property Type="Int32" Name="ft_Financials" Nullable="false" />
+    <Property Type="Int32" Name="ft_Forecasts" Nullable="false" />
+    <Property Type="Int32" Name="reuters_Financials_Dividends" Nullable="false" />
+    <Property Type="Int32" Name="reuters_Financials_Efficiencies" Nullable="false" />
+    <Property Type="Int32" Name="reuters_Financials_GrowthRates" Nullable="false" />
+    <Property Type="Int32" Name="reuters_Financials_Institutions" Nullable="false" />
+    <Property Type="Int32" Name="reuters_Financials_MgmtEffectiveness" Nullable="false" />
+    <Property Type="Int32" Name="reuters_Financials_ProfitabilityRatios" Nullable="false" />
+    <Property Type="Int32" Name="reuters_Financials_SalesEstimates" Nullable="false" />
+    <Property Type="Int32" Name="reuters_Financials_Strength" Nullable="false" />
+    <Property Type="Int32" Name="reuters_Financials_ValuationRatios" Nullable="false" />
+  </ComplexType>
 </Schema>

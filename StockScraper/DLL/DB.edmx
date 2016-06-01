@@ -1035,6 +1035,9 @@
         <Function Name="p_GetLastFailRecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="scheduler_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="p_GetRecordCountForJob" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="scheduler_id" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="DBModelStoreContainer">
           <EntitySet Name="finviz_Calendar" EntityType="Self.finviz_Calendar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="finviz_Financials" EntityType="Self.finviz_Financials" Schema="dbo" store:Type="Tables" />
@@ -1485,6 +1488,9 @@
             <End Role="ws_JobScheduler" EntitySet="ws_JobScheduler" />
             <End Role="ws_JobScheduler_Yearly" EntitySet="ws_JobScheduler_Yearly" />
           </AssociationSet>
+          <FunctionImport Name="p_GetRecordCountForJob" ReturnType="Collection(DBModel.p_GetRecordCountForJob_Result)">
+            <Parameter Name="scheduler_id" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="p_GetJobScheduler_Result">
           <Property Type="Int32" Name="SchedulerId" Nullable="false" />
@@ -2662,6 +2668,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="p_GetRecordCountForJob_Result">
+          <Property Type="Int32" Name="Job_id" Nullable="false" />
+          <Property Type="Int32" Name="finviz_Calendar" Nullable="false" />
+          <Property Type="Int32" Name="finviz_Financials" Nullable="false" />
+          <Property Type="Int32" Name="finviz_Insider_Trading" Nullable="false" />
+          <Property Type="Int32" Name="finviz_Market_Movers" Nullable="false" />
+          <Property Type="Int32" Name="finviz_NewsCount" Nullable="false" />
+          <Property Type="Int32" Name="finviz_Recommendations" Nullable="false" />
+          <Property Type="Int32" Name="ft_Consensus" Nullable="false" />
+          <Property Type="Int32" Name="ft_Financials" Nullable="false" />
+          <Property Type="Int32" Name="ft_Forecasts" Nullable="false" />
+          <Property Type="Int32" Name="reuters_Financials_Dividends" Nullable="false" />
+          <Property Type="Int32" Name="reuters_Financials_Efficiencies" Nullable="false" />
+          <Property Type="Int32" Name="reuters_Financials_GrowthRates" Nullable="false" />
+          <Property Type="Int32" Name="reuters_Financials_Institutions" Nullable="false" />
+          <Property Type="Int32" Name="reuters_Financials_MgmtEffectiveness" Nullable="false" />
+          <Property Type="Int32" Name="reuters_Financials_ProfitabilityRatios" Nullable="false" />
+          <Property Type="Int32" Name="reuters_Financials_SalesEstimates" Nullable="false" />
+          <Property Type="Int32" Name="reuters_Financials_Strength" Nullable="false" />
+          <Property Type="Int32" Name="reuters_Financials_ValuationRatios" Nullable="false" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3247,6 +3274,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="p_GetRecordCountForJob" FunctionName="DBModel.Store.p_GetRecordCountForJob">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBModel.p_GetRecordCountForJob_Result">
+                <ScalarProperty Name="Job_id" ColumnName="Job_id" />
+                <ScalarProperty Name="finviz_Calendar" ColumnName="finviz_Calendar" />
+                <ScalarProperty Name="finviz_Financials" ColumnName="finviz_Financials" />
+                <ScalarProperty Name="finviz_Insider_Trading" ColumnName="finviz_Insider_Trading" />
+                <ScalarProperty Name="finviz_Market_Movers" ColumnName="finviz_Market_Movers" />
+                <ScalarProperty Name="finviz_NewsCount" ColumnName="finviz_NewsCount" />
+                <ScalarProperty Name="finviz_Recommendations" ColumnName="finviz_Recommendations" />
+                <ScalarProperty Name="ft_Consensus" ColumnName="ft_Consensus" />
+                <ScalarProperty Name="ft_Financials" ColumnName="ft_Financials" />
+                <ScalarProperty Name="ft_Forecasts" ColumnName="ft_Forecasts" />
+                <ScalarProperty Name="reuters_Financials_Dividends" ColumnName="reuters_Financials_Dividends" />
+                <ScalarProperty Name="reuters_Financials_Efficiencies" ColumnName="reuters_Financials_Efficiencies" />
+                <ScalarProperty Name="reuters_Financials_GrowthRates" ColumnName="reuters_Financials_GrowthRates" />
+                <ScalarProperty Name="reuters_Financials_Institutions" ColumnName="reuters_Financials_Institutions" />
+                <ScalarProperty Name="reuters_Financials_MgmtEffectiveness" ColumnName="reuters_Financials_MgmtEffectiveness" />
+                <ScalarProperty Name="reuters_Financials_ProfitabilityRatios" ColumnName="reuters_Financials_ProfitabilityRatios" />
+                <ScalarProperty Name="reuters_Financials_SalesEstimates" ColumnName="reuters_Financials_SalesEstimates" />
+                <ScalarProperty Name="reuters_Financials_Strength" ColumnName="reuters_Financials_Strength" />
+                <ScalarProperty Name="reuters_Financials_ValuationRatios" ColumnName="reuters_Financials_ValuationRatios" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

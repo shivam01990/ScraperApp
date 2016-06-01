@@ -30,21 +30,27 @@
         {
             this.Header = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.grdJobs = new System.Windows.Forms.DataGridView();
             this.btnAddNewJob = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtJobName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.grdJobs = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cmbRunStatus = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.grdJobRuns = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbRunStatus = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbScheduler = new System.Windows.Forms.ComboBox();
+            this.grdRecordCount = new System.Windows.Forms.DataGridView();
             this.tabPage1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdJobs)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdJobRuns)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdRecordCount)).BeginInit();
             this.SuspendLayout();
             // 
             // Header
@@ -76,6 +82,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Search Jobs";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // grdJobs
+            // 
+            this.grdJobs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdJobs.Location = new System.Drawing.Point(0, 86);
+            this.grdJobs.Name = "grdJobs";
+            this.grdJobs.Size = new System.Drawing.Size(776, 391);
+            this.grdJobs.TabIndex = 5;
+            this.grdJobs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdJobs_CellContentClick);
             // 
             // btnAddNewJob
             // 
@@ -117,20 +132,12 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(0, 58);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(784, 506);
             this.tabControl1.TabIndex = 4;
-            // 
-            // grdJobs
-            // 
-            this.grdJobs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdJobs.Location = new System.Drawing.Point(0, 86);
-            this.grdJobs.Name = "grdJobs";
-            this.grdJobs.Size = new System.Drawing.Size(776, 391);
-            this.grdJobs.TabIndex = 5;
-            this.grdJobs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdJobs_CellContentClick);
             // 
             // tabPage2
             // 
@@ -145,6 +152,23 @@
             this.tabPage2.Text = "Job Run Status";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // grdJobRuns
+            // 
+            this.grdJobRuns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdJobRuns.Location = new System.Drawing.Point(3, 90);
+            this.grdJobRuns.Name = "grdJobRuns";
+            this.grdJobRuns.Size = new System.Drawing.Size(770, 387);
+            this.grdJobRuns.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Select Scheduler ";
+            // 
             // cmbRunStatus
             // 
             this.cmbRunStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -155,22 +179,45 @@
             this.cmbRunStatus.TabIndex = 0;
             this.cmbRunStatus.SelectedIndexChanged += new System.EventHandler(this.cmbRunStatus_SelectedIndexChanged);
             // 
-            // label2
+            // tabPage3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Select Job Type";
+            this.tabPage3.Controls.Add(this.grdRecordCount);
+            this.tabPage3.Controls.Add(this.cmbScheduler);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(776, 480);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Record Count";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // grdJobRuns
+            // label3
             // 
-            this.grdJobRuns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdJobRuns.Location = new System.Drawing.Point(3, 90);
-            this.grdJobRuns.Name = "grdJobRuns";
-            this.grdJobRuns.Size = new System.Drawing.Size(770, 387);
-            this.grdJobRuns.TabIndex = 2;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(26, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Select Scheduler ";
+            // 
+            // cmbScheduler
+            // 
+            this.cmbScheduler.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbScheduler.FormattingEnabled = true;
+            this.cmbScheduler.Location = new System.Drawing.Point(143, 38);
+            this.cmbScheduler.Name = "cmbScheduler";
+            this.cmbScheduler.Size = new System.Drawing.Size(169, 21);
+            this.cmbScheduler.TabIndex = 3;
+            this.cmbScheduler.SelectedIndexChanged += new System.EventHandler(this.cmbScheduler_SelectedIndexChanged);
+            // 
+            // grdRecordCount
+            // 
+            this.grdRecordCount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdRecordCount.Location = new System.Drawing.Point(3, 85);
+            this.grdRecordCount.Name = "grdRecordCount";
+            this.grdRecordCount.Size = new System.Drawing.Size(770, 395);
+            this.grdRecordCount.TabIndex = 4;
             // 
             // SchedulerJobs
             // 
@@ -183,11 +230,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdJobs)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdJobRuns)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdRecordCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +257,9 @@
         private System.Windows.Forms.DataGridView grdJobRuns;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbRunStatus;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView grdRecordCount;
+        private System.Windows.Forms.ComboBox cmbScheduler;
+        private System.Windows.Forms.Label label3;
     }
 }

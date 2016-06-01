@@ -44,5 +44,15 @@ namespace BLL
             return Job_id;
         }
         #endregion
+
+        #region--Get JobRun count--
+        public List<p_GetRecordCountForJob_Result> GetRecordCountForJob(int SchedulerId)
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                return db.p_GetRecordCountForJob(SchedulerId).ToList();
+            }
+        }
+        #endregion
     }
 }

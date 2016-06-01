@@ -580,5 +580,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="p_GetRecordCountForJob" FunctionName="DBModel.Store.p_GetRecordCountForJob">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.p_GetRecordCountForJob_Result">
+          <ScalarProperty Name="Job_id" ColumnName="Job_id" />
+          <ScalarProperty Name="finviz_Calendar" ColumnName="finviz_Calendar" />
+          <ScalarProperty Name="finviz_Financials" ColumnName="finviz_Financials" />
+          <ScalarProperty Name="finviz_Insider_Trading" ColumnName="finviz_Insider_Trading" />
+          <ScalarProperty Name="finviz_Market_Movers" ColumnName="finviz_Market_Movers" />
+          <ScalarProperty Name="finviz_NewsCount" ColumnName="finviz_NewsCount" />
+          <ScalarProperty Name="finviz_Recommendations" ColumnName="finviz_Recommendations" />
+          <ScalarProperty Name="ft_Consensus" ColumnName="ft_Consensus" />
+          <ScalarProperty Name="ft_Financials" ColumnName="ft_Financials" />
+          <ScalarProperty Name="ft_Forecasts" ColumnName="ft_Forecasts" />
+          <ScalarProperty Name="reuters_Financials_Dividends" ColumnName="reuters_Financials_Dividends" />
+          <ScalarProperty Name="reuters_Financials_Efficiencies" ColumnName="reuters_Financials_Efficiencies" />
+          <ScalarProperty Name="reuters_Financials_GrowthRates" ColumnName="reuters_Financials_GrowthRates" />
+          <ScalarProperty Name="reuters_Financials_Institutions" ColumnName="reuters_Financials_Institutions" />
+          <ScalarProperty Name="reuters_Financials_MgmtEffectiveness" ColumnName="reuters_Financials_MgmtEffectiveness" />
+          <ScalarProperty Name="reuters_Financials_ProfitabilityRatios" ColumnName="reuters_Financials_ProfitabilityRatios" />
+          <ScalarProperty Name="reuters_Financials_SalesEstimates" ColumnName="reuters_Financials_SalesEstimates" />
+          <ScalarProperty Name="reuters_Financials_Strength" ColumnName="reuters_Financials_Strength" />
+          <ScalarProperty Name="reuters_Financials_ValuationRatios" ColumnName="reuters_Financials_ValuationRatios" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
